@@ -2,25 +2,25 @@
 <TextureAtlas imagePath="ship.png">
 	<!-- Created with Adobe Animate version 19.2.1.408 -->
 	<!-- http://www.adobe.com/products/animate.html -->
-	<SubTexture name="cannon instance 10000" x="1" y="1" width="47" height="42" pivotX="23" pivotY="20.65"/>
-	<SubTexture name="redShip instance 10000" x="49" y="1" width="113" height="67" pivotX="56.65" pivotY="32.9"/>
-	<SubTexture name="redShip instance 10001" x="1" y="69" width="113" height="67"/>
-	<SubTexture name="redShip instance 10002" x="1" y="69" width="113" height="67"/>
-	<SubTexture name="redShip instance 10003" x="1" y="69" width="113" height="67"/>
-	<SubTexture name="redShip instance 10004" x="1" y="69" width="113" height="67"/>
-	<SubTexture name="redShip instance 10005" x="1" y="69" width="113" height="67"/>
-	<SubTexture name="redShip instance 10006" x="115" y="69" width="113" height="67"/>
-	<SubTexture name="redShip instance 10007" x="115" y="69" width="113" height="67"/>
-	<SubTexture name="redShip instance 10008" x="115" y="69" width="113" height="67"/>
-	<SubTexture name="redShip instance 10009" x="115" y="69" width="113" height="67"/>
-	<SubTexture name="redShip instance 10010" x="115" y="69" width="113" height="67"/>
-	<SubTexture name="redShip instance 10011" x="1" y="137" width="113" height="67"/>
-	<SubTexture name="redShip instance 10012" x="115" y="69" width="113" height="67"/>
-	<SubTexture name="redShip instance 10013" x="115" y="69" width="113" height="67"/>
-	<SubTexture name="redShip instance 10014" x="115" y="69" width="113" height="67"/>
-	<SubTexture name="redShip instance 10015" x="115" y="69" width="113" height="67"/>
-	<SubTexture name="redShip instance 10016" x="1" y="69" width="113" height="67"/>
-	<SubTexture name="redShip instance 10017" x="1" y="69" width="113" height="67"/>
-	<SubTexture name="redShip instance 10018" x="1" y="69" width="113" height="67"/>
-	<SubTexture name="redShip instance 10019" x="49" y="1" width="113" height="67"/>
+	<SubTexture name="cannon0000" x="1" y="1" width="47" height="42" pivotX="23" pivotY="20.65"/>
+	<SubTexture name="redShip0000" x="49" y="1" width="113" height="67" pivotX="56.65" pivotY="32.9"/>
+	<SubTexture name="redShip0001" x="163" y="1" width="113" height="67"/>
+	<SubTexture name="redShip0002" x="277" y="1" width="113" height="67"/>
+	<SubTexture name="redShip0003" x="391" y="1" width="113" height="67"/>
+	<SubTexture name="redShip0004" x="1" y="69" width="113" height="67"/>
+	<SubTexture name="redShip0005" x="115" y="69" width="113" height="67"/>
+	<SubTexture name="redShip0006" x="229" y="69" width="113" height="67"/>
+	<SubTexture name="redShip0007" x="343" y="69" width="113" height="67"/>
+	<SubTexture name="redShip0008" x="1" y="137" width="113" height="67"/>
+	<SubTexture name="redShip0009" x="115" y="137" width="113" height="67"/>
+	<SubTexture name="redShip0010" x="229" y="137" width="113" height="67"/>
+	<SubTexture name="redShip0011" x="343" y="137" width="113" height="67"/>
+	<SubTexture name="redShip0012" x="1" y="205" width="113" height="67"/>
+	<SubTexture name="redShip0013" x="115" y="205" width="113" height="67"/>
+	<SubTexture name="redShip0014" x="229" y="205" width="113" height="67"/>
+	<SubTexture name="redShip0015" x="343" y="205" width="113" height="67"/>
+	<SubTexture name="redShip0016" x="1" y="273" width="113" height="67"/>
+	<SubTexture name="redShip0017" x="115" y="273" width="113" height="67"/>
+	<SubTexture name="redShip0018" x="229" y="273" width="113" height="67"/>
+	<SubTexture name="redShip0019" x="343" y="273" width="113" height="67"/>
 </TextureAtlas>
