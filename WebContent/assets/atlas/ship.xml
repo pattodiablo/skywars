@@ -2,24 +2,24 @@
 <TextureAtlas imagePath="ship.png">
 	<!-- Created with Adobe Animate version 19.2.1.408 -->
 	<!-- http://www.adobe.com/products/animate.html -->
-	<SubTexture name="redShip instance 10000" x="1" y="1" width="224" height="133" pivotX="113.55" pivotY="66.05" frameX="-1" frameY="0" frameWidth="225" frameHeight="133"/>
-	<SubTexture name="redShip instance 10001" x="226" y="1" width="224" height="133" frameX="-1" frameY="0" frameWidth="225" frameHeight="133"/>
-	<SubTexture name="redShip instance 10002" x="226" y="1" width="224" height="133" frameX="-2" frameY="0" frameWidth="225" frameHeight="133"/>
-	<SubTexture name="redShip instance 10003" x="1" y="135" width="223" height="133" frameX="-2" frameY="0" frameWidth="225" frameHeight="133"/>
-	<SubTexture name="redShip instance 10004" x="1" y="135" width="223" height="133" frameX="-2" frameY="0" frameWidth="225" frameHeight="133"/>
-	<SubTexture name="redShip instance 10005" x="1" y="135" width="223" height="133" frameX="-2" frameY="0" frameWidth="225" frameHeight="133"/>
-	<SubTexture name="redShip instance 10006" x="225" y="135" width="224" height="133" frameX="-1" frameY="0" frameWidth="225" frameHeight="133"/>
-	<SubTexture name="redShip instance 10007" x="225" y="135" width="224" height="133" frameX="-1" frameY="0" frameWidth="225" frameHeight="133"/>
-	<SubTexture name="redShip instance 10008" x="225" y="135" width="224" height="133" frameX="-1" frameY="0" frameWidth="225" frameHeight="133"/>
+	<SubTexture name="redShip instance 10000" x="1" y="1" width="225" height="133" pivotX="113.55" pivotY="66.05"/>
+	<SubTexture name="redShip instance 10001" x="227" y="1" width="225" height="133"/>
+	<SubTexture name="redShip instance 10002" x="227" y="1" width="225" height="133"/>
+	<SubTexture name="redShip instance 10003" x="1" y="135" width="225" height="133"/>
+	<SubTexture name="redShip instance 10004" x="1" y="135" width="225" height="133"/>
+	<SubTexture name="redShip instance 10005" x="1" y="135" width="225" height="133"/>
+	<SubTexture name="redShip instance 10006" x="227" y="135" width="225" height="133"/>
+	<SubTexture name="redShip instance 10007" x="227" y="135" width="225" height="133"/>
+	<SubTexture name="redShip instance 10008" x="227" y="135" width="225" height="133"/>
 	<SubTexture name="redShip instance 10009" x="1" y="269" width="225" height="133"/>
 	<SubTexture name="redShip instance 10010" x="1" y="269" width="225" height="133"/>
 	<SubTexture name="redShip instance 10011" x="227" y="269" width="225" height="133"/>
 	<SubTexture name="redShip instance 10012" x="1" y="269" width="225" height="133"/>
-	<SubTexture name="redShip instance 10013" x="1" y="269" width="225" height="133" frameX="-1" frameY="0" frameWidth="225" frameHeight="133"/>
-	<SubTexture name="redShip instance 10014" x="225" y="135" width="224" height="133" frameX="-1" frameY="0" frameWidth="225" frameHeight="133"/>
-	<SubTexture name="redShip instance 10015" x="225" y="135" width="224" height="133" frameX="-2" frameY="0" frameWidth="225" frameHeight="133"/>
-	<SubTexture name="redShip instance 10016" x="1" y="135" width="223" height="133" frameX="-2" frameY="0" frameWidth="225" frameHeight="133"/>
-	<SubTexture name="redShip instance 10017" x="1" y="135" width="223" height="133" frameX="-2" frameY="0" frameWidth="225" frameHeight="133"/>
-	<SubTexture name="redShip instance 10018" x="226" y="1" width="224" height="133" frameX="-1" frameY="0" frameWidth="225" frameHeight="133"/>
-	<SubTexture name="redShip instance 10019" x="1" y="1" width="224" height="133" frameX="-1" frameY="0" frameWidth="225" frameHeight="133"/>
+	<SubTexture name="redShip instance 10013" x="1" y="269" width="225" height="133"/>
+	<SubTexture name="redShip instance 10014" x="227" y="135" width="225" height="133"/>
+	<SubTexture name="redShip instance 10015" x="227" y="135" width="225" height="133"/>
+	<SubTexture name="redShip instance 10016" x="1" y="135" width="225" height="133"/>
+	<SubTexture name="redShip instance 10017" x="1" y="135" width="225" height="133"/>
+	<SubTexture name="redShip instance 10018" x="227" y="1" width="225" height="133"/>
+	<SubTexture name="redShip instance 10019" x="1" y="1" width="225" height="133"/>
 </TextureAtlas>
