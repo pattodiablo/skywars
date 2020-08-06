@@ -32,15 +32,34 @@ Level.prototype.init = function () {
 
 Level.prototype.preload = function () {
 	
+	this.load.pack('images', 'assets/pack.json');
 	this.load.pack('atlas', 'assets/pack.json');
 	
 };
 
 Level.prototype.create = function () {
-	var _group = new mainShip(this.game);
-	_group.position.set(207.0, 168.0);
+	this.add.sprite(0.0, 0.0, 'background');
+	
+	var _player = new player(this.game, 337.0, 505.0);
+	this.add.existing(_player);
+	
+	var _platforms = this.add.physicsGroup(Phaser.Physics.ARCADE);
+	
+	var _building = new building1(this.game, 0.0, 830.0);
+	_platforms.add(_building);
+	
+	var _build = new building1(this.game, 1026.0, 830.0);
+	_platforms.add(_build);
+	
+	var _build1 = new building1(this.game, 2136.0, 830.0);
+	_platforms.add(_build1);
 	
 	
+	
+	// fields
+	
+	this.fPlayer = _player;
+	this.fPlatforms = _platforms;
 	this.myCreate();
 	
 	
@@ -49,6 +68,17 @@ Level.prototype.create = function () {
 /* --- end generated code --- */
 // -- user code here --
 Level.prototype.myCreate = function () {
+	this.game.input.onDown.add(this.swipeDownAction, this);
+	
+};
+
+Level.prototype.swipeDownAction = function(pointer) { //manejo de swipe control de pantalla
+this.fPlayer.body.velocity.y-=1000;
+				};
+
+Level.prototype.update = function () {
+	
+	this.game.physics.arcade.collide(this.fPlayer , this.fPlatforms);
 
 	
-}
+};

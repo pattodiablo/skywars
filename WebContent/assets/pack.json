@@ -1,5 +1,23 @@
 {
-  "images": [],
+  "images": [
+    {
+      "type": "image",
+      "key": "background",
+      "url": "assets/images/background.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "building1",
+      "url": "assets/images/building1.png",
+      "overwrite": false
+    },
+    {
+      "type": "script",
+      "key": "building11",
+      "url": "prefabs/building1.js"
+    }
+  ],
   "atlas": [
     {
       "type": "atlas",
@@ -22,10 +40,22 @@
       "type": "script",
       "key": "mainShip",
       "url": "prefabs/mainShip.js"
+    },
+    {
+      "type": "atlas",
+      "key": "player",
+      "textureURL": "assets/atlas/player.png",
+      "atlasURL": "assets/atlas/player.xml",
+      "format": "TEXTURE_ATLAS_XML_STARLING"
+    },
+    {
+      "type": "script",
+      "key": "player1",
+      "url": "prefabs/player.js"
     }
   ],
   "meta": {
-    "generated": "1596487937550",
+    "generated": "1596731216884",
     "app": "Phaser Editor",
     "url": "http://phasereditor.boniatillo.com",
     "version": "1.0",
