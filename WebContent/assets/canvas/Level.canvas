@@ -19,7 +19,7 @@
       200
     ],
     "showGrid": true,
-    "create_after": "\r\n\r\n"
+    "create_after": "this.myCreate();\r\n\r\n"
   },
   "stateSettings": {
     "scaleMode": "SHOW_ALL",
@@ -30,6 +30,7 @@
       255,
       255
     ],
+    "rendererRoundPixels": true,
     "autoLoad": true,
     "preloadSpriteId": "",
     "preloadSprite_direction": 0,
@@ -41,10 +42,19 @@
     "info": {
       "editorName": "Level",
       "setAll": [],
-      "children": []
+      "children": [{
+        "type": "prefab",
+        "prefab": "0",
+        "id": "6e3fec59-fc85-46f8-bba2-33a957f9e6f0",
+        "info": {
+          "editorName": "group",
+          "x": 207,
+          "y": 168
+        }
+      }]
     }
   },
   "type": "STATE",
   "asset-table": {},
-  "prefab-table": {}
+  "prefab-table": {"0": "WebContent/prefabs/mainShip.canvas"}
 }

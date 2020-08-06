@@ -25,17 +25,30 @@ Level.prototype.init = function () {
 	this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
 	this.scale.pageAlignHorizontally = true;
 	this.scale.pageAlignVertically = true;
+	this.game.renderer.renderSession.roundPixels = true;
 	this.stage.backgroundColor = '#80ffff';
 	
 };
 
 Level.prototype.preload = function () {
 	
+	this.load.pack('atlas', 'assets/pack.json');
+	
 };
 
 Level.prototype.create = function () {
+	var _group = new mainShip(this.game);
+	_group.position.set(207.0, 168.0);
+	
+	
+	this.myCreate();
+	
 	
 };
 
 /* --- end generated code --- */
 // -- user code here --
+Level.prototype.myCreate = function () {
+
+	
+}

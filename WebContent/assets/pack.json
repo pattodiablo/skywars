@@ -1,7 +1,34 @@
-{"meta": {
-  "generated": "1490300737380",
-  "app": "Phaser Editor",
-  "url": "http://phasereditor.boniatillo.com",
-  "version": "1.0",
-  "copyright": "Arian Fornaris (c) 2015,2016"
-}}
+{
+  "images": [],
+  "atlas": [
+    {
+      "type": "atlas",
+      "key": "ship",
+      "textureURL": "assets/atlas/ship.png",
+      "atlasURL": "assets/atlas/ship.xml",
+      "format": "TEXTURE_ATLAS_XML_STARLING"
+    },
+    {
+      "type": "script",
+      "key": "redShip",
+      "url": "prefabs/redShip.js"
+    },
+    {
+      "type": "script",
+      "key": "cannon",
+      "url": "prefabs/cannon.js"
+    },
+    {
+      "type": "script",
+      "key": "mainShip",
+      "url": "prefabs/mainShip.js"
+    }
+  ],
+  "meta": {
+    "generated": "1596487937550",
+    "app": "Phaser Editor",
+    "url": "http://phasereditor.boniatillo.com",
+    "version": "1.0",
+    "copyright": "Arian Fornaris (c) 2015,2016"
+  }
+}
