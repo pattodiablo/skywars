@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="player.png">
+	<!-- Created with Adobe Animate version 19.2.1.408 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="player0000" x="1" y="1" width="165" height="189" pivotX="81.45" pivotY="93.85"/>
+	<SubTexture name="player0001" x="167" y="1" width="165" height="189"/>
+	<SubTexture name="player0002" x="333" y="1" width="165" height="189"/>
+	<SubTexture name="player0003" x="499" y="1" width="165" height="189"/>
+	<SubTexture name="player0004" x="665" y="1" width="165" height="189"/>
+	<SubTexture name="player0005" x="831" y="1" width="165" height="189"/>
+	<SubTexture name="player0006" x="1" y="191" width="165" height="189"/>
+	<SubTexture name="player0007" x="167" y="191" width="165" height="189"/>
+	<SubTexture name="player0008" x="333" y="191" width="165" height="189"/>
+	<SubTexture name="player0009" x="499" y="191" width="165" height="189"/>
+	<SubTexture name="player0010" x="665" y="191" width="165" height="189"/>
+	<SubTexture name="player0011" x="831" y="191" width="165" height="189"/>
+	<SubTexture name="player0012" x="1" y="381" width="165" height="189"/>
+	<SubTexture name="player0013" x="167" y="381" width="165" height="189"/>
+	<SubTexture name="player0014" x="333" y="381" width="165" height="189"/>
+	<SubTexture name="player0015" x="499" y="381" width="165" height="189"/>
+	<SubTexture name="player0016" x="665" y="381" width="165" height="189"/>
+	<SubTexture name="player0017" x="831" y="381" width="165" height="189"/>
+	<SubTexture name="player0018" x="1" y="571" width="165" height="189"/>
+	<SubTexture name="player0019" x="167" y="571" width="165" height="189"/>
+	<SubTexture name="player0020" x="333" y="571" width="165" height="189"/>
+	<SubTexture name="player0021" x="499" y="571" width="165" height="189"/>
+</TextureAtlas>

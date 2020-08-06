@@ -1,0 +1,63 @@
+{
+  "canvas-version": 2,
+  "settings": {
+    "className": "building1",
+    "sceneWidth": 640,
+    "sceneHeight": 360,
+    "generateOnSave": true,
+    "enableStepping": false,
+    "lang": "JAVA_SCRIPT",
+    "baseClass": "Phaser.Sprite",
+    "backgroundColor": [
+      180,
+      180,
+      180
+    ],
+    "gridColor": [
+      200,
+      200,
+      200
+    ],
+    "showGrid": true,
+    "create_after": "this.myCreate();"
+  },
+  "stateSettings": {
+    "stageBackgroundColor": [
+      0,
+      0,
+      0
+    ],
+    "autoLoad": true,
+    "preloadSpriteId": "",
+    "preloadSprite_direction": 0,
+    "load.pack": []
+  },
+  "world": {
+    "type": "group",
+    "id": "a9b47f4d-1620-4d61-b0bc-1de1bfc5475e",
+    "info": {
+      "editorName": "building1",
+      "setAll": [],
+      "children": [{
+        "type": "image",
+        "id": "f584eed7-e912-475c-ac08-01774f7d141b",
+        "asset": "0",
+        "info": {
+          "editorName": "build",
+          "body": {
+            "type": "ARCADE_RECT",
+            "immovable": true,
+            "velocityX": -150
+          }
+        }
+      }]
+    }
+  },
+  "type": "SPRITE",
+  "asset-table": {"0": {
+    "file": "WebContent/assets/pack.json",
+    "section": "images",
+    "asset": "building1"
+  }},
+  "prefab-table": {}
+}
