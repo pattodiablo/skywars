@@ -83,12 +83,24 @@ Level.prototype.myCreate = function () {
 };
 
 Level.prototype.swipeDownAction = function(pointer) { //manejo de swipe control de pantalla
-this.fPlayer.body.velocity.y-=1000;
+	if(this.fPlayer.canJump){
+		this.fPlayer.body.velocity.y-=1000;
+		this.fPlayer.canJump =  false;
+	}
+
 				};
 
+
+Level.prototype.onPlatform = function (player, platform) {
+	player.body.velocity.x =  150;
+	player.canJump =  true;
+				};		
+				
 Level.prototype.update = function () {
 	
-	this.game.physics.arcade.collide(this.fPlayer , this.fPlatforms);
+	this.game.physics.arcade.collide(this.fPlayer , this.fPlatforms, this.onPlatform, null, this);
 
-	
+	if(this.fPlayer.y>=this.game.height+100){
+		this.game.state.start('Level');
+	}
 };

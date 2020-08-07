@@ -24,6 +24,8 @@ function player(aGame, aX, aY, aKey, aFrame) {
 	this.body.velocity.x = 170.0;
 	this.body.gravity.y = 1200.0;
 	
+	this.myCreate();
+	
 }
 
 /** @type Phaser.Sprite */
@@ -33,15 +35,15 @@ player.prototype.constructor = player;
 
 /* --- end generated code --- */
 // -- user code here --
+player.prototype.myCreate = function() {
+	
+this.canJump =  false;	
+};
+
 player.prototype.update = function() {
 
 
 	
-		if(	this.x>=this.game.width/1.5){
-			
-			this.body.velocity.x = 0;
-		}else{
-			this.body.velocity.x = 170.0;
-		}
+		
 
 	};
