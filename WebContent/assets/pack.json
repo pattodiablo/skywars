@@ -16,6 +16,11 @@
       "type": "script",
       "key": "building11",
       "url": "prefabs/building1.js"
+    },
+    {
+      "type": "script",
+      "key": "banner1",
+      "url": "prefabs/banner.js"
     }
   ],
   "atlas": [
@@ -52,10 +57,29 @@
       "type": "script",
       "key": "player1",
       "url": "prefabs/player.js"
+    },
+    {
+      "type": "atlas",
+      "key": "zepellin",
+      "textureURL": "assets/atlas/zepellin.png",
+      "atlasURL": "assets/atlas/zepellin.xml",
+      "format": "TEXTURE_ATLAS_XML_STARLING"
+    },
+    {
+      "type": "script",
+      "key": "zepellin1",
+      "url": "prefabs/zepellin.js"
+    },
+    {
+      "type": "atlas",
+      "key": "banner",
+      "textureURL": "assets/atlas/banner.png",
+      "atlasURL": "assets/atlas/banner.xml",
+      "format": "TEXTURE_ATLAS_XML_STARLING"
     }
   ],
   "meta": {
-    "generated": "1596731216884",
+    "generated": "1596808958945",
     "app": "Phaser Editor",
     "url": "http://phasereditor.boniatillo.com",
     "version": "1.0",

@@ -1,7 +1,7 @@
 {
   "canvas-version": 2,
   "settings": {
-    "className": "building1",
+    "className": "banner",
     "sceneWidth": 640,
     "sceneHeight": 360,
     "generateOnSave": true,
@@ -18,8 +18,7 @@
       200,
       200
     ],
-    "showGrid": true,
-    "create_after": "this.myCreate();"
+    "showGrid": true
   },
   "stateSettings": {
     "stageBackgroundColor": [
@@ -28,36 +27,29 @@
       0
     ],
     "autoLoad": true,
-    "preloadSpriteId": "",
     "preloadSprite_direction": 0,
     "load.pack": []
   },
   "world": {
     "type": "group",
-    "id": "a9b47f4d-1620-4d61-b0bc-1de1bfc5475e",
+    "id": "0fc70cd7-2943-4e6e-859b-af335415846d",
     "info": {
-      "editorName": "building1",
+      "editorName": "banner",
       "setAll": [],
       "children": [{
-        "type": "image",
-        "id": "f584eed7-e912-475c-ac08-01774f7d141b",
+        "type": "atlas-sprite",
+        "id": "2d82974d-e84a-4a99-b2c3-1d85b7396a25",
         "asset": "0",
-        "info": {
-          "editorName": "build",
-          "body": {
-            "type": "ARCADE_RECT",
-            "immovable": true,
-            "velocityX": -200
-          }
-        }
+        "info": {"editorName": "Symbol_10_instance_10000"}
       }]
     }
   },
   "type": "SPRITE",
   "asset-table": {"0": {
     "file": "WebContent/assets/pack.json",
-    "section": "images",
-    "asset": "building1"
+    "section": "atlas",
+    "asset": "banner",
+    "sprite": "Symbol 10 instance 10000"
   }},
   "prefab-table": {}
 }

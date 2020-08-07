@@ -40,26 +40,35 @@ Level.prototype.preload = function () {
 Level.prototype.create = function () {
 	this.add.sprite(0.0, 0.0, 'background');
 	
-	var _player = new player(this.game, 337.0, 505.0);
-	this.add.existing(_player);
+	var _banner = new banner(this.game, 2664.0, 563.0);
+	this.add.existing(_banner);
 	
 	var _platforms = this.add.physicsGroup(Phaser.Physics.ARCADE);
 	
 	var _building = new building1(this.game, 0.0, 830.0);
 	_platforms.add(_building);
 	
-	var _build = new building1(this.game, 1026.0, 830.0);
+	var _build1 = new building1(this.game, 2203.0, 830.0);
+	_platforms.add(_build1);
+	
+	var _build = new building1(this.game, 1129.0, 735.0);
 	_platforms.add(_build);
 	
-	var _build1 = new building1(this.game, 2136.0, 830.0);
-	_platforms.add(_build1);
+	var _build2 = new building1(this.game, 1129.0, 871.0);
+	_platforms.add(_build2);
+	
+	var _zepellin = new zepellin(this.game, 2070.0, 53.0);
+	this.add.existing(_zepellin);
+	
+	var _player = new player(this.game, 289.0, 512.0);
+	this.add.existing(_player);
 	
 	
 	
 	// fields
 	
-	this.fPlayer = _player;
 	this.fPlatforms = _platforms;
+	this.fPlayer = _player;
 	this.myCreate();
 	
 	
@@ -69,16 +78,29 @@ Level.prototype.create = function () {
 // -- user code here --
 Level.prototype.myCreate = function () {
 	this.game.input.onDown.add(this.swipeDownAction, this);
-	
+	this.game.world.setBounds(0, 0, 720, 480);
+	   this.game.camera.follow(this.fPlayer,Phaser.Camera.FOLLOW_LOCKON,0.1, 0.1,0,0);
 };
 
 Level.prototype.swipeDownAction = function(pointer) { //manejo de swipe control de pantalla
-this.fPlayer.body.velocity.y-=1000;
+	if(this.fPlayer.canJump){
+		this.fPlayer.body.velocity.y-=1000;
+		this.fPlayer.canJump =  false;
+	}
+
 				};
 
+
+Level.prototype.onPlatform = function (player, platform) {
+	player.body.velocity.x =  150;
+	player.canJump =  true;
+				};		
+				
 Level.prototype.update = function () {
 	
-	this.game.physics.arcade.collide(this.fPlayer , this.fPlatforms);
+	this.game.physics.arcade.collide(this.fPlayer , this.fPlatforms, this.onPlatform, null, this);
 
-	
+	if(this.fPlayer.y>=this.game.height+100){
+		this.game.state.start('Level');
+	}
 };

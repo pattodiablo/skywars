@@ -52,18 +52,17 @@
         {
           "type": "prefab",
           "prefab": "0",
-          "id": "7c050d5b-9d0e-4e47-b90d-b58463ba29e2",
+          "id": "64190fee-a22d-4007-8df5-c7f917602b79",
           "asset-ref": {
             "file": "WebContent/assets/pack.json",
             "section": "atlas",
-            "asset": "player",
-            "sprite": "player0000"
+            "asset": "banner",
+            "sprite": "Symbol 10 instance 10000"
           },
           "info": {
-            "editorName": "player",
-            "editorField": true,
-            "x": 337,
-            "y": 505
+            "editorName": "banner",
+            "x": 2664,
+            "y": 563
           }
         },
         {
@@ -93,21 +92,6 @@
               {
                 "type": "prefab",
                 "prefab": "1",
-                "id": "daa1c63b-0d8e-41f1-976b-f82ba982cdd7",
-                "asset-ref": {
-                  "file": "WebContent/assets/pack.json",
-                  "section": "images",
-                  "asset": "building1"
-                },
-                "info": {
-                  "editorName": "build",
-                  "x": 1026,
-                  "y": 830
-                }
-              },
-              {
-                "type": "prefab",
-                "prefab": "1",
                 "id": "ee11995f-b7d0-4c49-ba25-fa533940eae8",
                 "asset-ref": {
                   "file": "WebContent/assets/pack.json",
@@ -116,11 +100,74 @@
                 },
                 "info": {
                   "editorName": "build1",
-                  "x": 2136,
+                  "x": 2203,
                   "y": 830
+                }
+              },
+              {
+                "type": "prefab",
+                "prefab": "1",
+                "id": "daa1c63b-0d8e-41f1-976b-f82ba982cdd7",
+                "asset-ref": {
+                  "file": "WebContent/assets/pack.json",
+                  "section": "images",
+                  "asset": "building1"
+                },
+                "info": {
+                  "editorName": "build",
+                  "x": 1129,
+                  "y": 735
+                }
+              },
+              {
+                "type": "prefab",
+                "prefab": "1",
+                "id": "c4197cbf-e099-43d1-87d8-2abb24aea623",
+                "asset-ref": {
+                  "file": "WebContent/assets/pack.json",
+                  "section": "images",
+                  "asset": "building1"
+                },
+                "info": {
+                  "editorName": "build2",
+                  "x": 1129,
+                  "y": 871
                 }
               }
             ]
+          }
+        },
+        {
+          "type": "prefab",
+          "prefab": "2",
+          "id": "a31a3691-e8b8-46d5-a0b1-5aa98eb808c3",
+          "asset-ref": {
+            "file": "WebContent/assets/pack.json",
+            "section": "atlas",
+            "asset": "zepellin",
+            "sprite": "zepellin0000"
+          },
+          "info": {
+            "editorName": "zepellin",
+            "x": 2070,
+            "y": 53
+          }
+        },
+        {
+          "type": "prefab",
+          "prefab": "3",
+          "id": "6b92b063-cf03-45ca-b402-46b55aae01a8",
+          "asset-ref": {
+            "file": "WebContent/assets/pack.json",
+            "section": "atlas",
+            "asset": "player",
+            "sprite": "player0000"
+          },
+          "info": {
+            "editorName": "player",
+            "editorField": true,
+            "x": 289,
+            "y": 512
           }
         }
       ]
@@ -133,7 +180,9 @@
     "asset": "background"
   }},
   "prefab-table": {
-    "0": "WebContent/prefabs/player.canvas",
-    "1": "WebContent/prefabs/building1.canvas"
+    "0": "WebContent/prefabs/banner.canvas",
+    "1": "WebContent/prefabs/building1.canvas",
+    "2": "WebContent/prefabs/zepellin.canvas",
+    "3": "WebContent/prefabs/player.canvas"
   }
 }

@@ -18,11 +18,13 @@ function player(aGame, aX, aY, aKey, aFrame) {
 	Phaser.Sprite.call(this, aGame, aX, aY, aKey || 'player', aFrame == undefined || aFrame == null? 'player0000' : aFrame);
 	this.scale.set(0.7, 0.7);
 	this.anchor.set(0.5, 0.5);
-	var _anim_run = this.animations.add('run', ['player0000', 'player0001', 'player0002', 'player0003', 'player0004', 'player0005', 'player0006', 'player0007', 'player0008', 'player0009', 'player0010', 'player0011', 'player0012', 'player0013', 'player0014', 'player0015', 'player0016', 'player0017', 'player0018', 'player0019', 'player0020', 'player0021'], 40, true);
+	var _anim_run = this.animations.add('run', ['player0000', 'player0001', 'player0002', 'player0003', 'player0004', 'player0005', 'player0006', 'player0007', 'player0008', 'player0009', 'player0010', 'player0011', 'player0012', 'player0013', 'player0014', 'player0015', 'player0016', 'player0017', 'player0018', 'player0019', 'player0020', 'player0021'], 34, true);
 	_anim_run.play();
 	this.game.physics.arcade.enable(this);
-	this.body.velocity.x = 150.0;
+	this.body.velocity.x = 170.0;
 	this.body.gravity.y = 1200.0;
+	
+	this.myCreate();
 	
 }
 
@@ -33,3 +35,15 @@ player.prototype.constructor = player;
 
 /* --- end generated code --- */
 // -- user code here --
+player.prototype.myCreate = function() {
+	
+this.canJump =  false;	
+};
+
+player.prototype.update = function() {
+
+
+	
+		
+
+	};
