@@ -18,7 +18,11 @@ function building1(aGame, aX, aY, aKey, aFrame) {
 	Phaser.Sprite.call(this, aGame, aX, aY, aKey || 'building1', aFrame == undefined || aFrame == null? null : aFrame);
 	this.game.physics.arcade.enable(this);
 	this.body.immovable = true;
-	this.body.velocity.x = -300.0;
+	this.body.velocity.x = -200.0;
+	this.body.friction.x = 0.0;
+	this.body.checkCollision.down = false;
+	this.body.checkCollision.left = false;
+	this.body.checkCollision.right = false;
 	
 	this.myCreate();
 	

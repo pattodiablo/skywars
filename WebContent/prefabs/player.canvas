@@ -48,40 +48,80 @@
           "scale.y": 0.7,
           "anchor.x": 0.5,
           "anchor.y": 0.5,
-          "animations": [{
-            "name": "run",
-            "frameRate": 34,
-            "loop": true,
-            "autoPlay": true,
-            "frames": [
-              "player0000",
-              "player0001",
-              "player0002",
-              "player0003",
-              "player0004",
-              "player0005",
-              "player0006",
-              "player0007",
-              "player0008",
-              "player0009",
-              "player0010",
-              "player0011",
-              "player0012",
-              "player0013",
-              "player0014",
-              "player0015",
-              "player0016",
-              "player0017",
-              "player0018",
-              "player0019",
-              "player0020",
-              "player0021"
-            ]
-          }],
+          "animations": [
+            {
+              "name": "run",
+              "frameRate": 34,
+              "loop": true,
+              "autoPlay": true,
+              "frames": [
+                "player0000",
+                "player0001",
+                "player0002",
+                "player0003",
+                "player0004",
+                "player0005",
+                "player0006",
+                "player0007",
+                "player0008",
+                "player0009",
+                "player0010",
+                "player0011",
+                "player0012",
+                "player0013",
+                "player0014",
+                "player0015",
+                "player0016",
+                "player0017",
+                "player0018",
+                "player0019",
+                "player0020",
+                "player0021"
+              ]
+            },
+            {
+              "name": "up",
+              "frameRate": 24,
+              "loop": true,
+              "frames": [
+                "jumnp0000",
+                "jumnp0001",
+                "jumnp0002",
+                "jumnp0003"
+              ]
+            },
+            {
+              "name": "down",
+              "frameRate": 24,
+              "loop": true,
+              "frames": [
+                "jump20000",
+                "jump20001",
+                "jump20002",
+                "jump20003",
+                "jump20004",
+                "jump20005",
+                "jump20006",
+                "jump20007",
+                "jump20008",
+                "jump20009",
+                "jump20010",
+                "jump20011",
+                "jump20012",
+                "jump20013",
+                "jump20014",
+                "jump20015",
+                "jump20016",
+                "jump20017",
+                "jump20018",
+                "jump20019"
+              ]
+            }
+          ],
           "body": {
             "type": "ARCADE_RECT",
-            "velocityX": 170,
-            "gravityY": 1200
+            "gravityY": 1200,
+            "frictionX": 0
           }
         }
       }]

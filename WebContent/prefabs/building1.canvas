@@ -47,7 +47,11 @@
           "body": {
             "type": "ARCADE_RECT",
             "immovable": true,
-            "velocityX": -200
+            "velocityX": -200,
+            "frictionX": 0,
+            "checkCollisionDown": false,
+            "checkCollisionLeft": false,
+            "checkCollisionRight": false
           }
         }
       }]

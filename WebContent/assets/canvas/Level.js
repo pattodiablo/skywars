@@ -84,7 +84,9 @@ Level.prototype.myCreate = function () {
 
 Level.prototype.swipeDownAction = function(pointer) { //manejo de swipe control de pantalla
 	if(this.fPlayer.canJump){
+		this.fPlayer.body.velocity.x =  60;
 		this.fPlayer.body.velocity.y-=1000;
+		this.fPlayer.animations.play('up');
 		this.fPlayer.canJump =  false;
 	}
 
@@ -92,8 +94,14 @@ Level.prototype.swipeDownAction = function(pointer) { //manejo de swipe control 
 
 
 Level.prototype.onPlatform = function (player, platform) {
-	player.body.velocity.x =  150;
+
+	if(player.x>=this.game.width/2){
+		player.body.velocity.x = -60;	
+	}else{
+		player.body.velocity.x = 60;
+	}
 	player.canJump =  true;
+	this.fPlayer.animations.play('run');
 				};		
 				
 Level.prototype.update = function () {
