@@ -45,7 +45,7 @@ Level.prototype.create = function () {
 	var _buildings = new BgBuildings(this.game, 0.0, 69.0);
 	_middleBG.add(_buildings);
 	
-	var _banner = new banner(this.game, 2664.0, 563.0);
+	var _banner = new banner(this.game, 2664.0, 602.0);
 	this.add.existing(_banner);
 	
 	var _platforms = this.add.physicsGroup(Phaser.Physics.ARCADE);
@@ -84,13 +84,13 @@ Level.prototype.create = function () {
 // -- user code here --
 Level.prototype.myCreate = function () {
 	this.game.input.onDown.add(this.swipeDownAction, this);
-	this.game.world.setBounds(0, 0, 720, 480);
-	   this.game.camera.follow(this.fPlayer,Phaser.Camera.FOLLOW_LOCKON,0.1, 0.1,0,0);
+	this.game.world.setBounds(0, 0, 1920, 1100);
+	   this.game.camera.follow(this.fPlayer,Phaser.Camera.FOLLOW_LOCKON,0.01, 0.01,0,0);
 };
 
 Level.prototype.swipeDownAction = function(pointer) { //manejo de swipe control de pantalla
 	if(this.fPlayer.canJump){
-		this.fPlayer.body.velocity.x =  60;
+		this.fPlayer.body.velocity.x =  80;
 		this.fPlayer.body.velocity.y-=1000;
 		this.fPlayer.animations.play('up');
 		this.fPlayer.canJump =  false;

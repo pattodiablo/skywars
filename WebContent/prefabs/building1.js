@@ -38,7 +38,7 @@ building1.prototype.myCreate = function() {
 };
 
 building1.prototype.update = function() {
-
+	//this.position.y-=this.game.state.getCurrentState﻿().fPlayer.y/600;
 if(this.x <= -this.width){
 	
 	this.x = this.game.width + this.width/2;
