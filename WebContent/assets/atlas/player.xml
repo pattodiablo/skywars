@@ -2,31 +2,31 @@
 <TextureAtlas imagePath="player.png">
 	<!-- Created with Adobe Animate version 19.2.1.408 -->
 	<!-- http://www.adobe.com/products/animate.html -->
-	<SubTexture name="Symbol 11 instance 10000" x="1" y="1" width="165" height="174" pivotX="82.05" pivotY="86.2"/>
-	<SubTexture name="jumnp0000" x="167" y="1" width="163" height="191" pivotX="80.8" pivotY="95.8" frameX="0" frameY="-1" frameWidth="163" frameHeight="192"/>
-	<SubTexture name="jumnp0001" x="331" y="1" width="163" height="191" frameX="0" frameY="-1" frameWidth="163" frameHeight="192"/>
-	<SubTexture name="jumnp0002" x="495" y="1" width="159" height="192" frameX="0" frameY="0" frameWidth="163" frameHeight="192"/>
-	<SubTexture name="jumnp0003" x="655" y="1" width="159" height="192" frameX="0" frameY="0" frameWidth="163" frameHeight="192"/>
-	<SubTexture name="jump20000" x="815" y="1" width="165" height="181" pivotX="82.05" pivotY="90.5" frameX="0" frameY="-1" frameWidth="175" frameHeight="182"/>
-	<SubTexture name="jump20001" x="981" y="1" width="165" height="181" frameX="0" frameY="-1" frameWidth="175" frameHeight="182"/>
-	<SubTexture name="jump20002" x="1147" y="1" width="160" height="175" frameX="0" frameY="0" frameWidth="175" frameHeight="182"/>
-	<SubTexture name="jump20003" x="1308" y="1" width="160" height="175" frameX="0" frameY="0" frameWidth="175" frameHeight="182"/>
-	<SubTexture name="jump20004" x="1469" y="1" width="169" height="176" frameX="0" frameY="-2" frameWidth="175" frameHeight="182"/>
-	<SubTexture name="jump20005" x="1639" y="1" width="169" height="176" frameX="0" frameY="-2" frameWidth="175" frameHeight="182"/>
-	<SubTexture name="jump20006" x="1809" y="1" width="165" height="177" frameX="0" frameY="-1" frameWidth="175" frameHeight="182"/>
-	<SubTexture name="jump20007" x="1" y="194" width="165" height="177" frameX="0" frameY="-1" frameWidth="175" frameHeight="182"/>
-	<SubTexture name="jump20008" x="167" y="194" width="172" height="175" frameX="0" frameY="-3" frameWidth="175" frameHeight="182"/>
-	<SubTexture name="jump20009" x="340" y="194" width="172" height="175" frameX="0" frameY="-3" frameWidth="175" frameHeight="182"/>
-	<SubTexture name="jump20010" x="513" y="194" width="169" height="176" frameX="0" frameY="-2" frameWidth="175" frameHeight="182"/>
-	<SubTexture name="jump20011" x="683" y="194" width="169" height="176" frameX="0" frameY="-2" frameWidth="175" frameHeight="182"/>
-	<SubTexture name="jump20012" x="853" y="194" width="175" height="174" frameX="0" frameY="-4" frameWidth="175" frameHeight="182"/>
-	<SubTexture name="jump20013" x="1029" y="194" width="175" height="174" frameX="0" frameY="-4" frameWidth="175" frameHeight="182"/>
-	<SubTexture name="jump20014" x="1205" y="194" width="169" height="176" frameX="0" frameY="-2" frameWidth="175" frameHeight="182"/>
-	<SubTexture name="jump20015" x="1375" y="194" width="169" height="176" frameX="0" frameY="-2" frameWidth="175" frameHeight="182"/>
-	<SubTexture name="jump20016" x="1545" y="194" width="175" height="174" frameX="0" frameY="-4" frameWidth="175" frameHeight="182"/>
-	<SubTexture name="jump20017" x="1721" y="194" width="175" height="174" frameX="0" frameY="-4" frameWidth="175" frameHeight="182"/>
-	<SubTexture name="jump20018" x="1" y="372" width="165" height="177" frameX="0" frameY="-1" frameWidth="175" frameHeight="182"/>
-	<SubTexture name="jump20019" x="167" y="372" width="165" height="177" frameX="0" frameY="-1" frameWidth="175" frameHeight="182"/>
+	<SubTexture name="jumnp0000" x="1" y="1" width="163" height="191" pivotX="80.8" pivotY="95.8" frameX="0" frameY="-1" frameWidth="163" frameHeight="192"/>
+	<SubTexture name="jumnp0001" x="165" y="1" width="163" height="191" frameX="0" frameY="-1" frameWidth="163" frameHeight="192"/>
+	<SubTexture name="jumnp0002" x="329" y="1" width="159" height="192" frameX="0" frameY="0" frameWidth="163" frameHeight="192"/>
+	<SubTexture name="jumnp0003" x="489" y="1" width="159" height="192" frameX="0" frameY="0" frameWidth="163" frameHeight="192"/>
+	<SubTexture name="jump20000" x="649" y="1" width="165" height="181" pivotX="82.05" pivotY="90.5" frameX="0" frameY="-1" frameWidth="175" frameHeight="182"/>
+	<SubTexture name="jump20001" x="815" y="1" width="165" height="181" frameX="0" frameY="-1" frameWidth="175" frameHeight="182"/>
+	<SubTexture name="jump20002" x="981" y="1" width="160" height="175" frameX="0" frameY="0" frameWidth="175" frameHeight="182"/>
+	<SubTexture name="jump20003" x="1142" y="1" width="160" height="175" frameX="0" frameY="0" frameWidth="175" frameHeight="182"/>
+	<SubTexture name="jump20004" x="1303" y="1" width="169" height="176" frameX="0" frameY="-2" frameWidth="175" frameHeight="182"/>
+	<SubTexture name="jump20005" x="1473" y="1" width="169" height="176" frameX="0" frameY="-2" frameWidth="175" frameHeight="182"/>
+	<SubTexture name="jump20006" x="1643" y="1" width="165" height="177" frameX="0" frameY="-1" frameWidth="175" frameHeight="182"/>
+	<SubTexture name="jump20007" x="1809" y="1" width="165" height="177" frameX="0" frameY="-1" frameWidth="175" frameHeight="182"/>
+	<SubTexture name="jump20008" x="1" y="194" width="172" height="175" frameX="0" frameY="-3" frameWidth="175" frameHeight="182"/>
+	<SubTexture name="jump20009" x="174" y="194" width="172" height="175" frameX="0" frameY="-3" frameWidth="175" frameHeight="182"/>
+	<SubTexture name="jump20010" x="347" y="194" width="169" height="176" frameX="0" frameY="-2" frameWidth="175" frameHeight="182"/>
+	<SubTexture name="jump20011" x="517" y="194" width="169" height="176" frameX="0" frameY="-2" frameWidth="175" frameHeight="182"/>
+	<SubTexture name="jump20012" x="687" y="194" width="175" height="174" frameX="0" frameY="-4" frameWidth="175" frameHeight="182"/>
+	<SubTexture name="jump20013" x="863" y="194" width="175" height="174" frameX="0" frameY="-4" frameWidth="175" frameHeight="182"/>
+	<SubTexture name="jump20014" x="1039" y="194" width="169" height="176" frameX="0" frameY="-2" frameWidth="175" frameHeight="182"/>
+	<SubTexture name="jump20015" x="1209" y="194" width="169" height="176" frameX="0" frameY="-2" frameWidth="175" frameHeight="182"/>
+	<SubTexture name="jump20016" x="1379" y="194" width="175" height="174" frameX="0" frameY="-4" frameWidth="175" frameHeight="182"/>
+	<SubTexture name="jump20017" x="1555" y="194" width="175" height="174" frameX="0" frameY="-4" frameWidth="175" frameHeight="182"/>
+	<SubTexture name="jump20018" x="1731" y="194" width="165" height="177" frameX="0" frameY="-1" frameWidth="175" frameHeight="182"/>
+	<SubTexture name="jump20019" x="1" y="372" width="165" height="177" frameX="0" frameY="-1" frameWidth="175" frameHeight="182"/>
+	<SubTexture name="kick0000" x="167" y="372" width="165" height="174" pivotX="82.05" pivotY="86.2"/>
 	<SubTexture name="player0000" x="333" y="372" width="163" height="189" pivotX="81.45" pivotY="93.85" frameX="0" frameY="0" frameWidth="165" frameHeight="189"/>
 	<SubTexture name="player0001" x="497" y="372" width="163" height="189" frameX="0" frameY="0" frameWidth="165" frameHeight="189"/>
 	<SubTexture name="player0002" x="661" y="372" width="164" height="186" frameX="0" frameY="-3" frameWidth="165" frameHeight="189"/>
