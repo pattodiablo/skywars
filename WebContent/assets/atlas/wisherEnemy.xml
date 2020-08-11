@@ -4,11 +4,12 @@
 	<!-- http://www.adobe.com/products/animate.html -->
 	<SubTexture name="BirdEnemy0000" x="1" y="1" width="119" height="103" pivotX="59.35" pivotY="51" frameX="0" frameY="0" frameWidth="124" frameHeight="103"/>
 	<SubTexture name="BirdEnemy0001" x="121" y="1" width="119" height="103" frameX="0" frameY="0" frameWidth="124" frameHeight="103"/>
-	<SubTexture name="BirdEnemy0002" x="1" y="105" width="119" height="103" frameX="0" frameY="0" frameWidth="124" frameHeight="103"/>
-	<SubTexture name="BirdEnemy0003" x="121" y="105" width="119" height="103" frameX="0" frameY="0" frameWidth="124" frameHeight="103"/>
-	<SubTexture name="BirdEnemy0004" x="1" y="209" width="124" height="100" frameX="0" frameY="0" frameWidth="124" frameHeight="103"/>
-	<SubTexture name="BirdEnemy0005" x="126" y="209" width="124" height="100" frameX="0" frameY="0" frameWidth="124" frameHeight="103"/>
-	<SubTexture name="BirdEnemy0006" x="1" y="310" width="124" height="100" frameX="0" frameY="0" frameWidth="124" frameHeight="103"/>
-	<SubTexture name="BirdEnemy0007" x="126" y="310" width="124" height="100" frameX="0" frameY="0" frameWidth="124" frameHeight="103"/>
-	<SubTexture name="BirdEnemy0008" x="1" y="411" width="124" height="100" frameX="0" frameY="0" frameWidth="124" frameHeight="103"/>
+	<SubTexture name="BirdEnemy0002" x="241" y="1" width="119" height="103" frameX="0" frameY="0" frameWidth="124" frameHeight="103"/>
+	<SubTexture name="BirdEnemy0003" x="361" y="1" width="119" height="103" frameX="0" frameY="0" frameWidth="124" frameHeight="103"/>
+	<SubTexture name="BirdEnemy0004" x="1" y="105" width="124" height="100" frameX="0" frameY="0" frameWidth="124" frameHeight="103"/>
+	<SubTexture name="BirdEnemy0005" x="126" y="105" width="124" height="100" frameX="0" frameY="0" frameWidth="124" frameHeight="103"/>
+	<SubTexture name="BirdEnemy0006" x="251" y="105" width="124" height="100" frameX="0" frameY="0" frameWidth="124" frameHeight="103"/>
+	<SubTexture name="BirdEnemy0007" x="376" y="105" width="124" height="100" frameX="0" frameY="0" frameWidth="124" frameHeight="103"/>
+	<SubTexture name="BirdEnemy0008" x="1" y="206" width="124" height="100" frameX="0" frameY="0" frameWidth="124" frameHeight="103"/>
+	<SubTexture name="BirdEnemyKicked0000" x="126" y="206" width="120" height="103" pivotX="59.35" pivotY="51"/>
 </TextureAtlas>
