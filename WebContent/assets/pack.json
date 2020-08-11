@@ -21,6 +21,17 @@
       "type": "script",
       "key": "banner1",
       "url": "prefabs/banner.js"
+    },
+    {
+      "type": "image",
+      "key": "buildings",
+      "url": "assets/images/buildings.png",
+      "overwrite": false
+    },
+    {
+      "type": "script",
+      "key": "BgBuildings",
+      "url": "prefabs/BgBuildings.js"
     }
   ],
   "atlas": [
@@ -79,7 +90,7 @@
     }
   ],
   "meta": {
-    "generated": "1596808958945",
+    "generated": "1597156901823",
     "app": "Phaser Editor",
     "url": "http://phasereditor.boniatillo.com",
     "version": "1.0",

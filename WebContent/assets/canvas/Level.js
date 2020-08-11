@@ -40,6 +40,11 @@ Level.prototype.preload = function () {
 Level.prototype.create = function () {
 	this.add.sprite(0.0, 0.0, 'background');
 	
+	var _middleBG = this.add.group();
+	
+	var _buildings = new BgBuildings(this.game, 0.0, 69.0);
+	_middleBG.add(_buildings);
+	
 	var _banner = new banner(this.game, 2664.0, 563.0);
 	this.add.existing(_banner);
 	
@@ -67,6 +72,7 @@ Level.prototype.create = function () {
 	
 	// fields
 	
+	this.fMiddleBG = _middleBG;
 	this.fPlatforms = _platforms;
 	this.fPlayer = _player;
 	this.myCreate();
@@ -95,14 +101,19 @@ Level.prototype.swipeDownAction = function(pointer) { //manejo de swipe control 
 
 Level.prototype.onPlatform = function (player, platform) {
 
-	if(player.x>=this.game.width/2){
-		player.body.velocity.x = -60;	
-	}else{
-		player.body.velocity.x = 60;
-	}
+
+		player.body.velocity.x = platform.body.velocity.x/3;	
+
+	
+
 	player.canJump =  true;
 	this.fPlayer.animations.play('run');
-				};		
+console.log(platform.body.touching.up)
+	if(platform.body.touching.left){
+		player.canJump =  false;
+	}
+
+	};		
 				
 Level.prototype.update = function () {
 	
