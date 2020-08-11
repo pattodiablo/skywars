@@ -120,7 +120,7 @@
           ],
           "body": {
             "type": "ARCADE_RECT",
-            "gravityY": 1200,
+            "gravityY": 1300,
             "frictionX": 0
           }
         }

@@ -23,7 +23,7 @@ function player(aGame, aX, aY, aKey, aFrame) {
 	this.animations.add('down', ['jump20000', 'jump20001', 'jump20002', 'jump20003', 'jump20004', 'jump20005', 'jump20006', 'jump20007', 'jump20008', 'jump20009', 'jump20010', 'jump20011', 'jump20012', 'jump20013', 'jump20014', 'jump20015', 'jump20016', 'jump20017', 'jump20018', 'jump20019'], 24, true);
 	_anim_run.play();
 	this.game.physics.arcade.enable(this);
-	this.body.gravity.y = 1200.0;
+	this.body.gravity.y = 1300.0;
 	this.body.friction.x = 0.0;
 	
 	this.myCreate();
