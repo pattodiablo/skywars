@@ -50,8 +50,32 @@
           "info": {"editorName": "background"}
         },
         {
+          "type": "group",
+          "id": "0915f0cf-ca45-4951-9c6d-a579a5b7b3f4",
+          "info": {
+            "editorName": "middleBG",
+            "editorField": true,
+            "setAll": [],
+            "children": [{
+              "type": "prefab",
+              "prefab": "0",
+              "id": "45db8f2e-3f9f-4f03-a67b-2ac95d1f2da5",
+              "asset-ref": {
+                "file": "WebContent/assets/pack.json",
+                "section": "images",
+                "asset": "buildings"
+              },
+              "info": {
+                "editorName": "buildings",
+                "x": 0,
+                "y": 69
+              }
+            }]
+          }
+        },
+        {
           "type": "prefab",
-          "prefab": "0",
+          "prefab": "1",
           "id": "64190fee-a22d-4007-8df5-c7f917602b79",
           "asset-ref": {
             "file": "WebContent/assets/pack.json",
@@ -76,7 +100,7 @@
             "children": [
               {
                 "type": "prefab",
-                "prefab": "1",
+                "prefab": "2",
                 "id": "b53771e1-c5c3-4de3-950b-44651e7a8d31",
                 "asset-ref": {
                   "file": "WebContent/assets/pack.json",
@@ -91,7 +115,7 @@
               },
               {
                 "type": "prefab",
-                "prefab": "1",
+                "prefab": "2",
                 "id": "ee11995f-b7d0-4c49-ba25-fa533940eae8",
                 "asset-ref": {
                   "file": "WebContent/assets/pack.json",
@@ -106,7 +130,7 @@
               },
               {
                 "type": "prefab",
-                "prefab": "1",
+                "prefab": "2",
                 "id": "daa1c63b-0d8e-41f1-976b-f82ba982cdd7",
                 "asset-ref": {
                   "file": "WebContent/assets/pack.json",
@@ -121,7 +145,7 @@
               },
               {
                 "type": "prefab",
-                "prefab": "1",
+                "prefab": "2",
                 "id": "c4197cbf-e099-43d1-87d8-2abb24aea623",
                 "asset-ref": {
                   "file": "WebContent/assets/pack.json",
@@ -139,7 +163,7 @@
         },
         {
           "type": "prefab",
-          "prefab": "2",
+          "prefab": "3",
           "id": "a31a3691-e8b8-46d5-a0b1-5aa98eb808c3",
           "asset-ref": {
             "file": "WebContent/assets/pack.json",
@@ -155,7 +179,7 @@
         },
         {
           "type": "prefab",
-          "prefab": "3",
+          "prefab": "4",
           "id": "6b92b063-cf03-45ca-b402-46b55aae01a8",
           "asset-ref": {
             "file": "WebContent/assets/pack.json",
@@ -180,9 +204,10 @@
     "asset": "background"
   }},
   "prefab-table": {
-    "0": "WebContent/prefabs/banner.canvas",
-    "1": "WebContent/prefabs/building1.canvas",
-    "2": "WebContent/prefabs/zepellin.canvas",
-    "3": "WebContent/prefabs/player.canvas"
+    "0": "WebContent/prefabs/BgBuildings.canvas",
+    "1": "WebContent/prefabs/banner.canvas",
+    "2": "WebContent/prefabs/building1.canvas",
+    "3": "WebContent/prefabs/zepellin.canvas",
+    "4": "WebContent/prefabs/player.canvas"
   }
 }

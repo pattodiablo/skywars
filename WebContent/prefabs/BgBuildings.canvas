@@ -1,7 +1,7 @@
 {
   "canvas-version": 2,
   "settings": {
-    "className": "building1",
+    "className": "BgBuildings",
     "sceneWidth": 640,
     "sceneHeight": 360,
     "generateOnSave": true,
@@ -34,23 +34,15 @@
   },
   "world": {
     "type": "group",
-    "id": "a9b47f4d-1620-4d61-b0bc-1de1bfc5475e",
+    "id": "e1248cf9-6815-4fd0-b697-586ba7808f6a",
     "info": {
-      "editorName": "building1",
+      "editorName": "BgBuildings",
       "setAll": [],
       "children": [{
         "type": "image",
-        "id": "f584eed7-e912-475c-ac08-01774f7d141b",
+        "id": "19f5aa6f-aaa6-47b2-8e53-690b135a1487",
         "asset": "0",
-        "info": {
-          "editorName": "build",
-          "body": {
-            "type": "ARCADE_RECT",
-            "immovable": true,
-            "velocityX": -200,
-            "frictionX": 0
-          }
-        }
+        "info": {"editorName": "buildings"}
       }]
     }
   },
@@ -58,7 +50,7 @@
   "asset-table": {"0": {
     "file": "WebContent/assets/pack.json",
     "section": "images",
-    "asset": "building1"
+    "asset": "buildings"
   }},
   "prefab-table": {}
 }
