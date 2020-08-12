@@ -45,9 +45,6 @@ Level.prototype.create = function () {
 	var _buildings = new BgBuildings(this.game, 0.0, 69.0);
 	_middleBG.add(_buildings);
 	
-	var _banner = new banner(this.game, 2664.0, 602.0);
-	this.add.existing(_banner);
-	
 	var _platforms = this.add.physicsGroup(Phaser.Physics.ARCADE);
 	
 	var _building = new building1(this.game, 0.0, 830.0);
@@ -62,11 +59,10 @@ Level.prototype.create = function () {
 	var _build2 = new building1(this.game, 1129.0, 871.0);
 	_platforms.add(_build2);
 	
-	var _zepellin = new zepellin(this.game, 2070.0, 53.0);
-	this.add.existing(_zepellin);
-	
-	var _player = new player(this.game, 289.0, 512.0);
+	var _player = new player(this.game, 465.0, 512.0);
 	this.add.existing(_player);
+	
+	var _enemies = this.add.physicsGroup(Phaser.Physics.ARCADE);
 	
 	
 	
@@ -75,6 +71,7 @@ Level.prototype.create = function () {
 	this.fMiddleBG = _middleBG;
 	this.fPlatforms = _platforms;
 	this.fPlayer = _player;
+	this.fEnemies = _enemies;
 	this.myCreate();
 	
 	
@@ -83,41 +80,100 @@ Level.prototype.create = function () {
 /* --- end generated code --- */
 // -- user code here --
 Level.prototype.myCreate = function () {
+
 	this.game.input.onDown.add(this.swipeDownAction, this);
+	this.game.input.onUp.add(this.swipeUpAction, this);
 	this.game.world.setBounds(0, 0, 1920, 1100);
-	   this.game.camera.follow(this.fPlayer,Phaser.Camera.FOLLOW_LOCKON,0.01, 0.01,0,0);
+	this.game.camera.follow(this.fPlayer,Phaser.Camera.FOLLOW_LOCKON,0.01, 0.01,0,0);
+
+
+    enemyDeployTimer = this.game.time.create(false);
+    enemyDeployTimer.loop(2000, this.deployEnemy, this);
+    enemyDeployTimer.start();
+
+
 };
 
+Level.prototype.deployEnemy = function() {
+
+const enemyXDeploy = Math.random()  * (600 - 300) + 300;
+console.log(enemyXDeploy);
+var _BirdEnemy = new wisherEnemy(this.game, this.game.width+200, enemyXDeploy);
+	this.fEnemies.add(_BirdEnemy);
+
+};
+
+Level.prototype.swipeUpAction = function(pointer) { 
+this.fPlayer.isKicking = false;
+};
+
+
 Level.prototype.swipeDownAction = function(pointer) { //manejo de swipe control de pantalla
+	
+	if(!this.fPlayer.canJump && this.fPlayer.canKick){
+		const wichKick = Math.random()*10;
+		if(wichKick>=5){
+			this.fPlayer.animations.stop('down');
+			this.fPlayer.animations.play('kick');
+		}else{
+			this.fPlayer.animations.stop('down');
+			this.fPlayer.animations.play('kick2');
+		}
+		
+		this.fPlayer.isKicking = true;
+	}
+
 	if(this.fPlayer.canJump){
 		this.fPlayer.body.velocity.x =  80;
 		this.fPlayer.body.velocity.y-=1000;
 		this.fPlayer.animations.play('up');
 		this.fPlayer.canJump =  false;
+		this.fPlayer.canKick = true;
+		this.fPlayer.isKicking = false;
 	}
+	
 
 				};
 
 
 Level.prototype.onPlatform = function (player, platform) {
 
+if(platform.x>this.game.width/3){
 
-		player.body.velocity.x = platform.body.velocity.x/3;	
+player.body.velocity.x = platform.body.velocity.x;	
+}else{
 
+	player.body.velocity.x = -100;	
+}
 	
-
 	player.canJump =  true;
+	player.canKick = false;
+	player.isKicking= false;
+
 	this.fPlayer.animations.play('run');
-console.log(platform.body.touching.up)
+
 	if(platform.body.touching.left){
 		player.canJump =  false;
+			
 	}
 
-	};		
+	};	
+
+Level.prototype.destroyEnemy = function (player, enemy) {	
+
+
+	if(player.isKicking){
+		
+		enemy.tweenBtn.stop();
+		enemy.body.velocity.x=800;
+		enemy.body.gravity.y=1200;
+	}
+};
 				
 Level.prototype.update = function () {
 	
 	this.game.physics.arcade.collide(this.fPlayer , this.fPlatforms, this.onPlatform, null, this);
+	this.game.physics.arcade.overlap(this.fPlayer , this.fEnemies, this.destroyEnemy, null, this);
 
 	if(this.fPlayer.y>=this.game.height+100){
 		this.game.state.start('Level');
