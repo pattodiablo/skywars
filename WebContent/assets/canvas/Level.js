@@ -163,7 +163,12 @@ Level.prototype.destroyEnemy = function (player, enemy) {
 
 
 	if(player.isKicking){
-		
+			var _kickPower = new kickPower(this.game, enemy.x, enemy.y);
+			_kickPower.alpha = 0.5;
+			this.game.camera.shake(0.02, 250);
+  	this.game.camera.flash(0xffffff, 250)
+			this.add.existing(_kickPower);
+		enemy.animations.play('kicked');
 		enemy.tweenBtn.stop();
 		enemy.body.velocity.x=800;
 		enemy.body.gravity.y=1200;

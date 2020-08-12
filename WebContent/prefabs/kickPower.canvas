@@ -1,0 +1,74 @@
+{
+  "canvas-version": 2,
+  "settings": {
+    "className": "kickPower",
+    "sceneWidth": 640,
+    "sceneHeight": 360,
+    "generateOnSave": true,
+    "enableStepping": false,
+    "lang": "JAVA_SCRIPT",
+    "baseClass": "Phaser.Sprite",
+    "backgroundColor": [
+      180,
+      180,
+      180
+    ],
+    "gridColor": [
+      200,
+      200,
+      200
+    ],
+    "showGrid": true
+  },
+  "stateSettings": {
+    "stageBackgroundColor": [
+      0,
+      0,
+      0
+    ],
+    "autoLoad": true,
+    "preloadSpriteId": "",
+    "preloadSprite_direction": 0,
+    "load.pack": []
+  },
+  "world": {
+    "type": "group",
+    "id": "9fe62455-d4ec-46ae-a2a4-5c8da40a35d1",
+    "info": {
+      "editorName": "kickPower",
+      "setAll": [],
+      "children": [{
+        "type": "atlas-sprite",
+        "id": "428ddd91-4e87-4052-8e92-e51d924fc624",
+        "asset": "0",
+        "info": {
+          "editorName": "kickPower0000",
+          "animations": [{
+            "name": "powered",
+            "frameRate": 90,
+            "killOnComplete": true,
+            "autoPlay": true,
+            "frames": [
+              "kickPower0000",
+              "kickPower0001",
+              "kickPower0002",
+              "kickPower0003",
+              "kickPower0004",
+              "kickPower0005",
+              "kickPower0006",
+              "kickPower0007"
+            ]
+          }]
+        }
+      }]
+    }
+  },
+  "type": "SPRITE",
+  "asset-table": {"0": {
+    "file": "WebContent/assets/pack.json",
+    "section": "atlas",
+    "asset": "wisherEnemy",
+    "sprite": "kickPower0000"
+  }},
+  "prefab-table": {}
+}
