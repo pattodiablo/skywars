@@ -99,10 +99,15 @@
       "type": "script",
       "key": "wisherEnemy1",
       "url": "prefabs/wisherEnemy.js"
+    },
+    {
+      "type": "script",
+      "key": "kickPower",
+      "url": "prefabs/kickPower.js"
     }
   ],
   "meta": {
-    "generated": "1597161127554",
+    "generated": "1597244732084",
     "app": "Phaser Editor",
     "url": "http://phasereditor.boniatillo.com",
     "version": "1.0",

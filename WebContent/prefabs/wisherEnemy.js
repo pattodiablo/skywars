@@ -19,6 +19,7 @@ function wisherEnemy(aGame, aX, aY, aKey, aFrame) {
 	this.scale.set(0.7, 0.7);
 	this.anchor.set(0.5, 0.5);
 	var _anim_fly = this.animations.add('fly', ['BirdEnemy0000', 'BirdEnemy0001', 'BirdEnemy0002', 'BirdEnemy0003', 'BirdEnemy0004', 'BirdEnemy0005', 'BirdEnemy0006', 'BirdEnemy0007', 'BirdEnemy0008'], 30, true);
+	this.animations.add('kicked', ['BirdEnemyKicked0000'], 1, false);
 	_anim_fly.play();
 	this.game.physics.arcade.enable(this);
 	this.body.setCircle(51.5);

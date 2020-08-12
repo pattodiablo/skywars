@@ -48,23 +48,30 @@
           "scale.y": 0.7,
           "anchor.x": 0.5,
           "anchor.y": 0.5,
-          "animations": [{
-            "name": "fly",
-            "frameRate": 30,
-            "loop": true,
-            "autoPlay": true,
-            "frames": [
-              "BirdEnemy0000",
-              "BirdEnemy0001",
-              "BirdEnemy0002",
-              "BirdEnemy0003",
-              "BirdEnemy0004",
-              "BirdEnemy0005",
-              "BirdEnemy0006",
-              "BirdEnemy0007",
-              "BirdEnemy0008"
-            ]
-          }],
+          "animations": [
+            {
+              "name": "fly",
+              "frameRate": 30,
+              "loop": true,
+              "autoPlay": true,
+              "frames": [
+                "BirdEnemy0000",
+                "BirdEnemy0001",
+                "BirdEnemy0002",
+                "BirdEnemy0003",
+                "BirdEnemy0004",
+                "BirdEnemy0005",
+                "BirdEnemy0006",
+                "BirdEnemy0007",
+                "BirdEnemy0008"
+              ]
+            },
+            {
+              "name": "kicked",
+              "frameRate": 1,
+              "frames": ["BirdEnemyKicked0000"]
+            }
+          ],
           "body": {
             "type": "ARCADE_CIRCLE",
             "radius": 51.5
