@@ -87,10 +87,22 @@
       "textureURL": "assets/atlas/banner.png",
       "atlasURL": "assets/atlas/banner.xml",
       "format": "TEXTURE_ATLAS_XML_STARLING"
+    },
+    {
+      "type": "atlas",
+      "key": "wisherEnemy",
+      "textureURL": "assets/atlas/wisherEnemy.png",
+      "atlasURL": "assets/atlas/wisherEnemy.xml",
+      "format": "TEXTURE_ATLAS_XML_STARLING"
+    },
+    {
+      "type": "script",
+      "key": "wisherEnemy1",
+      "url": "prefabs/wisherEnemy.js"
     }
   ],
   "meta": {
-    "generated": "1597156901823",
+    "generated": "1597161127554",
     "app": "Phaser Editor",
     "url": "http://phasereditor.boniatillo.com",
     "version": "1.0",

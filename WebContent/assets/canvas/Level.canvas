@@ -74,22 +74,6 @@
           }
         },
         {
-          "type": "prefab",
-          "prefab": "1",
-          "id": "64190fee-a22d-4007-8df5-c7f917602b79",
-          "asset-ref": {
-            "file": "WebContent/assets/pack.json",
-            "section": "atlas",
-            "asset": "banner",
-            "sprite": "Symbol 10 instance 10000"
-          },
-          "info": {
-            "editorName": "banner",
-            "x": 2664,
-            "y": 602
-          }
-        },
-        {
           "type": "group",
           "id": "f907a866-b4d8-4cc7-aaf3-53201f32884d",
           "info": {
@@ -100,7 +84,7 @@
             "children": [
               {
                 "type": "prefab",
-                "prefab": "2",
+                "prefab": "1",
                 "id": "b53771e1-c5c3-4de3-950b-44651e7a8d31",
                 "asset-ref": {
                   "file": "WebContent/assets/pack.json",
@@ -115,7 +99,7 @@
               },
               {
                 "type": "prefab",
-                "prefab": "2",
+                "prefab": "1",
                 "id": "ee11995f-b7d0-4c49-ba25-fa533940eae8",
                 "asset-ref": {
                   "file": "WebContent/assets/pack.json",
@@ -130,7 +114,7 @@
               },
               {
                 "type": "prefab",
-                "prefab": "2",
+                "prefab": "1",
                 "id": "daa1c63b-0d8e-41f1-976b-f82ba982cdd7",
                 "asset-ref": {
                   "file": "WebContent/assets/pack.json",
@@ -145,7 +129,7 @@
               },
               {
                 "type": "prefab",
-                "prefab": "2",
+                "prefab": "1",
                 "id": "c4197cbf-e099-43d1-87d8-2abb24aea623",
                 "asset-ref": {
                   "file": "WebContent/assets/pack.json",
@@ -163,23 +147,7 @@
         },
         {
           "type": "prefab",
-          "prefab": "3",
-          "id": "a31a3691-e8b8-46d5-a0b1-5aa98eb808c3",
-          "asset-ref": {
-            "file": "WebContent/assets/pack.json",
-            "section": "atlas",
-            "asset": "zepellin",
-            "sprite": "zepellin0000"
-          },
-          "info": {
-            "editorName": "zepellin",
-            "x": 2070,
-            "y": 53
-          }
-        },
-        {
-          "type": "prefab",
-          "prefab": "4",
+          "prefab": "2",
           "id": "6b92b063-cf03-45ca-b402-46b55aae01a8",
           "asset-ref": {
             "file": "WebContent/assets/pack.json",
@@ -190,8 +158,19 @@
           "info": {
             "editorName": "player",
             "editorField": true,
-            "x": 289,
+            "x": 465,
             "y": 512
+          }
+        },
+        {
+          "type": "group",
+          "id": "7bd8b5d1-65a8-4677-8502-dca1e19d7753",
+          "info": {
+            "editorName": "enemies",
+            "editorField": true,
+            "physicsGroup": true,
+            "setAll": [],
+            "children": []
           }
         }
       ]
@@ -205,9 +184,7 @@
   }},
   "prefab-table": {
     "0": "WebContent/prefabs/BgBuildings.canvas",
-    "1": "WebContent/prefabs/banner.canvas",
-    "2": "WebContent/prefabs/building1.canvas",
-    "3": "WebContent/prefabs/zepellin.canvas",
-    "4": "WebContent/prefabs/player.canvas"
+    "1": "WebContent/prefabs/building1.canvas",
+    "2": "WebContent/prefabs/player.canvas"
   }
 }
