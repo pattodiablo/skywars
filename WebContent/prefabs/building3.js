@@ -35,11 +35,11 @@ building3.prototype.constructor = building3;
 // -- user code here --
 building3.prototype.myCreate = function() {
 	
-	
 };
 
 building3.prototype.update = function() {
-	//this.position.y-=this.game.state.getCurrentState﻿().fPlayer.y/600;
+	
+	this.body.velocity.x = -this.game.state.getCurrentState﻿().stageSpeed;
 if(this.x <= -this.width){
 	const variableDistance = Math.random()* (650 - 300) + 300;
 	this.x = this.game.state.getCurrentState﻿().fPlatforms.width-variableDistance;

@@ -58,17 +58,19 @@ coin.prototype.retriveCoin = function() {
 		tween.to({x:0,y:30}, 500, Phaser.Easing.Linear.None);
 		tween.onComplete.add(this.captureCoin, this);
 		tween.start();	
+	}else{
+		this.tint = 0x9e9e9e;
 	}
 	
 };
 
 coin.prototype.captureCoin = function() {
-	
+	this.game.state.getCurrentState().fPlayer.coins++;
 	this.destroy();
 };
 
 coin.prototype.update = function() {
-	if(this.y>=this.game.height+this.height || this.x<=-this.width){
+	if(this.y>=this.game.height+this.height || this.x<=-this.width-200){
 		
 		this.destroy();
 	}

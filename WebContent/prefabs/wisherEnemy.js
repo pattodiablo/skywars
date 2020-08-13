@@ -45,7 +45,7 @@ wisherEnemy.prototype.myCreate = function() {
 	this.tweenBtn.chain(this.tween2Btn);
 	this.tween2Btn.chain(this.tweenBtn);
 	this.tweenBtn.start();
-	this.body.velocity.x =   Math.random()  * (300 - 200) - 200;
+	this.body.velocity.x =   Math.random()  * (500 - 300) - 300;
 	
 };
 

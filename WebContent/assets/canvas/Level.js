@@ -28,6 +28,8 @@ Level.prototype.init = function () {
 	this.game.renderer.renderSession.roundPixels = true;
 	this.stage.backgroundColor = '#80ffff';
 	
+	this.myInit();
+	
 };
 
 Level.prototype.preload = function () {
@@ -38,7 +40,8 @@ Level.prototype.preload = function () {
 };
 
 Level.prototype.create = function () {
-	this.add.sprite(0.0, 0.0, 'background');
+	var _background = this.add.sprite(0.0, 0.0, 'background');
+	_background.fixedToCamera = true;
 	
 	var _middleBG = this.add.group();
 	
@@ -80,6 +83,12 @@ Level.prototype.create = function () {
 	
 	var _coins = this.add.physicsGroup(Phaser.Physics.ARCADE);
 	
+	var _coinSymbol = this.add.sprite(33.0, 30.0, 'powerUps', 'Symbol 4 instance 10013');
+	_coinSymbol.fixedToCamera = true;
+	
+	var _moneyText = this.add.text(133.0, 31.0, '000001', {"font":"bold 70px Arial","fill":"#ffff80","stroke":"#ff8040"});
+	_moneyText.fixedToCamera = true;
+	
 	
 	
 	// fields
@@ -93,6 +102,7 @@ Level.prototype.create = function () {
 	this.fPowerText = _powerText;
 	this.fCore1 = _core1;
 	this.fCoins = _coins;
+	this.fMoneyText = _moneyText;
 	this.myCreate();
 	
 	
@@ -100,7 +110,15 @@ Level.prototype.create = function () {
 
 /* --- end generated code --- */
 // -- user code here --
+
+
+Level.prototype.myInit = function () {
+	this.stageSpeed = 300;
+	this.maximunStageSpeed = 600;
+
+}
 Level.prototype.myCreate = function () {
+
 
 	this.game.input.onDown.add(this.swipeDownAction, this);
 	this.game.input.onUp.add(this.swipeUpAction, this);
@@ -111,26 +129,26 @@ Level.prototype.myCreate = function () {
     enemyDeployTimer = this.game.time.create(false);
     enemyDeployTimer.loop(2000, this.deployItems, this);
     enemyDeployTimer.start();
-
+	
 
 };
 
 Level.prototype.deployItems = function() {
 
 const wichItem =  Math.random() < 0.2;
-const enemyXDeploy = Math.random()  * (600 - 300) + 300;
+const enemyXDeploy = Math.random()  * (600 - 200) + 200;
 
 if(wichItem){
 
 
-var _itemPowerUp = new powerUp1(this.game, this.game.width+200, enemyXDeploy);
+var _itemPowerUp = new powerUp1(this.game, this.game.width+50, enemyXDeploy);
 	this.fPowerUps.add(_itemPowerUp);
 
 
 }else{
 
 
-var _BirdEnemy = new wisherEnemy(this.game, this.game.width+200, enemyXDeploy);
+var _BirdEnemy = new wisherEnemy(this.game, this.game.width+50, enemyXDeploy);
 	this.fEnemies.add(_BirdEnemy);
 }
 
@@ -228,6 +246,7 @@ Level.prototype.destroyEnemy = function (player, enemy) {
 };
 
 Level.prototype.createCoins = function (enemy) {
+
 	var _coin = new coin(this.game, enemy.x, enemy.y);
 	_coin.body.velocity.y=Math.random()*300;
 	this.fCoins.add(_coin);
@@ -264,15 +283,27 @@ Level.prototype.getPowerUp = function (player,powerUp) {
 };
 
 Level.prototype.update = function () {
+
+	if(this.stageSpeed>=this.maximunStageSpeed){
+
+		this.stageSpeed = this.maximunStageSpeed;
+
+	}else{
+		this.stageSpeed++;
+	}
+
 	
-	
+	this.fMoneyText.text = this.fPlayer.coins;
 	this.game.physics.arcade.collide(this.fCoins , this.fPlatforms, this.coinOnPlatform, null, this);
 	this.game.physics.arcade.collide(this.fPlayer , this.fPlatforms, this.onPlatform, null, this);
 	this.game.physics.arcade.overlap(this.fPlayer , this.fEnemies, this.destroyEnemy, null, this);
 	this.game.physics.arcade.overlap(this.fPlayer , this.fPowerUps, this.getPowerUp, null, this);
 
-	if(this.fPlayer.y>=this.game.height+100){
-		this.game.state.start('Level');
+	if(this.fPlayer.y>=this.game.height+100){ //muere die lost loose
+		this.fPlayer.coins-=10;
+		this.fPlayer.y = -50;
+		this.fPlayer.x = this.game.width/2;
+		this.shakeAndFlash();
 	}
 
 	if(this.fPlayer.canDoubleJump){

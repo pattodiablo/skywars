@@ -41,6 +41,7 @@ player.prototype.constructor = player;
 // -- user code here --
 player.prototype.myCreate = function() {
 	
+	this.coins = 0;
 	this.canJump =  false;	
 	this.isKicking = false;
 	this.canKick = false;
@@ -52,7 +53,10 @@ player.prototype.myCreate = function() {
 player.prototype.update = function() {
 		
 
+if(this.coins <= 0 ){
 
+	this.coins = 0 ;
+}
 	if(this.canJump==false && Math.sign(this.body.velocity.y)>=0 && !this.isKicking){
 		this.animations.play('down');
 		this.isFalling = true;

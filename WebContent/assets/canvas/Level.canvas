@@ -19,7 +19,8 @@
       200
     ],
     "showGrid": true,
-    "create_after": "this.myCreate();\r\n\r\n"
+    "create_after": "this.myCreate();\r\n\r\n",
+    "state_init_after": "this.myInit();"
   },
   "stateSettings": {
     "scaleMode": "SHOW_ALL",
@@ -47,7 +48,10 @@
           "type": "image",
           "id": "46b6db69-403f-4a7a-91df-5fb6b39b2798",
           "asset": "0",
-          "info": {"editorName": "background"}
+          "info": {
+            "editorName": "background",
+            "fixedToCamera": true
+          }
         },
         {
           "type": "group",
@@ -247,6 +251,32 @@
             "setAll": [],
             "children": []
           }
+        },
+        {
+          "type": "atlas-sprite",
+          "id": "eb65c2ab-d2e8-4c33-a59e-ae99b66fd401",
+          "asset": "2",
+          "info": {
+            "editorName": "coinSymbol",
+            "x": 33,
+            "y": 30,
+            "fixedToCamera": true
+          }
+        },
+        {
+          "type": "text",
+          "id": "c4dc2515-0247-4945-96ce-8d463fb9af73",
+          "info": {
+            "editorName": "moneyText",
+            "editorField": true,
+            "x": 133,
+            "y": 31,
+            "fixedToCamera": true,
+            "text": "000001",
+            "style.fontSize": 70,
+            "style.fill": "#ffff80",
+            "style.stroke": "#ff8040"
+          }
         }
       ]
     }
@@ -262,6 +292,12 @@
       "file": "WebContent/assets/pack.json",
       "section": "images",
       "asset": "core1"
+    },
+    "2": {
+      "file": "WebContent/assets/pack.json",
+      "section": "atlas",
+      "asset": "powerUps",
+      "sprite": "Symbol 4 instance 10013"
     }
   },
   "prefab-table": {
