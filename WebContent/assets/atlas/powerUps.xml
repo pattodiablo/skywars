@@ -2,24 +2,54 @@
 <TextureAtlas imagePath="powerUps.png">
 	<!-- Created with Adobe Animate version 19.2.1.408 -->
 	<!-- http://www.adobe.com/products/animate.html -->
-	<SubTexture name="core10000" x="1" y="1" width="165" height="240" pivotX="84.55" pivotY="117.75"/>
-	<SubTexture name="core10001" x="167" y="1" width="165" height="237" frameX="0" frameY="-2" frameWidth="165" frameHeight="240"/>
-	<SubTexture name="core10002" x="333" y="1" width="165" height="235" frameX="0" frameY="-4" frameWidth="165" frameHeight="240"/>
-	<SubTexture name="core10003" x="499" y="1" width="165" height="232" frameX="0" frameY="-6" frameWidth="165" frameHeight="240"/>
-	<SubTexture name="core10004" x="665" y="1" width="165" height="230" frameX="0" frameY="-8" frameWidth="165" frameHeight="240"/>
-	<SubTexture name="core10005" x="831" y="1" width="165" height="227" frameX="0" frameY="-10" frameWidth="165" frameHeight="240"/>
-	<SubTexture name="core10006" x="1" y="242" width="165" height="225" frameX="0" frameY="-12" frameWidth="165" frameHeight="240"/>
-	<SubTexture name="core10007" x="167" y="242" width="165" height="223" frameX="0" frameY="-14" frameWidth="165" frameHeight="240"/>
-	<SubTexture name="core10008" x="333" y="242" width="165" height="221" frameX="0" frameY="-15" frameWidth="165" frameHeight="240"/>
-	<SubTexture name="core10009" x="499" y="242" width="165" height="219" frameX="0" frameY="-17" frameWidth="165" frameHeight="240"/>
-	<SubTexture name="core10010" x="665" y="242" width="165" height="220" frameX="0" frameY="-16" frameWidth="165" frameHeight="240"/>
-	<SubTexture name="core10011" x="831" y="242" width="165" height="222" frameX="0" frameY="-14" frameWidth="165" frameHeight="240"/>
-	<SubTexture name="core10012" x="1" y="468" width="165" height="225" frameX="0" frameY="-12" frameWidth="165" frameHeight="240"/>
-	<SubTexture name="core10013" x="167" y="468" width="165" height="226" frameX="0" frameY="-11" frameWidth="165" frameHeight="240"/>
-	<SubTexture name="core10014" x="333" y="468" width="165" height="229" frameX="0" frameY="-9" frameWidth="165" frameHeight="240"/>
-	<SubTexture name="core10015" x="499" y="468" width="165" height="231" frameX="0" frameY="-7" frameWidth="165" frameHeight="240"/>
-	<SubTexture name="core10016" x="665" y="468" width="165" height="233" frameX="0" frameY="-5" frameWidth="165" frameHeight="240"/>
-	<SubTexture name="core10017" x="831" y="468" width="165" height="235" frameX="0" frameY="-4" frameWidth="165" frameHeight="240"/>
-	<SubTexture name="core10018" x="1" y="704" width="165" height="237" frameX="0" frameY="-2" frameWidth="165" frameHeight="240"/>
-	<SubTexture name="core10019" x="167" y="704" width="165" height="240"/>
+	<SubTexture name="Symbol 4 instance 10000" x="1" y="1" width="84" height="86" pivotX="41.45" pivotY="42.8"/>
+	<SubTexture name="Symbol 4 instance 10001" x="86" y="1" width="84" height="86"/>
+	<SubTexture name="Symbol 4 instance 10002" x="171" y="1" width="84" height="86"/>
+	<SubTexture name="Symbol 4 instance 10003" x="256" y="1" width="84" height="86"/>
+	<SubTexture name="Symbol 4 instance 10004" x="341" y="1" width="84" height="86"/>
+	<SubTexture name="Symbol 4 instance 10005" x="426" y="1" width="84" height="86"/>
+	<SubTexture name="Symbol 4 instance 10006" x="511" y="1" width="84" height="86"/>
+	<SubTexture name="Symbol 4 instance 10007" x="596" y="1" width="84" height="86"/>
+	<SubTexture name="Symbol 4 instance 10008" x="681" y="1" width="84" height="86"/>
+	<SubTexture name="Symbol 4 instance 10009" x="766" y="1" width="84" height="86"/>
+	<SubTexture name="Symbol 4 instance 10010" x="851" y="1" width="84" height="86"/>
+	<SubTexture name="Symbol 4 instance 10011" x="936" y="1" width="84" height="86"/>
+	<SubTexture name="Symbol 4 instance 10012" x="1" y="88" width="84" height="86"/>
+	<SubTexture name="Symbol 4 instance 10013" x="86" y="88" width="84" height="86"/>
+	<SubTexture name="Symbol 4 instance 10014" x="171" y="88" width="84" height="86"/>
+	<SubTexture name="Symbol 4 instance 10015" x="256" y="88" width="84" height="86"/>
+	<SubTexture name="Symbol 4 instance 10016" x="341" y="88" width="84" height="86"/>
+	<SubTexture name="Symbol 4 instance 10017" x="426" y="88" width="84" height="86"/>
+	<SubTexture name="Symbol 4 instance 10018" x="511" y="88" width="84" height="86"/>
+	<SubTexture name="Symbol 4 instance 10019" x="596" y="88" width="84" height="86"/>
+	<SubTexture name="Symbol 4 instance 10020" x="681" y="88" width="84" height="86"/>
+	<SubTexture name="Symbol 4 instance 10021" x="766" y="88" width="84" height="86"/>
+	<SubTexture name="Symbol 4 instance 10022" x="851" y="88" width="84" height="86"/>
+	<SubTexture name="Symbol 4 instance 10023" x="936" y="88" width="84" height="86"/>
+	<SubTexture name="Symbol 4 instance 10024" x="1" y="175" width="84" height="86"/>
+	<SubTexture name="Symbol 4 instance 10025" x="86" y="175" width="84" height="86"/>
+	<SubTexture name="Symbol 4 instance 10026" x="171" y="175" width="84" height="86"/>
+	<SubTexture name="Symbol 4 instance 10027" x="256" y="175" width="84" height="86"/>
+	<SubTexture name="Symbol 4 instance 10028" x="341" y="175" width="84" height="86"/>
+	<SubTexture name="Symbol 4 instance 10029" x="426" y="175" width="84" height="86"/>
+	<SubTexture name="core10000" x="511" y="175" width="165" height="240" pivotX="84.55" pivotY="117.75"/>
+	<SubTexture name="core10001" x="677" y="175" width="165" height="237" frameX="0" frameY="-2" frameWidth="165" frameHeight="240"/>
+	<SubTexture name="core10002" x="843" y="175" width="165" height="235" frameX="0" frameY="-4" frameWidth="165" frameHeight="240"/>
+	<SubTexture name="core10003" x="1" y="416" width="165" height="232" frameX="0" frameY="-6" frameWidth="165" frameHeight="240"/>
+	<SubTexture name="core10004" x="167" y="416" width="165" height="230" frameX="0" frameY="-8" frameWidth="165" frameHeight="240"/>
+	<SubTexture name="core10005" x="333" y="416" width="165" height="227" frameX="0" frameY="-10" frameWidth="165" frameHeight="240"/>
+	<SubTexture name="core10006" x="499" y="416" width="165" height="225" frameX="0" frameY="-12" frameWidth="165" frameHeight="240"/>
+	<SubTexture name="core10007" x="665" y="416" width="165" height="223" frameX="0" frameY="-14" frameWidth="165" frameHeight="240"/>
+	<SubTexture name="core10008" x="831" y="416" width="165" height="221" frameX="0" frameY="-15" frameWidth="165" frameHeight="240"/>
+	<SubTexture name="core10009" x="1" y="649" width="165" height="219" frameX="0" frameY="-17" frameWidth="165" frameHeight="240"/>
+	<SubTexture name="core10010" x="167" y="649" width="165" height="220" frameX="0" frameY="-16" frameWidth="165" frameHeight="240"/>
+	<SubTexture name="core10011" x="333" y="649" width="165" height="222" frameX="0" frameY="-14" frameWidth="165" frameHeight="240"/>
+	<SubTexture name="core10012" x="499" y="649" width="165" height="225" frameX="0" frameY="-12" frameWidth="165" frameHeight="240"/>
+	<SubTexture name="core10013" x="665" y="649" width="165" height="226" frameX="0" frameY="-11" frameWidth="165" frameHeight="240"/>
+	<SubTexture name="core10014" x="831" y="649" width="165" height="229" frameX="0" frameY="-9" frameWidth="165" frameHeight="240"/>
+	<SubTexture name="core10015" x="1" y="879" width="165" height="231" frameX="0" frameY="-7" frameWidth="165" frameHeight="240"/>
+	<SubTexture name="core10016" x="167" y="879" width="165" height="233" frameX="0" frameY="-5" frameWidth="165" frameHeight="240"/>
+	<SubTexture name="core10017" x="333" y="879" width="165" height="235" frameX="0" frameY="-4" frameWidth="165" frameHeight="240"/>
+	<SubTexture name="core10018" x="499" y="879" width="165" height="237" frameX="0" frameY="-2" frameWidth="165" frameHeight="240"/>
+	<SubTexture name="core10019" x="665" y="879" width="165" height="240"/>
 </TextureAtlas>
