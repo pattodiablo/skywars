@@ -32,6 +32,52 @@
       "type": "script",
       "key": "BgBuildings",
       "url": "prefabs/BgBuildings.js"
+    },
+    {
+      "type": "image",
+      "key": "core1",
+      "url": "assets/images/core1.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "core2",
+      "url": "assets/images/core2.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "core3",
+      "url": "assets/images/core3.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "core4",
+      "url": "assets/images/core4.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "building2",
+      "url": "assets/images/building2.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "building3",
+      "url": "assets/images/building3.png",
+      "overwrite": false
+    },
+    {
+      "type": "script",
+      "key": "building21",
+      "url": "prefabs/building2.js"
+    },
+    {
+      "type": "script",
+      "key": "building31",
+      "url": "prefabs/building3.js"
     }
   ],
   "atlas": [
@@ -104,10 +150,27 @@
       "type": "script",
       "key": "kickPower",
       "url": "prefabs/kickPower.js"
+    },
+    {
+      "type": "atlas",
+      "key": "powerUps",
+      "textureURL": "assets/atlas/powerUps.png",
+      "atlasURL": "assets/atlas/powerUps.xml",
+      "format": "TEXTURE_ATLAS_XML_STARLING"
+    },
+    {
+      "type": "script",
+      "key": "powerUp1",
+      "url": "prefabs/powerUp1.js"
+    },
+    {
+      "type": "script",
+      "key": "coin",
+      "url": "prefabs/coin.js"
     }
   ],
   "meta": {
-    "generated": "1597244732084",
+    "generated": "1597333764283",
     "app": "Phaser Editor",
     "url": "http://phasereditor.boniatillo.com",
     "version": "1.0",

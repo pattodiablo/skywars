@@ -19,7 +19,8 @@
       200
     ],
     "showGrid": true,
-    "create_after": "this.myCreate();\r\n\r\n"
+    "create_after": "this.myCreate();\r\n\r\n",
+    "state_init_after": "this.myInit();"
   },
   "stateSettings": {
     "scaleMode": "SHOW_ALL",
@@ -47,7 +48,10 @@
           "type": "image",
           "id": "46b6db69-403f-4a7a-91df-5fb6b39b2798",
           "asset": "0",
-          "info": {"editorName": "background"}
+          "info": {
+            "editorName": "background",
+            "fixedToCamera": true
+          }
         },
         {
           "type": "group",
@@ -100,21 +104,6 @@
               {
                 "type": "prefab",
                 "prefab": "1",
-                "id": "ee11995f-b7d0-4c49-ba25-fa533940eae8",
-                "asset-ref": {
-                  "file": "WebContent/assets/pack.json",
-                  "section": "images",
-                  "asset": "building1"
-                },
-                "info": {
-                  "editorName": "build1",
-                  "x": 2203,
-                  "y": 830
-                }
-              },
-              {
-                "type": "prefab",
-                "prefab": "1",
                 "id": "daa1c63b-0d8e-41f1-976b-f82ba982cdd7",
                 "asset-ref": {
                   "file": "WebContent/assets/pack.json",
@@ -129,17 +118,32 @@
               },
               {
                 "type": "prefab",
-                "prefab": "1",
-                "id": "c4197cbf-e099-43d1-87d8-2abb24aea623",
+                "prefab": "2",
+                "id": "e1ecd548-7b54-4443-b962-76e32982bf67",
                 "asset-ref": {
                   "file": "WebContent/assets/pack.json",
                   "section": "images",
-                  "asset": "building1"
+                  "asset": "building2"
                 },
                 "info": {
-                  "editorName": "build2",
-                  "x": 1129,
-                  "y": 871
+                  "editorName": "building2Tower",
+                  "x": 3303,
+                  "y": 652
+                }
+              },
+              {
+                "type": "prefab",
+                "prefab": "3",
+                "id": "a02e3abc-2c31-44fd-9783-4e0db76cd224",
+                "asset-ref": {
+                  "file": "WebContent/assets/pack.json",
+                  "section": "images",
+                  "asset": "building3"
+                },
+                "info": {
+                  "editorName": "building3Tower",
+                  "x": 2293,
+                  "y": 630
                 }
               }
             ]
@@ -147,7 +151,7 @@
         },
         {
           "type": "prefab",
-          "prefab": "2",
+          "prefab": "4",
           "id": "6b92b063-cf03-45ca-b402-46b55aae01a8",
           "asset-ref": {
             "file": "WebContent/assets/pack.json",
@@ -172,19 +176,135 @@
             "setAll": [],
             "children": []
           }
+        },
+        {
+          "type": "group",
+          "id": "8f84d5b9-856f-4759-9773-2194dd314929",
+          "info": {
+            "editorName": "powerUps",
+            "editorField": true,
+            "setAll": [],
+            "children": []
+          }
+        },
+        {
+          "type": "group",
+          "id": "bdd6b436-cdba-43f5-8a45-3cd0c93a8f8f",
+          "info": {
+            "editorName": "powerLabel",
+            "editorField": true,
+            "y": -595,
+            "setAll": [],
+            "children": [
+              {
+                "type": "text",
+                "id": "a0741f47-a5ff-4a78-8b60-a20fbc0eff43",
+                "info": {
+                  "editorName": "powerText",
+                  "editorField": true,
+                  "x": 64,
+                  "y": 480,
+                  "text": "Double Jump",
+                  "style.fontSize": 60,
+                  "style.fill": "#ffffff",
+                  "style.stroke": "#ffffff"
+                }
+              },
+              {
+                "type": "text",
+                "id": "5e63795f-1e69-4503-847f-4f7c75ee1e89",
+                "info": {
+                  "editorName": "text",
+                  "x": 91,
+                  "y": 453,
+                  "text": "you got",
+                  "style.fontSize": 30,
+                  "style.fill": "#ffffff",
+                  "style.stroke": "#ffffff"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "type": "image",
+          "id": "c5bf0b6f-22e1-4132-ac10-3068b6c245f7",
+          "asset": "1",
+          "info": {
+            "editorName": "core1",
+            "editorField": true,
+            "x": 1793,
+            "y": 32,
+            "scale.x": 0.7,
+            "scale.y": 0.7,
+            "fixedToCamera": true,
+            "tint": "0x808080"
+          }
+        },
+        {
+          "type": "group",
+          "id": "afc3c948-6cf1-4b34-b0f0-716534544e0c",
+          "info": {
+            "editorName": "coins",
+            "editorField": true,
+            "physicsGroup": true,
+            "setAll": [],
+            "children": []
+          }
+        },
+        {
+          "type": "atlas-sprite",
+          "id": "eb65c2ab-d2e8-4c33-a59e-ae99b66fd401",
+          "asset": "2",
+          "info": {
+            "editorName": "coinSymbol",
+            "x": 33,
+            "y": 30,
+            "fixedToCamera": true
+          }
+        },
+        {
+          "type": "text",
+          "id": "c4dc2515-0247-4945-96ce-8d463fb9af73",
+          "info": {
+            "editorName": "moneyText",
+            "editorField": true,
+            "x": 133,
+            "y": 31,
+            "fixedToCamera": true,
+            "text": "000001",
+            "style.fontSize": 70,
+            "style.fill": "#ffff80",
+            "style.stroke": "#ff8040"
+          }
         }
       ]
     }
   },
   "type": "STATE",
-  "asset-table": {"0": {
-    "file": "WebContent/assets/pack.json",
-    "section": "images",
-    "asset": "background"
-  }},
+  "asset-table": {
+    "0": {
+      "file": "WebContent/assets/pack.json",
+      "section": "images",
+      "asset": "background"
+    },
+    "1": {
+      "file": "WebContent/assets/pack.json",
+      "section": "images",
+      "asset": "core1"
+    },
+    "2": {
+      "file": "WebContent/assets/pack.json",
+      "section": "atlas",
+      "asset": "powerUps",
+      "sprite": "Symbol 4 instance 10013"
+    }
+  },
   "prefab-table": {
     "0": "WebContent/prefabs/BgBuildings.canvas",
     "1": "WebContent/prefabs/building1.canvas",
-    "2": "WebContent/prefabs/player.canvas"
+    "2": "WebContent/prefabs/building2.canvas",
+    "3": "WebContent/prefabs/building3.canvas",
+    "4": "WebContent/prefabs/player.canvas"
   }
 }

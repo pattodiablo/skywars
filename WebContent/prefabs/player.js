@@ -22,7 +22,8 @@ function player(aGame, aX, aY, aKey, aFrame) {
 	this.animations.add('up', ['jumnp0000', 'jumnp0001', 'jumnp0002', 'jumnp0003'], 24, true);
 	this.animations.add('down', ['jump20000', 'jump20001', 'jump20002', 'jump20003', 'jump20004', 'jump20005', 'jump20006', 'jump20007', 'jump20008', 'jump20009', 'jump20010', 'jump20011', 'jump20012', 'jump20013', 'jump20014', 'jump20015', 'jump20016', 'jump20017', 'jump20018', 'jump20019'], 24, true);
 	this.animations.add('kick', ['kick0000'], 1, true);
-	this.animations.add('kick2', ['kick20000'], 1, false);
+	var _anim_kick2 = this.animations.add('kick2', ['kick20000'], 1, false);
+	_anim_kick2.play();
 	this.game.physics.arcade.enable(this);
 	this.body.gravity.y = 1300.0;
 	this.body.friction.x = 0.0;
@@ -40,16 +41,29 @@ player.prototype.constructor = player;
 // -- user code here --
 player.prototype.myCreate = function() {
 	
+	this.coins = 0;
 	this.canJump =  false;	
 	this.isKicking = false;
 	this.canKick = false;
+	this.canDoubleJump =  false;
+	this.myDoubleJump = 0;
+	this.isFalling = false;
 };
 
 player.prototype.update = function() {
 		
+
+if(this.coins <= 0 ){
+
+	this.coins = 0 ;
+}
 	if(this.canJump==false && Math.sign(this.body.velocity.y)>=0 && !this.isKicking){
 		this.animations.play('down');
+		this.isFalling = true;
 		
+	}else{
+
+		this.isFalling = false;
 	}
 
 	};

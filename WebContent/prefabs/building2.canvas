@@ -1,7 +1,7 @@
 {
   "canvas-version": 2,
   "settings": {
-    "className": "building1",
+    "className": "building2",
     "sceneWidth": 640,
     "sceneHeight": 360,
     "generateOnSave": true,
@@ -34,16 +34,16 @@
   },
   "world": {
     "type": "group",
-    "id": "a9b47f4d-1620-4d61-b0bc-1de1bfc5475e",
+    "id": "33790047-6832-499e-a366-394db49e1d72",
     "info": {
-      "editorName": "building1",
+      "editorName": "building2",
       "setAll": [],
       "children": [{
         "type": "image",
-        "id": "f584eed7-e912-475c-ac08-01774f7d141b",
+        "id": "19bc323b-1eb6-423d-90fd-c9b143263272",
         "asset": "0",
         "info": {
-          "editorName": "build",
+          "editorName": "building2Tower",
           "body": {
             "type": "ARCADE_RECT",
             "immovable": true,
@@ -58,7 +58,7 @@
   "asset-table": {"0": {
     "file": "WebContent/assets/pack.json",
     "section": "images",
-    "asset": "building1"
+    "asset": "building2"
   }},
   "prefab-table": {}
 }
