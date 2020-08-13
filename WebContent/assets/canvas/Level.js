@@ -50,19 +50,35 @@ Level.prototype.create = function () {
 	var _building = new building1(this.game, 0.0, 830.0);
 	_platforms.add(_building);
 	
-	var _build1 = new building1(this.game, 2203.0, 830.0);
-	_platforms.add(_build1);
-	
 	var _build = new building1(this.game, 1129.0, 735.0);
 	_platforms.add(_build);
 	
-	var _build2 = new building1(this.game, 1129.0, 871.0);
-	_platforms.add(_build2);
+	var _building2Tower = new building2(this.game, 3303.0, 652.0);
+	_platforms.add(_building2Tower);
+	
+	var _building3Tower = new building3(this.game, 2293.0, 630.0);
+	_platforms.add(_building3Tower);
 	
 	var _player = new player(this.game, 465.0, 512.0);
 	this.add.existing(_player);
 	
 	var _enemies = this.add.physicsGroup(Phaser.Physics.ARCADE);
+	
+	var _powerUps = this.add.group();
+	
+	var _powerLabel = this.add.group();
+	_powerLabel.position.set(0.0, -595.0);
+	
+	var _powerText = this.add.text(64.0, 480.0, 'Double Jump', {"font":"bold 60px Arial","fill":"#ffffff","stroke":"#ffffff"}, _powerLabel);
+	
+	this.add.text(91.0, 453.0, 'you got', {"font":"bold 30px Arial","fill":"#ffffff","stroke":"#ffffff"}, _powerLabel);
+	
+	var _core1 = this.add.sprite(1793.0, 32.0, 'core1');
+	_core1.scale.set(0.7, 0.7);
+	_core1.fixedToCamera = true;
+	_core1.tint = 0x808080;
+	
+	var _coins = this.add.physicsGroup(Phaser.Physics.ARCADE);
 	
 	
 	
@@ -72,6 +88,11 @@ Level.prototype.create = function () {
 	this.fPlatforms = _platforms;
 	this.fPlayer = _player;
 	this.fEnemies = _enemies;
+	this.fPowerUps = _powerUps;
+	this.fPowerLabel = _powerLabel;
+	this.fPowerText = _powerText;
+	this.fCore1 = _core1;
+	this.fCoins = _coins;
 	this.myCreate();
 	
 	
@@ -85,30 +106,47 @@ Level.prototype.myCreate = function () {
 	this.game.input.onUp.add(this.swipeUpAction, this);
 	this.game.world.setBounds(0, 0, 1920, 1100);
 	this.game.camera.follow(this.fPlayer,Phaser.Camera.FOLLOW_LOCKON,0.01, 0.01,0,0);
-
+	this.jumpPower = -900;
 
     enemyDeployTimer = this.game.time.create(false);
-    enemyDeployTimer.loop(2000, this.deployEnemy, this);
+    enemyDeployTimer.loop(2000, this.deployItems, this);
     enemyDeployTimer.start();
 
 
 };
 
-Level.prototype.deployEnemy = function() {
+Level.prototype.deployItems = function() {
 
+const wichItem =  Math.random() < 0.2;
 const enemyXDeploy = Math.random()  * (600 - 300) + 300;
-console.log(enemyXDeploy);
+
+if(wichItem){
+
+
+var _itemPowerUp = new powerUp1(this.game, this.game.width+200, enemyXDeploy);
+	this.fPowerUps.add(_itemPowerUp);
+
+
+}else{
+
+
 var _BirdEnemy = new wisherEnemy(this.game, this.game.width+200, enemyXDeploy);
 	this.fEnemies.add(_BirdEnemy);
+}
+
 
 };
 
 Level.prototype.swipeUpAction = function(pointer) { 
 this.fPlayer.isKicking = false;
+this.jumpPower=0;
 };
 
 
 Level.prototype.swipeDownAction = function(pointer) { //manejo de swipe control de pantalla
+	
+
+
 	
 	if(!this.fPlayer.canJump && this.fPlayer.canKick){
 		const wichKick = Math.random()*10;
@@ -124,12 +162,17 @@ Level.prototype.swipeDownAction = function(pointer) { //manejo de swipe control 
 	}
 
 	if(this.fPlayer.canJump){
-		this.fPlayer.body.velocity.x =  80;
-		this.fPlayer.body.velocity.y-=1000;
+		this.fPlayer.body.velocity.x =  70;
+		this.fPlayer.body.velocity.y=-900;
 		this.fPlayer.animations.play('up');
 		this.fPlayer.canJump =  false;
 		this.fPlayer.canKick = true;
 		this.fPlayer.isKicking = false;
+
+		
+	}else if(this.fPlayer.canDoubleJump && this.fPlayer.isFalling){
+		this.fPlayer.body.velocity.y=-1000;
+			this.fPlayer.canDoubleJump = false;
 	}
 	
 
@@ -159,28 +202,84 @@ player.body.velocity.x = platform.body.velocity.x;
 
 	};	
 
+Level.prototype.coinOnPlatform = function (coin, platform) {
+
+
+
+coin.body.velocity.x = platform.body.velocity.x;	
+
+
+	};	
+
 Level.prototype.destroyEnemy = function (player, enemy) {	
 
 
 	if(player.isKicking){
 			var _kickPower = new kickPower(this.game, enemy.x, enemy.y);
 			_kickPower.alpha = 0.5;
-			this.game.camera.shake(0.02, 250);
-  	this.game.camera.flash(0xffffff, 250)
-			this.add.existing(_kickPower);
+		this.shakeAndFlash();
+		this.createCoins(enemy);
+		this.add.existing(_kickPower);
 		enemy.animations.play('kicked');
 		enemy.tweenBtn.stop();
 		enemy.body.velocity.x=800;
 		enemy.body.gravity.y=1200;
 	}
 };
-				
+
+Level.prototype.createCoins = function (enemy) {
+	var _coin = new coin(this.game, enemy.x, enemy.y);
+	_coin.body.velocity.y=Math.random()*300;
+	this.fCoins.add(_coin);
+
+}
+
+Level.prototype.shakeAndFlash = function () {
+		this.game.camera.shake(0.02, 120);
+  		this.game.camera.flash(0xffffff, 250)
+};
+
+Level.prototype.getPowerUp = function (player,powerUp) {
+	
+	this.shakeAndFlash();
+	if(powerUp.myPower == 'doubleJump'){
+		player.canDoubleJump =  true;
+		
+	}
+	powerUp.destroy();
+
+			pigArrives = this.game.add.tween(this.fPowerLabel);
+		    pigArrives.to({y:-240}, 1200, Phaser.Easing.Bounce.Out);
+		    pigArrives.onComplete.add(theEnd, this);
+		    pigArrives.start();
+		    	function theEnd() {
+		    
+		    e = this.game.add.tween(this.fPowerLabel);
+		    
+		    e.to({ y: -600 }, 500, Phaser.Easing.Bounce.Out);
+		    e.start();
+
+		}
+
+};
+
 Level.prototype.update = function () {
 	
+	
+	this.game.physics.arcade.collide(this.fCoins , this.fPlatforms, this.coinOnPlatform, null, this);
 	this.game.physics.arcade.collide(this.fPlayer , this.fPlatforms, this.onPlatform, null, this);
 	this.game.physics.arcade.overlap(this.fPlayer , this.fEnemies, this.destroyEnemy, null, this);
+	this.game.physics.arcade.overlap(this.fPlayer , this.fPowerUps, this.getPowerUp, null, this);
 
 	if(this.fPlayer.y>=this.game.height+100){
 		this.game.state.start('Level');
+	}
+
+	if(this.fPlayer.canDoubleJump){
+		this.fCore1.alpha=1;
+		this.fCore1.tint=0xffffff;
+	}else{
+		this.fCore1.alpha=0.5;
+		this.fCore1.tint=0x808080;
 	}
 };

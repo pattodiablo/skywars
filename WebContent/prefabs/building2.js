@@ -7,15 +7,15 @@
 
 
 /**
- * building1
+ * building2
  * @param {Phaser.Game} aGame A reference to the currently running game.
  * @param {Number} aX The x coordinate (in world space) to position the Sprite at.
  * @param {Number} aY The y coordinate (in world space) to position the Sprite at.
  * @param {any} aKey This is the image or texture used by the Sprite during rendering. It can be a string which is a reference to the Cache entry, or an instance of a RenderTexture or PIXI.Texture.
  * @param {any} aFrame If this Sprite is using part of a sprite sheet or texture atlas you can specify the exact frame to use by giving a string or numeric index.
  */
-function building1(aGame, aX, aY, aKey, aFrame) {
-	Phaser.Sprite.call(this, aGame, aX, aY, aKey || 'building1', aFrame == undefined || aFrame == null? null : aFrame);
+function building2(aGame, aX, aY, aKey, aFrame) {
+	Phaser.Sprite.call(this, aGame, aX, aY, aKey || 'building2', aFrame == undefined || aFrame == null? null : aFrame);
 	this.game.physics.arcade.enable(this);
 	this.body.immovable = true;
 	this.body.velocity.x = -500.0;
@@ -26,18 +26,18 @@ function building1(aGame, aX, aY, aKey, aFrame) {
 }
 
 /** @type Phaser.Sprite */
-var building1_proto = Object.create(Phaser.Sprite.prototype);
-building1.prototype = building1_proto;
-building1.prototype.constructor = building1;
+var building2_proto = Object.create(Phaser.Sprite.prototype);
+building2.prototype = building2_proto;
+building2.prototype.constructor = building2;
 
 /* --- end generated code --- */
 // -- user code here --
-building1.prototype.myCreate = function() {
+building2.prototype.myCreate = function() {
 	
 	
 };
 
-building1.prototype.update = function() {
+building2.prototype.update = function() {
 	//this.position.y-=this.game.state.getCurrentState﻿().fPlayer.y/600;
 if(this.x <= -this.width){
 	const variableDistance = Math.random()* (650 - 300) + 300;

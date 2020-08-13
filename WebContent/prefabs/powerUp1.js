@@ -7,37 +7,38 @@
 
 
 /**
- * wisherEnemy
+ * powerUp1
  * @param {Phaser.Game} aGame A reference to the currently running game.
  * @param {Number} aX The x coordinate (in world space) to position the Sprite at.
  * @param {Number} aY The y coordinate (in world space) to position the Sprite at.
  * @param {any} aKey This is the image or texture used by the Sprite during rendering. It can be a string which is a reference to the Cache entry, or an instance of a RenderTexture or PIXI.Texture.
  * @param {any} aFrame If this Sprite is using part of a sprite sheet or texture atlas you can specify the exact frame to use by giving a string or numeric index.
  */
-function wisherEnemy(aGame, aX, aY, aKey, aFrame) {
-	Phaser.Sprite.call(this, aGame, aX, aY, aKey || 'wisherEnemy', aFrame == undefined || aFrame == null? 'BirdEnemy0000' : aFrame);
+function powerUp1(aGame, aX, aY, aKey, aFrame) {
+	Phaser.Sprite.call(this, aGame, aX, aY, aKey || 'powerUps', aFrame == undefined || aFrame == null? 'core10000' : aFrame);
 	this.scale.set(0.7, 0.7);
 	this.anchor.set(0.5, 0.5);
-	var _anim_fly = this.animations.add('fly', ['BirdEnemy0000', 'BirdEnemy0001', 'BirdEnemy0002', 'BirdEnemy0003', 'BirdEnemy0004', 'BirdEnemy0005', 'BirdEnemy0006', 'BirdEnemy0007', 'BirdEnemy0008'], 30, true);
-	this.animations.add('kicked', ['BirdEnemyKicked0000'], 1, false);
-	_anim_fly.play();
+	var _anim_powering = this.animations.add('powering', ['core10000', 'core10001', 'core10002', 'core10003', 'core10004', 'core10005', 'core10006', 'core10007', 'core10008', 'core10009', 'core10010', 'core10011', 'core10012', 'core10013', 'core10014', 'core10015', 'core10016', 'core10017', 'core10018', 'core10019'], 30, true);
+	_anim_powering.play();
 	this.game.physics.arcade.enable(this);
-	this.body.setCircle(51.5);
-	this.body.immovable = true;
+	this.body.setCircle(62.5, 24.28570556640625, 95.71427917480469);
+	this.body.velocity.x = -400.0;
 	
 	this.myCreate();
 	
 }
 
 /** @type Phaser.Sprite */
-var wisherEnemy_proto = Object.create(Phaser.Sprite.prototype);
-wisherEnemy.prototype = wisherEnemy_proto;
-wisherEnemy.prototype.constructor = wisherEnemy;
+var powerUp1_proto = Object.create(Phaser.Sprite.prototype);
+powerUp1.prototype = powerUp1_proto;
+powerUp1.prototype.constructor = powerUp1;
 
 /* --- end generated code --- */
 // -- user code here --
-wisherEnemy.prototype.myCreate = function() {
+
+powerUp1.prototype.myCreate =  function(){
 	
+	this.myPower = 'doubleJump';
 	this.MyY = this.y + 30;
 	this.tweenBtn = this.game.add.tween(this).to( {y:this.MyY}, 200, Phaser.Easing.Sinusoidal.InOut, true);
 	this.tween2Btn = this.game.add.tween(this).to(  {y:this.y}, 200, Phaser.Easing.Sinusoidal.InOut, true);
@@ -45,16 +46,9 @@ wisherEnemy.prototype.myCreate = function() {
 	this.tweenBtn.chain(this.tween2Btn);
 	this.tween2Btn.chain(this.tweenBtn);
 	this.tweenBtn.start();
-	this.body.velocity.x =   Math.random()  * (300 - 200) - 200;
 	
 };
 
-wisherEnemy.prototype.update = function() {
+powerUp1.prototype.update = function() {
 	
-	if(this.x<=-100){
-		this.destroy();
-	}
-	if(this.x>=2200){
-		this.destroy();
-	}
 };

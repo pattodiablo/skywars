@@ -125,6 +125,7 @@
             {
               "name": "kick2",
               "frameRate": 1,
+              "autoPlay": true,
               "frames": ["kick20000"]
             }
           ],

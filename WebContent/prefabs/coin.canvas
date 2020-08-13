@@ -1,0 +1,108 @@
+{
+  "canvas-version": 2,
+  "settings": {
+    "className": "coin",
+    "sceneWidth": 640,
+    "sceneHeight": 360,
+    "generateOnSave": true,
+    "enableStepping": false,
+    "lang": "JAVA_SCRIPT",
+    "baseClass": "Phaser.Sprite",
+    "backgroundColor": [
+      180,
+      180,
+      180
+    ],
+    "gridColor": [
+      200,
+      200,
+      200
+    ],
+    "showGrid": true,
+    "create_after": "this.myCreate();"
+  },
+  "stateSettings": {
+    "stageBackgroundColor": [
+      0,
+      0,
+      0
+    ],
+    "autoLoad": true,
+    "preloadSpriteId": "",
+    "preloadSprite_direction": 0,
+    "load.pack": []
+  },
+  "world": {
+    "type": "group",
+    "id": "da8db2dc-b259-442f-9e31-ac43c8f1e915",
+    "info": {
+      "editorName": "coin",
+      "setAll": [],
+      "children": [{
+        "type": "atlas-sprite",
+        "id": "efdeb9d7-d06a-4047-8136-440a12678c05",
+        "asset": "0",
+        "info": {
+          "editorName": "coinShine",
+          "scale.x": 0.5,
+          "scale.y": 0.5,
+          "anchor.x": 0.5,
+          "anchor.y": 0.5,
+          "animations": [{
+            "name": "shine",
+            "frameRate": 30,
+            "loop": true,
+            "autoPlay": true,
+            "frames": [
+              "Symbol 4 instance 10000",
+              "Symbol 4 instance 10001",
+              "Symbol 4 instance 10002",
+              "Symbol 4 instance 10003",
+              "Symbol 4 instance 10004",
+              "Symbol 4 instance 10005",
+              "Symbol 4 instance 10006",
+              "Symbol 4 instance 10007",
+              "Symbol 4 instance 10008",
+              "Symbol 4 instance 10009",
+              "Symbol 4 instance 10010",
+              "Symbol 4 instance 10011",
+              "Symbol 4 instance 10012",
+              "Symbol 4 instance 10013",
+              "Symbol 4 instance 10014",
+              "Symbol 4 instance 10015",
+              "Symbol 4 instance 10016",
+              "Symbol 4 instance 10017",
+              "Symbol 4 instance 10018",
+              "Symbol 4 instance 10019",
+              "Symbol 4 instance 10020",
+              "Symbol 4 instance 10021",
+              "Symbol 4 instance 10022",
+              "Symbol 4 instance 10023",
+              "Symbol 4 instance 10024",
+              "Symbol 4 instance 10025",
+              "Symbol 4 instance 10026",
+              "Symbol 4 instance 10027",
+              "Symbol 4 instance 10028",
+              "Symbol 4 instance 10029"
+            ]
+          }],
+          "body": {
+            "type": "ARCADE_RECT",
+            "bounceY": 0.5,
+            "velocityX": 300,
+            "velocityY": 100,
+            "gravityY": 900
+          }
+        }
+      }]
+    }
+  },
+  "type": "SPRITE",
+  "asset-table": {"0": {
+    "file": "WebContent/assets/pack.json",
+    "section": "atlas",
+    "asset": "powerUps",
+    "sprite": "Symbol 4 instance 10000"
+  }},
+  "prefab-table": {}
+}
