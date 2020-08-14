@@ -88,6 +88,9 @@ Level.prototype.create = function () {
 	var _moneyText = this.add.text(133.0, 31.0, '000001', {"font":"bold 70px Arial","fill":"#ffff80","stroke":"#ff8040"});
 	_moneyText.fixedToCamera = true;
 	
+	var _jumpText = this.add.text(1779.0, 68.0, '0', {"font":"bold 50px Arial","fill":"#ffff80","stroke":"#ff8040"});
+	_jumpText.fixedToCamera = true;
+	
 	
 	
 	// fields
@@ -102,6 +105,7 @@ Level.prototype.create = function () {
 	this.fCore1 = _core1;
 	this.fCoins = _coins;
 	this.fMoneyText = _moneyText;
+	this.fJumpText = _jumpText;
 	this.myCreate();
 	
 	
@@ -139,9 +143,17 @@ const enemyXDeploy = Math.random()  * (600 - 200) + 200;
 
 if(wichItem){
 
+	const wichItem2 =  Math.random() < 0.9;
+	
 
-var _itemPowerUp = new powerUp1(this.game, this.game.width+50, enemyXDeploy);
-	this.fPowerUps.add(_itemPowerUp);
+	if(wichItem2){
+		var _itemPowerUp = new powerUp1(this.game, this.game.width+50, enemyXDeploy);
+		this.fPowerUps.add(_itemPowerUp);
+	}else{
+		var _itemPowerUp = new powerUp2(this.game, this.game.width+50, enemyXDeploy);
+		this.fPowerUps.add(_itemPowerUp);
+	}
+	
 
 
 }else{
@@ -179,7 +191,7 @@ Level.prototype.swipeDownAction = function(pointer) { //manejo de swipe control 
 	}
 
 	if(this.fPlayer.canJump){
-		this.fPlayer.body.velocity.x =  70;
+		this.fPlayer.body.velocity.x =  50;
 		this.fPlayer.body.velocity.y=-900;
 		this.fPlayer.animations.play('up');
 		this.fPlayer.canJump =  false;
@@ -190,6 +202,7 @@ Level.prototype.swipeDownAction = function(pointer) { //manejo de swipe control 
 	}else if(this.fPlayer.canDoubleJump && this.fPlayer.isFalling){
 		this.fPlayer.body.velocity.y=-1000;
 			this.fPlayer.canDoubleJump = false;
+			this.fPlayer.myDoubleJump--;
 	}
 	
 
@@ -203,7 +216,7 @@ if(platform.x>this.game.width/3){
 player.body.velocity.x = platform.body.velocity.x;	
 }else{
 
-	player.body.velocity.x = -100;	
+	player.body.velocity.x = -30;	
 }
 	
 	player.canJump =  true;
@@ -264,28 +277,78 @@ Level.prototype.getPowerUp = function (player,powerUp) {
 	
 	this.shakeAndFlash();
 	if(powerUp.myPower == 'doubleJump'){
-		player.canDoubleJump =  true;
+		player.myDoubleJump++;
+			this.fPowerText.text = 'Double Jump';
+			
+
+	}
+
+	if(powerUp.myPower == 'speedForce'){
+		if(!this.fPlayer.usingSpeedForce){
+
+
+			
+		fly = this.game.add.tween(this.fPlayer);
+		fly.to({x:this.game.width/2 , y:this.game.height/3}, 500, Phaser.Easing.Linear.None);
+		fly.start();
+
+		this.fPlayer.usingSpeedForce =  true;
+		this.fPowerText.text = 'Speed Force';
+		this.fPlayer.x = this.game.width/2;
+		this.fPlayer.y = this.game.height/3;
+		this.fPlayer.body.moves = false;
+		this.maximunStageSpeed=1000;
+		this.stageSpeed=1000;
+
+		this.timerPower = this.game.time.create(false);
+    	this.timerPower.loop(3000, slowAgain, this);
+   		this.timerPower.start();
+
+   		this.speedPowerInstance = new speedPower(this.game, this.fPlayer.x, this.fPlayer.y);
+		this.add.existing(this.speedPowerInstance);
+
+   		this.fEnemies.forEach(enemy => {
+  			enemy.speedKill =  true;
+		});
+
+   		function slowAgain(){
+			this.speedPowerInstance.destroy();
+   			this.fEnemies.forEach(enemy => {
+  			enemy.speedKill =  false;
+			});
+			this.fPlayer.usingSpeedForce =  false;
+   			this.fPlayer.body.moves = true;
+   			this.maximunStageSpeed=600;
+   			this.timerPower.destroy();
+   		}
 		
 	}
-	powerUp.destroy();
 
 			pigArrives = this.game.add.tween(this.fPowerLabel);
 		    pigArrives.to({y:-240}, 1200, Phaser.Easing.Bounce.Out);
 		    pigArrives.onComplete.add(theEnd, this);
 		    pigArrives.start();
-		    	function theEnd() {
+		    
+		    function theEnd() {
 		    
 		    e = this.game.add.tween(this.fPowerLabel);
 		    
 		    e.to({ y: -600 }, 500, Phaser.Easing.Bounce.Out);
 		    e.start();
 
-		}
+			}
+
+	
+}
+powerUp.destroy();
 
 };
 
 Level.prototype.update = function () {
 
+	if(this.fPlayer.myDoubleJump>0){
+		this.fPlayer.canDoubleJump =  true;
+	}
 	if(this.stageSpeed>=this.maximunStageSpeed){
 
 		this.stageSpeed = this.maximunStageSpeed;
@@ -296,6 +359,8 @@ Level.prototype.update = function () {
 
 	
 	this.fMoneyText.text = this.fPlayer.coins;
+	this.fJumpText.text = this.fPlayer.myDoubleJump;
+
 	this.game.physics.arcade.collide(this.fCoins , this.fPlatforms, this.coinOnPlatform, null, this);
 	this.game.physics.arcade.collide(this.fPlayer , this.fPlatforms, this.onPlatform, null, this);
 	this.game.physics.arcade.overlap(this.fPlayer , this.fEnemies, this.destroyEnemy, null, this);

@@ -48,6 +48,7 @@ player.prototype.myCreate = function() {
 	this.canDoubleJump =  false;
 	this.myDoubleJump = 0;
 	this.isFalling = false;
+	this.usingSpeedForce =  false;
 
 };
 

@@ -275,6 +275,21 @@
             "style.fill": "#ffff80",
             "style.stroke": "#ff8040"
           }
+        },
+        {
+          "type": "text",
+          "id": "031cb792-8dad-4063-8485-b5aec86fe53b",
+          "info": {
+            "editorName": "jumpText",
+            "editorField": true,
+            "x": 1779,
+            "y": 68,
+            "fixedToCamera": true,
+            "text": "0",
+            "style.fontSize": 50,
+            "style.fill": "#ffff80",
+            "style.stroke": "#ff8040"
+          }
         }
       ]
     }

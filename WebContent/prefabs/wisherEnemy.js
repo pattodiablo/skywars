@@ -46,10 +46,25 @@ wisherEnemy.prototype.myCreate = function() {
 	this.tween2Btn.chain(this.tweenBtn);
 	this.tweenBtn.start();
 	this.body.velocity.x =   Math.random()  * (500 - 300) - 300;
+	this.speedKill =  false;
 	
 };
 
+
+wisherEnemy.prototype.killedBySpeed = function() {
+	
+	const enemyPoint = new Phaser.Point(this.x,this.y);
+		if(enemyPoint.distance(this.game.state.getCurrentState﻿().fPlayer)<=500){
+			this.game.state.getCurrentState﻿().destroyEnemy(this.game.state.getCurrentState﻿().fPlayer,this);
+			
+		}
+};
+
 wisherEnemy.prototype.update = function() {
+	
+	if(this.speedKill){
+		this.killedBySpeed();
+	}
 	
 	if(this.x<=-100){
 		this.destroy();
