@@ -76,17 +76,17 @@
 	<SubTexture name="jumpPower instance 10001" x="1357" y="807" width="193" height="311"/>
 	<SubTexture name="jumpPower instance 10002" x="1551" y="807" width="193" height="311"/>
 	<SubTexture name="jumpPower instance 10003" x="1745" y="807" width="193" height="311"/>
-	<SubTexture name="jumpPower instance 10004" x="1" y="1119" width="193" height="301" frameX="0" frameY="-10" frameWidth="193" frameHeight="311"/>
+	<SubTexture name="jumpPower instance 10004" x="1" y="1119" width="193" height="311"/>
 	<SubTexture name="jumpPower instance 10005" x="195" y="1119" width="193" height="311"/>
 	<SubTexture name="jumpPower instance 10006" x="389" y="1119" width="193" height="311"/>
 	<SubTexture name="jumpPower instance 10007" x="583" y="1119" width="193" height="311"/>
 	<SubTexture name="jumpPower instance 10008" x="777" y="1119" width="193" height="311"/>
-	<SubTexture name="jumpPower instance 10009" x="971" y="1119" width="193" height="301" frameX="0" frameY="-10" frameWidth="193" frameHeight="311"/>
+	<SubTexture name="jumpPower instance 10009" x="971" y="1119" width="193" height="311"/>
 	<SubTexture name="jumpPower instance 10010" x="1165" y="1119" width="193" height="311"/>
 	<SubTexture name="jumpPower instance 10011" x="1359" y="1119" width="193" height="311"/>
 	<SubTexture name="jumpPower instance 10012" x="1553" y="1119" width="193" height="311"/>
 	<SubTexture name="jumpPower instance 10013" x="1747" y="1119" width="193" height="311"/>
-	<SubTexture name="jumpPower instance 10014" x="1" y="1431" width="193" height="301" frameX="0" frameY="-10" frameWidth="193" frameHeight="311"/>
+	<SubTexture name="jumpPower instance 10014" x="1" y="1431" width="193" height="311"/>
 	<SubTexture name="speedPower instance 10000" x="195" y="1431" width="507" height="597" pivotX="252.9" pivotY="343.45"/>
 	<SubTexture name="speedPower instance 10001" x="703" y="1431" width="507" height="597"/>
 	<SubTexture name="speedPower instance 10002" x="1211" y="1431" width="507" height="589" frameX="0" frameY="-8" frameWidth="507" frameHeight="597"/>
