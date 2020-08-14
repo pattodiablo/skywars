@@ -78,6 +78,12 @@
       "type": "script",
       "key": "building31",
       "url": "prefabs/building3.js"
+    },
+    {
+      "type": "image",
+      "key": "coin1",
+      "url": "assets/images/coin.png",
+      "overwrite": false
     }
   ],
   "atlas": [
@@ -170,7 +176,7 @@
     }
   ],
   "meta": {
-    "generated": "1597333764283",
+    "generated": "1597356291088",
     "app": "Phaser Editor",
     "url": "http://phasereditor.boniatillo.com",
     "version": "1.0",

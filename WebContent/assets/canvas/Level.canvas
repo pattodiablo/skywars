@@ -233,10 +233,8 @@
           "info": {
             "editorName": "core1",
             "editorField": true,
-            "x": 1793,
+            "x": 1728,
             "y": 32,
-            "scale.x": 0.7,
-            "scale.y": 0.7,
             "fixedToCamera": true,
             "tint": "0x808080"
           }
