@@ -272,6 +272,7 @@ Level.prototype.shakeAndFlash = function () {
 
 Level.prototype.getPowerUp = function (player,powerUp) {
 	
+	if(!this.fPlayer.usingDoubleJump || !this.fPlayer.usingSpeedForce){
 	this.shakeAndFlash();
 	if(powerUp.myPower == 'doubleJump'){
 		if(!this.fPlayer.usingDoubleJump){
@@ -341,7 +342,7 @@ Level.prototype.getPowerUp = function (player,powerUp) {
 	}
 
 			
-
+}
 	
 }
 pigArrives = this.game.add.tween(this.fPowerLabel);
