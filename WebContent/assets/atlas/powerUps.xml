@@ -72,4 +72,19 @@
 	<SubTexture name="core20017" x="665" y="808" width="165" height="235" frameX="0" frameY="-4" frameWidth="165" frameHeight="240"/>
 	<SubTexture name="core20018" x="831" y="808" width="165" height="237" frameX="0" frameY="-2" frameWidth="165" frameHeight="240"/>
 	<SubTexture name="core20019" x="997" y="808" width="165" height="240"/>
+	<SubTexture name="speedPower instance 10000" x="1163" y="808" width="507" height="507" pivotX="252.9" pivotY="252.9"/>
+	<SubTexture name="speedPower instance 10001" x="1" y="1316" width="507" height="507"/>
+	<SubTexture name="speedPower instance 10002" x="509" y="1316" width="507" height="507"/>
+	<SubTexture name="speedPower instance 10003" x="1017" y="1316" width="507" height="507"/>
+	<SubTexture name="speedPower instance 10004" x="1525" y="1316" width="507" height="507"/>
+	<SubTexture name="speedPower instance 10005" x="1" y="1824" width="507" height="507"/>
+	<SubTexture name="speedPower instance 10006" x="509" y="1824" width="507" height="507"/>
+	<SubTexture name="speedPower instance 10007" x="1017" y="1824" width="507" height="507"/>
+	<SubTexture name="speedPower instance 10008" x="1525" y="1824" width="507" height="507"/>
+	<SubTexture name="speedPower instance 10009" x="1" y="2332" width="507" height="507"/>
+	<SubTexture name="speedPower instance 10010" x="509" y="2332" width="507" height="507"/>
+	<SubTexture name="speedPower instance 10011" x="1017" y="2332" width="507" height="507"/>
+	<SubTexture name="speedPower instance 10012" x="1525" y="2332" width="507" height="507"/>
+	<SubTexture name="speedPower instance 10013" x="1" y="2840" width="507" height="507"/>
+	<SubTexture name="speedPower instance 10014" x="509" y="2840" width="507" height="507"/>
 </TextureAtlas>
