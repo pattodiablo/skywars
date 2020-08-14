@@ -40,7 +40,7 @@ building1.prototype.myCreate = function() {
 building1.prototype.update = function() {
 	this.body.velocity.x = -this.game.state.getCurrentState﻿().stageSpeed;
 if(this.x <= -this.width){
-	const variableDistance = Math.random()* (650 - 300) + 300;
+	const variableDistance = Math.random()* (1600 - 1200) + 1200;
 	this.x = this.game.state.getCurrentState﻿().fPlatforms.width-variableDistance;
 
 	}

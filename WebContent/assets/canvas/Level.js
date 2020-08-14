@@ -53,16 +53,13 @@ Level.prototype.create = function () {
 	var _building = new building1(this.game, 0.0, 830.0);
 	_platforms.add(_building);
 	
-	var _build = new building1(this.game, 1129.0, 735.0);
-	_platforms.add(_build);
-	
-	var _building2Tower = new building2(this.game, 3303.0, 652.0);
+	var _building2Tower = new building2(this.game, 3198.0, 652.0);
 	_platforms.add(_building2Tower);
 	
 	var _building3Tower = new building3(this.game, 2293.0, 630.0);
 	_platforms.add(_building3Tower);
 	
-	var _build2 = new building1(this.game, 4437.0, 647.0);
+	var _build2 = new building1(this.game, 4604.0, 659.0);
 	_platforms.add(_build2);
 	
 	var _player = new player(this.game, 465.0, 512.0);
@@ -91,9 +88,6 @@ Level.prototype.create = function () {
 	var _moneyText = this.add.text(133.0, 31.0, '000001', {"font":"bold 70px Arial","fill":"#ffff80","stroke":"#ff8040"});
 	_moneyText.fixedToCamera = true;
 	
-	var _jumpText = this.add.text(1779.0, 68.0, '0', {"font":"bold 50px Arial","fill":"#ffff80","stroke":"#ff8040"});
-	_jumpText.fixedToCamera = true;
-	
 	
 	
 	// fields
@@ -108,7 +102,6 @@ Level.prototype.create = function () {
 	this.fCore1 = _core1;
 	this.fCoins = _coins;
 	this.fMoneyText = _moneyText;
-	this.fJumpText = _jumpText;
 	this.myCreate();
 	
 	
@@ -133,7 +126,7 @@ Level.prototype.myCreate = function () {
 	this.jumpPower = -900;
 
     enemyDeployTimer = this.game.time.create(false);
-    enemyDeployTimer.loop(2000, this.deployItems, this);
+    enemyDeployTimer.loop(1500, this.deployItems, this);
     enemyDeployTimer.start();
 	//this.setupCoinEmitter();
 
@@ -204,7 +197,7 @@ Level.prototype.swipeDownAction = function(pointer) { //manejo de swipe control 
 		
 	}else if(this.fPlayer.canDoubleJump && this.fPlayer.isFalling){
 		this.fPlayer.body.velocity.y=-1000;
-			this.fPlayer.canDoubleJump = false;
+			//this.fPlayer.canDoubleJump = false;
 			this.fPlayer.myDoubleJump--;
 	}
 	
@@ -257,6 +250,7 @@ Level.prototype.destroyEnemy = function (player, enemy) {
 		enemy.tweenBtn.stop();
 		enemy.body.velocity.x=800;
 		enemy.body.gravity.y=1200;
+		
 	}
 };
 
@@ -280,9 +274,21 @@ Level.prototype.getPowerUp = function (player,powerUp) {
 	
 	this.shakeAndFlash();
 	if(powerUp.myPower == 'doubleJump'){
-		player.myDoubleJump++;
-			this.fPowerText.text = 'Double Jump';
-			
+
+			player.myDoubleJump++;
+			player.canDoubleJump=true;
+			this.fPowerText.text = 'Jump and Destroy';
+		
+			this.timerPower2 = this.game.time.create(false);
+	    	this.timerPower2.loop(5000, quitDoubleJump, this);
+	   		this.timerPower2.start();
+
+   			function quitDoubleJump(){
+   				console.log('power up disabled');
+			player.canDoubleJump=false;
+   			this.timerPower2.destroy();
+
+   			}
 
 	}
 
@@ -327,7 +333,11 @@ Level.prototype.getPowerUp = function (player,powerUp) {
 		
 	}
 
-			pigArrives = this.game.add.tween(this.fPowerLabel);
+			
+
+	
+}
+pigArrives = this.game.add.tween(this.fPowerLabel);
 		    pigArrives.to({y:-240}, 1200, Phaser.Easing.Bounce.Out);
 		    pigArrives.onComplete.add(theEnd, this);
 		    pigArrives.start();
@@ -340,9 +350,6 @@ Level.prototype.getPowerUp = function (player,powerUp) {
 		    e.start();
 
 			}
-
-	
-}
 powerUp.destroy();
 
 };
@@ -362,7 +369,7 @@ Level.prototype.update = function () {
 
 	
 	this.fMoneyText.text = this.fPlayer.coins;
-	this.fJumpText.text = this.fPlayer.myDoubleJump;
+	
 
 	this.game.physics.arcade.collide(this.fCoins , this.fPlatforms, this.coinOnPlatform, null, this);
 	this.game.physics.arcade.collide(this.fPlayer , this.fPlatforms, this.onPlatform, null, this);
