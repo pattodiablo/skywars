@@ -76,8 +76,7 @@ Level.prototype.create = function () {
 	
 	this.add.text(91.0, 453.0, 'you got', {"font":"bold 30px Arial","fill":"#ffffff","stroke":"#ffffff"}, _powerLabel);
 	
-	var _core1 = this.add.sprite(1793.0, 32.0, 'core1');
-	_core1.scale.set(0.7, 0.7);
+	var _core1 = this.add.sprite(1728.0, 32.0, 'core1');
 	_core1.fixedToCamera = true;
 	_core1.tint = 0x808080;
 	
@@ -129,7 +128,7 @@ Level.prototype.myCreate = function () {
     enemyDeployTimer = this.game.time.create(false);
     enemyDeployTimer.loop(2000, this.deployItems, this);
     enemyDeployTimer.start();
-	
+	//this.setupCoinEmitter();
 
 };
 
@@ -236,7 +235,7 @@ Level.prototype.destroyEnemy = function (player, enemy) {
 			var _kickPower = new kickPower(this.game, enemy.x, enemy.y);
 			_kickPower.alpha = 0.5;
 		this.shakeAndFlash();
-		this.createCoins(enemy);
+		this.createCoins(enemy.x,enemy.y,300);
 		this.add.existing(_kickPower);
 		enemy.animations.play('kicked');
 		enemy.tweenBtn.stop();
@@ -245,10 +244,13 @@ Level.prototype.destroyEnemy = function (player, enemy) {
 	}
 };
 
-Level.prototype.createCoins = function (enemy) {
 
-	var _coin = new coin(this.game, enemy.x, enemy.y);
-	_coin.body.velocity.y=Math.random()*300;
+
+Level.prototype.createCoins = function (x,y,velo) {
+
+	var _coin = new coin(this.game, x, y);
+	_coin.body.velocity.y=Math.random()*velo;
+	_coin.body.velocity.x=Math.random()*velo;
 	this.fCoins.add(_coin);
 
 }
@@ -302,6 +304,10 @@ Level.prototype.update = function () {
 	if(this.fPlayer.y>=this.game.height+100){ //muere die lost loose
 		this.fPlayer.coins-=10;
 		this.fPlayer.y = -50;
+		for(var i = 0 ; i<=15; i++){
+			this.createCoins(this.game.width/2,0,1500);
+		}
+	
 		this.fPlayer.x = this.game.width/2;
 		this.shakeAndFlash();
 	}

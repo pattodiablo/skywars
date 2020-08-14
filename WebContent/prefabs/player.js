@@ -41,14 +41,17 @@ player.prototype.constructor = player;
 // -- user code here --
 player.prototype.myCreate = function() {
 	
-	this.coins = 0;
+	this.coins = 50;
 	this.canJump =  false;	
 	this.isKicking = false;
 	this.canKick = false;
 	this.canDoubleJump =  false;
 	this.myDoubleJump = 0;
 	this.isFalling = false;
+
 };
+
+
 
 player.prototype.update = function() {
 		
