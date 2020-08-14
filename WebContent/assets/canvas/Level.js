@@ -62,6 +62,9 @@ Level.prototype.create = function () {
 	var _building3Tower = new building3(this.game, 2293.0, 630.0);
 	_platforms.add(_building3Tower);
 	
+	var _build2 = new building1(this.game, 4437.0, 647.0);
+	_platforms.add(_build2);
+	
 	var _player = new player(this.game, 465.0, 512.0);
 	this.add.existing(_player);
 	
@@ -143,7 +146,7 @@ const enemyXDeploy = Math.random()  * (600 - 200) + 200;
 
 if(wichItem){
 
-	const wichItem2 =  Math.random() < 0.9;
+	const wichItem2 =  Math.random() < 0.7;
 	
 
 	if(wichItem2){
