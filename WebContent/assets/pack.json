@@ -173,10 +173,20 @@
       "type": "script",
       "key": "coin",
       "url": "prefabs/coin.js"
+    },
+    {
+      "type": "script",
+      "key": "powerUp2",
+      "url": "prefabs/powerUp2.js"
+    },
+    {
+      "type": "script",
+      "key": "speedPower",
+      "url": "prefabs/speedPower.js"
     }
   ],
   "meta": {
-    "generated": "1597356291088",
+    "generated": "1597420973253",
     "app": "Phaser Editor",
     "url": "http://phasereditor.boniatillo.com",
     "version": "1.0",

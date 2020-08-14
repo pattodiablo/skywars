@@ -1,0 +1,83 @@
+{
+  "canvas-version": 2,
+  "settings": {
+    "className": "speedPower",
+    "sceneWidth": 640,
+    "sceneHeight": 360,
+    "generateOnSave": true,
+    "enableStepping": false,
+    "lang": "JAVA_SCRIPT",
+    "baseClass": "Phaser.Sprite",
+    "backgroundColor": [
+      180,
+      180,
+      180
+    ],
+    "gridColor": [
+      200,
+      200,
+      200
+    ],
+    "showGrid": true
+  },
+  "stateSettings": {
+    "stageBackgroundColor": [
+      0,
+      0,
+      0
+    ],
+    "autoLoad": true,
+    "preloadSpriteId": "",
+    "preloadSprite_direction": 0,
+    "load.pack": []
+  },
+  "world": {
+    "type": "group",
+    "id": "dc6390fd-7d8d-4886-b726-7b3b9036d15a",
+    "info": {
+      "editorName": "speedPower",
+      "setAll": [],
+      "children": [{
+        "type": "atlas-sprite",
+        "id": "1027f7de-f847-4e6d-8a2e-1467cbbaa214",
+        "asset": "0",
+        "info": {
+          "editorName": "speedPower_instance_10014",
+          "anchor.x": 0.5,
+          "anchor.y": 0.5,
+          "animations": [{
+            "name": "power",
+            "frameRate": 30,
+            "loop": true,
+            "autoPlay": true,
+            "frames": [
+              "speedPower instance 10000",
+              "speedPower instance 10001",
+              "speedPower instance 10002",
+              "speedPower instance 10003",
+              "speedPower instance 10004",
+              "speedPower instance 10005",
+              "speedPower instance 10006",
+              "speedPower instance 10007",
+              "speedPower instance 10008",
+              "speedPower instance 10009",
+              "speedPower instance 10010",
+              "speedPower instance 10011",
+              "speedPower instance 10012",
+              "speedPower instance 10013",
+              "speedPower instance 10014"
+            ]
+          }]
+        }
+      }]
+    }
+  },
+  "type": "SPRITE",
+  "asset-table": {"0": {
+    "file": "WebContent/assets/pack.json",
+    "section": "atlas",
+    "asset": "powerUps",
+    "sprite": "speedPower instance 10014"
+  }},
+  "prefab-table": {}
+}
