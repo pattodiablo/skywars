@@ -274,9 +274,14 @@ Level.prototype.getPowerUp = function (player,powerUp) {
 	
 	this.shakeAndFlash();
 	if(powerUp.myPower == 'doubleJump'){
+		if(!this.fPlayer.usingDoubleJump){
 
+			this._jumpPower_instance_ = new jumpPower(this.game, this.fPlayer.x, this.fPlayer.y);
+			this.add.existing(this._jumpPower_instance_);
+	
 			player.myDoubleJump++;
 			player.canDoubleJump=true;
+			this.fPlayer.usingDoubleJump =  true;
 			this.fPowerText.text = 'Jump and Destroy';
 		
 			this.timerPower2 = this.game.time.create(false);
@@ -284,12 +289,14 @@ Level.prototype.getPowerUp = function (player,powerUp) {
 	   		this.timerPower2.start();
 
    			function quitDoubleJump(){
+   				this._jumpPower_instance_.destroy();
    				console.log('power up disabled');
-			player.canDoubleJump=false;
-   			this.timerPower2.destroy();
+   				this.fPlayer.usingDoubleJump =  false;
+				player.canDoubleJump=false;
+	   			this.timerPower2.destroy();
 
    			}
-
+		}
 	}
 
 	if(powerUp.myPower == 'speedForce'){

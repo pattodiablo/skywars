@@ -1,0 +1,83 @@
+{
+  "canvas-version": 2,
+  "settings": {
+    "className": "jumpPower",
+    "sceneWidth": 640,
+    "sceneHeight": 360,
+    "generateOnSave": true,
+    "enableStepping": false,
+    "lang": "JAVA_SCRIPT",
+    "baseClass": "Phaser.Sprite",
+    "backgroundColor": [
+      180,
+      180,
+      180
+    ],
+    "gridColor": [
+      200,
+      200,
+      200
+    ],
+    "showGrid": true
+  },
+  "stateSettings": {
+    "stageBackgroundColor": [
+      0,
+      0,
+      0
+    ],
+    "autoLoad": true,
+    "preloadSpriteId": "",
+    "preloadSprite_direction": 0,
+    "load.pack": []
+  },
+  "world": {
+    "type": "group",
+    "id": "c1a77082-e7c0-4491-ad6b-368cdb4a87fa",
+    "info": {
+      "editorName": "jumpPower",
+      "setAll": [],
+      "children": [{
+        "type": "atlas-sprite",
+        "id": "7f27c9a8-5513-4d1a-b11a-d68a44e27ad9",
+        "asset": "0",
+        "info": {
+          "editorName": "jumpPower_instance_10014",
+          "anchor.x": 0.5,
+          "anchor.y": 0.7,
+          "animations": [{
+            "name": "power",
+            "frameRate": 30,
+            "loop": true,
+            "autoPlay": true,
+            "frames": [
+              "jumpPower instance 10000",
+              "jumpPower instance 10001",
+              "jumpPower instance 10002",
+              "jumpPower instance 10003",
+              "jumpPower instance 10004",
+              "jumpPower instance 10005",
+              "jumpPower instance 10006",
+              "jumpPower instance 10007",
+              "jumpPower instance 10008",
+              "jumpPower instance 10009",
+              "jumpPower instance 10010",
+              "jumpPower instance 10011",
+              "jumpPower instance 10012",
+              "jumpPower instance 10013",
+              "jumpPower instance 10014"
+            ]
+          }]
+        }
+      }]
+    }
+  },
+  "type": "SPRITE",
+  "asset-table": {"0": {
+    "file": "WebContent/assets/pack.json",
+    "section": "atlas",
+    "asset": "powerUps",
+    "sprite": "jumpPower instance 10014"
+  }},
+  "prefab-table": {}
+}
