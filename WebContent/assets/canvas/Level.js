@@ -69,6 +69,9 @@ Level.prototype.create = function () {
 	
 	var _powerUps = this.add.group();
 	
+	var _core = new powerUp3(this.game, 1095.0, 509.0);
+	_powerUps.add(_core);
+	
 	var _powerLabel = this.add.group();
 	_powerLabel.position.set(0.0, -595.0);
 	
@@ -88,6 +91,8 @@ Level.prototype.create = function () {
 	var _moneyText = this.add.text(133.0, 31.0, '000001', {"font":"bold 70px Arial","fill":"#ffff80","stroke":"#ff8040"});
 	_moneyText.fixedToCamera = true;
 	
+	var _bullets = this.add.physicsGroup(Phaser.Physics.ARCADE);
+	
 	
 	
 	// fields
@@ -102,6 +107,7 @@ Level.prototype.create = function () {
 	this.fCore1 = _core1;
 	this.fCoins = _coins;
 	this.fMoneyText = _moneyText;
+	this.fBullets = _bullets;
 	this.myCreate();
 	
 	
@@ -139,15 +145,24 @@ const enemyXDeploy = Math.random()  * (550 - 200) + 200;
 
 if(wichItem){
 
-	const wichItem2 =  Math.random() < 0.9;
+	const wichItem2 =  Math.random() < 0.8;
 	
 
 	if(wichItem2){
 		var _itemPowerUp = new powerUp1(this.game, this.game.width+50, enemyXDeploy);
 		this.fPowerUps.add(_itemPowerUp);
 	}else{
-		var _itemPowerUp = new powerUp2(this.game, this.game.width+50, enemyXDeploy);
-		this.fPowerUps.add(_itemPowerUp);
+		
+			const wichItem3 =  Math.random() < 0.5;
+			
+			if(wichItem3){
+				var _itemPowerUp = new powerUp2(this.game, this.game.width+50, enemyXDeploy);
+				this.fPowerUps.add(_itemPowerUp);
+			}else{
+				var _itemPowerUp = new powerUp3(this.game, this.game.width+50, enemyXDeploy);
+				this.fPowerUps.add(_itemPowerUp);
+			}
+		
 	}
 	
 
@@ -243,22 +258,28 @@ Level.prototype.destroyEnemy = function (player, enemy) {
 	if(player.isKicking){
 			var _kickPower = new kickPower(this.game, enemy.x, enemy.y);
 			_kickPower.alpha = 0.5;
-		this.shakeAndFlash();
-		this.createCoins(enemy.x,enemy.y,300);
-		this.add.existing(_kickPower);
-		enemy.animations.play('kicked');
-		enemy.tweenBtn.stop();
-		enemy.body.velocity.x=800;
-		enemy.body.gravity.y=1200;
+			this.shakeAndFlash();
+			this.createCoins(enemy.x,enemy.y,300,false);
+			this.add.existing(_kickPower);
+			enemy.animations.play('kicked');
+			enemy.tweenBtn.stop();
+			enemy.body.velocity.x=800;
+			enemy.body.gravity.y=1200;
 		
 	}
 };
 
+Level.prototype.destroyEnemyWithBullet = function (bullet, enemy) {	
+		this.shakeAndFlash();
+		this.createCoins(enemy.x,enemy.y,-800,true);
+		enemy.body.velocity.x=800;
+		enemy.body.gravity.y=1200;
+};
 
-
-Level.prototype.createCoins = function (x,y,velo) {
+Level.prototype.createCoins = function (x,y,velo,killedByBullet) {
 
 	var _coin = new coin(this.game, x, y);
+	_coin.killedByBullet = killedByBullet;
 	_coin.body.velocity.y=Math.random()*velo;
 	_coin.body.velocity.x=Math.random()*velo;
 	this.fCoins.add(_coin);
@@ -272,8 +293,25 @@ Level.prototype.shakeAndFlash = function () {
 
 Level.prototype.getPowerUp = function (player,powerUp) {
 	
-	if(!this.fPlayer.usingDoubleJump || !this.fPlayer.usingSpeedForce){
+	if(!this.fPlayer.usingDoubleJump || !this.fPlayer.usingSpeedForce || !this.fPlayer.canShot){
 	this.shakeAndFlash();
+		if(powerUp.myPower == 'SuperShot'){
+			console.log('i got superShot');
+			this.fPowerText.text = 'Super Shot';
+			player.canShot=true;
+			
+			this.timerPower3 = this.game.time.create(false);
+	    	this.timerPower3.loop(6000, quitSuperShot, this);
+	   		this.timerPower3.start();
+
+   			function quitSuperShot(){
+   			player.canShot=false;
+				player.canShot=false;
+				player.enableShootOnce =true;
+			this.timerPower3.destroy();
+   			}
+			
+		}
 	if(powerUp.myPower == 'doubleJump'){
 		if(!this.fPlayer.usingDoubleJump){
 
@@ -378,7 +416,7 @@ Level.prototype.update = function () {
 	
 	this.fMoneyText.text = this.fPlayer.coins;
 	
-
+	this.game.physics.arcade.collide(this.fBullets , this.fEnemies, this.destroyEnemyWithBullet, null, this);
 	this.game.physics.arcade.collide(this.fCoins , this.fPlatforms, this.coinOnPlatform, null, this);
 	this.game.physics.arcade.collide(this.fPlayer , this.fPlatforms, this.onPlatform, null, this);
 	this.game.physics.arcade.overlap(this.fPlayer , this.fEnemies, this.destroyEnemy, null, this);

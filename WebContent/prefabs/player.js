@@ -50,13 +50,40 @@ player.prototype.myCreate = function() {
 	this.isFalling = false;
 	this.usingSpeedForce =  false;
 	this.usingDoubleJump =  false;
+	this.canShot = false;
+	this.enableShootOnce = true;
+	this.shootTimer = this.game.time.create(false);
 
 };
 
+player.prototype.enaBleShooting = function() {
 
+	
 
-player.prototype.update = function() {
+    this.shootTimer.loop(500, function(){
+		var _Fireshot = new shot(this.game, this.x+this.width/2, this.y);
+		this.game.state.getCurrentState().fBullets.add(_Fireshot);
 		
+	} , this);
+
+    this.shootTimer.start();
+}
+
+player.prototype.fire = function() {
+
+	
+	
+}
+player.prototype.update = function() {
+
+if(this.canShot && this.enableShootOnce){
+	this.enaBleShooting();
+	this.enableShootOnce = false;
+}
+	
+if(!this.canShot){
+	this.shootTimer.destroy();
+}
 
 if(this.coins <= 0 ){
 

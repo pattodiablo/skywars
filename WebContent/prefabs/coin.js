@@ -40,9 +40,9 @@ coin.prototype.constructor = coin;
 coin.prototype.myCreate = function() {
 	
     this.enemyDeployTimer = this.game.time.create(false);
-    this. enemyDeployTimer.loop(500, this.retriveCoin, this);
+    this.enemyDeployTimer.loop(500, this.retriveCoin, this);
     this.enemyDeployTimer.start();
-    
+    this.killedByBullet =  false;
     
 };
 
@@ -50,10 +50,10 @@ coin.prototype.retriveCoin = function() {
 	
 	this.enemyDeployTimer.destroy();
 	this.myPoint =  new Phaser.Point(this.x,this.y);
-	const distance = Math.abs(this.myPoint.distance(this.game.state.getCurrentState﻿().fPlayer));
+	const distance = Math.abs(this.myPoint.distance(this.game.state.getCurrentState().fPlayer));
 	
 	
-	if(distance <= 300){
+	if(distance <= 300 || this.killedByBullet){
 		tween = this.game.add.tween(this);
 		tween.to({x:0,y:30}, 500, Phaser.Easing.Linear.None);
 		tween.onComplete.add(this.captureCoin, this);

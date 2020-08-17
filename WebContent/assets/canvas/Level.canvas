@@ -184,7 +184,22 @@
             "editorName": "powerUps",
             "editorField": true,
             "setAll": [],
-            "children": []
+            "children": [{
+              "type": "prefab",
+              "prefab": "5",
+              "id": "11e72016-f3fb-4695-8ee0-bada43ea2368",
+              "asset-ref": {
+                "file": "WebContent/assets/pack.json",
+                "section": "atlas",
+                "asset": "powerUps",
+                "sprite": "core30000"
+              },
+              "info": {
+                "editorName": "core",
+                "x": 1095,
+                "y": 509
+              }
+            }]
           }
         },
         {
@@ -275,6 +290,17 @@
             "style.fill": "#ffff80",
             "style.stroke": "#ff8040"
           }
+        },
+        {
+          "type": "group",
+          "id": "e4d295ee-f184-4a66-a6fa-596eda4801ad",
+          "info": {
+            "editorName": "bullets",
+            "editorField": true,
+            "physicsGroup": true,
+            "setAll": [],
+            "children": []
+          }
         }
       ]
     }
@@ -303,6 +329,7 @@
     "1": "WebContent/prefabs/building1.canvas",
     "2": "WebContent/prefabs/building2.canvas",
     "3": "WebContent/prefabs/building3.canvas",
-    "4": "WebContent/prefabs/player.canvas"
+    "4": "WebContent/prefabs/player.canvas",
+    "5": "WebContent/prefabs/powerUp3.canvas"
   }
 }

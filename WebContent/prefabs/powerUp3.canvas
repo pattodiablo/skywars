@@ -1,0 +1,98 @@
+{
+  "canvas-version": 2,
+  "settings": {
+    "className": "powerUp3",
+    "sceneWidth": 640,
+    "sceneHeight": 360,
+    "generateOnSave": true,
+    "enableStepping": false,
+    "lang": "JAVA_SCRIPT",
+    "baseClass": "Phaser.Sprite",
+    "backgroundColor": [
+      180,
+      180,
+      180
+    ],
+    "gridColor": [
+      200,
+      200,
+      200
+    ],
+    "showGrid": true,
+    "create_after": "this.myCreate();"
+  },
+  "stateSettings": {
+    "stageBackgroundColor": [
+      0,
+      0,
+      0
+    ],
+    "autoLoad": true,
+    "preloadSpriteId": "",
+    "preloadSprite_direction": 0,
+    "load.pack": []
+  },
+  "world": {
+    "type": "group",
+    "id": "32a89e34-b3a2-491a-b63a-3a30735c5f21",
+    "info": {
+      "editorName": "powerUp3",
+      "setAll": [],
+      "children": [{
+        "type": "atlas-sprite",
+        "id": "b9e69def-a677-4ad6-9174-beaf00c9e1b2",
+        "asset": "0",
+        "info": {
+          "editorName": "core30000",
+          "scale.x": 0.7,
+          "scale.y": 0.7,
+          "anchor.x": 0.5,
+          "anchor.y": 0.5,
+          "animations": [{
+            "name": "powering",
+            "frameRate": 30,
+            "loop": true,
+            "autoPlay": true,
+            "frames": [
+              "core30000",
+              "core30001",
+              "core30002",
+              "core30003",
+              "core30004",
+              "core30005",
+              "core30006",
+              "core30007",
+              "core30008",
+              "core30009",
+              "core30010",
+              "core30011",
+              "core30012",
+              "core30013",
+              "core30014",
+              "core30015",
+              "core30016",
+              "core30017",
+              "core30018",
+              "core30019"
+            ]
+          }],
+          "body": {
+            "type": "ARCADE_CIRCLE",
+            "offsetX": 24.28571319580078,
+            "offsetY": 99.99999237060547,
+            "velocityX": -400,
+            "radius": 62.5
+          }
+        }
+      }]
+    }
+  },
+  "type": "SPRITE",
+  "asset-table": {"0": {
+    "file": "WebContent/assets/pack.json",
+    "section": "atlas",
+    "asset": "powerUps",
+    "sprite": "core30000"
+  }},
+  "prefab-table": {}
+}

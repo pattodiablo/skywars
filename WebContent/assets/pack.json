@@ -188,10 +188,20 @@
       "type": "script",
       "key": "jumpPower",
       "url": "prefabs/jumpPower.js"
+    },
+    {
+      "type": "script",
+      "key": "shot",
+      "url": "prefabs/shot.js"
+    },
+    {
+      "type": "script",
+      "key": "powerUp3",
+      "url": "prefabs/powerUp3.js"
     }
   ],
   "meta": {
-    "generated": "1597437678540",
+    "generated": "1597680299740",
     "app": "Phaser Editor",
     "url": "http://phasereditor.boniatillo.com",
     "version": "1.0",
