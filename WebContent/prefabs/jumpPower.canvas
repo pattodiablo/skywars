@@ -47,7 +47,7 @@
           "anchor.y": 0.7,
           "animations": [{
             "name": "power",
-            "frameRate": 30,
+            "frameRate": 15,
             "loop": true,
             "autoPlay": true,
             "frames": [
