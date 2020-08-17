@@ -26,80 +26,85 @@
 	<SubTexture name="Symbol 4 instance 10021" x="1786" y="1" width="84" height="87"/>
 	<SubTexture name="Symbol 4 instance 10022" x="1871" y="1" width="84" height="87"/>
 	<SubTexture name="Symbol 4 instance 10023" x="1956" y="1" width="84" height="87"/>
-	<SubTexture name="Symbol 4 instance 10024" x="1" y="89" width="84" height="87"/>
-	<SubTexture name="Symbol 4 instance 10025" x="86" y="89" width="84" height="87"/>
-	<SubTexture name="Symbol 4 instance 10026" x="171" y="89" width="84" height="87"/>
-	<SubTexture name="Symbol 4 instance 10027" x="256" y="89" width="84" height="87"/>
-	<SubTexture name="Symbol 4 instance 10028" x="341" y="89" width="84" height="87"/>
-	<SubTexture name="Symbol 4 instance 10029" x="426" y="89" width="84" height="87"/>
-	<SubTexture name="core10000" x="511" y="89" width="165" height="239" pivotX="84.55" pivotY="117.75"/>
-	<SubTexture name="core10001" x="677" y="89" width="165" height="237" frameX="0" frameY="-2" frameWidth="165" frameHeight="239"/>
-	<SubTexture name="core10002" x="843" y="89" width="165" height="234" frameX="0" frameY="-4" frameWidth="165" frameHeight="239"/>
-	<SubTexture name="core10003" x="1009" y="89" width="165" height="232" frameX="0" frameY="-6" frameWidth="165" frameHeight="239"/>
-	<SubTexture name="core10004" x="1175" y="89" width="165" height="230" frameX="0" frameY="-8" frameWidth="165" frameHeight="239"/>
-	<SubTexture name="core10005" x="1341" y="89" width="165" height="228" frameX="0" frameY="-9" frameWidth="165" frameHeight="239"/>
-	<SubTexture name="core10006" x="1507" y="89" width="165" height="226" frameX="0" frameY="-11" frameWidth="165" frameHeight="239"/>
-	<SubTexture name="core10007" x="1673" y="89" width="165" height="223" frameX="0" frameY="-13" frameWidth="165" frameHeight="239"/>
-	<SubTexture name="core10008" x="1839" y="89" width="165" height="221" frameX="0" frameY="-15" frameWidth="165" frameHeight="239"/>
-	<SubTexture name="core10009" x="1" y="329" width="165" height="218" frameX="0" frameY="-17" frameWidth="165" frameHeight="239"/>
-	<SubTexture name="core10010" x="167" y="329" width="165" height="221" frameX="0" frameY="-15" frameWidth="165" frameHeight="239"/>
-	<SubTexture name="core10011" x="333" y="329" width="165" height="222" frameX="0" frameY="-14" frameWidth="165" frameHeight="239"/>
-	<SubTexture name="core10012" x="499" y="329" width="165" height="225" frameX="0" frameY="-12" frameWidth="165" frameHeight="239"/>
-	<SubTexture name="core10013" x="665" y="329" width="165" height="227" frameX="0" frameY="-10" frameWidth="165" frameHeight="239"/>
-	<SubTexture name="core10014" x="831" y="329" width="165" height="228" frameX="0" frameY="-9" frameWidth="165" frameHeight="239"/>
-	<SubTexture name="core10015" x="997" y="329" width="165" height="231" frameX="0" frameY="-7" frameWidth="165" frameHeight="239"/>
-	<SubTexture name="core10016" x="1163" y="329" width="165" height="233" frameX="0" frameY="-5" frameWidth="165" frameHeight="239"/>
-	<SubTexture name="core10017" x="1329" y="329" width="165" height="236" frameX="0" frameY="-3" frameWidth="165" frameHeight="239"/>
-	<SubTexture name="core10018" x="1495" y="329" width="165" height="237" frameX="0" frameY="-2" frameWidth="165" frameHeight="239"/>
-	<SubTexture name="core10019" x="1661" y="329" width="165" height="239"/>
-	<SubTexture name="core20000" x="1827" y="329" width="165" height="239" pivotX="84.55" pivotY="117.75"/>
-	<SubTexture name="core20001" x="1" y="569" width="165" height="237" frameX="0" frameY="-2" frameWidth="165" frameHeight="239"/>
-	<SubTexture name="core20002" x="167" y="569" width="165" height="234" frameX="0" frameY="-4" frameWidth="165" frameHeight="239"/>
-	<SubTexture name="core20003" x="333" y="569" width="165" height="232" frameX="0" frameY="-6" frameWidth="165" frameHeight="239"/>
-	<SubTexture name="core20004" x="499" y="569" width="165" height="230" frameX="0" frameY="-8" frameWidth="165" frameHeight="239"/>
-	<SubTexture name="core20005" x="665" y="569" width="165" height="228" frameX="0" frameY="-9" frameWidth="165" frameHeight="239"/>
-	<SubTexture name="core20006" x="831" y="569" width="165" height="226" frameX="0" frameY="-11" frameWidth="165" frameHeight="239"/>
-	<SubTexture name="core20007" x="997" y="569" width="165" height="223" frameX="0" frameY="-13" frameWidth="165" frameHeight="239"/>
-	<SubTexture name="core20008" x="1163" y="569" width="165" height="221" frameX="0" frameY="-15" frameWidth="165" frameHeight="239"/>
-	<SubTexture name="core20009" x="1329" y="569" width="165" height="218" frameX="0" frameY="-17" frameWidth="165" frameHeight="239"/>
-	<SubTexture name="core20010" x="1495" y="569" width="165" height="221" frameX="0" frameY="-15" frameWidth="165" frameHeight="239"/>
-	<SubTexture name="core20011" x="1661" y="569" width="165" height="222" frameX="0" frameY="-14" frameWidth="165" frameHeight="239"/>
-	<SubTexture name="core20012" x="1827" y="569" width="165" height="225" frameX="0" frameY="-12" frameWidth="165" frameHeight="239"/>
-	<SubTexture name="core20013" x="1" y="807" width="165" height="227" frameX="0" frameY="-10" frameWidth="165" frameHeight="239"/>
-	<SubTexture name="core20014" x="167" y="807" width="165" height="228" frameX="0" frameY="-9" frameWidth="165" frameHeight="239"/>
-	<SubTexture name="core20015" x="333" y="807" width="165" height="231" frameX="0" frameY="-7" frameWidth="165" frameHeight="239"/>
-	<SubTexture name="core20016" x="499" y="807" width="165" height="233" frameX="0" frameY="-5" frameWidth="165" frameHeight="239"/>
-	<SubTexture name="core20017" x="665" y="807" width="165" height="236" frameX="0" frameY="-3" frameWidth="165" frameHeight="239"/>
-	<SubTexture name="core20018" x="831" y="807" width="165" height="237" frameX="0" frameY="-2" frameWidth="165" frameHeight="239"/>
-	<SubTexture name="core20019" x="997" y="807" width="165" height="239"/>
-	<SubTexture name="jumpPower instance 10000" x="1163" y="807" width="193" height="311" pivotX="95.85" pivotY="211.3"/>
-	<SubTexture name="jumpPower instance 10001" x="1357" y="807" width="193" height="311"/>
-	<SubTexture name="jumpPower instance 10002" x="1551" y="807" width="193" height="311"/>
-	<SubTexture name="jumpPower instance 10003" x="1745" y="807" width="193" height="311"/>
-	<SubTexture name="jumpPower instance 10004" x="1" y="1119" width="193" height="311"/>
-	<SubTexture name="jumpPower instance 10005" x="195" y="1119" width="193" height="311"/>
-	<SubTexture name="jumpPower instance 10006" x="389" y="1119" width="193" height="311"/>
-	<SubTexture name="jumpPower instance 10007" x="583" y="1119" width="193" height="311"/>
-	<SubTexture name="jumpPower instance 10008" x="777" y="1119" width="193" height="311"/>
-	<SubTexture name="jumpPower instance 10009" x="971" y="1119" width="193" height="311"/>
-	<SubTexture name="jumpPower instance 10010" x="1165" y="1119" width="193" height="311"/>
-	<SubTexture name="jumpPower instance 10011" x="1359" y="1119" width="193" height="311"/>
-	<SubTexture name="jumpPower instance 10012" x="1553" y="1119" width="193" height="311"/>
-	<SubTexture name="jumpPower instance 10013" x="1747" y="1119" width="193" height="311"/>
-	<SubTexture name="jumpPower instance 10014" x="1" y="1431" width="193" height="311"/>
-	<SubTexture name="speedPower instance 10000" x="195" y="1431" width="507" height="597" pivotX="252.9" pivotY="343.45"/>
-	<SubTexture name="speedPower instance 10001" x="703" y="1431" width="507" height="597"/>
-	<SubTexture name="speedPower instance 10002" x="1211" y="1431" width="507" height="589" frameX="0" frameY="-8" frameWidth="507" frameHeight="597"/>
-	<SubTexture name="speedPower instance 10003" x="1" y="2029" width="507" height="597"/>
-	<SubTexture name="speedPower instance 10004" x="509" y="2029" width="507" height="597"/>
-	<SubTexture name="speedPower instance 10005" x="1017" y="2029" width="507" height="589" frameX="0" frameY="-8" frameWidth="507" frameHeight="597"/>
-	<SubTexture name="speedPower instance 10006" x="1525" y="2029" width="507" height="597"/>
-	<SubTexture name="speedPower instance 10007" x="1" y="2627" width="507" height="597"/>
-	<SubTexture name="speedPower instance 10008" x="509" y="2627" width="507" height="589" frameX="0" frameY="-8" frameWidth="507" frameHeight="597"/>
-	<SubTexture name="speedPower instance 10009" x="1017" y="2627" width="507" height="597"/>
-	<SubTexture name="speedPower instance 10010" x="1525" y="2627" width="507" height="597"/>
-	<SubTexture name="speedPower instance 10011" x="1" y="3225" width="507" height="589" frameX="0" frameY="-8" frameWidth="507" frameHeight="597"/>
-	<SubTexture name="speedPower instance 10012" x="509" y="3225" width="507" height="597"/>
-	<SubTexture name="speedPower instance 10013" x="1017" y="3225" width="507" height="597"/>
-	<SubTexture name="speedPower instance 10014" x="1525" y="3225" width="507" height="589" frameX="0" frameY="-8" frameWidth="507" frameHeight="597"/>
+	<SubTexture name="Symbol 4 instance 10024" x="2041" y="1" width="84" height="87"/>
+	<SubTexture name="Symbol 4 instance 10025" x="2126" y="1" width="84" height="87"/>
+	<SubTexture name="Symbol 4 instance 10026" x="2211" y="1" width="84" height="87"/>
+	<SubTexture name="Symbol 4 instance 10027" x="2296" y="1" width="84" height="87"/>
+	<SubTexture name="Symbol 4 instance 10028" x="2381" y="1" width="84" height="87"/>
+	<SubTexture name="Symbol 4 instance 10029" x="2466" y="1" width="84" height="87"/>
+	<SubTexture name="Symbol 9 instance 10000" x="2551" y="1" width="122" height="65" pivotX="86.7" pivotY="32"/>
+	<SubTexture name="Symbol 9 instance 10001" x="2674" y="1" width="109" height="65" frameX="-13" frameY="0" frameWidth="122" frameHeight="65"/>
+	<SubTexture name="Symbol 9 instance 10002" x="2784" y="1" width="96" height="65" frameX="-26" frameY="0" frameWidth="122" frameHeight="65"/>
+	<SubTexture name="Symbol 9 instance 10003" x="2881" y="1" width="83" height="65" frameX="-39" frameY="0" frameWidth="122" frameHeight="65"/>
+	<SubTexture name="Symbol 9 instance 10004" x="2965" y="1" width="70" height="65" frameX="-52" frameY="0" frameWidth="122" frameHeight="65"/>
+	<SubTexture name="core10000" x="3036" y="1" width="165" height="239" pivotX="84.55" pivotY="117.75"/>
+	<SubTexture name="core10001" x="3202" y="1" width="165" height="237" frameX="0" frameY="-2" frameWidth="165" frameHeight="239"/>
+	<SubTexture name="core10002" x="3368" y="1" width="165" height="234" frameX="0" frameY="-4" frameWidth="165" frameHeight="239"/>
+	<SubTexture name="core10003" x="3534" y="1" width="165" height="232" frameX="0" frameY="-6" frameWidth="165" frameHeight="239"/>
+	<SubTexture name="core10004" x="3700" y="1" width="165" height="230" frameX="0" frameY="-8" frameWidth="165" frameHeight="239"/>
+	<SubTexture name="core10005" x="3866" y="1" width="165" height="228" frameX="0" frameY="-9" frameWidth="165" frameHeight="239"/>
+	<SubTexture name="core10006" x="1" y="241" width="165" height="226" frameX="0" frameY="-11" frameWidth="165" frameHeight="239"/>
+	<SubTexture name="core10007" x="167" y="241" width="165" height="223" frameX="0" frameY="-13" frameWidth="165" frameHeight="239"/>
+	<SubTexture name="core10008" x="333" y="241" width="165" height="221" frameX="0" frameY="-15" frameWidth="165" frameHeight="239"/>
+	<SubTexture name="core10009" x="499" y="241" width="165" height="218" frameX="0" frameY="-17" frameWidth="165" frameHeight="239"/>
+	<SubTexture name="core10010" x="665" y="241" width="165" height="221" frameX="0" frameY="-15" frameWidth="165" frameHeight="239"/>
+	<SubTexture name="core10011" x="831" y="241" width="165" height="222" frameX="0" frameY="-14" frameWidth="165" frameHeight="239"/>
+	<SubTexture name="core10012" x="997" y="241" width="165" height="225" frameX="0" frameY="-12" frameWidth="165" frameHeight="239"/>
+	<SubTexture name="core10013" x="1163" y="241" width="165" height="227" frameX="0" frameY="-10" frameWidth="165" frameHeight="239"/>
+	<SubTexture name="core10014" x="1329" y="241" width="165" height="228" frameX="0" frameY="-9" frameWidth="165" frameHeight="239"/>
+	<SubTexture name="core10015" x="1495" y="241" width="165" height="231" frameX="0" frameY="-7" frameWidth="165" frameHeight="239"/>
+	<SubTexture name="core10016" x="1661" y="241" width="165" height="233" frameX="0" frameY="-5" frameWidth="165" frameHeight="239"/>
+	<SubTexture name="core10017" x="1827" y="241" width="165" height="236" frameX="0" frameY="-3" frameWidth="165" frameHeight="239"/>
+	<SubTexture name="core10018" x="1993" y="241" width="165" height="237" frameX="0" frameY="-2" frameWidth="165" frameHeight="239"/>
+	<SubTexture name="core10019" x="2159" y="241" width="165" height="239"/>
+	<SubTexture name="core20000" x="2325" y="241" width="164" height="239" pivotX="84.55" pivotY="117.75"/>
+	<SubTexture name="core20001" x="2490" y="241" width="164" height="237" frameX="0" frameY="-2" frameWidth="164" frameHeight="239"/>
+	<SubTexture name="core20002" x="2655" y="241" width="164" height="234" frameX="0" frameY="-4" frameWidth="164" frameHeight="239"/>
+	<SubTexture name="core20003" x="2820" y="241" width="164" height="232" frameX="0" frameY="-6" frameWidth="164" frameHeight="239"/>
+	<SubTexture name="core20004" x="2985" y="241" width="164" height="230" frameX="0" frameY="-8" frameWidth="164" frameHeight="239"/>
+	<SubTexture name="core20005" x="3150" y="241" width="164" height="228" frameX="0" frameY="-9" frameWidth="164" frameHeight="239"/>
+	<SubTexture name="core20006" x="3315" y="241" width="164" height="226" frameX="0" frameY="-11" frameWidth="164" frameHeight="239"/>
+	<SubTexture name="core20007" x="3480" y="241" width="164" height="223" frameX="0" frameY="-13" frameWidth="164" frameHeight="239"/>
+	<SubTexture name="core20008" x="3645" y="241" width="164" height="221" frameX="0" frameY="-15" frameWidth="164" frameHeight="239"/>
+	<SubTexture name="core20009" x="3810" y="241" width="164" height="218" frameX="0" frameY="-17" frameWidth="164" frameHeight="239"/>
+	<SubTexture name="core20010" x="1" y="481" width="164" height="221" frameX="0" frameY="-15" frameWidth="164" frameHeight="239"/>
+	<SubTexture name="core20011" x="166" y="481" width="164" height="222" frameX="0" frameY="-14" frameWidth="164" frameHeight="239"/>
+	<SubTexture name="core20012" x="331" y="481" width="164" height="225" frameX="0" frameY="-12" frameWidth="164" frameHeight="239"/>
+	<SubTexture name="core20013" x="496" y="481" width="164" height="227" frameX="0" frameY="-10" frameWidth="164" frameHeight="239"/>
+	<SubTexture name="core20014" x="661" y="481" width="164" height="228" frameX="0" frameY="-9" frameWidth="164" frameHeight="239"/>
+	<SubTexture name="core20015" x="826" y="481" width="164" height="231" frameX="0" frameY="-7" frameWidth="164" frameHeight="239"/>
+	<SubTexture name="core20016" x="991" y="481" width="164" height="233" frameX="0" frameY="-5" frameWidth="164" frameHeight="239"/>
+	<SubTexture name="core20017" x="1156" y="481" width="164" height="236" frameX="0" frameY="-3" frameWidth="164" frameHeight="239"/>
+	<SubTexture name="core20018" x="1321" y="481" width="164" height="237" frameX="0" frameY="-2" frameWidth="164" frameHeight="239"/>
+	<SubTexture name="core20019" x="1486" y="481" width="164" height="239"/>
+	<SubTexture name="jumpPower instance 10000" x="1651" y="481" width="192" height="311" pivotX="95.85" pivotY="211.3"/>
+	<SubTexture name="jumpPower instance 10001" x="1844" y="481" width="192" height="311"/>
+	<SubTexture name="jumpPower instance 10002" x="2037" y="481" width="192" height="311"/>
+	<SubTexture name="jumpPower instance 10003" x="2230" y="481" width="192" height="311"/>
+	<SubTexture name="jumpPower instance 10004" x="2423" y="481" width="192" height="311"/>
+	<SubTexture name="jumpPower instance 10005" x="2616" y="481" width="192" height="311"/>
+	<SubTexture name="jumpPower instance 10006" x="2809" y="481" width="192" height="311"/>
+	<SubTexture name="jumpPower instance 10007" x="3002" y="481" width="192" height="311"/>
+	<SubTexture name="jumpPower instance 10008" x="3195" y="481" width="192" height="311"/>
+	<SubTexture name="jumpPower instance 10009" x="3388" y="481" width="192" height="311"/>
+	<SubTexture name="jumpPower instance 10010" x="3581" y="481" width="192" height="311"/>
+	<SubTexture name="jumpPower instance 10011" x="3774" y="481" width="192" height="311"/>
+	<SubTexture name="jumpPower instance 10012" x="1" y="793" width="192" height="311"/>
+	<SubTexture name="jumpPower instance 10013" x="194" y="793" width="192" height="311"/>
+	<SubTexture name="jumpPower instance 10014" x="387" y="793" width="192" height="311"/>
+	<SubTexture name="speedPower instance 10000" x="580" y="793" width="507" height="597" pivotX="252.9" pivotY="343.45"/>
+	<SubTexture name="speedPower instance 10001" x="1088" y="793" width="507" height="597"/>
+	<SubTexture name="speedPower instance 10002" x="1596" y="793" width="507" height="589" frameX="0" frameY="-8" frameWidth="507" frameHeight="597"/>
+	<SubTexture name="speedPower instance 10003" x="2104" y="793" width="507" height="597"/>
+	<SubTexture name="speedPower instance 10004" x="2612" y="793" width="507" height="597"/>
+	<SubTexture name="speedPower instance 10005" x="3120" y="793" width="507" height="589" frameX="0" frameY="-8" frameWidth="507" frameHeight="597"/>
+	<SubTexture name="speedPower instance 10006" x="1" y="1391" width="507" height="597"/>
+	<SubTexture name="speedPower instance 10007" x="509" y="1391" width="507" height="597"/>
+	<SubTexture name="speedPower instance 10008" x="1017" y="1391" width="507" height="589" frameX="0" frameY="-8" frameWidth="507" frameHeight="597"/>
+	<SubTexture name="speedPower instance 10009" x="1525" y="1391" width="507" height="597"/>
+	<SubTexture name="speedPower instance 10010" x="2033" y="1391" width="507" height="597"/>
+	<SubTexture name="speedPower instance 10011" x="2541" y="1391" width="507" height="589" frameX="0" frameY="-8" frameWidth="507" frameHeight="597"/>
+	<SubTexture name="speedPower instance 10012" x="3049" y="1391" width="507" height="597"/>
+	<SubTexture name="speedPower instance 10013" x="3557" y="1391" width="507" height="597"/>
+	<SubTexture name="speedPower instance 10014" x="1" y="1989" width="507" height="589" frameX="0" frameY="-8" frameWidth="507" frameHeight="597"/>
 </TextureAtlas>
