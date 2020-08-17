@@ -135,11 +135,11 @@ Level.prototype.myCreate = function () {
 Level.prototype.deployItems = function() {
 
 const wichItem =  Math.random() < 0.2;
-const enemyXDeploy = Math.random()  * (600 - 200) + 200;
+const enemyXDeploy = Math.random()  * (550 - 200) + 200;
 
 if(wichItem){
 
-	const wichItem2 =  Math.random() < 0.8;
+	const wichItem2 =  Math.random() < 0.9;
 	
 
 	if(wichItem2){
