@@ -17,7 +17,7 @@
 function jumpPower(aGame, aX, aY, aKey, aFrame) {
 	Phaser.Sprite.call(this, aGame, aX, aY, aKey || 'powerUps', aFrame == undefined || aFrame == null? 'jumpPower instance 10014' : aFrame);
 	this.anchor.set(0.5, 0.7);
-	var _anim_power = this.animations.add('power', ['jumpPower instance 10000', 'jumpPower instance 10001', 'jumpPower instance 10002', 'jumpPower instance 10003', 'jumpPower instance 10004', 'jumpPower instance 10005', 'jumpPower instance 10006', 'jumpPower instance 10007', 'jumpPower instance 10008', 'jumpPower instance 10009', 'jumpPower instance 10010', 'jumpPower instance 10011', 'jumpPower instance 10012', 'jumpPower instance 10013', 'jumpPower instance 10014'], 30, true);
+	var _anim_power = this.animations.add('power', ['jumpPower instance 10000', 'jumpPower instance 10001', 'jumpPower instance 10002', 'jumpPower instance 10003', 'jumpPower instance 10004', 'jumpPower instance 10005', 'jumpPower instance 10006', 'jumpPower instance 10007', 'jumpPower instance 10008', 'jumpPower instance 10009', 'jumpPower instance 10010', 'jumpPower instance 10011', 'jumpPower instance 10012', 'jumpPower instance 10013', 'jumpPower instance 10014'], 15, true);
 	_anim_power.play();
 	
 }

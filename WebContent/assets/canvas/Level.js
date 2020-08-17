@@ -122,7 +122,7 @@ Level.prototype.myCreate = function () {
 	this.game.input.onDown.add(this.swipeDownAction, this);
 	this.game.input.onUp.add(this.swipeUpAction, this);
 	this.game.world.setBounds(0, 0, 1920, 1100);
-	this.game.camera.follow(this.fPlayer,Phaser.Camera.FOLLOW_LOCKON,0.01, 0.01,0,0);
+	this.game.camera.follow(this.fPlayer, Phaser.Camera.FOLLOW_LOCKON,0.01, 0.01,0,0);
 	this.jumpPower = -900;
 
     enemyDeployTimer = this.game.time.create(false);
@@ -139,7 +139,7 @@ const enemyXDeploy = Math.random()  * (600 - 200) + 200;
 
 if(wichItem){
 
-	const wichItem2 =  Math.random() < 0.7;
+	const wichItem2 =  Math.random() < 0.8;
 	
 
 	if(wichItem2){
@@ -387,7 +387,7 @@ Level.prototype.update = function () {
 	if(this.fPlayer.y>=this.game.height+100){ //muere die lost loose
 		this.fPlayer.coins-=10;
 		this.fPlayer.y = -50;
-		for(var i = 0 ; i<=15; i++){
+		for(var i = 0 ; i<=10; i++){
 			this.createCoins(this.game.width/2,0,1500);
 		}
 	
