@@ -62,22 +62,19 @@ Level.prototype.create = function () {
 	var _build2 = new building1(this.game, 4604.0, 659.0);
 	_platforms.add(_build2);
 	
+	var _powerLabel = this.add.group();
+	_powerLabel.position.set(0.0, -595.0);
+	
+	var _powerText = this.add.text(64.0, 456.0, 'Double Jump', {"font":"bold 120px Arial","fill":"#ffffff","stroke":"#ffffff"}, _powerLabel);
+	
+	this.add.text(87.0, 397.0, 'You got', {"font":"bold 60px Arial","fill":"#ffffff","stroke":"#ffffff"}, _powerLabel);
+	
 	var _player = new player(this.game, 465.0, 512.0);
 	this.add.existing(_player);
 	
 	var _enemies = this.add.physicsGroup(Phaser.Physics.ARCADE);
 	
 	var _powerUps = this.add.group();
-	
-	var _core = new powerUp3(this.game, 1095.0, 509.0);
-	_powerUps.add(_core);
-	
-	var _powerLabel = this.add.group();
-	_powerLabel.position.set(0.0, -595.0);
-	
-	var _powerText = this.add.text(64.0, 480.0, 'Double Jump', {"font":"bold 60px Arial","fill":"#ffffff","stroke":"#ffffff"}, _powerLabel);
-	
-	this.add.text(91.0, 453.0, 'you got', {"font":"bold 30px Arial","fill":"#ffffff","stroke":"#ffffff"}, _powerLabel);
 	
 	var _core1 = this.add.sprite(1728.0, 32.0, 'core1');
 	_core1.fixedToCamera = true;
@@ -99,11 +96,11 @@ Level.prototype.create = function () {
 	
 	this.fMiddleBG = _middleBG;
 	this.fPlatforms = _platforms;
+	this.fPowerLabel = _powerLabel;
+	this.fPowerText = _powerText;
 	this.fPlayer = _player;
 	this.fEnemies = _enemies;
 	this.fPowerUps = _powerUps;
-	this.fPowerLabel = _powerLabel;
-	this.fPowerText = _powerText;
 	this.fCore1 = _core1;
 	this.fCoins = _coins;
 	this.fMoneyText = _moneyText;
@@ -132,7 +129,7 @@ Level.prototype.myCreate = function () {
 	this.jumpPower = -900;
 
     enemyDeployTimer = this.game.time.create(false);
-    enemyDeployTimer.loop(1500, this.deployItems, this);
+    enemyDeployTimer.loop(1250, this.deployItems, this);
     enemyDeployTimer.start();
 	//this.setupCoinEmitter();
 
@@ -305,10 +302,10 @@ Level.prototype.getPowerUp = function (player,powerUp) {
 	   		this.timerPower3.start();
 
    			function quitSuperShot(){
-   			player.canShot=false;
+   				player.canShot=false;
 				player.canShot=false;
 				player.enableShootOnce =true;
-			this.timerPower3.destroy();
+				this.timerPower3.destroy();
    			}
 			
 		}
@@ -340,9 +337,7 @@ Level.prototype.getPowerUp = function (player,powerUp) {
 
 	if(powerUp.myPower == 'speedForce'){
 		if(!this.fPlayer.usingSpeedForce){
-
-
-			
+		
 		fly = this.game.add.tween(this.fPlayer);
 		fly.to({x:this.game.width/2 , y:this.game.height/3}, 500, Phaser.Easing.Linear.None);
 		fly.start();
@@ -381,12 +376,19 @@ Level.prototype.getPowerUp = function (player,powerUp) {
 
 			
 }
-	
+	this.showLabel();
 }
-pigArrives = this.game.add.tween(this.fPowerLabel);
-		    pigArrives.to({y:-240}, 1200, Phaser.Easing.Bounce.Out);
-		    pigArrives.onComplete.add(theEnd, this);
-		    pigArrives.start();
+			
+			
+			powerUp.destroy();
+
+};
+
+Level.prototype.showLabel = function () {
+			bajaLetrero = this.game.add.tween(this.fPowerLabel);		
+		    bajaLetrero.to({y:-240}, 1200, Phaser.Easing.Bounce.Out);
+		    bajaLetrero.onComplete.add(theEnd, this);
+		    bajaLetrero.start();
 		    
 		    function theEnd() {
 		    
@@ -396,9 +398,7 @@ pigArrives = this.game.add.tween(this.fPowerLabel);
 		    e.start();
 
 			}
-powerUp.destroy();
-
-};
+}
 
 Level.prototype.update = function () {
 
@@ -423,12 +423,12 @@ Level.prototype.update = function () {
 	this.game.physics.arcade.overlap(this.fPlayer , this.fPowerUps, this.getPowerUp, null, this);
 
 	if(this.fPlayer.y>=this.game.height+100){ //muere die lost loose
-		this.fPlayer.coins-=10;
+		this.fPlayer.coins-=Math.round(10+this.fPlayer.coins*0.1);
 		this.fPlayer.y = -50;
 		for(var i = 0 ; i<=10; i++){
 			this.createCoins(this.game.width/2,0,1500);
 		}
-	
+		this.stageSpeed -= 100;
 		this.fPlayer.x = this.game.width/2;
 		this.shakeAndFlash();
 	}

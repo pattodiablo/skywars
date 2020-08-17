@@ -41,7 +41,7 @@ player.prototype.constructor = player;
 // -- user code here --
 player.prototype.myCreate = function() {
 	
-	this.coins = 50;
+	this.coins = 30;
 	this.canJump =  false;	
 	this.isKicking = false;
 	this.canKick = false;
