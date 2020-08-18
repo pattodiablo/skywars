@@ -150,6 +150,45 @@
           }
         },
         {
+          "type": "group",
+          "id": "bdd6b436-cdba-43f5-8a45-3cd0c93a8f8f",
+          "info": {
+            "editorName": "powerLabel",
+            "editorField": true,
+            "y": -595,
+            "setAll": [],
+            "children": [
+              {
+                "type": "text",
+                "id": "a0741f47-a5ff-4a78-8b60-a20fbc0eff43",
+                "info": {
+                  "editorName": "powerText",
+                  "editorField": true,
+                  "x": 64,
+                  "y": 456,
+                  "text": "Double Jump",
+                  "style.fontSize": 120,
+                  "style.fill": "#ffffff",
+                  "style.stroke": "#ffffff"
+                }
+              },
+              {
+                "type": "text",
+                "id": "5e63795f-1e69-4503-847f-4f7c75ee1e89",
+                "info": {
+                  "editorName": "text",
+                  "x": 87,
+                  "y": 397,
+                  "text": "You got",
+                  "style.fontSize": 60,
+                  "style.fill": "#ffffff",
+                  "style.stroke": "#ffffff"
+                }
+              }
+            ]
+          }
+        },
+        {
           "type": "prefab",
           "prefab": "4",
           "id": "6b92b063-cf03-45ca-b402-46b55aae01a8",
@@ -184,61 +223,7 @@
             "editorName": "powerUps",
             "editorField": true,
             "setAll": [],
-            "children": [{
-              "type": "prefab",
-              "prefab": "5",
-              "id": "11e72016-f3fb-4695-8ee0-bada43ea2368",
-              "asset-ref": {
-                "file": "WebContent/assets/pack.json",
-                "section": "atlas",
-                "asset": "powerUps",
-                "sprite": "core30000"
-              },
-              "info": {
-                "editorName": "core",
-                "x": 1095,
-                "y": 509
-              }
-            }]
-          }
-        },
-        {
-          "type": "group",
-          "id": "bdd6b436-cdba-43f5-8a45-3cd0c93a8f8f",
-          "info": {
-            "editorName": "powerLabel",
-            "editorField": true,
-            "y": -595,
-            "setAll": [],
-            "children": [
-              {
-                "type": "text",
-                "id": "a0741f47-a5ff-4a78-8b60-a20fbc0eff43",
-                "info": {
-                  "editorName": "powerText",
-                  "editorField": true,
-                  "x": 64,
-                  "y": 480,
-                  "text": "Double Jump",
-                  "style.fontSize": 60,
-                  "style.fill": "#ffffff",
-                  "style.stroke": "#ffffff"
-                }
-              },
-              {
-                "type": "text",
-                "id": "5e63795f-1e69-4503-847f-4f7c75ee1e89",
-                "info": {
-                  "editorName": "text",
-                  "x": 91,
-                  "y": 453,
-                  "text": "you got",
-                  "style.fontSize": 30,
-                  "style.fill": "#ffffff",
-                  "style.stroke": "#ffffff"
-                }
-              }
-            ]
+            "children": []
           }
         },
         {
@@ -329,7 +314,6 @@
     "1": "WebContent/prefabs/building1.canvas",
     "2": "WebContent/prefabs/building2.canvas",
     "3": "WebContent/prefabs/building3.canvas",
-    "4": "WebContent/prefabs/player.canvas",
-    "5": "WebContent/prefabs/powerUp3.canvas"
+    "4": "WebContent/prefabs/player.canvas"
   }
 }

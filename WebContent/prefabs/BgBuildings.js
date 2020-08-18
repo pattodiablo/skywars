@@ -34,7 +34,7 @@ this.addNext =  true;
 };
 
 BgBuildings.prototype.update = function () {
-this.x+=0.1;
+this.x+=0.2;
 	this.position.y=-this.game.state.getCurrentState﻿().fPlayer.y/64+30;
 	if(this.x>=this.game.width/3){
 		if(this.addNext){
@@ -43,5 +43,9 @@ this.x+=0.1;
 			this.addNext = false;
 		}
 	
+	}
+	if(this.x>=this.game.width){
+		
+		this.destroy();
 	}
 };
