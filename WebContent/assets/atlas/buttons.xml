@@ -32,8 +32,8 @@
 	<SubTexture name="buttonMenu instance 10027" x="1" y="1495" width="560" height="165"/>
 	<SubTexture name="buttonMenu instance 10028" x="562" y="1495" width="560" height="165"/>
 	<SubTexture name="buttonMenu instance 10029" x="1123" y="1495" width="560" height="165"/>
-	<SubTexture name="menuOver instance 10000" x="1" y="1661" width="560" height="180" pivotX="251.5" pivotY="132.65"/>
-	<SubTexture name="menuOver instance 10001" x="562" y="1661" width="560" height="180"/>
-	<SubTexture name="menuOver instance 10002" x="1123" y="1661" width="560" height="180"/>
-	<SubTexture name="menuOver instance 10003" x="1" y="1842" width="560" height="180"/>
+	<SubTexture name="menuOver instance 10000" x="1" y="1661" width="560" height="166" pivotX="251.5" pivotY="132.65" frameX="0" frameY="0" frameWidth="560" frameHeight="180"/>
+	<SubTexture name="menuOver instance 10001" x="562" y="1661" width="560" height="170" frameX="0" frameY="0" frameWidth="560" frameHeight="180"/>
+	<SubTexture name="menuOver instance 10002" x="1123" y="1661" width="560" height="175" frameX="0" frameY="0" frameWidth="560" frameHeight="180"/>
+	<SubTexture name="menuOver instance 10003" x="1" y="1837" width="560" height="180"/>
 </TextureAtlas>
