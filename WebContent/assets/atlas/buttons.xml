@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="buttons.png">
+	<!-- Created with Adobe Animate version 19.2.1.408 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="buttonMenu instance 10000" x="1" y="1" width="560" height="165" pivotX="251.5" pivotY="132.65"/>
+	<SubTexture name="buttonMenu instance 10001" x="562" y="1" width="560" height="165"/>
+	<SubTexture name="buttonMenu instance 10002" x="1123" y="1" width="560" height="165"/>
+	<SubTexture name="buttonMenu instance 10003" x="1" y="167" width="560" height="165"/>
+	<SubTexture name="buttonMenu instance 10004" x="562" y="167" width="560" height="165"/>
+	<SubTexture name="buttonMenu instance 10005" x="1123" y="167" width="560" height="165"/>
+	<SubTexture name="buttonMenu instance 10006" x="1" y="333" width="560" height="165"/>
+	<SubTexture name="buttonMenu instance 10007" x="562" y="333" width="560" height="165"/>
+	<SubTexture name="buttonMenu instance 10008" x="1123" y="333" width="560" height="165"/>
+	<SubTexture name="buttonMenu instance 10009" x="1" y="499" width="560" height="165"/>
+	<SubTexture name="buttonMenu instance 10010" x="562" y="499" width="560" height="165"/>
+	<SubTexture name="buttonMenu instance 10011" x="1123" y="499" width="560" height="165"/>
+	<SubTexture name="buttonMenu instance 10012" x="1" y="665" width="560" height="165"/>
+	<SubTexture name="buttonMenu instance 10013" x="562" y="665" width="560" height="165"/>
+	<SubTexture name="buttonMenu instance 10014" x="1123" y="665" width="560" height="165"/>
+	<SubTexture name="buttonMenu instance 10015" x="1" y="831" width="560" height="165"/>
+	<SubTexture name="buttonMenu instance 10016" x="562" y="831" width="560" height="165"/>
+	<SubTexture name="buttonMenu instance 10017" x="1123" y="831" width="560" height="165"/>
+	<SubTexture name="buttonMenu instance 10018" x="1" y="997" width="560" height="165"/>
+	<SubTexture name="buttonMenu instance 10019" x="562" y="997" width="560" height="165"/>
+	<SubTexture name="buttonMenu instance 10020" x="1123" y="997" width="560" height="165"/>
+	<SubTexture name="buttonMenu instance 10021" x="1" y="1163" width="560" height="165"/>
+	<SubTexture name="buttonMenu instance 10022" x="562" y="1163" width="560" height="165"/>
+	<SubTexture name="buttonMenu instance 10023" x="1123" y="1163" width="560" height="165"/>
+	<SubTexture name="buttonMenu instance 10024" x="1" y="1329" width="560" height="165"/>
+	<SubTexture name="buttonMenu instance 10025" x="562" y="1329" width="560" height="165"/>
+	<SubTexture name="buttonMenu instance 10026" x="1123" y="1329" width="560" height="165"/>
+	<SubTexture name="buttonMenu instance 10027" x="1" y="1495" width="560" height="165"/>
+	<SubTexture name="buttonMenu instance 10028" x="562" y="1495" width="560" height="165"/>
+	<SubTexture name="buttonMenu instance 10029" x="1123" y="1495" width="560" height="165"/>
+</TextureAtlas>
