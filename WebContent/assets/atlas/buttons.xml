@@ -59,6 +59,9 @@
 	<SubTexture name="updtaBtn30007" x="1273" y="2158" width="317" height="74"/>
 	<SubTexture name="updtaBtn30008" x="1591" y="2158" width="317" height="74"/>
 	<SubTexture name="updtaBtn30009" x="1" y="2233" width="317" height="74"/>
-	<SubTexture name="upgradeSign0000" x="319" y="2233" width="74" height="84" pivotX="36.65" pivotY="41.65"/>
-	<SubTexture name="upgradeSign0001" x="394" y="2233" width="74" height="84"/>
+	<SubTexture name="upgradeSign0000" x="319" y="2233" width="326" height="84" pivotX="36.65" pivotY="41.65"/>
+	<SubTexture name="upgradeSign0001" x="646" y="2233" width="326" height="84"/>
+	<SubTexture name="upgradeSign0002" x="973" y="2233" width="326" height="84"/>
+	<SubTexture name="upgradeSign0003" x="1300" y="2233" width="326" height="84"/>
+	<SubTexture name="upgradeSign0004" x="1627" y="2233" width="326" height="84"/>
 </TextureAtlas>
