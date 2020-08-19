@@ -36,4 +36,16 @@
 	<SubTexture name="menuOver instance 10001" x="562" y="1661" width="560" height="170" frameX="0" frameY="0" frameWidth="560" frameHeight="180"/>
 	<SubTexture name="menuOver instance 10002" x="1123" y="1661" width="560" height="175" frameX="0" frameY="0" frameWidth="560" frameHeight="180"/>
 	<SubTexture name="menuOver instance 10003" x="1" y="1837" width="560" height="180"/>
+	<SubTexture name="updateBtn instance 10000" x="562" y="1837" width="318" height="74" pivotX="158.5" pivotY="36.5"/>
+	<SubTexture name="updateBtn instance 10001" x="881" y="1837" width="318" height="71" frameX="0" frameY="-3" frameWidth="318" frameHeight="74"/>
+	<SubTexture name="updateBtn instance 10002" x="1200" y="1837" width="318" height="68" frameX="0" frameY="-6" frameWidth="318" frameHeight="74"/>
+	<SubTexture name="updateBtn instance 10003" x="1519" y="1837" width="318" height="65" frameX="0" frameY="-9" frameWidth="318" frameHeight="74"/>
+	<SubTexture name="updateBtn instance 10004" x="1" y="2018" width="318" height="62" frameX="0" frameY="-12" frameWidth="318" frameHeight="74"/>
+	<SubTexture name="updateBtn instance 10005" x="320" y="2018" width="318" height="64" frameX="0" frameY="-10" frameWidth="318" frameHeight="74"/>
+	<SubTexture name="updateBtn instance 10006" x="639" y="2018" width="318" height="67" frameX="0" frameY="-7" frameWidth="318" frameHeight="74"/>
+	<SubTexture name="updateBtn instance 10007" x="958" y="2018" width="318" height="69" frameX="0" frameY="-5" frameWidth="318" frameHeight="74"/>
+	<SubTexture name="updateBtn instance 10008" x="1277" y="2018" width="318" height="72" frameX="0" frameY="-2" frameWidth="318" frameHeight="74"/>
+	<SubTexture name="updateBtn instance 10009" x="1596" y="2018" width="318" height="74"/>
+	<SubTexture name="updateindicator instance 10000" x="1915" y="2018" width="74" height="84" pivotX="36.65" pivotY="41.65"/>
+	<SubTexture name="updateindicator instance 10001" x="1" y="2103" width="74" height="84"/>
 </TextureAtlas>
