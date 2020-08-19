@@ -72,4 +72,8 @@ wisherEnemy.prototype.update = function() {
 	if(this.x>=2200){
 		this.destroy();
 	}
+	
+	if(this.y<=this.height+100){
+		this.destroy();
+	}
 };

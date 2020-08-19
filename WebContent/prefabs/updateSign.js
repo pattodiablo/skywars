@@ -7,23 +7,24 @@
 
 
 /**
- * cannon
+ * updateSign
  * @param {Phaser.Game} aGame A reference to the currently running game.
  * @param {Number} aX The x coordinate (in world space) to position the Sprite at.
  * @param {Number} aY The y coordinate (in world space) to position the Sprite at.
  * @param {any} aKey This is the image or texture used by the Sprite during rendering. It can be a string which is a reference to the Cache entry, or an instance of a RenderTexture or PIXI.Texture.
  * @param {any} aFrame If this Sprite is using part of a sprite sheet or texture atlas you can specify the exact frame to use by giving a string or numeric index.
  */
-function cannon(aGame, aX, aY, aKey, aFrame) {
-	Phaser.Sprite.call(this, aGame, aX, aY, aKey || 'ship', aFrame == undefined || aFrame == null? 'cannon0000' : aFrame);
+function updateSign(aGame, aX, aY, aKey, aFrame) {
+	Phaser.Sprite.call(this, aGame, aX, aY, aKey || 'buttons', aFrame == undefined || aFrame == null? 'upgradeSign0000' : aFrame);
 	this.anchor.set(0.5, 0.5);
+	this.animations.add('updated', ['upgradeSign0001'], 1, false);
 	
 }
 
 /** @type Phaser.Sprite */
-var cannon_proto = Object.create(Phaser.Sprite.prototype);
-cannon.prototype = cannon_proto;
-cannon.prototype.constructor = cannon;
+var updateSign_proto = Object.create(Phaser.Sprite.prototype);
+updateSign.prototype = updateSign_proto;
+updateSign.prototype.constructor = updateSign;
 
 /* --- end generated code --- */
 // -- user code here --

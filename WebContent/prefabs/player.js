@@ -41,6 +41,10 @@ player.prototype.constructor = player;
 // -- user code here --
 player.prototype.myCreate = function() {
 	
+	this.myLevel = 1;
+	this.core1Level = 0;
+	this.core2Level = 0;
+	this.core3Level = 0;
 	this.coins = 30;
 	this.canJump =  false;	
 	this.isKicking = false;

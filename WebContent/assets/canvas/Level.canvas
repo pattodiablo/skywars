@@ -189,23 +189,6 @@
           }
         },
         {
-          "type": "prefab",
-          "prefab": "4",
-          "id": "6b92b063-cf03-45ca-b402-46b55aae01a8",
-          "asset-ref": {
-            "file": "WebContent/assets/pack.json",
-            "section": "atlas",
-            "asset": "player",
-            "sprite": "player0000"
-          },
-          "info": {
-            "editorName": "player",
-            "editorField": true,
-            "x": 465,
-            "y": 512
-          }
-        },
-        {
           "type": "group",
           "id": "7bd8b5d1-65a8-4677-8502-dca1e19d7753",
           "info": {
@@ -234,7 +217,7 @@
             "editorName": "core1",
             "editorField": true,
             "x": 1728,
-            "y": 32,
+            "y": 67,
             "fixedToCamera": true,
             "tint": "0x808080"
           }
@@ -257,7 +240,7 @@
           "info": {
             "editorName": "coinSymbol",
             "x": 33,
-            "y": 30,
+            "y": 74,
             "fixedToCamera": true
           }
         },
@@ -268,7 +251,7 @@
             "editorName": "moneyText",
             "editorField": true,
             "x": 133,
-            "y": 31,
+            "y": 75,
             "fixedToCamera": true,
             "text": "000001",
             "style.fontSize": 70,
@@ -285,6 +268,34 @@
             "physicsGroup": true,
             "setAll": [],
             "children": []
+          }
+        },
+        {
+          "type": "prefab",
+          "prefab": "4",
+          "id": "fa3dba75-18ff-418b-a377-eeeadc87a459",
+          "info": {
+            "editorName": "menu",
+            "editorField": true,
+            "x": 9,
+            "y": -947
+          }
+        },
+        {
+          "type": "prefab",
+          "prefab": "5",
+          "id": "6b92b063-cf03-45ca-b402-46b55aae01a8",
+          "asset-ref": {
+            "file": "WebContent/assets/pack.json",
+            "section": "atlas",
+            "asset": "player",
+            "sprite": "player0000"
+          },
+          "info": {
+            "editorName": "player",
+            "editorField": true,
+            "x": 465,
+            "y": 512
           }
         }
       ]
@@ -314,6 +325,7 @@
     "1": "WebContent/prefabs/building1.canvas",
     "2": "WebContent/prefabs/building2.canvas",
     "3": "WebContent/prefabs/building3.canvas",
-    "4": "WebContent/prefabs/player.canvas"
+    "4": "WebContent/prefabs/menuBg.canvas",
+    "5": "WebContent/prefabs/player.canvas"
   }
 }

@@ -1,0 +1,481 @@
+{
+  "canvas-version": 2,
+  "settings": {
+    "className": "menuBg",
+    "sceneWidth": 1920,
+    "sceneHeight": 1080,
+    "generateOnSave": true,
+    "enableStepping": false,
+    "lang": "JAVA_SCRIPT",
+    "baseClass": "Phaser.Group",
+    "backgroundColor": [
+      180,
+      180,
+      180
+    ],
+    "gridColor": [
+      200,
+      200,
+      200
+    ],
+    "showGrid": true,
+    "create_after": "this.myCreate();"
+  },
+  "stateSettings": {
+    "stageBackgroundColor": [
+      0,
+      0,
+      0
+    ],
+    "autoLoad": true,
+    "preloadSpriteId": "",
+    "preloadSprite_direction": 0,
+    "load.pack": []
+  },
+  "world": {
+    "type": "group",
+    "id": "93b94b06-2485-48be-af5c-f122848ab7cf",
+    "info": {
+      "editorName": "menuBg",
+      "setAll": [],
+      "children": [{
+        "type": "group",
+        "id": "caed86f1-3ae6-4b4b-a25a-2a98a795b8fc",
+        "info": {
+          "editorName": "group",
+          "setAll": [],
+          "children": [
+            {
+              "type": "image",
+              "id": "7f0d02f2-8f5f-4e53-aeb1-780a1a5cc00c",
+              "asset": "0",
+              "info": {
+                "editorName": "menuBg1",
+                "fixedToCamera": true
+              }
+            },
+            {
+              "type": "prefab",
+              "prefab": "0",
+              "id": "80f2c705-62b7-4a18-ab9c-a3bef6d6b6b8",
+              "asset-ref": {
+                "file": "WebContent/assets/pack.json",
+                "section": "atlas",
+                "asset": "buttons",
+                "sprite": "buttonMenu instance 10000"
+              },
+              "info": {
+                "editorName": "buttonMenu",
+                "x": 933,
+                "y": 1032
+              }
+            },
+            {
+              "type": "text",
+              "id": "b8d4237b-8601-4b07-a97a-308dff82c984",
+              "info": {
+                "editorName": "returnText",
+                "editorField": true,
+                "x": 764,
+                "y": 1018,
+                "text": "RETURN TO BASE",
+                "style.fontSize": 40,
+                "style.fill": "#ffffff"
+              }
+            },
+            {
+              "type": "text",
+              "id": "131070ee-b5b6-4b60-8394-2c42d3cf6159",
+              "info": {
+                "editorName": "coins",
+                "editorField": true,
+                "x": 363,
+                "y": 71,
+                "text": "0000",
+                "style.fontSize": 50,
+                "style.fill": "#683329"
+              }
+            },
+            {
+              "type": "text",
+              "id": "7b8dcd2b-f6cf-4bd1-94b4-7f44a4f4d3c7",
+              "info": {
+                "editorName": "coinsLabel",
+                "x": 362,
+                "y": 43,
+                "text": "your coins",
+                "style.fontSize": 25,
+                "style.fill": "#683329"
+              }
+            },
+            {
+              "type": "text",
+              "id": "30df9f01-5b32-4869-9070-cd5d50bfbe48",
+              "info": {
+                "editorName": "LevelLabel",
+                "x": 363,
+                "y": 149,
+                "text": "Level",
+                "style.fontSize": 50,
+                "style.fill": "#ffffff"
+              }
+            },
+            {
+              "type": "text",
+              "id": "a968a410-b69e-4c61-b424-be310b8167e0",
+              "info": {
+                "editorName": "LevelNumber",
+                "editorField": true,
+                "x": 494,
+                "y": 149,
+                "text": "00",
+                "style.fontSize": 50,
+                "style.fill": "#ffffff"
+              }
+            },
+            {
+              "type": "image",
+              "id": "0fe51dea-488e-4801-a20c-dc4e0758febd",
+              "asset": "1",
+              "info": {
+                "editorName": "userPic",
+                "x": 46,
+                "y": 24
+              }
+            },
+            {
+              "type": "group",
+              "id": "d9220af3-aa89-4ab6-9a02-2ce4c64f25c2",
+              "info": {
+                "editorName": "MultiJump",
+                "x": -47,
+                "y": -31,
+                "setAll": [],
+                "children": [
+                  {
+                    "type": "text",
+                    "id": "5c432627-2353-4e54-be3a-2af58f79b3e6",
+                    "info": {
+                      "editorName": "text",
+                      "x": 316,
+                      "y": 458,
+                      "text": "Multi Jump",
+                      "style.fontSize": 60,
+                      "style.fill": "#ffffff"
+                    }
+                  },
+                  {
+                    "type": "prefab",
+                    "prefab": "1",
+                    "id": "21231b0b-765f-4187-a90e-787bcc66f6b3",
+                    "asset-ref": {
+                      "file": "WebContent/assets/pack.json",
+                      "section": "atlas",
+                      "asset": "buttons",
+                      "sprite": "upgradeSign0000"
+                    },
+                    "info": {
+                      "editorName": "upgradeSign1",
+                      "editorField": true,
+                      "x": 479,
+                      "y": 577
+                    }
+                  },
+                  {
+                    "type": "prefab",
+                    "prefab": "2",
+                    "id": "636adf9d-6cd8-4469-a03e-0b7c3fa81f92",
+                    "asset-ref": {
+                      "file": "WebContent/assets/pack.json",
+                      "section": "atlas",
+                      "asset": "buttons",
+                      "sprite": "updtaBtn0000"
+                    },
+                    "info": {
+                      "editorName": "Core1UpdateBtn",
+                      "x": 474,
+                      "y": 664
+                    }
+                  },
+                  {
+                    "type": "image",
+                    "id": "a2343267-bce4-4e9c-92dd-504d35b3c477",
+                    "asset": "2",
+                    "info": {
+                      "editorName": "core",
+                      "x": 164,
+                      "y": 507
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "id": "971189e8-0145-4e0c-b572-7644dcc3b46d",
+                    "info": {
+                      "editorName": "Core1cost",
+                      "editorField": true,
+                      "x": 428,
+                      "y": 631,
+                      "text": "00000",
+                      "style.fontSize": 45,
+                      "style.fill": "#ffffff"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "id": "887f18cb-744d-426f-8e22-832fee552f3f",
+                    "info": {
+                      "editorName": "explainText",
+                      "editorPick": false,
+                      "editorField": true,
+                      "x": 380,
+                      "y": 703,
+                      "text": "appearing rate",
+                      "style.fontSize": 30,
+                      "style.fill": "#ffffff"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "type": "group",
+              "id": "61c747d4-2c7f-4cbe-937f-2e673ddea889",
+              "info": {
+                "editorName": "SpeedForce",
+                "x": 533,
+                "y": -31,
+                "setAll": [],
+                "children": [
+                  {
+                    "type": "text",
+                    "id": "62acfd23-d1c6-481e-81ab-1272e833013a",
+                    "info": {
+                      "editorName": "text",
+                      "x": 316,
+                      "y": 458,
+                      "text": "Speed Force",
+                      "style.fontSize": 60,
+                      "style.fill": "#ffffff"
+                    }
+                  },
+                  {
+                    "type": "prefab",
+                    "prefab": "1",
+                    "id": "505d861e-e778-4585-a1e8-f0e9b55fb23b",
+                    "asset-ref": {
+                      "file": "WebContent/assets/pack.json",
+                      "section": "atlas",
+                      "asset": "buttons",
+                      "sprite": "upgradeSign0000"
+                    },
+                    "info": {
+                      "editorName": "upgradeSign2",
+                      "editorField": true,
+                      "x": 479,
+                      "y": 577
+                    }
+                  },
+                  {
+                    "type": "prefab",
+                    "prefab": "2",
+                    "id": "ab68d036-4543-4480-af8d-ec11083219fc",
+                    "asset-ref": {
+                      "file": "WebContent/assets/pack.json",
+                      "section": "atlas",
+                      "asset": "buttons",
+                      "sprite": "updtaBtn0000"
+                    },
+                    "info": {
+                      "editorName": "Core2UpdateBtn",
+                      "x": 474,
+                      "y": 664
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "id": "d8d534f4-5f0e-4157-bd4f-8f10153379ac",
+                    "info": {
+                      "editorName": "Core2cost",
+                      "editorField": true,
+                      "x": 429,
+                      "y": 631,
+                      "text": "00000",
+                      "style.fontSize": 45,
+                      "style.fill": "#ffffff"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "id": "db54f9c8-e136-4d93-915d-db9cd254266d",
+                    "info": {
+                      "editorName": "explainText",
+                      "editorPick": false,
+                      "editorField": true,
+                      "x": 380,
+                      "y": 703,
+                      "text": "appearing rate",
+                      "style.fontSize": 30,
+                      "style.fill": "#ffffff"
+                    }
+                  },
+                  {
+                    "type": "image",
+                    "id": "99811e7b-2147-4e6e-a5f1-6bf31052d2b9",
+                    "asset": "3",
+                    "info": {
+                      "editorName": "core1",
+                      "x": 164,
+                      "y": 507
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "type": "group",
+              "id": "aa34a5f3-f301-4f2d-ac1a-c3afd834f133",
+              "info": {
+                "editorName": "SuperShot",
+                "x": 1119,
+                "y": -31,
+                "setAll": [],
+                "children": [
+                  {
+                    "type": "text",
+                    "id": "d6a7af3c-b457-4788-99cf-feff1f83a3ef",
+                    "info": {
+                      "editorName": "text",
+                      "x": 316,
+                      "y": 458,
+                      "text": "Super Shot",
+                      "style.fontSize": 60,
+                      "style.fill": "#ffffff"
+                    }
+                  },
+                  {
+                    "type": "prefab",
+                    "prefab": "1",
+                    "id": "83369f20-2ea7-4e0b-9fd1-8538fd6e09ab",
+                    "asset-ref": {
+                      "file": "WebContent/assets/pack.json",
+                      "section": "atlas",
+                      "asset": "buttons",
+                      "sprite": "upgradeSign0000"
+                    },
+                    "info": {
+                      "editorName": "upgradeSign3",
+                      "editorField": true,
+                      "x": 479,
+                      "y": 577
+                    }
+                  },
+                  {
+                    "type": "prefab",
+                    "prefab": "2",
+                    "id": "1105d316-a7c1-421e-8324-cbc2aaa70c86",
+                    "asset-ref": {
+                      "file": "WebContent/assets/pack.json",
+                      "section": "atlas",
+                      "asset": "buttons",
+                      "sprite": "updtaBtn0000"
+                    },
+                    "info": {
+                      "editorName": "Core3UpdateBtn",
+                      "x": 474,
+                      "y": 664
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "id": "f739ef25-9162-4f5b-92dc-c1868e76844d",
+                    "info": {
+                      "editorName": "Core3cost",
+                      "editorField": true,
+                      "x": 428,
+                      "y": 631,
+                      "text": "00000",
+                      "style.fontSize": 45,
+                      "style.fill": "#ffffff"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "id": "d482479d-62d4-4ebd-936e-634f9b7c74c0",
+                    "info": {
+                      "editorName": "explainText",
+                      "editorPick": false,
+                      "editorField": true,
+                      "x": 380,
+                      "y": 703,
+                      "text": "appearing rate",
+                      "style.fontSize": 30,
+                      "style.fill": "#ffffff"
+                    }
+                  },
+                  {
+                    "type": "image",
+                    "id": "ed1c4f2d-c454-454f-83b4-6dbbb591f92b",
+                    "asset": "4",
+                    "info": {
+                      "editorName": "core3",
+                      "x": 164,
+                      "y": 507
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "type": "image",
+              "id": "eb99cc5a-13ee-4ff7-9a75-cdd36b74f0c8",
+              "asset": "5",
+              "info": {
+                "editorName": "menuCoin",
+                "x": 291,
+                "y": 60
+              }
+            }
+          ]
+        }
+      }]
+    }
+  },
+  "type": "GROUP",
+  "asset-table": {
+    "0": {
+      "file": "WebContent/assets/pack.json",
+      "section": "images",
+      "asset": "menuBg"
+    },
+    "1": {
+      "file": "WebContent/assets/pack.json",
+      "section": "images",
+      "asset": "userPic"
+    },
+    "2": {
+      "file": "WebContent/assets/pack.json",
+      "section": "images",
+      "asset": "core1"
+    },
+    "3": {
+      "file": "WebContent/assets/pack.json",
+      "section": "images",
+      "asset": "core2"
+    },
+    "4": {
+      "file": "WebContent/assets/pack.json",
+      "section": "images",
+      "asset": "core3"
+    },
+    "5": {
+      "file": "WebContent/assets/pack.json",
+      "section": "images",
+      "asset": "menuCoin"
+    }
+  },
+  "prefab-table": {
+    "0": "WebContent/prefabs/upgradeBtn.canvas",
+    "1": "WebContent/prefabs/updateSign.canvas",
+    "2": "WebContent/prefabs/updateBtn.canvas"
+  }
+}

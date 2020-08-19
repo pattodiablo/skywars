@@ -84,31 +84,38 @@
       "key": "coin1",
       "url": "assets/images/coin.png",
       "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "menuBg",
+      "url": "assets/images/menuBg.png",
+      "overwrite": false
+    },
+    {
+      "type": "script",
+      "key": "menuBg1",
+      "url": "prefabs/menuBg.js"
+    },
+    {
+      "type": "image",
+      "key": "deployBtn",
+      "url": "assets/images/deployBtn.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "userPic",
+      "url": "assets/images/userPic.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "menuCoin",
+      "url": "assets/images/menuCoin.png",
+      "overwrite": false
     }
   ],
   "atlas": [
-    {
-      "type": "atlas",
-      "key": "ship",
-      "textureURL": "assets/atlas/ship.png",
-      "atlasURL": "assets/atlas/ship.xml",
-      "format": "TEXTURE_ATLAS_XML_STARLING"
-    },
-    {
-      "type": "script",
-      "key": "redShip",
-      "url": "prefabs/redShip.js"
-    },
-    {
-      "type": "script",
-      "key": "cannon",
-      "url": "prefabs/cannon.js"
-    },
-    {
-      "type": "script",
-      "key": "mainShip",
-      "url": "prefabs/mainShip.js"
-    },
     {
       "type": "atlas",
       "key": "player",
@@ -120,18 +127,6 @@
       "type": "script",
       "key": "player1",
       "url": "prefabs/player.js"
-    },
-    {
-      "type": "atlas",
-      "key": "zepellin",
-      "textureURL": "assets/atlas/zepellin.png",
-      "atlasURL": "assets/atlas/zepellin.xml",
-      "format": "TEXTURE_ATLAS_XML_STARLING"
-    },
-    {
-      "type": "script",
-      "key": "zepellin1",
-      "url": "prefabs/zepellin.js"
     },
     {
       "type": "atlas",
@@ -198,10 +193,32 @@
       "type": "script",
       "key": "powerUp3",
       "url": "prefabs/powerUp3.js"
+    },
+    {
+      "type": "atlas",
+      "key": "buttons",
+      "textureURL": "assets/atlas/buttons.png",
+      "atlasURL": "assets/atlas/buttons.xml",
+      "format": "TEXTURE_ATLAS_XML_STARLING"
+    },
+    {
+      "type": "script",
+      "key": "upgradeBtn",
+      "url": "prefabs/upgradeBtn.js"
+    },
+    {
+      "type": "script",
+      "key": "updateSign",
+      "url": "prefabs/updateSign.js"
+    },
+    {
+      "type": "script",
+      "key": "updateBtn",
+      "url": "prefabs/updateBtn.js"
     }
   ],
   "meta": {
-    "generated": "1597680299740",
+    "generated": "1597849238429",
     "app": "Phaser Editor",
     "url": "http://phasereditor.boniatillo.com",
     "version": "1.0",

@@ -1,7 +1,7 @@
 {
   "canvas-version": 2,
   "settings": {
-    "className": "cannon",
+    "className": "updateSign",
     "sceneWidth": 640,
     "sceneHeight": 360,
     "generateOnSave": true,
@@ -33,18 +33,23 @@
   },
   "world": {
     "type": "group",
-    "id": "b665b3d2-c3ca-422b-9e87-8f0dae6553c3",
+    "id": "bd8c51c8-ce7d-465b-a6d4-4521949eb967",
     "info": {
-      "editorName": "cannon",
+      "editorName": "updateSign",
       "setAll": [],
       "children": [{
         "type": "atlas-sprite",
-        "id": "79facac9-f3b8-40f4-a614-d03b44db1dc1",
+        "id": "c9c723f6-3a1a-4f7a-8d34-e044a950e991",
         "asset": "0",
         "info": {
-          "editorName": "cannon0000",
+          "editorName": "upgradeSign0000",
           "anchor.x": 0.5,
-          "anchor.y": 0.5
+          "anchor.y": 0.5,
+          "animations": [{
+            "name": "updated",
+            "frameRate": 1,
+            "frames": ["upgradeSign0001"]
+          }]
         }
       }]
     }
@@ -53,8 +58,8 @@
   "asset-table": {"0": {
     "file": "WebContent/assets/pack.json",
     "section": "atlas",
-    "asset": "ship",
-    "sprite": "cannon0000"
+    "asset": "buttons",
+    "sprite": "upgradeSign0000"
   }},
   "prefab-table": {}
 }

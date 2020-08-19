@@ -69,26 +69,29 @@ Level.prototype.create = function () {
 	
 	this.add.text(87.0, 397.0, 'You got', {"font":"bold 60px Arial","fill":"#ffffff","stroke":"#ffffff"}, _powerLabel);
 	
-	var _player = new player(this.game, 465.0, 512.0);
-	this.add.existing(_player);
-	
 	var _enemies = this.add.physicsGroup(Phaser.Physics.ARCADE);
 	
 	var _powerUps = this.add.group();
 	
-	var _core1 = this.add.sprite(1728.0, 32.0, 'core1');
+	var _core1 = this.add.sprite(1728.0, 67.0, 'core1');
 	_core1.fixedToCamera = true;
 	_core1.tint = 0x808080;
 	
 	var _coins = this.add.physicsGroup(Phaser.Physics.ARCADE);
 	
-	var _coinSymbol = this.add.sprite(33.0, 30.0, 'powerUps', 'Symbol 4 instance 10013');
+	var _coinSymbol = this.add.sprite(33.0, 74.0, 'powerUps', 'Symbol 4 instance 10013');
 	_coinSymbol.fixedToCamera = true;
 	
-	var _moneyText = this.add.text(133.0, 31.0, '000001', {"font":"bold 70px Arial","fill":"#ffff80","stroke":"#ff8040"});
+	var _moneyText = this.add.text(133.0, 75.0, '000001', {"font":"bold 70px Arial","fill":"#ffff80","stroke":"#ff8040"});
 	_moneyText.fixedToCamera = true;
 	
 	var _bullets = this.add.physicsGroup(Phaser.Physics.ARCADE);
+	
+	var _menu = new menuBg(this.game);
+	_menu.position.set(9.0, -947.0);
+	
+	var _player = new player(this.game, 465.0, 512.0);
+	this.add.existing(_player);
 	
 	
 	
@@ -98,13 +101,14 @@ Level.prototype.create = function () {
 	this.fPlatforms = _platforms;
 	this.fPowerLabel = _powerLabel;
 	this.fPowerText = _powerText;
-	this.fPlayer = _player;
 	this.fEnemies = _enemies;
 	this.fPowerUps = _powerUps;
 	this.fCore1 = _core1;
 	this.fCoins = _coins;
 	this.fMoneyText = _moneyText;
 	this.fBullets = _bullets;
+	this.fMenu = _menu;
+	this.fPlayer = _player;
 	this.myCreate();
 	
 	
@@ -137,27 +141,47 @@ Level.prototype.myCreate = function () {
 
 Level.prototype.deployItems = function() {
 
-const wichItem =  Math.random() < 0.2;
+var itemAppearChance = (this.fPlayer.core1Level + this.fPlayer.core2Level + this.fPlayer.core3Level)/10;
+
+if(itemAppearChance>=0.3){
+	itemAppearChance = 0.3;
+}
+
+const wichItem =  Math.random() < itemAppearChance;
+
+console.log( itemAppearChance);
 const enemyXDeploy = Math.random()  * (550 - 200) + 200;
 
 if(wichItem){
-
-	const wichItem2 =  Math.random() < 0.8;
+	const item1Cap = this.fPlayer.core1Level/10;
+	console.log( 'item 1 chance ' + (0.5+item1Cap));
+	const wichItem2 =  Math.random() < (0.5+item1Cap);
 	
 
 	if(wichItem2){
 		var _itemPowerUp = new powerUp1(this.game, this.game.width+50, enemyXDeploy);
 		this.fPowerUps.add(_itemPowerUp);
+
 	}else{
-		
+			const item2Cap = this.fPlayer.core2Level/10;
+			const item3Cap = this.fPlayer.core2Level/10;
+
 			const wichItem3 =  Math.random() < 0.5;
 			
 			if(wichItem3){
-				var _itemPowerUp = new powerUp2(this.game, this.game.width+50, enemyXDeploy);
-				this.fPowerUps.add(_itemPowerUp);
+				const saleOno =  Math.random() < 0.6+item2Cap;
+				if(saleOno){
+					var _itemPowerUp = new powerUp2(this.game, this.game.width+50, enemyXDeploy);
+					this.fPowerUps.add(_itemPowerUp);
+				}
+				
 			}else{
-				var _itemPowerUp = new powerUp3(this.game, this.game.width+50, enemyXDeploy);
-				this.fPowerUps.add(_itemPowerUp);
+				const saleOno2 =  Math.random() < 0.6+item2Cap;
+				if(saleOno2){
+					var _itemPowerUp = new powerUp3(this.game, this.game.width+50, enemyXDeploy);
+					this.fPowerUps.add(_itemPowerUp);
+				}
+				
 			}
 		
 	}
@@ -318,7 +342,7 @@ Level.prototype.getPowerUp = function (player,powerUp) {
 			player.myDoubleJump++;
 			player.canDoubleJump=true;
 			this.fPlayer.usingDoubleJump =  true;
-			this.fPowerText.text = 'Jump and Destroy';
+			this.fPowerText.text = 'Multi Jump';
 		
 			this.timerPower2 = this.game.time.create(false);
 	    	this.timerPower2.loop(5000, quitDoubleJump, this);
@@ -357,22 +381,22 @@ Level.prototype.getPowerUp = function (player,powerUp) {
    		this.speedPowerInstance = new speedPower(this.game, this.fPlayer.x, this.fPlayer.y);
 		this.add.existing(this.speedPowerInstance);
 
-   		this.fEnemies.forEach(enemy => {
+   		this.fEnemies.forEach(function(enemy){
   			enemy.speedKill =  true;
 		});
 
    		function slowAgain(){
 			this.speedPowerInstance.destroy();
-   			this.fEnemies.forEach(enemy => {
+   			this.fEnemies.forEach(function(enemy){
   			enemy.speedKill =  false;
 			});
 			this.fPlayer.usingSpeedForce =  false;
    			this.fPlayer.body.moves = true;
    			this.maximunStageSpeed=600;
    			this.timerPower.destroy();
-   		}
+   		};
 		
-	}
+	};
 
 			
 }
@@ -428,7 +452,12 @@ Level.prototype.update = function () {
 		for(var i = 0 ; i<=10; i++){
 			this.createCoins(this.game.width/2,0,1500);
 		}
-		this.stageSpeed -= 100;
+		this.stageSpeed -= 20;
+		if(this.stageSpeed<=100){
+
+			this.stageSpeed=100
+		}
+		
 		this.fPlayer.x = this.game.width/2;
 		this.shakeAndFlash();
 	}
