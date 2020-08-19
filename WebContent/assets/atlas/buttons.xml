@@ -38,27 +38,27 @@
 	<SubTexture name="menuOver instance 10001" x="1123" y="1661" width="560" height="170" frameX="0" frameY="0" frameWidth="560" frameHeight="180"/>
 	<SubTexture name="menuOver instance 10002" x="1" y="1832" width="560" height="175" frameX="0" frameY="0" frameWidth="560" frameHeight="180"/>
 	<SubTexture name="menuOver instance 10003" x="562" y="1832" width="560" height="180"/>
-	<SubTexture name="updtaBtn0000" x="1123" y="1832" width="317" height="74" pivotX="158.5" pivotY="36.5"/>
-	<SubTexture name="updtaBtn0001" x="1441" y="1832" width="317" height="74"/>
-	<SubTexture name="updtaBtn0002" x="1" y="2013" width="317" height="74"/>
-	<SubTexture name="updtaBtn0003" x="319" y="2013" width="317" height="74"/>
-	<SubTexture name="updtaBtn0004" x="637" y="2013" width="317" height="74"/>
-	<SubTexture name="updtaBtn0005" x="955" y="2013" width="317" height="74"/>
-	<SubTexture name="updtaBtn0006" x="1273" y="2013" width="317" height="74"/>
-	<SubTexture name="updtaBtn0007" x="1591" y="2013" width="317" height="74"/>
-	<SubTexture name="updtaBtn0008" x="1" y="2088" width="317" height="74"/>
-	<SubTexture name="updtaBtn0009" x="319" y="2088" width="317" height="74"/>
-	<SubTexture name="updtaBtn0000" x="637" y="2088" width="318" height="74"/>
-	<SubTexture name="updtaBtn0001" x="956" y="2088" width="318" height="71" frameX="0" frameY="-3" frameWidth="318" frameHeight="74"/>
-	<SubTexture name="updtaBtn0002" x="1275" y="2088" width="318" height="68" frameX="0" frameY="-6" frameWidth="318" frameHeight="74"/>
-	<SubTexture name="updtaBtn0003" x="1594" y="2088" width="318" height="65" frameX="0" frameY="-9" frameWidth="318" frameHeight="74"/>
-	<SubTexture name="updtaBtn0004" x="1" y="2163" width="318" height="62" frameX="0" frameY="-12" frameWidth="318" frameHeight="74"/>
-	<SubTexture name="updtaBtn0005" x="320" y="2163" width="318" height="64" frameX="0" frameY="-10" frameWidth="318" frameHeight="74"/>
-	<SubTexture name="updtaBtn0006" x="639" y="2163" width="318" height="67" frameX="0" frameY="-7" frameWidth="318" frameHeight="74"/>
-	<SubTexture name="updtaBtn0007" x="958" y="2163" width="318" height="69" frameX="0" frameY="-5" frameWidth="318" frameHeight="74"/>
-	<SubTexture name="updtaBtn0008" x="1277" y="2163" width="318" height="72" frameX="0" frameY="-2" frameWidth="318" frameHeight="74"/>
-	<SubTexture name="updtaBtn0009" x="1596" y="2163" width="318" height="74"/>
-	<SubTexture name="updtaBtn20000" x="1" y="2238" width="318" height="74" pivotX="158.5" pivotY="36.5"/>
-	<SubTexture name="upgradeSign0000" x="320" y="2238" width="74" height="84" pivotX="36.65" pivotY="41.65"/>
-	<SubTexture name="upgradeSign0001" x="395" y="2238" width="74" height="84"/>
+	<SubTexture name="updtaBtn0000" x="1123" y="1832" width="318" height="74" pivotX="158.5" pivotY="36.5"/>
+	<SubTexture name="updtaBtn0001" x="1442" y="1832" width="318" height="71" frameX="0" frameY="-3" frameWidth="318" frameHeight="74"/>
+	<SubTexture name="updtaBtn0002" x="1" y="2013" width="318" height="68" frameX="0" frameY="-6" frameWidth="318" frameHeight="74"/>
+	<SubTexture name="updtaBtn0003" x="320" y="2013" width="318" height="65" frameX="0" frameY="-9" frameWidth="318" frameHeight="74"/>
+	<SubTexture name="updtaBtn0004" x="639" y="2013" width="318" height="62" frameX="0" frameY="-12" frameWidth="318" frameHeight="74"/>
+	<SubTexture name="updtaBtn0005" x="958" y="2013" width="318" height="64" frameX="0" frameY="-10" frameWidth="318" frameHeight="74"/>
+	<SubTexture name="updtaBtn0006" x="1277" y="2013" width="318" height="67" frameX="0" frameY="-7" frameWidth="318" frameHeight="74"/>
+	<SubTexture name="updtaBtn0007" x="1596" y="2013" width="318" height="69" frameX="0" frameY="-5" frameWidth="318" frameHeight="74"/>
+	<SubTexture name="updtaBtn0008" x="1" y="2083" width="318" height="72" frameX="0" frameY="-2" frameWidth="318" frameHeight="74"/>
+	<SubTexture name="updtaBtn0009" x="320" y="2083" width="318" height="74"/>
+	<SubTexture name="updtaBtn20000" x="639" y="2083" width="318" height="74" pivotX="158.5" pivotY="36.5"/>
+	<SubTexture name="updtaBtn30000" x="958" y="2083" width="317" height="74" pivotX="158.5" pivotY="36.5"/>
+	<SubTexture name="updtaBtn30001" x="1276" y="2083" width="317" height="74"/>
+	<SubTexture name="updtaBtn30002" x="1594" y="2083" width="317" height="74"/>
+	<SubTexture name="updtaBtn30003" x="1" y="2158" width="317" height="74"/>
+	<SubTexture name="updtaBtn30004" x="319" y="2158" width="317" height="74"/>
+	<SubTexture name="updtaBtn30005" x="637" y="2158" width="317" height="74"/>
+	<SubTexture name="updtaBtn30006" x="955" y="2158" width="317" height="74"/>
+	<SubTexture name="updtaBtn30007" x="1273" y="2158" width="317" height="74"/>
+	<SubTexture name="updtaBtn30008" x="1591" y="2158" width="317" height="74"/>
+	<SubTexture name="updtaBtn30009" x="1" y="2233" width="317" height="74"/>
+	<SubTexture name="upgradeSign0000" x="319" y="2233" width="74" height="84" pivotX="36.65" pivotY="41.65"/>
+	<SubTexture name="upgradeSign0001" x="394" y="2233" width="74" height="84"/>
 </TextureAtlas>
