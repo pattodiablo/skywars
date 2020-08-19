@@ -250,7 +250,7 @@
                     "type": "text",
                     "id": "62acfd23-d1c6-481e-81ab-1272e833013a",
                     "info": {
-                      "editorName": "text",
+                      "editorName": "text2",
                       "x": 316,
                       "y": 458,
                       "text": "Speed Force",
@@ -308,8 +308,7 @@
                     "type": "text",
                     "id": "db54f9c8-e136-4d93-915d-db9cd254266d",
                     "info": {
-                      "editorName": "explainText",
-                      "editorPick": false,
+                      "editorName": "explainText2",
                       "editorField": true,
                       "x": 380,
                       "y": 703,
@@ -344,7 +343,7 @@
                     "type": "text",
                     "id": "d6a7af3c-b457-4788-99cf-feff1f83a3ef",
                     "info": {
-                      "editorName": "text",
+                      "editorName": "text3",
                       "x": 316,
                       "y": 458,
                       "text": "Super Shot",
@@ -402,8 +401,7 @@
                     "type": "text",
                     "id": "d482479d-62d4-4ebd-936e-634f9b7c74c0",
                     "info": {
-                      "editorName": "explainText",
-                      "editorPick": false,
+                      "editorName": "explainText3",
                       "editorField": true,
                       "x": 380,
                       "y": 703,

@@ -60,7 +60,8 @@ upgradeBtn.prototype.pullMenu = function () {
 		this.menuOn = true;
 		this.game.state.getCurrentState().fPlayer.body.enable = false;
 		this.game.state.getCurrentState().maximunStageSpeed=300;
-		 this.game.state.getCurrentState().fMenu.fReturnText.text = 'READY & DEPLOY';
+		this.game.state.getCurrentState().fMenu.fReturnText.text = 'READY & DEPLOY';
+		this.game.state.getCurrentState().fMenu.menuIsOpen =  true;
 		
 	}else{
 			
@@ -71,7 +72,8 @@ upgradeBtn.prototype.pullMenu = function () {
 		this.game.state.getCurrentState().fPlayer.body.enable = true;
 		//this.game.state.getCurrentState().fPlayer.x = this.game.width/2;
 		this.game.state.getCurrentState().maximunStageSpeed=600;
-		 this.game.state.getCurrentState().fMenu.fReturnText.text = 'RETURN TO BASE';
+		this.game.state.getCurrentState().fMenu.fReturnText.text = 'RETURN TO BASE';
+		this.game.state.getCurrentState().fMenu.menuIsOpen =  false;
 	}
 	
 	

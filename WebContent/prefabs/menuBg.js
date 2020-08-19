@@ -9,7 +9,8 @@
 /**
  * menuBg.
  * @param {Phaser.Game} aGame A reference to the currently running game.
- * @param {Phaser.Group} aParent The parent Group (or other {@link DisplayObject}) that this group will be added to.    If undefined/unspecified the Group will be added to the {@link Phaser.Game#world Game World}; if null the Group will not be added to any parent.
+ * @param {Phaser.Group} aParent The parent Group (or other {@link DisplayObject}) that this group will be added to.
+    If undefined/unspecified the Group will be added to the {@link Phaser.Game#world Game World}; if null the Group will not be added to any parent.
  * @param {string} aName A name for this group. Not used internally but useful for debugging.
  * @param {boolean} aAddToStage If true this group will be added directly to the Game.Stage instead of Game.World.
  * @param {boolean} aEnableBody If true all Sprites created with {@link #create} or {@link #createMulitple} will have a physics body created on them. Change the body type with {@link #physicsBodyType}.
@@ -66,7 +67,7 @@ function menuBg(aGame, aParent, aName, aAddToStage, aEnableBody, aPhysicsBodyTyp
 	
 	var _Core2cost = this.game.add.text(429.0, 631.0, '00000', {"font":"bold 45px Arial","fill":"#ffffff"}, _SpeedForce);
 	
-	var _explainText = this.game.add.text(380.0, 703.0, 'appearing rate', {"font":"bold 30px Arial","fill":"#ffffff"}, _SpeedForce);
+	var _explainText2 = this.game.add.text(380.0, 703.0, 'appearing rate', {"font":"bold 30px Arial","fill":"#ffffff"}, _SpeedForce);
 	
 	this.game.add.sprite(164.0, 507.0, 'core2', null, _SpeedForce);
 	
@@ -83,7 +84,7 @@ function menuBg(aGame, aParent, aName, aAddToStage, aEnableBody, aPhysicsBodyTyp
 	
 	var _Core3cost = this.game.add.text(428.0, 631.0, '00000', {"font":"bold 45px Arial","fill":"#ffffff"}, _SuperShot);
 	
-	var _explainText = this.game.add.text(380.0, 703.0, 'appearing rate', {"font":"bold 30px Arial","fill":"#ffffff"}, _SuperShot);
+	var _explainText3 = this.game.add.text(380.0, 703.0, 'appearing rate', {"font":"bold 30px Arial","fill":"#ffffff"}, _SuperShot);
 	
 	this.game.add.sprite(164.0, 507.0, 'core3', null, _SuperShot);
 	
@@ -103,11 +104,11 @@ function menuBg(aGame, aParent, aName, aAddToStage, aEnableBody, aPhysicsBodyTyp
 	this.fUpgradeSign2 = _upgradeSign2;
 	this.fCore2UpdateBtn = _Core2UpdateBtn;
 	this.fCore2cost = _Core2cost;
-	this.fExplainText = _explainText;
+	this.fExplainText2 = _explainText2;
 	this.fUpgradeSign3 = _upgradeSign3;
 	this.fCore3UpdateBtn = _Core3UpdateBtn;
 	this.fCore3cost = _Core3cost;
-	this.fExplainText = _explainText;
+	this.fExplainText3 = _explainText3;
 	
 	this.myCreate();
 	
@@ -123,6 +124,7 @@ menuBg.prototype.constructor = menuBg;
 
 menuBg.prototype.myCreate =  function(){
 	
+	this.menuIsOpen =  false;
 	this.myIniYPos =  this.y;
 	this.core1BaseCost = 100;
 	this.core1Level = 0;
@@ -201,6 +203,10 @@ menuBg.prototype.updateCore3 =  function(){
 
 menuBg.prototype.update =  function(){
 
+	if(this.menuIsOpen){
+
+
+
 	this.fCoins.text = this.game.state.getCurrentState().fPlayer.coins;
 	this.fLevelNumber.text =this.game.state.getCurrentState().fPlayer.myLevel;
 	this.fCore1cost.text = this.core1BaseCost;
@@ -228,5 +234,6 @@ menuBg.prototype.update =  function(){
 			this.fCore3UpdateBtn.animations.play('cantUpdate');
 		}
 		
-	
+			
+	}
 	}
