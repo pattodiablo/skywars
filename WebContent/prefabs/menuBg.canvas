@@ -66,8 +66,8 @@
               },
               "info": {
                 "editorName": "buttonMenu",
-                "x": 933,
-                "y": 1032
+                "x": 531,
+                "y": 1040
               }
             },
             {
@@ -76,8 +76,8 @@
               "info": {
                 "editorName": "returnText",
                 "editorField": true,
-                "x": 764,
-                "y": 1018,
+                "x": 342,
+                "y": 1020,
                 "text": "RETURN TO BASE",
                 "style.fontSize": 40,
                 "style.fill": "#ffffff"
@@ -89,22 +89,10 @@
               "info": {
                 "editorName": "coins",
                 "editorField": true,
-                "x": 363,
-                "y": 71,
+                "x": 441,
+                "y": 61,
                 "text": "0000",
-                "style.fontSize": 50,
-                "style.fill": "#683329"
-              }
-            },
-            {
-              "type": "text",
-              "id": "7b8dcd2b-f6cf-4bd1-94b4-7f44a4f4d3c7",
-              "info": {
-                "editorName": "coinsLabel",
-                "x": 362,
-                "y": 43,
-                "text": "your coins",
-                "style.fontSize": 25,
+                "style.fontSize": 60,
                 "style.fill": "#683329"
               }
             },
@@ -113,7 +101,7 @@
               "id": "30df9f01-5b32-4869-9070-cd5d50bfbe48",
               "info": {
                 "editorName": "LevelLabel",
-                "x": 363,
+                "x": 451,
                 "y": 149,
                 "text": "Level",
                 "style.fontSize": 50,
@@ -126,7 +114,7 @@
               "info": {
                 "editorName": "LevelNumber",
                 "editorField": true,
-                "x": 494,
+                "x": 582,
                 "y": 149,
                 "text": "00",
                 "style.fontSize": 50,
@@ -139,7 +127,7 @@
               "asset": "1",
               "info": {
                 "editorName": "userPic",
-                "x": 46,
+                "x": 127,
                 "y": 24
               }
             },
@@ -219,20 +207,6 @@
                       "style.fontSize": 45,
                       "style.fill": "#ffffff"
                     }
-                  },
-                  {
-                    "type": "text",
-                    "id": "887f18cb-744d-426f-8e22-832fee552f3f",
-                    "info": {
-                      "editorName": "explainText",
-                      "editorPick": false,
-                      "editorField": true,
-                      "x": 380,
-                      "y": 703,
-                      "text": "appearing rate",
-                      "style.fontSize": 30,
-                      "style.fill": "#ffffff"
-                    }
                   }
                 ]
               }
@@ -301,19 +275,6 @@
                       "y": 631,
                       "text": "00000",
                       "style.fontSize": 45,
-                      "style.fill": "#ffffff"
-                    }
-                  },
-                  {
-                    "type": "text",
-                    "id": "db54f9c8-e136-4d93-915d-db9cd254266d",
-                    "info": {
-                      "editorName": "explainText2",
-                      "editorField": true,
-                      "x": 380,
-                      "y": 703,
-                      "text": "appearing rate",
-                      "style.fontSize": 30,
                       "style.fill": "#ffffff"
                     }
                   },
@@ -398,19 +359,6 @@
                     }
                   },
                   {
-                    "type": "text",
-                    "id": "d482479d-62d4-4ebd-936e-634f9b7c74c0",
-                    "info": {
-                      "editorName": "explainText3",
-                      "editorField": true,
-                      "x": 380,
-                      "y": 703,
-                      "text": "appearing rate",
-                      "style.fontSize": 30,
-                      "style.fill": "#ffffff"
-                    }
-                  },
-                  {
                     "type": "image",
                     "id": "ed1c4f2d-c454-454f-83b4-6dbbb591f92b",
                     "asset": "4",
@@ -424,13 +372,37 @@
               }
             },
             {
+              "type": "text",
+              "id": "887f18cb-744d-426f-8e22-832fee552f3f",
+              "info": {
+                "editorName": "explainText",
+                "editorField": true,
+                "x": 42,
+                "y": 291,
+                "text": "*Each upgrade grants appearing rate and time usage",
+                "style.fontSize": 30,
+                "style.fill": "#ffffff"
+              }
+            },
+            {
               "type": "image",
               "id": "eb99cc5a-13ee-4ff7-9a75-cdd36b74f0c8",
               "asset": "5",
               "info": {
                 "editorName": "menuCoin",
-                "x": 291,
+                "x": 365,
                 "y": 60
+              }
+            },
+            {
+              "type": "prefab",
+              "prefab": "3",
+              "id": "99c2dd64-831d-4386-8853-7d4f4ca097fe",
+              "info": {
+                "editorName": "levelBar",
+                "editorField": true,
+                "x": 855,
+                "y": 933
               }
             }
           ]
@@ -474,6 +446,7 @@
   "prefab-table": {
     "0": "WebContent/prefabs/upgradeBtn.canvas",
     "1": "WebContent/prefabs/updateSign.canvas",
-    "2": "WebContent/prefabs/updateBtn.canvas"
+    "2": "WebContent/prefabs/updateBtn.canvas",
+    "3": "WebContent/prefabs/levelBar.canvas"
   }
 }

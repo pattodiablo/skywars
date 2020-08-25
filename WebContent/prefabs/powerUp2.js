@@ -49,5 +49,7 @@ powerUp2.prototype.myCreate =  function(){
 };
 
 powerUp2.prototype.update = function() {
-	
+	if(this.x<=-100){
+		this.destroy();
+	}
 };

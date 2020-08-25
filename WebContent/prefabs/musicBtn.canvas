@@ -1,0 +1,73 @@
+{
+  "canvas-version": 2,
+  "settings": {
+    "className": "musicBtn",
+    "sceneWidth": 640,
+    "sceneHeight": 360,
+    "generateOnSave": true,
+    "enableStepping": false,
+    "lang": "JAVA_SCRIPT",
+    "baseClass": "Phaser.Sprite",
+    "backgroundColor": [
+      180,
+      180,
+      180
+    ],
+    "gridColor": [
+      200,
+      200,
+      200
+    ],
+    "showGrid": true,
+    "create_after": "this.myCreate();"
+  },
+  "stateSettings": {
+    "stageBackgroundColor": [
+      0,
+      0,
+      0
+    ],
+    "autoLoad": true,
+    "preloadSpriteId": "",
+    "preloadSprite_direction": 0,
+    "load.pack": []
+  },
+  "world": {
+    "type": "group",
+    "id": "9b840428-7ea1-4883-bc8d-91d05a955bff",
+    "info": {
+      "editorName": "musicBtn",
+      "setAll": [],
+      "children": [{
+        "type": "atlas-sprite",
+        "id": "bb0bf86c-d9ad-45e0-ab91-66bf4f2bd093",
+        "asset": "0",
+        "info": {
+          "editorName": "musicBtn0000",
+          "anchor.x": 0.5,
+          "anchor.y": 0.5,
+          "animations": [
+            {
+              "name": "off",
+              "frameRate": 1,
+              "frames": ["musicBtn0001"]
+            },
+            {
+              "name": "on",
+              "frameRate": 1,
+              "frames": ["musicBtn0000"]
+            }
+          ]
+        }
+      }]
+    }
+  },
+  "type": "SPRITE",
+  "asset-table": {"0": {
+    "file": "WebContent/assets/pack.json",
+    "section": "atlas",
+    "asset": "buttons",
+    "sprite": "musicBtn0000"
+  }},
+  "prefab-table": {}
+}

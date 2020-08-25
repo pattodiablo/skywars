@@ -1,0 +1,73 @@
+{
+  "canvas-version": 2,
+  "settings": {
+    "className": "expLabel",
+    "sceneWidth": 640,
+    "sceneHeight": 360,
+    "generateOnSave": true,
+    "enableStepping": false,
+    "lang": "JAVA_SCRIPT",
+    "baseClass": "Phaser.Sprite",
+    "backgroundColor": [
+      180,
+      180,
+      180
+    ],
+    "gridColor": [
+      200,
+      200,
+      200
+    ],
+    "showGrid": true
+  },
+  "stateSettings": {
+    "stageBackgroundColor": [
+      0,
+      0,
+      0
+    ],
+    "autoLoad": true,
+    "preloadSpriteId": "",
+    "preloadSprite_direction": 0,
+    "load.pack": []
+  },
+  "world": {
+    "type": "group",
+    "id": "4bf10fcd-daa4-429f-a7c6-350f6c5f5b40",
+    "info": {
+      "editorName": "expLabel",
+      "setAll": [],
+      "children": [{
+        "type": "atlas-sprite",
+        "id": "86b92fc6-b7a1-4e31-a217-54652342e6ef",
+        "asset": "0",
+        "info": {
+          "editorName": "expLabel0000",
+          "anchor.x": 0.5,
+          "anchor.y": 0.5,
+          "animations": [{
+            "name": "show",
+            "frameRate": 15,
+            "killOnComplete": true,
+            "autoPlay": true,
+            "frames": [
+              "expLabel0000",
+              "expLabel0001",
+              "expLabel0002",
+              "expLabel0003",
+              "expLabel0004"
+            ]
+          }]
+        }
+      }]
+    }
+  },
+  "type": "SPRITE",
+  "asset-table": {"0": {
+    "file": "WebContent/assets/pack.json",
+    "section": "atlas",
+    "asset": "buttons",
+    "sprite": "expLabel0000"
+  }},
+  "prefab-table": {}
+}

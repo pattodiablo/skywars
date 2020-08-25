@@ -5,6 +5,7 @@ window.onload = function() {
 	// game.state.add("Boot", Boot);
 	// game.state.add("Menu", Menu);
 	// game.state.add("Preload", Preload);
+	game.musicOption=1;
 	game.state.add("Level", Level);
 
 	game.state.start("Level");

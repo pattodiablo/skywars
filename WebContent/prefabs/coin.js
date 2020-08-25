@@ -54,10 +54,10 @@ coin.prototype.retriveCoin = function() {
 	
 	
 	if(distance <= 300 || this.killedByBullet){
-		tween = this.game.add.tween(this);
-		tween.to({x:0,y:30}, 500, Phaser.Easing.Linear.None);
-		tween.onComplete.add(this.captureCoin, this);
-		tween.start();	
+		this.tween = this.game.add.tween(this);
+		this.tween.to({x:this.game.width-370,y:30}, 500, Phaser.Easing.Linear.None);
+		this.tween.onComplete.add(this.captureCoin, this);
+		this.tween.start();	
 	}else{
 		this.tint = 0x9e9e9e;
 	}
@@ -65,14 +65,16 @@ coin.prototype.retriveCoin = function() {
 };
 
 coin.prototype.captureCoin = function() {
+	this.tween.stop();	
 	this.game.state.getCurrentState().fPlayer.coins++;
 	this.destroy();
 };
 
 coin.prototype.update = function() {
-	if(this.y>=this.game.height+this.height || this.x<=-this.width-200){
+	if(!this.killedByBullet){
+	if(this.y>=this.game.height+300 || this.x<=-this.width-500){
 		
 		this.destroy();
 	}
-
+}
 };

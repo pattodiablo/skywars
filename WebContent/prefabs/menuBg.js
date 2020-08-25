@@ -22,20 +22,18 @@ function menuBg(aGame, aParent, aName, aAddToStage, aEnableBody, aPhysicsBodyTyp
 	var _menuBg1 = this.game.add.sprite(0.0, 0.0, 'menuBg', null, this);
 	_menuBg1.fixedToCamera = true;
 	
-	var _buttonMenu = new upgradeBtn(this.game, 933.0, 1032.0);
+	var _buttonMenu = new upgradeBtn(this.game, 531.0, 1040.0);
 	this.add(_buttonMenu);
 	
-	var _returnText = this.game.add.text(764.0, 1018.0, 'RETURN TO BASE', {"font":"bold 40px Arial","fill":"#ffffff"}, this);
+	var _returnText = this.game.add.text(342.0, 1020.0, 'RETURN TO BASE', {"font":"bold 40px Arial","fill":"#ffffff"}, this);
 	
-	var _coins = this.game.add.text(363.0, 71.0, '0000', {"font":"bold 50px Arial","fill":"#683329"}, this);
+	var _coins = this.game.add.text(441.0, 61.0, '0000', {"font":"bold 60px Arial","fill":"#683329"}, this);
 	
-	this.game.add.text(362.0, 43.0, 'your coins', {"font":"bold 25px Arial","fill":"#683329"}, this);
+	this.game.add.text(451.0, 149.0, 'Level', {"font":"bold 50px Arial","fill":"#ffffff"}, this);
 	
-	this.game.add.text(363.0, 149.0, 'Level', {"font":"bold 50px Arial","fill":"#ffffff"}, this);
+	var _LevelNumber = this.game.add.text(582.0, 149.0, '00', {"font":"bold 50px Arial","fill":"#ffffff"}, this);
 	
-	var _LevelNumber = this.game.add.text(494.0, 149.0, '00', {"font":"bold 50px Arial","fill":"#ffffff"}, this);
-	
-	this.game.add.sprite(46.0, 24.0, 'userPic', null, this);
+	this.game.add.sprite(127.0, 24.0, 'userPic', null, this);
 	
 	var _MultiJump = this.game.add.group(this);
 	_MultiJump.position.set(-47.0, -31.0);
@@ -52,8 +50,6 @@ function menuBg(aGame, aParent, aName, aAddToStage, aEnableBody, aPhysicsBodyTyp
 	
 	var _Core1cost = this.game.add.text(428.0, 631.0, '00000', {"font":"bold 45px Arial","fill":"#ffffff"}, _MultiJump);
 	
-	var _explainText = this.game.add.text(380.0, 703.0, 'appearing rate', {"font":"bold 30px Arial","fill":"#ffffff"}, _MultiJump);
-	
 	var _SpeedForce = this.game.add.group(this);
 	_SpeedForce.position.set(533.0, -31.0);
 	
@@ -66,8 +62,6 @@ function menuBg(aGame, aParent, aName, aAddToStage, aEnableBody, aPhysicsBodyTyp
 	_SpeedForce.add(_Core2UpdateBtn);
 	
 	var _Core2cost = this.game.add.text(429.0, 631.0, '00000', {"font":"bold 45px Arial","fill":"#ffffff"}, _SpeedForce);
-	
-	var _explainText2 = this.game.add.text(380.0, 703.0, 'appearing rate', {"font":"bold 30px Arial","fill":"#ffffff"}, _SpeedForce);
 	
 	this.game.add.sprite(164.0, 507.0, 'core2', null, _SpeedForce);
 	
@@ -84,11 +78,14 @@ function menuBg(aGame, aParent, aName, aAddToStage, aEnableBody, aPhysicsBodyTyp
 	
 	var _Core3cost = this.game.add.text(428.0, 631.0, '00000', {"font":"bold 45px Arial","fill":"#ffffff"}, _SuperShot);
 	
-	var _explainText3 = this.game.add.text(380.0, 703.0, 'appearing rate', {"font":"bold 30px Arial","fill":"#ffffff"}, _SuperShot);
-	
 	this.game.add.sprite(164.0, 507.0, 'core3', null, _SuperShot);
 	
-	this.game.add.sprite(291.0, 60.0, 'menuCoin', null, this);
+	var _explainText = this.game.add.text(42.0, 291.0, '*Each upgrade grants appearing rate and time usage', {"font":"bold 30px Arial","fill":"#ffffff"}, this);
+	
+	this.game.add.sprite(365.0, 60.0, 'menuCoin', null, this);
+	
+	var _levelBar = new levelBar(this.game, this);
+	_levelBar.position.set(855.0, 933.0);
 	
 	
 	
@@ -100,15 +97,14 @@ function menuBg(aGame, aParent, aName, aAddToStage, aEnableBody, aPhysicsBodyTyp
 	this.fUpgradeSign1 = _upgradeSign1;
 	this.fCore1UpdateBtn = _Core1UpdateBtn;
 	this.fCore1cost = _Core1cost;
-	this.fExplainText = _explainText;
 	this.fUpgradeSign2 = _upgradeSign2;
 	this.fCore2UpdateBtn = _Core2UpdateBtn;
 	this.fCore2cost = _Core2cost;
-	this.fExplainText2 = _explainText2;
 	this.fUpgradeSign3 = _upgradeSign3;
 	this.fCore3UpdateBtn = _Core3UpdateBtn;
 	this.fCore3cost = _Core3cost;
-	this.fExplainText3 = _explainText3;
+	this.fExplainText = _explainText;
+	this.fLevelBar = _levelBar;
 	
 	this.myCreate();
 	
@@ -201,13 +197,26 @@ menuBg.prototype.updateCore3 =  function(){
 	
 }
 
-menuBg.prototype.update =  function(){
+menuBg.prototype.updateMenu =  function(){
 
-	if(this.menuIsOpen){
+	this.customUpdate = this.game.time.create(false);
+    this.customUpdate.loop(500, this.customGet, this);
+    this.customUpdate.start();
+}
+
+menuBg.prototype.stopUpdateMenu =  function(){
+
+    this.customUpdate.destroy();
+}
+
+menuBg.prototype.customGet =  function(){
+
+this.fCoins.text = this.game.state.getCurrentState().fPlayer.coins;
+if(this.menuIsOpen){
 
 
 
-	this.fCoins.text = this.game.state.getCurrentState().fPlayer.coins;
+
 	this.fLevelNumber.text =this.game.state.getCurrentState().fPlayer.myLevel;
 	this.fCore1cost.text = this.core1BaseCost;
 	this.fCore2cost.text = this.core2BaseCost;
@@ -224,10 +233,11 @@ menuBg.prototype.update =  function(){
 			this.fCore2UpdateBtn.animations.play('able');
 		}else{
 
-			this.fCore2UpdateBtn.animations.play('cantUpdate');
+			this.fCore2UpdateBtn.
+			animations.play('cantUpdate');
 		}
 
-		if(this.game.state.getCurrentState().fPlayer.coins>=this.core2BaseCost && this.game.state.getCurrentState().fPlayer.core2Level<4){
+		if(this.game.state.getCurrentState().fPlayer.coins>=this.core3BaseCost && this.game.state.getCurrentState().fPlayer.core3Level<4){
 			this.fCore3UpdateBtn.animations.play('able');
 		}else{
 
@@ -236,4 +246,9 @@ menuBg.prototype.update =  function(){
 		
 			
 	}
-	}
+
+}
+
+
+
+

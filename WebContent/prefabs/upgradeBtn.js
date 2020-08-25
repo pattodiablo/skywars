@@ -56,12 +56,13 @@ upgradeBtn.prototype.pullMenu = function () {
 		this.playerPos = -100;
 		this.menuPos = 30;
 		this.BtnPos=  860;
-		this.textPos = 830;
+		this.textPos = 840;
 		this.menuOn = true;
 		this.game.state.getCurrentState().fPlayer.body.enable = false;
 		this.game.state.getCurrentState().maximunStageSpeed=300;
 		this.game.state.getCurrentState().fMenu.fReturnText.text = 'READY & DEPLOY';
 		this.game.state.getCurrentState().fMenu.menuIsOpen =  true;
+		this.game.state.getCurrentState().fMenu.updateMenu();
 		
 	}else{
 			
@@ -74,6 +75,8 @@ upgradeBtn.prototype.pullMenu = function () {
 		this.game.state.getCurrentState().maximunStageSpeed=600;
 		this.game.state.getCurrentState().fMenu.fReturnText.text = 'RETURN TO BASE';
 		this.game.state.getCurrentState().fMenu.menuIsOpen =  false;
+		this.game.state.getCurrentState().fMenu.stopUpdateMenu();
+		
 	}
 	
 	

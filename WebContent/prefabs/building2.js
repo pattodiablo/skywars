@@ -42,6 +42,10 @@ building2.prototype.update = function() {
 if(this.x <= -this.width){
 	const variableDistance = Math.random()* (500 - 300) + 300;
 	this.x = this.game.state.getCurrentState﻿().fPlatforms.width-variableDistance;
+	
+	
+	const variableDistance2 = Math.random()* (800 - 650) + 650;
+	this.y = variableDistance2;
 
 	}
 

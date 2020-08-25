@@ -113,6 +113,17 @@
       "key": "menuCoin",
       "url": "assets/images/menuCoin.png",
       "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "levelBg",
+      "url": "assets/images/levelBg.png",
+      "overwrite": false
+    },
+    {
+      "type": "script",
+      "key": "levelBar",
+      "url": "prefabs/levelBar.js"
     }
   ],
   "atlas": [
@@ -215,10 +226,30 @@
       "type": "script",
       "key": "updateBtn",
       "url": "prefabs/updateBtn.js"
+    },
+    {
+      "type": "script",
+      "key": "expLabel",
+      "url": "prefabs/expLabel.js"
+    },
+    {
+      "type": "script",
+      "key": "LevelBarGlow",
+      "url": "prefabs/LevelBarGlow.js"
+    },
+    {
+      "type": "script",
+      "key": "musicBtn",
+      "url": "prefabs/musicBtn.js"
+    },
+    {
+      "type": "script",
+      "key": "FxBtn",
+      "url": "prefabs/FxBtn.js"
     }
   ],
   "meta": {
-    "generated": "1597849238429",
+    "generated": "1598311290865",
     "app": "Phaser Editor",
     "url": "http://phasereditor.boniatillo.com",
     "version": "1.0",

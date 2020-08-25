@@ -20,7 +20,8 @@
     ],
     "showGrid": true,
     "create_after": "this.myCreate();\r\n\r\n",
-    "state_init_after": "this.myInit();"
+    "state_init_after": "this.myInit();",
+    "state_preload_after": "this.myPreload();"
   },
   "stateSettings": {
     "scaleMode": "SHOW_ALL",
@@ -98,7 +99,7 @@
                 "info": {
                   "editorName": "building",
                   "x": 0,
-                  "y": 830
+                  "y": 634
                 }
               },
               {
@@ -112,8 +113,8 @@
                 },
                 "info": {
                   "editorName": "building2Tower",
-                  "x": 3198,
-                  "y": 652
+                  "x": 3302,
+                  "y": 590
                 }
               },
               {
@@ -128,7 +129,7 @@
                 "info": {
                   "editorName": "building3Tower",
                   "x": 2293,
-                  "y": 630
+                  "y": 785
                 }
               },
               {
@@ -210,19 +211,6 @@
           }
         },
         {
-          "type": "image",
-          "id": "c5bf0b6f-22e1-4132-ac10-3068b6c245f7",
-          "asset": "1",
-          "info": {
-            "editorName": "core1",
-            "editorField": true,
-            "x": 1728,
-            "y": 67,
-            "fixedToCamera": true,
-            "tint": "0x808080"
-          }
-        },
-        {
           "type": "group",
           "id": "afc3c948-6cf1-4b34-b0f0-716534544e0c",
           "info": {
@@ -231,32 +219,6 @@
             "physicsGroup": true,
             "setAll": [],
             "children": []
-          }
-        },
-        {
-          "type": "atlas-sprite",
-          "id": "eb65c2ab-d2e8-4c33-a59e-ae99b66fd401",
-          "asset": "2",
-          "info": {
-            "editorName": "coinSymbol",
-            "x": 33,
-            "y": 74,
-            "fixedToCamera": true
-          }
-        },
-        {
-          "type": "text",
-          "id": "c4dc2515-0247-4945-96ce-8d463fb9af73",
-          "info": {
-            "editorName": "moneyText",
-            "editorField": true,
-            "x": 133,
-            "y": 75,
-            "fixedToCamera": true,
-            "text": "000001",
-            "style.fontSize": 70,
-            "style.fill": "#ffff80",
-            "style.stroke": "#ff8040"
           }
         },
         {
@@ -297,35 +259,56 @@
             "x": 465,
             "y": 512
           }
+        },
+        {
+          "type": "prefab",
+          "prefab": "6",
+          "id": "6f95b69a-684b-4169-8b5c-e575c5271a73",
+          "asset-ref": {
+            "file": "WebContent/assets/pack.json",
+            "section": "atlas",
+            "asset": "buttons",
+            "sprite": "musicBtn0000"
+          },
+          "info": {
+            "editorName": "musicBtn",
+            "x": 79,
+            "y": 1005
+          }
+        },
+        {
+          "type": "prefab",
+          "prefab": "7",
+          "id": "b6057b19-2168-4e8f-9920-70eacc8fb4a6",
+          "asset-ref": {
+            "file": "WebContent/assets/pack.json",
+            "section": "atlas",
+            "asset": "buttons",
+            "sprite": "FxBtn0000"
+          },
+          "info": {
+            "editorName": "FxBtn",
+            "x": 219,
+            "y": 1005
+          }
         }
       ]
     }
   },
   "type": "STATE",
-  "asset-table": {
-    "0": {
-      "file": "WebContent/assets/pack.json",
-      "section": "images",
-      "asset": "background"
-    },
-    "1": {
-      "file": "WebContent/assets/pack.json",
-      "section": "images",
-      "asset": "core1"
-    },
-    "2": {
-      "file": "WebContent/assets/pack.json",
-      "section": "atlas",
-      "asset": "powerUps",
-      "sprite": "Symbol 4 instance 10013"
-    }
-  },
+  "asset-table": {"0": {
+    "file": "WebContent/assets/pack.json",
+    "section": "images",
+    "asset": "background"
+  }},
   "prefab-table": {
     "0": "WebContent/prefabs/BgBuildings.canvas",
     "1": "WebContent/prefabs/building1.canvas",
     "2": "WebContent/prefabs/building2.canvas",
     "3": "WebContent/prefabs/building3.canvas",
     "4": "WebContent/prefabs/menuBg.canvas",
-    "5": "WebContent/prefabs/player.canvas"
+    "5": "WebContent/prefabs/player.canvas",
+    "6": "WebContent/prefabs/musicBtn.canvas",
+    "7": "WebContent/prefabs/FxBtn.canvas"
   }
 }

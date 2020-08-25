@@ -42,6 +42,7 @@ player.prototype.constructor = player;
 player.prototype.myCreate = function() {
 	
 	this.myLevel = 1;
+	this.ExpPoints = 0;
 	this.core1Level = 0;
 	this.core2Level = 0;
 	this.core3Level = 0;
@@ -57,6 +58,9 @@ player.prototype.myCreate = function() {
 	this.canShot = false;
 	this.enableShootOnce = true;
 	this.shootTimer = this.game.time.create(false);
+	this.currentFillLevel;
+	this.levelCap=1000;
+	this.totalLevelFill = this.levelCap*this.myLevel;
 
 };
 
@@ -73,11 +77,21 @@ player.prototype.enaBleShooting = function() {
     this.shootTimer.start();
 }
 
-player.prototype.fire = function() {
 
+
+player.prototype.getExp = function() {
+this.ExpPoints++;
+
+this.currentFillLevel = this.ExpPoints/this.totalLevelFill;
+
+	if(this.ExpPoints>=this.levelCap){
+		this.myLevel++;
+		this.ExpPoints = 0;
 	
-	
+		this.game.state.getCurrentState().newLevelAnim();
+		}
 }
+
 player.prototype.update = function() {
 
 if(this.canShot && this.enableShootOnce){
@@ -88,6 +102,8 @@ if(this.canShot && this.enableShootOnce){
 if(!this.canShot){
 	this.shootTimer.destroy();
 }
+
+
 
 if(this.coins <= 0 ){
 

@@ -1,0 +1,81 @@
+{
+  "canvas-version": 2,
+  "settings": {
+    "className": "LevelBarGlow",
+    "sceneWidth": 640,
+    "sceneHeight": 360,
+    "generateOnSave": true,
+    "enableStepping": false,
+    "lang": "JAVA_SCRIPT",
+    "baseClass": "Phaser.Sprite",
+    "backgroundColor": [
+      180,
+      180,
+      180
+    ],
+    "gridColor": [
+      200,
+      200,
+      200
+    ],
+    "showGrid": true
+  },
+  "stateSettings": {
+    "stageBackgroundColor": [
+      0,
+      0,
+      0
+    ],
+    "autoLoad": true,
+    "preloadSpriteId": "",
+    "preloadSprite_direction": 0,
+    "load.pack": []
+  },
+  "world": {
+    "type": "group",
+    "id": "d2fff985-19dd-47bd-ae17-88c22094611a",
+    "info": {
+      "editorName": "LevelBarGlow",
+      "setAll": [],
+      "children": [{
+        "type": "atlas-sprite",
+        "id": "793138ec-9e70-4e94-80d7-b73ec6c0f50c",
+        "asset": "0",
+        "info": {
+          "editorName": "levelBar0000",
+          "animations": [{
+            "name": "glow",
+            "frameRate": 15,
+            "loop": true,
+            "autoPlay": true,
+            "frames": [
+              "levelBar0000",
+              "levelBar0001",
+              "levelBar0002",
+              "levelBar0003",
+              "levelBar0004",
+              "levelBar0005",
+              "levelBar0006",
+              "levelBar0007",
+              "levelBar0008",
+              "levelBar0009",
+              "levelBar0010",
+              "levelBar0011",
+              "levelBar0012",
+              "levelBar0013",
+              "levelBar0014"
+            ]
+          }]
+        }
+      }]
+    }
+  },
+  "type": "SPRITE",
+  "asset-table": {"0": {
+    "file": "WebContent/assets/pack.json",
+    "section": "atlas",
+    "asset": "buttons",
+    "sprite": "levelBar0000"
+  }},
+  "prefab-table": {}
+}
