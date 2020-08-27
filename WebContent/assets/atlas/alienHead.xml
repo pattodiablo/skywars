@@ -2,17 +2,19 @@
 <TextureAtlas imagePath="alienHead.png">
 	<!-- Created with Adobe Animate version 19.2.1.408 -->
 	<!-- http://www.adobe.com/products/animate.html -->
-	<SubTexture name="attack0000" x="1" y="1" width="249" height="411" pivotX="123.85" pivotY="204.75"/>
-	<SubTexture name="blink0000" x="251" y="1" width="249" height="411" pivotX="123.85" pivotY="204.75"/>
-	<SubTexture name="blink0001" x="501" y="1" width="249" height="411"/>
-	<SubTexture name="blink0002" x="751" y="1" width="249" height="411"/>
-	<SubTexture name="blink0003" x="1" y="413" width="249" height="411"/>
-	<SubTexture name="blink0004" x="251" y="413" width="249" height="411"/>
-	<SubTexture name="blink0005" x="501" y="413" width="249" height="411"/>
-	<SubTexture name="blink0006" x="751" y="413" width="249" height="411"/>
-	<SubTexture name="blink0007" x="1" y="825" width="249" height="411"/>
-	<SubTexture name="blink0008" x="251" y="825" width="249" height="411"/>
-	<SubTexture name="blink0009" x="501" y="825" width="249" height="411"/>
-	<SubTexture name="hurt0000" x="751" y="825" width="249" height="411" pivotX="123.85" pivotY="204.75"/>
-	<SubTexture name="idle0000" x="1" y="1237" width="249" height="411" pivotX="123.85" pivotY="204.75"/>
+	<SubTexture name="Symbol 1 instance 10000" x="1" y="1" width="205" height="346" pivotX="100.7" pivotY="172.4" frameX="0" frameY="0" frameWidth="238" frameHeight="358"/>
+	<SubTexture name="Symbol 1 instance 10001" x="207" y="1" width="205" height="346" frameX="-33" frameY="-12" frameWidth="238" frameHeight="358"/>
+	<SubTexture name="attack0000" x="413" y="1" width="249" height="411" pivotX="123.85" pivotY="204.75"/>
+	<SubTexture name="blink0000" x="663" y="1" width="249" height="411" pivotX="123.85" pivotY="204.75"/>
+	<SubTexture name="blink0001" x="1" y="413" width="249" height="411"/>
+	<SubTexture name="blink0002" x="251" y="413" width="249" height="411"/>
+	<SubTexture name="blink0003" x="501" y="413" width="249" height="411"/>
+	<SubTexture name="blink0004" x="751" y="413" width="249" height="411"/>
+	<SubTexture name="blink0005" x="1" y="825" width="249" height="411"/>
+	<SubTexture name="blink0006" x="251" y="825" width="249" height="411"/>
+	<SubTexture name="blink0007" x="501" y="825" width="249" height="411"/>
+	<SubTexture name="blink0008" x="751" y="825" width="249" height="411"/>
+	<SubTexture name="blink0009" x="1" y="1237" width="249" height="411"/>
+	<SubTexture name="hurt0000" x="251" y="1237" width="249" height="411" pivotX="123.85" pivotY="204.75"/>
+	<SubTexture name="idle0000" x="501" y="1237" width="249" height="411" pivotX="123.85" pivotY="204.75"/>
 </TextureAtlas>
