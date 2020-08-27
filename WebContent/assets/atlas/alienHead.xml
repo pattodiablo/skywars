@@ -4,17 +4,47 @@
 	<!-- http://www.adobe.com/products/animate.html -->
 	<SubTexture name="Symbol 1 instance 10000" x="1" y="1" width="205" height="346" pivotX="100.7" pivotY="172.4" frameX="0" frameY="0" frameWidth="221" frameHeight="346"/>
 	<SubTexture name="Symbol 1 instance 10001" x="207" y="1" width="221" height="346"/>
-	<SubTexture name="attack0000" x="429" y="1" width="249" height="411" pivotX="123.85" pivotY="204.75"/>
-	<SubTexture name="blink0000" x="679" y="1" width="249" height="411" pivotX="123.85" pivotY="204.75"/>
-	<SubTexture name="blink0001" x="1" y="413" width="249" height="411"/>
-	<SubTexture name="blink0002" x="251" y="413" width="249" height="411"/>
-	<SubTexture name="blink0003" x="501" y="413" width="249" height="411"/>
-	<SubTexture name="blink0004" x="751" y="413" width="249" height="411"/>
-	<SubTexture name="blink0005" x="1" y="825" width="249" height="411"/>
-	<SubTexture name="blink0006" x="251" y="825" width="249" height="411"/>
-	<SubTexture name="blink0007" x="501" y="825" width="249" height="411"/>
-	<SubTexture name="blink0008" x="751" y="825" width="249" height="411"/>
-	<SubTexture name="blink0009" x="1" y="1237" width="249" height="411"/>
-	<SubTexture name="hurt0000" x="251" y="1237" width="249" height="411" pivotX="123.85" pivotY="204.75"/>
-	<SubTexture name="idle0000" x="501" y="1237" width="249" height="411" pivotX="123.85" pivotY="204.75"/>
+	<SubTexture name="Symbol 4 instance 10000" x="429" y="1" width="241" height="241" pivotX="133.05" pivotY="133.05" frameX="-13" frameY="-13" frameWidth="267" frameHeight="266"/>
+	<SubTexture name="Symbol 4 instance 10001" x="671" y="1" width="243" height="242" frameX="-12" frameY="-12" frameWidth="267" frameHeight="266"/>
+	<SubTexture name="Symbol 4 instance 10002" x="915" y="1" width="245" height="244" frameX="-11" frameY="-11" frameWidth="267" frameHeight="266"/>
+	<SubTexture name="Symbol 4 instance 10003" x="1161" y="1" width="247" height="246" frameX="-10" frameY="-10" frameWidth="267" frameHeight="266"/>
+	<SubTexture name="Symbol 4 instance 10004" x="1409" y="1" width="248" height="248" frameX="-9" frameY="-9" frameWidth="267" frameHeight="266"/>
+	<SubTexture name="Symbol 4 instance 10005" x="1658" y="1" width="250" height="250" frameX="-8" frameY="-8" frameWidth="267" frameHeight="266"/>
+	<SubTexture name="Symbol 4 instance 10006" x="1" y="348" width="252" height="252" frameX="-7" frameY="-7" frameWidth="267" frameHeight="266"/>
+	<SubTexture name="Symbol 4 instance 10007" x="254" y="348" width="254" height="254" frameX="-6" frameY="-6" frameWidth="267" frameHeight="266"/>
+	<SubTexture name="Symbol 4 instance 10008" x="509" y="348" width="256" height="256" frameX="-5" frameY="-5" frameWidth="267" frameHeight="266"/>
+	<SubTexture name="Symbol 4 instance 10009" x="766" y="348" width="258" height="258" frameX="-4" frameY="-4" frameWidth="267" frameHeight="266"/>
+	<SubTexture name="Symbol 4 instance 10010" x="1025" y="348" width="259" height="260" frameX="-4" frameY="-3" frameWidth="267" frameHeight="266"/>
+	<SubTexture name="Symbol 4 instance 10011" x="1285" y="348" width="261" height="262" frameX="-3" frameY="-2" frameWidth="267" frameHeight="266"/>
+	<SubTexture name="Symbol 4 instance 10012" x="1547" y="348" width="263" height="264" frameX="-2" frameY="-1" frameWidth="267" frameHeight="266"/>
+	<SubTexture name="Symbol 4 instance 10013" x="1" y="613" width="265" height="266" frameX="-1" frameY="0" frameWidth="267" frameHeight="266"/>
+	<SubTexture name="Symbol 4 instance 10014" x="267" y="613" width="267" height="266"/>
+	<SubTexture name="Symbol 4 instance 10015" x="535" y="613" width="265" height="266" frameX="-1" frameY="0" frameWidth="267" frameHeight="266"/>
+	<SubTexture name="Symbol 4 instance 10016" x="801" y="613" width="263" height="264" frameX="-2" frameY="-1" frameWidth="267" frameHeight="266"/>
+	<SubTexture name="Symbol 4 instance 10017" x="1065" y="613" width="262" height="262" frameX="-2" frameY="-2" frameWidth="267" frameHeight="266"/>
+	<SubTexture name="Symbol 4 instance 10018" x="1328" y="613" width="260" height="260" frameX="-3" frameY="-3" frameWidth="267" frameHeight="266"/>
+	<SubTexture name="Symbol 4 instance 10019" x="1589" y="613" width="258" height="258" frameX="-4" frameY="-4" frameWidth="267" frameHeight="266"/>
+	<SubTexture name="Symbol 4 instance 10020" x="1" y="880" width="257" height="256" frameX="-5" frameY="-5" frameWidth="267" frameHeight="266"/>
+	<SubTexture name="Symbol 4 instance 10021" x="259" y="880" width="255" height="254" frameX="-6" frameY="-6" frameWidth="267" frameHeight="266"/>
+	<SubTexture name="Symbol 4 instance 10022" x="515" y="880" width="253" height="254" frameX="-7" frameY="-6" frameWidth="267" frameHeight="266"/>
+	<SubTexture name="Symbol 4 instance 10023" x="769" y="880" width="251" height="252" frameX="-8" frameY="-7" frameWidth="267" frameHeight="266"/>
+	<SubTexture name="Symbol 4 instance 10024" x="1021" y="880" width="250" height="250" frameX="-8" frameY="-8" frameWidth="267" frameHeight="266"/>
+	<SubTexture name="Symbol 4 instance 10025" x="1272" y="880" width="248" height="248" frameX="-9" frameY="-9" frameWidth="267" frameHeight="266"/>
+	<SubTexture name="Symbol 4 instance 10026" x="1521" y="880" width="246" height="246" frameX="-10" frameY="-10" frameWidth="267" frameHeight="266"/>
+	<SubTexture name="Symbol 4 instance 10027" x="1768" y="880" width="244" height="244" frameX="-11" frameY="-11" frameWidth="267" frameHeight="266"/>
+	<SubTexture name="Symbol 4 instance 10028" x="1" y="1137" width="243" height="242" frameX="-12" frameY="-12" frameWidth="267" frameHeight="266"/>
+	<SubTexture name="Symbol 4 instance 10029" x="245" y="1137" width="241" height="241" frameX="-13" frameY="-13" frameWidth="267" frameHeight="266"/>
+	<SubTexture name="attack0000" x="487" y="1137" width="249" height="411" pivotX="123.85" pivotY="204.75"/>
+	<SubTexture name="blink0000" x="737" y="1137" width="249" height="411" pivotX="123.85" pivotY="204.75"/>
+	<SubTexture name="blink0001" x="987" y="1137" width="249" height="411"/>
+	<SubTexture name="blink0002" x="1237" y="1137" width="249" height="411"/>
+	<SubTexture name="blink0003" x="1487" y="1137" width="249" height="411"/>
+	<SubTexture name="blink0004" x="1737" y="1137" width="249" height="411"/>
+	<SubTexture name="blink0005" x="1" y="1549" width="249" height="411"/>
+	<SubTexture name="blink0006" x="251" y="1549" width="249" height="411"/>
+	<SubTexture name="blink0007" x="501" y="1549" width="249" height="411"/>
+	<SubTexture name="blink0008" x="751" y="1549" width="249" height="411"/>
+	<SubTexture name="blink0009" x="1001" y="1549" width="249" height="411"/>
+	<SubTexture name="hurt0000" x="1251" y="1549" width="249" height="411" pivotX="123.85" pivotY="204.75"/>
+	<SubTexture name="idle0000" x="1501" y="1549" width="249" height="411" pivotX="123.85" pivotY="204.75"/>
 </TextureAtlas>
