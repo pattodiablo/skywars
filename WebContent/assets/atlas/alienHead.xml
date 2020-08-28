@@ -45,6 +45,21 @@
 	<SubTexture name="blink0007" x="1001" y="1561" width="249" height="411"/>
 	<SubTexture name="blink0008" x="1251" y="1561" width="249" height="411"/>
 	<SubTexture name="blink0009" x="1501" y="1561" width="249" height="411"/>
-	<SubTexture name="hurt0000" x="1751" y="1561" width="249" height="411" pivotX="123.85" pivotY="204.75"/>
-	<SubTexture name="idle0000" x="1" y="1973" width="249" height="411" pivotX="123.85" pivotY="204.75"/>
+	<SubTexture name="explotion0000" x="1" y="1973" width="324" height="325" pivotX="159.3" pivotY="164.5"/>
+	<SubTexture name="explotion0001" x="326" y="1973" width="324" height="325"/>
+	<SubTexture name="explotion0002" x="651" y="1973" width="324" height="325"/>
+	<SubTexture name="explotion0003" x="976" y="1973" width="324" height="325"/>
+	<SubTexture name="explotion0004" x="1301" y="1973" width="324" height="325"/>
+	<SubTexture name="explotion0005" x="1626" y="1973" width="324" height="325"/>
+	<SubTexture name="explotion0006" x="1" y="2299" width="324" height="325"/>
+	<SubTexture name="explotion0007" x="326" y="2299" width="324" height="325"/>
+	<SubTexture name="explotion0008" x="651" y="2299" width="324" height="325"/>
+	<SubTexture name="explotion0009" x="976" y="2299" width="324" height="325"/>
+	<SubTexture name="explotion0010" x="1301" y="2299" width="324" height="325"/>
+	<SubTexture name="explotion0011" x="1626" y="2299" width="324" height="325"/>
+	<SubTexture name="explotion0012" x="1" y="2625" width="324" height="325"/>
+	<SubTexture name="explotion0013" x="326" y="2625" width="324" height="325"/>
+	<SubTexture name="explotion0014" x="651" y="2625" width="324" height="325"/>
+	<SubTexture name="hurt0000" x="976" y="2625" width="249" height="411" pivotX="123.85" pivotY="204.75"/>
+	<SubTexture name="idle0000" x="1226" y="2625" width="249" height="411" pivotX="123.85" pivotY="204.75"/>
 </TextureAtlas>
