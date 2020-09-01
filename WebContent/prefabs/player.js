@@ -46,7 +46,7 @@ player.prototype.myCreate = function() {
 	this.core1Level = 0;
 	this.core2Level = 0;
 	this.core3Level = 0;
-	this.coins = 29;
+	this.coins = 3000;
 	this.canJump =  false;	
 	this.isKicking = false;
 	this.canKick = false;
@@ -91,6 +91,13 @@ this.currentFillLevel = this.ExpPoints/this.totalLevelFill;
 		this.ExpPoints = 0;
 		this.game.state.getCurrentState().isBosstime = false;
 		this.game.state.getCurrentState().newLevelAnim();
+		this.usingSpeedForce =  false;
+		
+			if(typeof this.speedPowerInstance !== "undefined"){
+				console.log('destruyo intancias colgadas');
+				this.game.state.getCurrentState().speedPowerInstance.destroy();
+				this.game.state.getCurrentState().timerPower.destroy();
+			}
 		}
 }
 

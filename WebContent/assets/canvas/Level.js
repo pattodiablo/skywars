@@ -150,6 +150,7 @@ this.game.load.script('filter', 'https://cdn.rawgit.com/photonstorm/phaser-ce/ma
 Level.prototype.myCreate = function () {
 
   this.isBosstime =  false;
+  this.isBossShow =  false;
   var filter = this.game.add.filter('Pixelate', 1920, 1080);
   filter.sizeX =10;
   filter.sizeY =10;
@@ -485,9 +486,9 @@ coin.body.velocity.x = platform.body.velocity.x;
 
 	};	
 Level.prototype.getExperience = function (enemy) {	
-console.log(this.fPlayer.currentFillLevel*10);
+
 this.fPlayer.getExp();
-if(this.fPlayer.currentFillLevel*10>8 && !this.isBosstime ){
+if(this.fPlayer.currentFillLevel*10>8 && !this.isBosstime && !this.isBossShow){
 	
 	bossCome.play('bossCome');
 	var _bigEnemy = new alienEnemy(this.game);
@@ -576,11 +577,18 @@ Level.prototype.destroyEnemyWithLevel = function (player, enemy) {
 };
 
 Level.prototype.destroyEnemyWithBullet = function (bullet, enemy) {	
+
 		this.getExperience(enemy);
-		//this.shakeAndFlash();
+		this.shakeAndFlash();
 		this.createCoins(enemy.x,enemy.y,-800,true);
-		enemy.body.velocity.x=800;
-		enemy.body.gravity.y=1200;
+			enemy.animations.play('kicked');
+			enemy.tweenBtn.stop();
+			enemy.tween2Btn.stop();
+			enemy.body.velocity.x= 1200;
+			enemy.body.gravity.y=1200;
+			enemy.body.enabled = false;
+			enemy.body.checkCollision.none = false;
+			this.getExperience(enemy);
 };
 
 Level.prototype.createCoins = function (x,y,velo,killedByBullet) {
@@ -695,21 +703,28 @@ Level.prototype.getPowerUp = function (player,powerUp) {
 	}
 
 	if(powerUp.myPower == 'speedForce'){
+	
 		if(!this.fPlayer.usingSpeedForce){
+			
+			
+		if(typeof this.speedPowerInstance !== "undefined"){
+			this.speedPowerInstance.destroy();
+			this.timerPower.destroy();
+		}
+
 		
+
 	/*	fly = this.game.add.tween(this.fPlayer);
 		fly.to({x:this.game.width/2 , y:this.game.height/3}, 500, Phaser.Easing.Linear.None);
 		fly.start();*/
 
 		this.fPlayer.usingSpeedForce =  true;
 		this.fPowerText.text = 'Speed Force';
-		//this.fPlayer.x = this.game.width/2;
-		//this.fPlayer.y = this.game.height/3;
 		this.fPlayer.body.moves = true;
 		this.maximunStageSpeed=1500;
 		this.stageSpeed=1500;
 
-		switch(player.core3Level){
+		switch(player.core2Level){
 
 				case 1:
 					powerUpTimer1 = 1500;
@@ -837,7 +852,7 @@ Level.prototype.hitEnemyShot = function (player,shot) {
 
 Level.prototype.update = function () {
 
-	//this.fPlayer.getExp();
+	this.fPlayer.getExp();
 	
 	if(this.fPlayer.myDoubleJump>0){
 		this.fPlayer.canDoubleJump =  true;
@@ -853,7 +868,7 @@ Level.prototype.update = function () {
 	
 	this.fMenu.fLevelBar.fMoneyText.text = this.fPlayer.coins;
 	
-	this.game.physics.arcade.collide(this.fBullets , this.fEnemies, this.destroyEnemyWithBullet, null, this);
+	this.game.physics.arcade.overlap(this.fBullets , this.fEnemies, this.destroyEnemyWithBullet, null, this);
 	this.game.physics.arcade.collide(this.fCoins , this.fPlatforms, this.coinOnPlatform, null, this);
 	this.game.physics.arcade.collide(this.fPlayer , this.fPlatforms, this.onPlatform, null, this);
 	this.game.physics.arcade.overlap(this.fPlayer , this.fEnemies, this.destroyEnemy, null, this);

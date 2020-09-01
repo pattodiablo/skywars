@@ -68,6 +68,7 @@ alienEnemy.prototype.constructor = alienEnemy;
 // -- user code here --
 alienEnemy.prototype.myCreate = function() {
 
+	this.game.state.getCurrentState().isBossShow = true;
 	this.appearTime = this.game.time.create(false);
     this.appearTime.loop(40000, this.leaveScreen, this);
     this.appearTime.start();
@@ -161,6 +162,7 @@ this.game.physics.arcade.overlap( this.game.state.getCurrentState().fPlayer, thi
 	if(this.fEnemyShip.y>1800){
 			  this.appearTime.destroy();
 		this.destroyTimer.destroy();
+		this.game.state.getCurrentState().isBossShow = false;
 		this.destroy();
 
 	}
@@ -172,7 +174,7 @@ this.game.physics.arcade.overlap( this.game.state.getCurrentState().fPlayer, thi
 
 					this.destroyTimer.destroy();
 			}
-	
+		this.game.state.getCurrentState().isBossShow = false;
 		this.destroy();
 
 	}
