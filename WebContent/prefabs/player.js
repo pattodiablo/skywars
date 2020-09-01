@@ -58,7 +58,7 @@ player.prototype.myCreate = function() {
 	this.canShot = false;
 	this.enableShootOnce = true;
 	this.shootTimer = this.game.time.create(false);
-	this.currentFillLevel;
+	this.currentFillLevel = 0;
 	this.levelCap=1000;
 	this.totalLevelFill = this.levelCap*this.myLevel;
 
@@ -69,6 +69,7 @@ player.prototype.enaBleShooting = function() {
 	
 
     this.shootTimer.loop(500, function(){
+    	laserShot.play('laserShot');
 		var _Fireshot = new shot(this.game, this.x+this.width/2, this.y);
 		this.game.state.getCurrentState().fBullets.add(_Fireshot);
 		
@@ -79,15 +80,16 @@ player.prototype.enaBleShooting = function() {
 
 
 
-player.prototype.getExp = function() {
+player.prototype.getExp = function() {	
 this.ExpPoints++;
 
 this.currentFillLevel = this.ExpPoints/this.totalLevelFill;
 
 	if(this.ExpPoints>=this.levelCap){
+		levelUp.play('levelUp');
 		this.myLevel++;
 		this.ExpPoints = 0;
-	
+		this.game.state.getCurrentState().isBosstime = false;
 		this.game.state.getCurrentState().newLevelAnim();
 		}
 }

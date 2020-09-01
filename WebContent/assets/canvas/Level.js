@@ -92,10 +92,13 @@ Level.prototype.create = function () {
 	var _FxBtn = new FxBtn(this.game, 219.0, 1005.0);
 	this.add.existing(_FxBtn);
 	
+	var _enemyShots = this.add.group();
+	
 	
 	
 	// fields
 	
+	this.fBackground = _background;
 	this.fMiddleBG = _middleBG;
 	this.fPlatforms = _platforms;
 	this.fPowerLabel = _powerLabel;
@@ -106,6 +109,7 @@ Level.prototype.create = function () {
 	this.fBullets = _bullets;
 	this.fMenu = _menu;
 	this.fPlayer = _player;
+	this.fEnemyShots = _enemyShots;
 	this.myCreate();
 	
 	
@@ -124,13 +128,32 @@ Level.prototype.myInit = function () {
 Level.prototype.myPreload = function () {
 this.game.load.audio('bgmusic1', ['assets/audio/bgmusic1.mp3','assets/audio/bgmusic1.ogg']);
 
+this.game.load.audio('bgmusic2', ['assets/audio/bgmusic2.mp3','assets/audio/bgmusic2.ogg']);
+
+this.game.load.audio('baseCall', ['assets/audio/baseCall.mp3','assets/audio/baseCall.ogg']);
+this.game.load.audio('bossCome', ['assets/audio/bossCome.mp3','assets/audio/bossCome.ogg']);
+this.game.load.audio('bossCome2', ['assets/audio/bossCome2.mp3','assets/audio/bossCome2.ogg']);
+this.game.load.audio('die', ['assets/audio/die.mp3','assets/audio/die.ogg']);
+this.game.load.audio('getCoins', ['assets/audio/getCoins.mp3','assets/audio/getCoins.ogg']);
+this.game.load.audio('laserShot', ['assets/audio/laserShot.mp3','assets/audio/laserShot.ogg']);
+this.game.load.audio('powerup1', ['assets/audio/powerup1.mp3','assets/audio/powerup1.ogg']);
+this.game.load.audio('punch1', ['assets/audio/punch1.mp3','assets/audio/punch1.ogg']);
+this.game.load.audio('punch2', ['assets/audio/punch2.mp3','assets/audio/punch2.ogg']);
+this.game.load.audio('punch3', ['assets/audio/punch3.mp3','assets/audio/punch3.ogg']);
+this.game.load.audio('levelUp', ['assets/audio/levelUp.mp3','assets/audio/levelUp.ogg']);
+this.game.load.audio('upgrade', ['assets/audio/upgrade.mp3','assets/audio/upgrade.ogg']);
+this.game.load.script('filter', 'https://cdn.rawgit.com/photonstorm/phaser-ce/master/filters/Pixelate.js');
 
 };
 
 
 Level.prototype.myCreate = function () {
 
-	
+  this.isBosstime =  false;
+  var filter = this.game.add.filter('Pixelate', 1920, 1080);
+  filter.sizeX =10;
+  filter.sizeY =10;
+//this.fBackground.filters = [filter];
 
 	this.createCoins(this.fPlayer.x,this.fPlayer.y,300,false);
 	this.kickLevel = 0;
@@ -141,11 +164,19 @@ Level.prototype.myCreate = function () {
 	this.game.camera.follow(this.fPlayer, Phaser.Camera.FOLLOW_LOCKON,0.01, 0.01,0,0);
 	this.jumpPower = -900;
 
+
+if(!this.initSound){
+
+	  this.bgMusicPlay();
+	  this.initSound=true;
+}
+
+
     enemyDeployTimer = this.game.time.create(false);
     enemyDeployTimer.loop(1250, this.deployItems, this);
     enemyDeployTimer.start();
 
-  	
+  		
 	//this.setupCoinEmitter();
 
 
@@ -162,18 +193,25 @@ Level.prototype.bgMusicPlay = function () {
 	BgMusic2.allowMultiple = false;
 	BgMusic2.loop = true;
 	
-	var BgMusicSelector = Math.round(Math.random()) //agreagar musica de bg randomicamente
-	BgMusic.play();
-	switch (this.game.musicOption){
+	
+	if(this.game.musicOption>2){
+	this.game.musicOption = 1;
+	}
+	this.game.musicOption++;
 
-		case "1":
+	this.randomSong = Math.round(Math.random(1 - 2 ) + 1);
+
+
+	switch (this.randomSong){
+
+		case 1:
 			console.log('rola 1 selected!');
 			this.BgMusic = 1;
 			BgMusic.play();
 		break;
 			
 
-		case "2":
+		case 2:
 			console.log('rola 2 selected!');
 			this.BgMusic = 2;
 			BgMusic2.play();
@@ -186,31 +224,59 @@ Level.prototype.bgMusicPlay = function () {
 	}
 	
 
-	hurt = this.game.add.audio('hurt', 0.2);
-	hurt.allowMultiple = false;
-	hurt.addMarker('hurt', 0, 0.15	);
+	baseCall = this.game.add.audio('baseCall', 0.2);
+	baseCall.allowMultiple = false;
+	baseCall.addMarker('baseCall', 0, 0.35	);
 
-	getFuel = this.game.add.audio('getFuel', 0.2);
-	getFuel.allowMultiple = false;
-	getFuel.addMarker('getFuel', 0, 0.30	);
+	bossCome = this.game.add.audio('bossCome', 0.2);
+	bossCome.allowMultiple = false;
+	bossCome.addMarker('bossCome', 0, 2.2	);
 
-	pickCristal = this.game.add.audio('pickCristal', 0.2);
-	pickCristal.allowMultiple = true;
-	pickCristal.addMarker('pickCristal', 0, 0.18	);
+	bossCome2 = this.game.add.audio('bossCome2', 0.2);
+	bossCome2.allowMultiple = true;
+	bossCome2.addMarker('bossCome2', 0, 2.2	);
 
-	elevate1 = this.game.add.audio('elevate1', 0.2);
-	elevate1.allowMultiple = true;
-	elevate1.addMarker('elevate1', 0, 0.13	);
+	die = this.game.add.audio('die', 0.2);
+	die.allowMultiple = true;
+	die.addMarker('die', 0, 1.6	);
 
-	elevate2 = this.game.add.audio('elevate2', 0.2);
-	elevate2.allowMultiple = true;
-	elevate2.addMarker('elevate2', 0, 0.13	);
+	getCoins = this.game.add.audio('getCoins', 0.2);
+	getCoins.allowMultiple = false;
+	getCoins.addMarker('getCoins', 0, 0.52	);
 
-	elevate3 = this.game.add.audio('elevate3', 0.2);
-	elevate3.allowMultiple = true;
-	elevate3.addMarker('elevate3', 0, 0.13	);
 
-	this.fxSounds = [hurt,getFuel,pickCristal,elevate1,elevate2,elevate3]; //agreagar aqui todos los sound fx que se necesita adminstrar
+	laserShot = this.game.add.audio('laserShot', 0.2);
+	laserShot.allowMultiple = true;
+	laserShot.addMarker('laserShot', 0, 0.38);
+
+	powerup1 = this.game.add.audio('powerup1', 0.2);
+	powerup1.allowMultiple = true;
+	powerup1.addMarker('powerup1', 0, 0.5	);
+
+	punch1 = this.game.add.audio('punch1', 0.05);
+	punch1.allowMultiple = true;
+	punch1.addMarker('punch1', 0, 0.3	);
+
+	punch2 = this.game.add.audio('punch2', 0.05);
+	punch2.allowMultiple = true;
+	punch2.addMarker('punch2', 0, 0.45	);
+
+	punch3 = this.game.add.audio('punch3', 0.05);
+	punch3.allowMultiple = true;
+	punch3.addMarker('punch3', 0, 0.7	);
+
+
+	levelUp = this.game.add.audio('levelUp', 0.05);
+	levelUp.allowMultiple = true;
+	levelUp.addMarker('levelUp', 0, 4.3	);
+
+	upgrade = this.game.add.audio('upgrade', 0.05);
+	upgrade.allowMultiple = true;
+	upgrade.addMarker('upgrade', 0, 0.9	);
+
+
+
+	this.fxSounds = [baseCall,bossCome,bossCome2,die,getCoins,laserShot,powerup1,punch1,punch2,punch3,upgrade]; //agreagar aqui todos los sound fx que se necesita adminstrar
 
 	if(!fxEnabled){
 		this.fxSounds.forEach(function(soundFx) { 	 //en caso de que se deshabilite los sonidos fxs
@@ -219,7 +285,10 @@ Level.prototype.bgMusicPlay = function () {
 	}
 
 }
+Level.prototype.getCoinSound = function (game) {
 
+	getCoins.play('getCoins');
+}
 Level.prototype.switchMusic = function () {
 
 
@@ -233,14 +302,14 @@ Level.prototype.switchMusic = function () {
 
 	}else{
 	
-
-		if(this.BgMusic = 1){
+console.log(this.randomSong);
+		if(this.randomSong == 1){
 
 			BgMusic.play();
 
 		}else{
 
-			BgMusic2.stop();
+			BgMusic2.play();
 
 		}
 		
@@ -289,7 +358,7 @@ Level.prototype.deployItems = function() {
 
 var itemAppearChance = (this.fPlayer.core1Level + this.fPlayer.core2Level + this.fPlayer.core3Level)/10;
 
-const enemyXDeploy = Math.random()  * (550 - 200) + 200;
+const enemyXDeploy = Math.random()  * (550 - 200) + 200; //este es en realidad el Y donde aparece el power o el enemy
 
 if(itemAppearChance>=0.5){
 	itemAppearChance = 0.5;
@@ -300,7 +369,7 @@ const salen =  Math.random() < itemAppearChance;
 if(salen){
 
 	const wichSale =  Math.round(Math.random() * 3);
-	
+
 
 	if(this.fPlayer.core1Level>=1 && wichSale<=1){
 		const item1Cap = this.fPlayer.core1Level/10;
@@ -350,11 +419,7 @@ this.jumpPower=0;
 Level.prototype.swipeDownAction = function(pointer) { //manejo de swipe control de pantalla
 	
 
-if(!this.initSound){
 
-	  this.bgMusicPlay();
-	  this.initSound=true;
-}
 	
 	if(!this.fPlayer.canJump && this.fPlayer.canKick){
 		const wichKick = Math.random()*10;
@@ -421,7 +486,15 @@ coin.body.velocity.x = platform.body.velocity.x;
 	};	
 Level.prototype.getExperience = function (enemy) {	
 
+if(this.fPlayer.currentFillLevel*100>8 && !this.isBosstime ){
+	
+	bossCome.play('bossCome');
+	var _bigEnemy = new alienEnemy(this.game);
+	_bigEnemy.position.set(1382.0, -483.0);
+	this.isBosstime = true;
+}
 if(this.fPlayer.ExpPoints>=this.kickLevel){
+
 	const randScale = Math.random()*1;
 	var _expLabel = new expLabel(this.game,enemy.x, enemy.y);
 	_expLabel.y = enemy.y-60*randScale;
@@ -439,7 +512,27 @@ Level.prototype.destroyEnemy = function (player, enemy) {
 
 	
 	if(player.isKicking){
-					
+		if(!enemy.isKicked){
+		wichKick  = Math.round(Math.random()*3);
+			
+			switch(wichKick){
+				case 1:
+				punch1.play('punch1');
+				break;
+				case 2:
+				punch2.play('punch2');
+				break;
+				case 3:
+				punch3.play('punch3');
+				break;
+				default:
+				punch1.play('punch1');
+				break;
+
+			}
+		
+		enemy.isKicked =  true;
+}
 			var _kickPower = new kickPower(this.game, enemy.x, enemy.y);
 			_kickPower.alpha = 0.5;
 			this.shakeAndFlash();
@@ -450,6 +543,8 @@ Level.prototype.destroyEnemy = function (player, enemy) {
 			enemy.tween2Btn.stop();
 			enemy.body.velocity.x=800;
 			enemy.body.gravity.y=1200;
+			enemy.body.enabled = false;
+			enemy.body.checkCollision.none = false;
 			this.getExperience(enemy);
 	}
 	
@@ -480,7 +575,7 @@ Level.prototype.destroyEnemyWithLevel = function (player, enemy) {
 
 Level.prototype.destroyEnemyWithBullet = function (bullet, enemy) {	
 		this.getExperience(enemy);
-		this.shakeAndFlash();
+		//this.shakeAndFlash();
 		this.createCoins(enemy.x,enemy.y,-800,true);
 		enemy.body.velocity.x=800;
 		enemy.body.gravity.y=1200;
@@ -504,6 +599,7 @@ Level.prototype.shakeAndFlash = function () {
 Level.prototype.getPowerUp = function (player,powerUp) {
 	
 	if(!this.fPlayer.usingDoubleJump || !this.fPlayer.usingSpeedForce || !this.fPlayer.canShot){
+		powerup1.play('powerup1');
 	this.shakeAndFlash();
 		if(powerUp.myPower == 'SuperShot'){
 			console.log('i got superShot');
@@ -522,6 +618,10 @@ Level.prototype.getPowerUp = function (player,powerUp) {
 
 				case 3:
 					powerUpTimer3 = 4000;
+				break;
+
+				case 4:
+					powerUpTimer3 = 4500;
 				break;
 
 				default:
@@ -560,11 +660,15 @@ Level.prototype.getPowerUp = function (player,powerUp) {
 				break;
 
 				case 2:
-					powerUpTimer2 = 5000;
+					powerUpTimer2 = 4000;
 				break;
 
 				case 3:
-					powerUpTimer2 = 7000;
+					powerUpTimer2 = 5000;
+				break;
+
+				case 4:
+					powerUpTimer2 = 6000;
 				break;
 
 				default:
@@ -591,15 +695,15 @@ Level.prototype.getPowerUp = function (player,powerUp) {
 	if(powerUp.myPower == 'speedForce'){
 		if(!this.fPlayer.usingSpeedForce){
 		
-		fly = this.game.add.tween(this.fPlayer);
+	/*	fly = this.game.add.tween(this.fPlayer);
 		fly.to({x:this.game.width/2 , y:this.game.height/3}, 500, Phaser.Easing.Linear.None);
-		fly.start();
+		fly.start();*/
 
 		this.fPlayer.usingSpeedForce =  true;
 		this.fPowerText.text = 'Speed Force';
-		this.fPlayer.x = this.game.width/2;
-		this.fPlayer.y = this.game.height/3;
-		this.fPlayer.body.moves = false;
+		//this.fPlayer.x = this.game.width/2;
+		//this.fPlayer.y = this.game.height/3;
+		this.fPlayer.body.moves = true;
 		this.maximunStageSpeed=1500;
 		this.stageSpeed=1500;
 
@@ -616,6 +720,11 @@ Level.prototype.getPowerUp = function (player,powerUp) {
 				case 3:
 					powerUpTimer1 = 2500;
 				break;
+
+				case 4:
+					powerUpTimer1 = 3000;
+				break;
+
 
 				default:
 					powerUpTimer1 = 1000;
@@ -688,6 +797,7 @@ Level.prototype.newLevelAnim = function () {
 
 		explode = this.game.add.tween(this.speedPowerInstance.scale);
 		explode.to({x:20 , y:20}, 500, Phaser.Easing.Linear.None);
+		explode.onComplete.add(slowAgain, this);
 		explode.start();
 
 
@@ -696,17 +806,31 @@ Level.prototype.newLevelAnim = function () {
 		});
 
    		function slowAgain(){
-			this.speedPowerInstance.destroy();
-   			this.fEnemies.forEach(function(enemy){
-  			enemy.speedKill =  false;
-			});
-			this.fPlayer.usingSpeedForce =  false;
-   			this.fPlayer.body.moves = true;
-   			this.maximunStageSpeed=600;
-   			this.timerPower.destroy();
+
+				explode.stop();
+				this.speedPowerInstance.destroy();
    		};
 
 }
+
+Level.prototype.hitEnemyShot = function (player,shot) {
+
+	player.body.velocity.x = -500;	
+	
+	if(player.isKicking){
+		shot.tint = 0xd827d8;
+		punch3.play('punch3');
+		this.shakeAndFlash();
+		player.body.velocity.x = -100;	
+		this.createCoins(this.fPlayer.x, this.fPlayer.y,300,false);
+		shot.body.velocity.x = 1000;	
+		shot.body.gravity.y = 500;
+		shot.isKicked = true;
+	}
+	
+	
+}
+
 
 
 Level.prototype.update = function () {
@@ -732,8 +856,14 @@ Level.prototype.update = function () {
 	this.game.physics.arcade.collide(this.fPlayer , this.fPlatforms, this.onPlatform, null, this);
 	this.game.physics.arcade.overlap(this.fPlayer , this.fEnemies, this.destroyEnemy, null, this);
 	this.game.physics.arcade.overlap(this.fPlayer , this.fPowerUps, this.getPowerUp, null, this);
+	this.game.physics.arcade.overlap(this.fPlayer , this.fEnemyShots, this.hitEnemyShot, null, this);
+	
+	
+	
 
-	if(this.fPlayer.y>=this.game.height+100){ //muere die lost loose
+
+	if(this.fPlayer.y>=this.game.height+100 || this.fPlayer.x<=-100){ //muere die lost loose
+		die.play('die');
 		this.fPlayer.coins-=Math.round(10+this.fPlayer.coins*0.1);
 		this.fPlayer.y = -50;
 		this.fPlayer.body.velocity.x = 200;

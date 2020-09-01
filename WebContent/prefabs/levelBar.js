@@ -60,6 +60,7 @@ levelBar.prototype.myCreate = function() {
 
 }
 levelBar.prototype.customUpdate = function() {
+	
 this.fLevelText.text = this.game.state.getCurrentState().fPlayer.myLevel;
 
 this.fLevelBarGlow.scale.x = this.game.state.getCurrentState().fPlayer.currentFillLevel;

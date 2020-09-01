@@ -1,0 +1,177 @@
+{
+  "canvas-version": 2,
+  "settings": {
+    "className": "alienEnemy",
+    "sceneWidth": 640,
+    "sceneHeight": 360,
+    "generateOnSave": true,
+    "enableStepping": false,
+    "lang": "JAVA_SCRIPT",
+    "baseClass": "Phaser.Group",
+    "backgroundColor": [
+      180,
+      180,
+      180
+    ],
+    "gridColor": [
+      200,
+      200,
+      200
+    ],
+    "showGrid": true,
+    "create_after": "this.myCreate();"
+  },
+  "stateSettings": {
+    "stageBackgroundColor": [
+      0,
+      0,
+      0
+    ],
+    "autoLoad": true,
+    "preloadSpriteId": "",
+    "preloadSprite_direction": 0,
+    "load.pack": []
+  },
+  "world": {
+    "type": "group",
+    "id": "8ee9e102-a829-408f-afbf-ecac5e6f9aac",
+    "info": {
+      "editorName": "alienEnemy",
+      "setAll": [],
+      "children": [{
+        "type": "group",
+        "id": "5b5fdd5e-488d-4f36-9c18-f9aed740c00f",
+        "info": {
+          "editorName": "group",
+          "setAll": [],
+          "children": [
+            {
+              "type": "image",
+              "id": "affbd36a-fc3a-4a35-bcd1-190b1aff2d5f",
+              "asset": "0",
+              "info": {
+                "editorName": "enemyLeg2",
+                "editorField": true,
+                "x": 41,
+                "y": 284,
+                "scale.x": 0.5,
+                "scale.y": 0.5
+              }
+            },
+            {
+              "type": "prefab",
+              "prefab": "0",
+              "id": "ce40cf23-822b-4123-b210-d9a638802a0d",
+              "asset-ref": {
+                "file": "WebContent/assets/pack.json",
+                "section": "atlas",
+                "asset": "alienHead",
+                "sprite": "Symbol 1 instance 10001"
+              },
+              "info": {
+                "editorName": "engine",
+                "editorField": true,
+                "x": 331,
+                "y": 153
+              }
+            },
+            {
+              "type": "image",
+              "id": "38329aef-13ba-4802-8fce-69fb13aecba1",
+              "asset": "1",
+              "info": {
+                "editorName": "enemyShip",
+                "editorField": true,
+                "scale.x": 0.5,
+                "scale.y": 0.5,
+                "body": {
+                  "type": "ARCADE_CIRCLE",
+                  "offsetX": 68.0555419921875,
+                  "offsetY": 104.16665649414062,
+                  "immovable": true,
+                  "radius": 225.5
+                }
+              }
+            },
+            {
+              "type": "image",
+              "id": "4c644e90-36b0-463a-a213-c5cdd431df28",
+              "asset": "0",
+              "info": {
+                "editorName": "enemyLeg",
+                "editorField": true,
+                "x": 116,
+                "y": 289,
+                "scale.x": 0.5,
+                "scale.y": 0.5
+              }
+            },
+            {
+              "type": "prefab",
+              "prefab": "1",
+              "id": "575ddc77-7f43-4f39-9106-bc23b3c64529",
+              "asset-ref": {
+                "file": "WebContent/assets/pack.json",
+                "section": "atlas",
+                "asset": "alienHead",
+                "sprite": "attack0000"
+              },
+              "info": {
+                "editorName": "alienHeadPrefab",
+                "editorField": true,
+                "x": 76,
+                "y": 27
+              }
+            },
+            {
+              "type": "image",
+              "id": "4e846493-a397-4fc4-99b8-d7dbfa79727a",
+              "asset": "2",
+              "info": {
+                "editorName": "alienWindow",
+                "editorField": true,
+                "y": 18,
+                "scale.x": 0.5,
+                "scale.y": 0.5
+              }
+            },
+            {
+              "type": "prefab",
+              "prefab": "2",
+              "id": "7d2141ac-b4f9-4502-91fa-8c043b0c8b0a",
+              "info": {
+                "editorName": "enemyBar",
+                "editorField": true,
+                "x": -4,
+                "y": -46
+              }
+            }
+          ]
+        }
+      }]
+    }
+  },
+  "type": "GROUP",
+  "asset-table": {
+    "0": {
+      "file": "WebContent/assets/pack.json",
+      "section": "images",
+      "asset": "enemyLeg"
+    },
+    "1": {
+      "file": "WebContent/assets/pack.json",
+      "section": "images",
+      "asset": "enemyShip"
+    },
+    "2": {
+      "file": "WebContent/assets/pack.json",
+      "section": "images",
+      "asset": "alienWindow"
+    }
+  },
+  "prefab-table": {
+    "0": "WebContent/prefabs/shipTurbo.canvas",
+    "1": "WebContent/prefabs/alienHead.canvas",
+    "2": "WebContent/prefabs/enemyLifeBar.canvas"
+  }
+}

@@ -36,8 +36,9 @@ this.addNext =  true;
 BgBuildings.prototype.update = function () {
 this.x+=0.2;
 	this.position.y=-this.game.state.getCurrentState﻿().fPlayer.y/64+30;
+	if(this.addNext){
 	if(this.x>=this.game.width/3){
-		if(this.addNext){
+		
 			var _buildings = new BgBuildings(this.game, -this.width, 69.0);
 			this.game.state.getCurrentState﻿().fMiddleBG.add(_buildings);
 			this.addNext = false;

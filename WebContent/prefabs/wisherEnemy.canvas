@@ -74,7 +74,6 @@
           ],
           "body": {
             "type": "ARCADE_CIRCLE",
-            "immovable": true,
             "radius": 51.5
           }
         }

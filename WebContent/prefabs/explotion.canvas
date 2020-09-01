@@ -1,0 +1,83 @@
+{
+  "canvas-version": 2,
+  "settings": {
+    "className": "explotion",
+    "sceneWidth": 640,
+    "sceneHeight": 360,
+    "generateOnSave": true,
+    "enableStepping": false,
+    "lang": "JAVA_SCRIPT",
+    "baseClass": "Phaser.Sprite",
+    "backgroundColor": [
+      180,
+      180,
+      180
+    ],
+    "gridColor": [
+      200,
+      200,
+      200
+    ],
+    "showGrid": true
+  },
+  "stateSettings": {
+    "stageBackgroundColor": [
+      0,
+      0,
+      0
+    ],
+    "autoLoad": true,
+    "preloadSpriteId": "",
+    "preloadSprite_direction": 0,
+    "load.pack": []
+  },
+  "world": {
+    "type": "group",
+    "id": "06ddb77d-7214-45dd-affa-70d40ba2ffc6",
+    "info": {
+      "editorName": "explotion",
+      "setAll": [],
+      "children": [{
+        "type": "atlas-sprite",
+        "id": "b97bea8f-08a1-4ca5-af1d-4766fb0c4734",
+        "asset": "0",
+        "info": {
+          "editorName": "explotion0014",
+          "anchor.x": 0.5,
+          "anchor.y": 0.5,
+          "animations": [{
+            "name": "exploding",
+            "frameRate": 45,
+            "killOnComplete": true,
+            "autoPlay": true,
+            "frames": [
+              "explotion0000",
+              "explotion0001",
+              "explotion0002",
+              "explotion0003",
+              "explotion0004",
+              "explotion0005",
+              "explotion0006",
+              "explotion0007",
+              "explotion0008",
+              "explotion0009",
+              "explotion0010",
+              "explotion0011",
+              "explotion0012",
+              "explotion0013",
+              "explotion0014"
+            ]
+          }]
+        }
+      }]
+    }
+  },
+  "type": "SPRITE",
+  "asset-table": {"0": {
+    "file": "WebContent/assets/pack.json",
+    "section": "atlas",
+    "asset": "alienHead",
+    "sprite": "explotion0014"
+  }},
+  "prefab-table": {}
+}

@@ -124,6 +124,52 @@
       "type": "script",
       "key": "levelBar",
       "url": "prefabs/levelBar.js"
+    },
+    {
+      "type": "image",
+      "key": "enemyLeg",
+      "url": "assets/images/enemyLeg.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "enemyShip",
+      "url": "assets/images/enemyShip.png",
+      "overwrite": false
+    },
+    {
+      "type": "script",
+      "key": "alienEnemy",
+      "url": "prefabs/alienEnemy.js"
+    },
+    {
+      "type": "image",
+      "key": "alienWindow",
+      "url": "assets/images/alienWindow.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "enemyBar",
+      "url": "assets/images/enemyBar.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "enemyLife",
+      "url": "assets/images/enemyLife.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "enemyLifeFull",
+      "url": "assets/images/enemyLifeFull.png",
+      "overwrite": false
+    },
+    {
+      "type": "script",
+      "key": "enemyLifeBar",
+      "url": "prefabs/enemyLifeBar.js"
     }
   ],
   "atlas": [
@@ -246,10 +292,37 @@
       "type": "script",
       "key": "FxBtn",
       "url": "prefabs/FxBtn.js"
+    },
+    {
+      "type": "atlas",
+      "key": "alienHead",
+      "textureURL": "assets/atlas/alienHead.png",
+      "atlasURL": "assets/atlas/alienHead.xml",
+      "format": "TEXTURE_ATLAS_XML_STARLING"
+    },
+    {
+      "type": "script",
+      "key": "alienHead1",
+      "url": "prefabs/alienHead.js"
+    },
+    {
+      "type": "script",
+      "key": "shipTurbo",
+      "url": "prefabs/shipTurbo.js"
+    },
+    {
+      "type": "script",
+      "key": "fireBall",
+      "url": "prefabs/fireBall.js"
+    },
+    {
+      "type": "script",
+      "key": "explotion",
+      "url": "prefabs/explotion.js"
     }
   ],
   "meta": {
-    "generated": "1598311290865",
+    "generated": "1598649724706",
     "app": "Phaser Editor",
     "url": "http://phasereditor.boniatillo.com",
     "version": "1.0",

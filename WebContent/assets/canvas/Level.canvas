@@ -51,6 +51,7 @@
           "asset": "0",
           "info": {
             "editorName": "background",
+            "editorField": true,
             "fixedToCamera": true
           }
         },
@@ -290,6 +291,16 @@
             "editorName": "FxBtn",
             "x": 219,
             "y": 1005
+          }
+        },
+        {
+          "type": "group",
+          "id": "b00d9001-73b6-44cd-852d-3d0d284c1c7e",
+          "info": {
+            "editorName": "enemyShots",
+            "editorField": true,
+            "setAll": [],
+            "children": []
           }
         }
       ]

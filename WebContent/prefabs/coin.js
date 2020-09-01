@@ -65,6 +65,7 @@ coin.prototype.retriveCoin = function() {
 };
 
 coin.prototype.captureCoin = function() {
+	this.game.state.getCurrentState().getCoinSound(this.game);
 	this.tween.stop();	
 	this.game.state.getCurrentState().fPlayer.coins++;
 	this.destroy();
@@ -72,9 +73,9 @@ coin.prototype.captureCoin = function() {
 
 coin.prototype.update = function() {
 	if(!this.killedByBullet){
-	if(this.y>=this.game.height+300 || this.x<=-this.width-500){
-		
-		this.destroy();
-	}
+		if(this.y>=this.game.height+100 ){
+			
+			this.destroy();
+		}
 }
 };

@@ -23,7 +23,6 @@ function wisherEnemy(aGame, aX, aY, aKey, aFrame) {
 	_anim_fly.play();
 	this.game.physics.arcade.enable(this);
 	this.body.setCircle(51.5);
-	this.body.immovable = true;
 	
 	this.myCreate();
 	
@@ -47,6 +46,7 @@ wisherEnemy.prototype.myCreate = function() {
 	this.tweenBtn.start();
 	this.body.velocity.x =   Math.random()  * (500 - 300) - 300;
 	this.speedKill =  false;
+	this.isKicked =  false;
 	
 };
 
@@ -62,18 +62,27 @@ wisherEnemy.prototype.killedBySpeed = function() {
 
 wisherEnemy.prototype.update = function() {
 	
-	if(this.speedKill){
+	if(this.speedKill){ //elimna al enemigo al usar speedforce
 		this.killedBySpeed();
 	}
-	
-	if(this.x<=-100){
-		this.destroy();
-	}
-	if(this.x>=2200){
+
+	if(this.y<=-100){ //elimina al enmigo al salir a la arriba de la pantalla por -100 px
+
 		this.destroy();
 	}
 	
-	if(this.y<=this.height+100){
+	if(this.x<=-100){ //elimina al enmigo al salir a la izquierda de la pantalla por 100 px
+
+		this.destroy();
+	}
+
+	if(this.x>=2200){ //elimina al enmigo al salir a la derecha de la pantalla por 500 px
+				
+		this.destroy();
+	}
+	
+	if(this.y>=1180){
+		
 		this.destroy();
 	}
 };

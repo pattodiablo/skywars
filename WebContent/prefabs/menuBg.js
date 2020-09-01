@@ -149,12 +149,16 @@ menuBg.prototype.updateCore1 =  function(){
 
 
 		if(this.game.state.getCurrentState().fPlayer.core1Level<4){
+				upgrade.play('upgrade');
 			this.fUpgradeSign1.frame++;
 			this.core1BaseCost += Math.round(this.core1BaseCost*this.game.state.getCurrentState().fPlayer.myLevel*0.2);
 			this.game.state.getCurrentState().fPlayer.coins -= this.core1BaseCost;
 			this.game.state.getCurrentState().fPlayer.core1Level++;	
 			this.game.state.getCurrentState().shakeAndFlash();
 			
+		}else{
+
+			this.fCore1cost.text = 'not available';
 		}
 		
 	}
@@ -167,12 +171,16 @@ menuBg.prototype.updateCore2 =  function(){
 
 
 		if(this.game.state.getCurrentState().fPlayer.core2Level<4){
+			upgrade.play('upgrade');
 			this.fUpgradeSign2.frame++;
 			this.core2BaseCost += Math.round(this.core2BaseCost*this.game.state.getCurrentState().fPlayer.myLevel*0.2);
 			this.game.state.getCurrentState().fPlayer.coins -= this.core2BaseCost;
 			this.game.state.getCurrentState().fPlayer.core2Level++;	
 			this.game.state.getCurrentState().shakeAndFlash();
 			
+		}else{
+
+			this.fCore2cost.text = 'not available';
 		}
 		
 	}
@@ -185,12 +193,16 @@ menuBg.prototype.updateCore3 =  function(){
 
 
 		if(this.game.state.getCurrentState().fPlayer.core3Level<4){
+				upgrade.play('upgrade');
 			this.fUpgradeSign3.frame++;
 			this.core3BaseCost += Math.round(this.core3BaseCost*this.game.state.getCurrentState().fPlayer.myLevel*0.2);
 			this.game.state.getCurrentState().fPlayer.coins -= this.core3BaseCost;
 			this.game.state.getCurrentState().fPlayer.core3Level++;	
 			this.game.state.getCurrentState().shakeAndFlash();
 			
+		}else{
+
+			this.fCore3cost.text = 'not available';
 		}
 		
 	}
@@ -212,6 +224,7 @@ menuBg.prototype.stopUpdateMenu =  function(){
 menuBg.prototype.customGet =  function(){
 
 this.fCoins.text = this.game.state.getCurrentState().fPlayer.coins;
+
 if(this.menuIsOpen){
 
 
@@ -233,8 +246,7 @@ if(this.menuIsOpen){
 			this.fCore2UpdateBtn.animations.play('able');
 		}else{
 
-			this.fCore2UpdateBtn.
-			animations.play('cantUpdate');
+			this.fCore2UpdateBtn.animations.play('cantUpdate');
 		}
 
 		if(this.game.state.getCurrentState().fPlayer.coins>=this.core3BaseCost && this.game.state.getCurrentState().fPlayer.core3Level<4){
