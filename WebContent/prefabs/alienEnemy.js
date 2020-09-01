@@ -75,7 +75,7 @@ alienEnemy.prototype.myCreate = function() {
 
 	this.fullLifeWidth = this.fEnemyBar.fEnemyLifeFull.width;
 
-	this.damagePower = 100; //usar para probar destruccion del enemigo 1 es default
+	this.damagePower = 1; //usar para probar destruccion del enemigo 1 es default
 	this.life = 100;
 
 	this.speedKill =  false;
@@ -155,7 +155,7 @@ alienEnemy.prototype.update = function() {
 
 this.game.physics.arcade.collide(this.fEnemyShip , this.game.state.getCurrentState().fEnemyShots, this.autoHit, null, this);
 this.game.physics.arcade.collide(this.game.state.getCurrentState().fBullets , this.fEnemyShip, this.bulletEnemyHit, null, this);
-this.game.physics.arcade.collide( this.game.state.getCurrentState().fPlayer, this.fEnemyShip , this.kickBigEnemy, null, this);
+this.game.physics.arcade.overlap( this.game.state.getCurrentState().fPlayer, this.fEnemyShip , this.kickBigEnemy, null, this);
 
 
 	if(this.fEnemyShip.y>1800){

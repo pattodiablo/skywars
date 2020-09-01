@@ -485,14 +485,16 @@ coin.body.velocity.x = platform.body.velocity.x;
 
 	};	
 Level.prototype.getExperience = function (enemy) {	
-
-if(this.fPlayer.currentFillLevel*100>8 && !this.isBosstime ){
+console.log(this.fPlayer.currentFillLevel*10);
+this.fPlayer.getExp();
+if(this.fPlayer.currentFillLevel*10>8 && !this.isBosstime ){
 	
 	bossCome.play('bossCome');
 	var _bigEnemy = new alienEnemy(this.game);
 	_bigEnemy.position.set(1382.0, -483.0);
 	this.isBosstime = true;
 }
+
 if(this.fPlayer.ExpPoints>=this.kickLevel){
 
 	const randScale = Math.random()*1;
@@ -503,7 +505,7 @@ if(this.fPlayer.ExpPoints>=this.kickLevel){
 	this.kickLevel++;
 }
 
-this.fPlayer.getExp();
+
 
 
 }
