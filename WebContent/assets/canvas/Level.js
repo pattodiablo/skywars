@@ -757,8 +757,7 @@ Level.prototype.getPowerUp = function (player,powerUp) {
 		});
 
    		function slowAgain(){
-   			console.log('slowing')
-				console.log('largo ' + this.speedAnimations.length);
+   			
 				if(this.speedAnimations.length>0){
 						this.speedAnimations.forEach(function(animation){
 		  				
@@ -811,7 +810,7 @@ Level.prototype.newLevelAnim = function () {
 		});
 
    		function slowAgain2(){
-console.log('im here');
+
 				explode.stop();
 
 				this.speedPowerInstance.destroy();
