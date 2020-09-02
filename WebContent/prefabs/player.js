@@ -91,13 +91,7 @@ this.currentFillLevel = this.ExpPoints/this.totalLevelFill;
 		this.ExpPoints = 0;
 		this.game.state.getCurrentState().isBosstime = false;
 		this.game.state.getCurrentState().newLevelAnim();
-		this.usingSpeedForce =  false;
 		
-			if(typeof this.speedPowerInstance !== "undefined"){
-				console.log('destruyo intancias colgadas');
-				this.game.state.getCurrentState().speedPowerInstance.destroy();
-				this.game.state.getCurrentState().timerPower.destroy();
-			}
 		}
 }
 

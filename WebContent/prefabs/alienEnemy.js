@@ -168,7 +168,7 @@ this.game.physics.arcade.overlap( this.game.state.getCurrentState().fPlayer, thi
 	}
 
 		if(this.fEnemyShip.y<-300){
-		console.log('destroy enemy up');
+	
 		  this.appearTime.destroy();
 			if(typeof this.destroyTimer !== "undefined"){
 
@@ -213,9 +213,7 @@ if(!this.isKilled){
 alienEnemy.prototype.getDamage = function(damage) {
 	this.life-=damage;
 	this.fEnemyBar.fEnemyLifeFull.width=this.life*this.fullLifeWidth/100;
-	
-	console.log('bar  size '+this.fEnemyBar.fEnemyLifeFull.width);
-	console.log('enemy life '+this.life);
+
 	if(this.life<=0){
 		this.life = 0;
 		this.destroyShip();

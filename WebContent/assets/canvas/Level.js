@@ -149,6 +149,7 @@ this.game.load.script('filter', 'https://cdn.rawgit.com/photonstorm/phaser-ce/ma
 
 Level.prototype.myCreate = function () {
 
+this.speedAnimations = [];
   this.isBosstime =  false;
   this.isBossShow =  false;
   var filter = this.game.add.filter('Pixelate', 1920, 1080);
@@ -660,7 +661,7 @@ Level.prototype.getPowerUp = function (player,powerUp) {
 	
 			player.myDoubleJump++;
 			player.canDoubleJump=true;
-			this.fPlayer.usingDoubleJump =  true;
+		
 			this.fPowerText.text = 'Multi Jump';
 		
 			switch(player.core1Level){
@@ -704,15 +705,8 @@ Level.prototype.getPowerUp = function (player,powerUp) {
 
 	if(powerUp.myPower == 'speedForce'){
 	
-		if(!this.fPlayer.usingSpeedForce){
-			
-			
-		if(typeof this.speedPowerInstance !== "undefined"){
-			this.speedPowerInstance.destroy();
-			this.timerPower.destroy();
-		}
+	
 
-		
 
 	/*	fly = this.game.add.tween(this.fPlayer);
 		fly.to({x:this.game.width/2 , y:this.game.height/3}, 500, Phaser.Easing.Linear.None);
@@ -744,23 +738,36 @@ Level.prototype.getPowerUp = function (player,powerUp) {
 
 
 				default:
-					powerUpTimer1 = 1000;
+					powerUpTimer1 = 1500;
 				break;
 			}
 
-		this.timerPower = this.game.time.create(false);
-    	this.timerPower.loop(powerUpTimer1, slowAgain, this);
-   		this.timerPower.start();
+		
 
    		this.speedPowerInstance = new speedPower(this.game, this.fPlayer.x, this.fPlayer.y);
 		this.add.existing(this.speedPowerInstance);
+		this.speedAnimations.push(this.speedPowerInstance);
+		console.log('largo ' + this.speedAnimations.length);
+		this.timerPower = this.game.time.create(false);
+    	this.timerPower.loop(powerUpTimer1, slowAgain, this);
+   		this.timerPower.start();
 
    		this.fEnemies.forEach(function(enemy){
   			enemy.speedKill =  true;
 		});
 
    		function slowAgain(){
-			this.speedPowerInstance.destroy();
+   			console.log('slowing')
+				console.log('largo ' + this.speedAnimations.length);
+				if(this.speedAnimations.length>0){
+						this.speedAnimations.forEach(function(animation){
+		  				
+		  				animation.destroy();
+
+				});
+					this.speedAnimations = [];	
+				}
+	
    			this.fEnemies.forEach(function(enemy){
   			enemy.speedKill =  false;
 			});
@@ -770,7 +777,7 @@ Level.prototype.getPowerUp = function (player,powerUp) {
    			this.timerPower.destroy();
    		};
 		
-	};
+
 
 			
 }
@@ -781,6 +788,37 @@ Level.prototype.getPowerUp = function (player,powerUp) {
 			powerUp.destroy();
 
 };
+
+Level.prototype.newLevelAnim = function () {
+
+		
+
+		this.timerPower2 = this.game.time.create(false);
+    	this.timerPower2.loop(500, slowAgain2, this);
+   		this.timerPower2.start();
+
+   		this.speedPowerInstance = new jumpPower(this.game, this.fPlayer.x, this.fPlayer.y);
+		this.add.existing(this.speedPowerInstance);
+
+		explode = this.game.add.tween(this.speedPowerInstance.scale);
+		explode.to({x:20 , y:20}, 500, Phaser.Easing.Linear.None);
+		explode.onComplete.add(slowAgain2, this);
+		explode.start();
+
+
+   		this.fEnemies.forEach(function(enemy){
+  			enemy.game.state.getCurrentState().destroyEnemyWithLevel(this.fPlayer,enemy);
+		});
+
+   		function slowAgain2(){
+console.log('im here');
+				explode.stop();
+
+				this.speedPowerInstance.destroy();
+					this.timerPower2.destroy();
+   		};
+
+}
 
 Level.prototype.showLabel = function () {
 			bajaLetrero = this.game.add.tween(this.fPowerLabel);		
@@ -798,37 +836,7 @@ Level.prototype.showLabel = function () {
 			}
 }
 
-Level.prototype.newLevelAnim = function () {
 
-		
-
-		this.fPlayer.usingSpeedForce =  true;
-		this.fPowerText.text = 'Speed Force';
-
-		this.timerPower = this.game.time.create(false);
-    	this.timerPower.loop(500, slowAgain, this);
-   		this.timerPower.start();
-
-   		this.speedPowerInstance = new jumpPower(this.game, this.fPlayer.x, this.fPlayer.y);
-		this.add.existing(this.speedPowerInstance);
-
-		explode = this.game.add.tween(this.speedPowerInstance.scale);
-		explode.to({x:20 , y:20}, 500, Phaser.Easing.Linear.None);
-		explode.onComplete.add(slowAgain, this);
-		explode.start();
-
-
-   		this.fEnemies.forEach(function(enemy){
-  			enemy.game.state.getCurrentState().destroyEnemyWithLevel(this.fPlayer,enemy);
-		});
-
-   		function slowAgain(){
-
-				explode.stop();
-				this.speedPowerInstance.destroy();
-   		};
-
-}
 
 Level.prototype.hitEnemyShot = function (player,shot) {
 
