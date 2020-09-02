@@ -859,7 +859,7 @@ Level.prototype.hitEnemyShot = function (player,shot) {
 
 Level.prototype.update = function () {
 
-	this.fPlayer.getExp();
+	//this.fPlayer.getExp();
 	
 	if(this.fPlayer.myDoubleJump>0){
 		this.fPlayer.canDoubleJump =  true;
