@@ -76,7 +76,7 @@ upgradeBtn.prototype.pullMenu = function () {
 		this.game.state.getCurrentState().fMenu.fReturnText.text = 'RETURN TO BASE';
 		this.game.state.getCurrentState().fMenu.menuIsOpen =  false;
 		this.game.state.getCurrentState().fMenu.stopUpdateMenu();
-		
+		this.game.state.getCurrentState().fLifeBar.callBarra();
 	}
 	
 	

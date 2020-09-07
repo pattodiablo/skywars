@@ -38,6 +38,3 @@ shot.prototype.constructor = shot;
 
 /* --- end generated code --- */
 // -- user code here --
-shot.prototype.update = function() {
-
-}

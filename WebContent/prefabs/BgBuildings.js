@@ -31,11 +31,18 @@ BgBuildings.prototype.constructor = BgBuildings;
 BgBuildings.prototype.myCreate = function () {
 
 this.addNext =  true;
+
+   	this.myTimer = this.game.time.create(false);
+    this.myTimer.loop(200, this.timerUpdate, this);
+    this.myTimer.start();
+
 };
 
-BgBuildings.prototype.update = function () {
-this.x+=0.2;
-	this.position.y=-this.game.state.getCurrentState﻿().fPlayer.y/64+30;
+BgBuildings.prototype.timerUpdate = function () {
+
+	this.x+=1;
+
+		
 	if(this.addNext){
 	if(this.x>=this.game.width/3){
 		
@@ -45,8 +52,15 @@ this.x+=0.2;
 		}
 	
 	}
-	if(this.x>=this.game.width){
+	if(this.x>=1920){
 		
 		this.destroy();
 	}
+
+
+}
+
+BgBuildings.prototype.update = function () {
+this.position.y=-this.game.state.getCurrentState﻿().fPlayer.y/64+30;
+
 };

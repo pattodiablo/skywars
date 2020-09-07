@@ -47,9 +47,36 @@ wisherEnemy.prototype.myCreate = function() {
 	this.body.velocity.x =   Math.random()  * (500 - 300) - 300;
 	this.speedKill =  false;
 	this.isKicked =  false;
+	this.isCombo =  false;
+	this.isRed = false;
+
+	this.myTimer = this.game.time.create(false);
+    this.myTimer.loop(200, this.timerUpdate, this);
+    this.myTimer.start();
 	
 };
 
+wisherEnemy.prototype.turnRed = function() {
+	this.tint=0xffa4a4;
+	this.ShootTimer = this.game.time.create(false);
+    this.ShootTimer.loop(2000, this.shoot, this);
+    this.ShootTimer.start();
+
+}
+
+wisherEnemy.prototype.setKicked = function() {
+
+	this.isKicked =  true;
+}
+
+wisherEnemy.prototype.shoot = function() {
+
+		var _Fireshot = new shot(this.game, this.x-this.width/2, this.y);
+		_Fireshot.tint = 0xffa4a4;
+    	_Fireshot.body.velocity.x*=-1;
+    	_Fireshot.scale.setTo(-1,0.3);
+    	this.game.state.getCurrentState﻿().fEnemyBullet.add(_Fireshot)
+};
 
 wisherEnemy.prototype.killedBySpeed = function() {
 	
@@ -60,29 +87,53 @@ wisherEnemy.prototype.killedBySpeed = function() {
 		}
 };
 
+wisherEnemy.prototype.timerUpdate = function() {
+	if(this.y<=-100){ //elimina al enmigo al salir a la arriba de la pantalla por -100 px
+		 if(typeof this.ShootTimer !== "undefined"){
+
+			this.ShootTimer.destroy();
+		 }
+		this.destroy();
+	}
+	
+	if(this.x<=-100){ //elimina al enmigo al salir a la izquierda de la pantalla por 100 px
+		 if(typeof this.ShootTimer !== "undefined"){
+
+			this.ShootTimer.destroy();
+		 }
+		this.destroy();
+	}
+
+	if(this.x>=2200){ //elimina al enmigo al salir a la derecha de la pantalla por 500 px
+		 if(typeof this.ShootTimer !== "undefined"){
+
+			this.ShootTimer.destroy();
+		 }		
+		this.destroy();
+	}
+	
+	if(this.y>=1180){
+		 if(typeof this.ShootTimer !== "undefined"){
+
+			this.ShootTimer.destroy();
+		 }
+		this.destroy();
+	}
+	
+}
+
 wisherEnemy.prototype.update = function() {
+
+	if(this.isKicked){
+
+		this.isCombo = true;
+		this.isKicked = false;
+		
+	}
 	
 	if(this.speedKill){ //elimna al enemigo al usar speedforce
 		this.killedBySpeed();
 	}
 
-	if(this.y<=-100){ //elimina al enmigo al salir a la arriba de la pantalla por -100 px
 
-		this.destroy();
-	}
-	
-	if(this.x<=-100){ //elimina al enmigo al salir a la izquierda de la pantalla por 100 px
-
-		this.destroy();
-	}
-
-	if(this.x>=2200){ //elimina al enmigo al salir a la derecha de la pantalla por 500 px
-				
-		this.destroy();
-	}
-	
-	if(this.y>=1180){
-		
-		this.destroy();
-	}
 };

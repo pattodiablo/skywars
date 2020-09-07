@@ -49,6 +49,7 @@
             "name": "power",
             "frameRate": 15,
             "loop": true,
+            "field": true,
             "autoPlay": true,
             "frames": [
               "jumpPower instance 10000",

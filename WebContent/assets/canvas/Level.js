@@ -28,7 +28,7 @@ Level.prototype.init = function () {
 	this.scale.pageAlignVertically = true;
 	this.game.renderer.renderSession.roundPixels = true;
 	this.stage.backgroundColor = '#80ffff';
-	
+	this.game.forceSingleUpdate = true;
 	this.myInit();
 	
 };
@@ -62,6 +62,9 @@ Level.prototype.create = function () {
 	var _building3Tower = new building3(this.game, 2293.0, 785.0);
 	_platforms.add(_building3Tower);
 	
+	var _lifeBar = new barraSalva(this.game, 474.0, 1304.0);
+	_platforms.add(_lifeBar);
+	
 	var _build2 = new building1(this.game, 4604.0, 659.0);
 	_platforms.add(_build2);
 	
@@ -80,6 +83,14 @@ Level.prototype.create = function () {
 	
 	var _bullets = this.add.physicsGroup(Phaser.Physics.ARCADE);
 	
+	var _bossGroup = this.add.group();
+	
+	var _comboText = this.add.group();
+	
+	var _enemyShots = this.add.group();
+	
+	var _enemyBullet = this.add.group();
+	
 	var _menu = new menuBg(this.game);
 	_menu.position.set(9.0, -947.0);
 	
@@ -92,8 +103,6 @@ Level.prototype.create = function () {
 	var _FxBtn = new FxBtn(this.game, 219.0, 1005.0);
 	this.add.existing(_FxBtn);
 	
-	var _enemyShots = this.add.group();
-	
 	
 	
 	// fields
@@ -101,15 +110,19 @@ Level.prototype.create = function () {
 	this.fBackground = _background;
 	this.fMiddleBG = _middleBG;
 	this.fPlatforms = _platforms;
+	this.fLifeBar = _lifeBar;
 	this.fPowerLabel = _powerLabel;
 	this.fPowerText = _powerText;
 	this.fEnemies = _enemies;
 	this.fPowerUps = _powerUps;
 	this.fCoins = _coins;
 	this.fBullets = _bullets;
+	this.fBossGroup = _bossGroup;
+	this.fComboText = _comboText;
+	this.fEnemyShots = _enemyShots;
+	this.fEnemyBullet = _enemyBullet;
 	this.fMenu = _menu;
 	this.fPlayer = _player;
-	this.fEnemyShots = _enemyShots;
 	this.myCreate();
 	
 	
@@ -149,7 +162,13 @@ this.game.load.script('filter', 'https://cdn.rawgit.com/photonstorm/phaser-ce/ma
 
 Level.prototype.myCreate = function () {
 
+this.timerPowers = [];
+this.timerPowers2 = [];
+this.timerPowers3 = [];
+this.comboHit =  0;
 this.speedAnimations = [];
+this.jumpAnimations = [];
+
   this.isBosstime =  false;
   this.isBossShow =  false;
   var filter = this.game.add.filter('Pixelate', 1920, 1080);
@@ -181,6 +200,9 @@ if(!this.initSound){
   		
 	//this.setupCoinEmitter();
 
+   	this.myTimer = this.game.time.create(false);
+    this.myTimer.loop(200, this.timerUpdate, this);
+    this.myTimer.start();
 
 };
 
@@ -278,7 +300,7 @@ Level.prototype.bgMusicPlay = function () {
 
 
 
-	this.fxSounds = [baseCall,bossCome,bossCome2,die,getCoins,laserShot,powerup1,punch1,punch2,punch3,upgrade]; //agreagar aqui todos los sound fx que se necesita adminstrar
+	this.fxSounds = [baseCall,bossCome,bossCome2,die,getCoins,laserShot,powerup1,punch1,punch2,punch3,levelUp,upgrade]; //agreagar aqui todos los sound fx que se necesita adminstrar
 
 	if(!fxEnabled){
 		this.fxSounds.forEach(function(soundFx) { 	 //en caso de que se deshabilite los sonidos fxs
@@ -408,6 +430,11 @@ if(salen){
 
 
 var _BirdEnemy = new wisherEnemy(this.game, this.game.width+50, enemyXDeploy);
+var isRedEnemy=Math.random()<0.1;
+	if(isRedEnemy){
+		_BirdEnemy.turnRed();
+	}
+
 	this.fEnemies.add(_BirdEnemy);
 
 };
@@ -437,6 +464,7 @@ Level.prototype.swipeDownAction = function(pointer) { //manejo de swipe control 
 	}
 
 	if(this.fPlayer.canJump){
+		this.comboHit =  0;
 		this.fPlayer.body.velocity.x =  50;
 		this.fPlayer.body.velocity.y=-900;
 		this.fPlayer.animations.play('up');
@@ -486,24 +514,21 @@ coin.body.velocity.x = platform.body.velocity.x;
 
 
 	};	
-Level.prototype.getExperience = function (enemy) {	
+Level.prototype.getExperience = function (enemy,comboHit) {	
 
-this.fPlayer.getExp();
+this.fPlayer.getExp(comboHit);
 if(this.fPlayer.currentFillLevel*10>8 && !this.isBosstime && !this.isBossShow){
 	
 	bossCome.play('bossCome');
 	var _bigEnemy = new alienEnemy(this.game);
 	_bigEnemy.position.set(1382.0, -483.0);
+	this.fBossGroup.add(_bigEnemy);
 	this.isBosstime = true;
 }
 
 if(this.fPlayer.ExpPoints>=this.kickLevel){
 
-	const randScale = Math.random()*1;
-	var _expLabel = new expLabel(this.game,enemy.x, enemy.y);
-	_expLabel.y = enemy.y-60*randScale;
-	_expLabel.scale.setTo(randScale,randScale);
-	this.add.existing(_expLabel);
+	
 	this.kickLevel++;
 }
 
@@ -513,11 +538,25 @@ if(this.fPlayer.ExpPoints>=this.kickLevel){
 }
 
 Level.prototype.destroyEnemy = function (player, enemy) {	
-
+//estas haciendo combo kick... 
 	
 	if(player.isKicking){
 		if(!enemy.isKicked){
-		wichKick  = Math.round(Math.random()*3);
+		
+		if(!enemy.isCombo){
+
+			var _kickPower = new kickPower(this.game, enemy.x, enemy.y);
+			_kickPower.alpha = 0.5;
+			this.add.existing(_kickPower);
+			enemy.animations.play('kicked');
+			enemy.tweenBtn.stop();
+			enemy.tween2Btn.stop();
+			enemy.body.velocity.x=800;
+			enemy.body.gravity.y=1200;
+			enemy.body.enabled = false;
+			enemy.body.checkCollision.none = false;
+
+			wichKick  = Math.round(Math.random()*3);
 			
 			switch(wichKick){
 				case 1:
@@ -534,29 +573,50 @@ Level.prototype.destroyEnemy = function (player, enemy) {
 				break;
 
 			}
+
+		//	this.shakeAndFlash();
+			enemy.isKicked =  true;
+			this.comboHit++;
 		
-		enemy.isKicked =  true;
+
+		if(this.comboHit>=2){
+
+			var comboText = this.add.text(enemy.x, enemy.y, 'x' + this.comboHit , {"font":"bold 120px Arial","fill":"#ffffff","stroke":"#ffffff"});
+			this.fComboText.add(comboText);
+			
+			this.showLevel = this.game.add.tween(comboText);
+			this.showLevel.to({alpha:0}, 500, Phaser.Easing.Linear.None);
+			this.showLevel.onComplete.add(function(){
+			this.fComboText.forEach(function(comboText){
+				comboText.destroy();
+			})
+			//this.showLevel.stop();
+			}, this);
+			this.showLevel.start();
+
+			this.showLevel2 = this.game.add.tween(comboText);
+			this.showLevel2.to({y:comboText.y-50}, 500, Phaser.Easing.Linear.None);
+
+			this.showLevel2.onComplete.add(function(){	
+			//this.showLevel2.stop();
+			}, this);
+
+			this.showLevel2.start();
+		}
+		}
 }
-			var _kickPower = new kickPower(this.game, enemy.x, enemy.y);
-			_kickPower.alpha = 0.5;
-			this.shakeAndFlash();
+			
 			this.createCoins(enemy.x,enemy.y,300,false);
-			this.add.existing(_kickPower);
-			enemy.animations.play('kicked');
-			enemy.tweenBtn.stop();
-			enemy.tween2Btn.stop();
-			enemy.body.velocity.x=800;
-			enemy.body.gravity.y=1200;
-			enemy.body.enabled = false;
-			enemy.body.checkCollision.none = false;
-			this.getExperience(enemy);
+			
+			
+			this.getExperience(enemy,this.comboHit);
 	}
 	
 };
 
 Level.prototype.destroyEnemyWithLevel = function (player, enemy) {	
 
-			this.shakeAndFlash();
+			//this.shakeAndFlash();
 			for(var i=0; i<=10; i++){
 
 			this.createCoins(enemy.x,enemy.y,300,true);	
@@ -579,22 +639,39 @@ Level.prototype.destroyEnemyWithLevel = function (player, enemy) {
 
 Level.prototype.destroyEnemyWithBullet = function (bullet, enemy) {	
 
-		this.getExperience(enemy);
-		this.shakeAndFlash();
-		this.createCoins(enemy.x,enemy.y,-800,true);
+		if(!enemy.isKicked){
+			
+			this.fBullets.remove(bullet);
+			enemy.setKicked();
+			
 			enemy.animations.play('kicked');
 			enemy.tweenBtn.stop();
 			enemy.tween2Btn.stop();
 			enemy.body.velocity.x= 1200;
 			enemy.body.gravity.y=1200;
-			enemy.body.enabled = false;
 			enemy.body.checkCollision.none = false;
-			this.getExperience(enemy);
+			enemy.body.enabled = false;
+			
+			for (var i = 0; i < 10; i++) {
+				this.getExperience(enemy);
+			this.createCoins(enemy.x,enemy.y,-800,true);
+			}
+			
+			
+	}
+	
 };
 
-Level.prototype.createCoins = function (x,y,velo,killedByBullet) {
+Level.prototype.createCoins = function (x,y,velo,killedByBullet,noRetrieve) {
 
 	var _coin = new coin(this.game, x, y);
+	if(!noRetrieve){
+			_coin.startRetrieve();
+		}else{
+
+			_coin.tint = 0x9e9e9e;
+		}
+
 	_coin.killedByBullet = killedByBullet;
 	_coin.body.velocity.y=Math.random()*velo;
 	_coin.body.velocity.x=Math.random()*velo;
@@ -613,6 +690,13 @@ Level.prototype.getPowerUp = function (player,powerUp) {
 		powerup1.play('powerup1');
 	this.shakeAndFlash();
 		if(powerUp.myPower == 'SuperShot'){
+		if(this.timerPowers.length>0){
+
+				this.timerPowers.forEach(function(timer){
+					timer.destroy();
+
+				});
+			}
 			console.log('i got superShot');
 			this.fPowerText.text = 'Super Shot';
 			player.canShot=true;
@@ -645,6 +729,8 @@ Level.prototype.getPowerUp = function (player,powerUp) {
 	    	this.timerPower3.loop(powerUpTimer3, quitSuperShot, this);
 	   		this.timerPower3.start();
 
+	   		this.timerPowers.push(this.timerPower3);
+
    			function quitSuperShot(){
    				player.canShot=false;
 				player.enableShootOnce =true;
@@ -654,11 +740,19 @@ Level.prototype.getPowerUp = function (player,powerUp) {
 		}
 
 	if(powerUp.myPower == 'doubleJump'){
-		if(!this.fPlayer.usingDoubleJump){
 
+		if(!this.fPlayer.usingDoubleJump){
+			if(this.timerPowers2.length>0){
+
+				this.timerPowers2.forEach(function(timer){
+					timer.destroy();
+
+				});
+			}
 			this._jumpPower_instance_ = new jumpPower(this.game, this.fPlayer.x, this.fPlayer.y);
 			this.add.existing(this._jumpPower_instance_);
-	
+			this.jumpAnimations.push(this._jumpPower_instance_);
+			player.usingDoubleJump=true;
 			player.myDoubleJump++;
 			player.canDoubleJump=true;
 		
@@ -688,16 +782,25 @@ Level.prototype.getPowerUp = function (player,powerUp) {
 			}
 		
 
-			this.timerPower2 = this.game.time.create(false);
-	    	this.timerPower2.loop(powerUpTimer2, quitDoubleJump, this);
-	   		this.timerPower2.start();
+			this.timerPower4 = this.game.time.create(false);
+	    	this.timerPower4.loop(powerUpTimer2, quitDoubleJump, this);
+	   		this.timerPower4.start();
+
+	   		this.timerPowers2.push(this.timerPower4);
 
    			function quitDoubleJump(){
+
+   			
+   				this.jumpAnimations.forEach(function(animation){
+
+   					animation.destroy();
+   				});
+   				this.jumpAnimations = [];	
 
    				this._jumpPower_instance_.destroy();
    				this.fPlayer.usingDoubleJump =  false;
 				player.canDoubleJump=false;
-	   			this.timerPower2.destroy();
+	   			this.timerPower4.destroy();
 
    			}
 		}
@@ -705,7 +808,13 @@ Level.prototype.getPowerUp = function (player,powerUp) {
 
 	if(powerUp.myPower == 'speedForce'){
 	
-	
+	if(this.timerPowers3.length>0){
+
+				this.timerPowers3.forEach(function(timer){
+					timer.destroy();
+
+				});
+			}
 
 
 	/*	fly = this.game.add.tween(this.fPlayer);
@@ -747,17 +856,19 @@ Level.prototype.getPowerUp = function (player,powerUp) {
    		this.speedPowerInstance = new speedPower(this.game, this.fPlayer.x, this.fPlayer.y);
 		this.add.existing(this.speedPowerInstance);
 		this.speedAnimations.push(this.speedPowerInstance);
-		console.log('largo ' + this.speedAnimations.length);
+
 		this.timerPower = this.game.time.create(false);
     	this.timerPower.loop(powerUpTimer1, slowAgain, this);
    		this.timerPower.start();
+		this.timerPowers3.push(this.timerPower);
+
 
    		this.fEnemies.forEach(function(enemy){
   			enemy.speedKill =  true;
 		});
 
    		function slowAgain(){
-   			
+   	
 				if(this.speedAnimations.length>0){
 						this.speedAnimations.forEach(function(animation){
 		  				
@@ -792,16 +903,17 @@ Level.prototype.newLevelAnim = function () {
 
 		
 
-		this.timerPower2 = this.game.time.create(false);
-    	this.timerPower2.loop(500, slowAgain2, this);
-   		this.timerPower2.start();
+	
 
    		this.speedPowerInstance = new jumpPower(this.game, this.fPlayer.x, this.fPlayer.y);
+   		this.powerAnim = this.speedPowerInstance.animations.play('power');
+   		this.powerAnim.killOnComplete=true;
+   		this.powerAnim.loop=false;
 		this.add.existing(this.speedPowerInstance);
 
 		explode = this.game.add.tween(this.speedPowerInstance.scale);
 		explode.to({x:20 , y:20}, 500, Phaser.Easing.Linear.None);
-		explode.onComplete.add(slowAgain2, this);
+	
 		explode.start();
 
 
@@ -809,13 +921,6 @@ Level.prototype.newLevelAnim = function () {
   			enemy.game.state.getCurrentState().destroyEnemyWithLevel(this.fPlayer,enemy);
 		});
 
-   		function slowAgain2(){
-
-				explode.stop();
-
-				this.speedPowerInstance.destroy();
-					this.timerPower2.destroy();
-   		};
 
 }
 
@@ -855,12 +960,18 @@ Level.prototype.hitEnemyShot = function (player,shot) {
 	
 }
 
+Level.prototype.hitPlayerWithBullet = function (player,bullet) {
+	bullet.destroy();
+	this.shakeAndFlash();
+	for(var i = 0 ; i<=5; i++){
+		this.fPlayer.coins--;
+			this.createCoins(player.x,player.y,1500,false,true);
+		}
+}
 
+Level.prototype.timerUpdate = function() {
 
-Level.prototype.update = function () {
-
-	//this.fPlayer.getExp();
-	
+	this.fMenu.fLevelBar.fMoneyText.text = this.fPlayer.coins;
 	if(this.fPlayer.myDoubleJump>0){
 		this.fPlayer.canDoubleJump =  true;
 	}
@@ -869,11 +980,19 @@ Level.prototype.update = function () {
 		this.stageSpeed = this.maximunStageSpeed;
 
 	}else{
-		this.stageSpeed++;
+		this.stageSpeed+=10;
 	}
 
-	
-	this.fMenu.fLevelBar.fMoneyText.text = this.fPlayer.coins;
+
+		
+
+
+
+}
+
+Level.prototype.update = function () {
+
+//	this.fPlayer.getExp(); //solo para pruebas habilitar para ganar experiencia rapidamente
 	
 	this.game.physics.arcade.overlap(this.fBullets , this.fEnemies, this.destroyEnemyWithBullet, null, this);
 	this.game.physics.arcade.collide(this.fCoins , this.fPlatforms, this.coinOnPlatform, null, this);
@@ -881,29 +1000,29 @@ Level.prototype.update = function () {
 	this.game.physics.arcade.overlap(this.fPlayer , this.fEnemies, this.destroyEnemy, null, this);
 	this.game.physics.arcade.overlap(this.fPlayer , this.fPowerUps, this.getPowerUp, null, this);
 	this.game.physics.arcade.overlap(this.fPlayer , this.fEnemyShots, this.hitEnemyShot, null, this);
-	
-	
-	
-
-
+	this.game.physics.arcade.overlap(this.fPlayer , this.fEnemyBullet, this.hitPlayerWithBullet, null, this);
 	if(this.fPlayer.y>=this.game.height+100 || this.fPlayer.x<=-100){ //muere die lost loose
 		die.play('die');
 		this.fPlayer.coins-=Math.round(10+this.fPlayer.coins*0.1);
+
+		this.fPlayer.body.velocity.x=0;
+		this.fPlayer.canJump = false;
+		this.fPlayer.x = this.game.width/3.5;
 		this.fPlayer.y = -50;
-		this.fPlayer.body.velocity.x = 200;
 		
-		for(var i = 0 ; i<=10; i++){
-			this.createCoins(this.game.width/2,0,1500);
+		
+		for(var i = 0 ; i<=5; i++){
+			this.createCoins(this.game.width/2,0,1500, false, true);
 		}
 		this.stageSpeed -= 20;
 		if(this.stageSpeed<=100){
 
 			this.stageSpeed=100
 		}
+		this.fLifeBar.callBarra();
 		
-		this.fPlayer.x = this.game.width/2;
 		this.shakeAndFlash();
 	}
-
 	
 };
+

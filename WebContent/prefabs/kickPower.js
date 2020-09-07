@@ -16,6 +16,7 @@
  */
 function kickPower(aGame, aX, aY, aKey, aFrame) {
 	Phaser.Sprite.call(this, aGame, aX, aY, aKey || 'wisherEnemy', aFrame == undefined || aFrame == null? 'kickPower0000' : aFrame);
+	this.scale.set(2.0, 1.0);
 	var _anim_powered = this.animations.add('powered', ['kickPower0000', 'kickPower0001', 'kickPower0002', 'kickPower0003', 'kickPower0004', 'kickPower0005', 'kickPower0006', 'kickPower0007'], 90, false);
 	_anim_powered.killOnComplete = true;
 	_anim_powered.play();

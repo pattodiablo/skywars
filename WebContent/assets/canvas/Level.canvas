@@ -135,6 +135,23 @@
               },
               {
                 "type": "prefab",
+                "prefab": "4",
+                "id": "aed8a8e5-ed00-403e-97c5-bda720b02ca8",
+                "asset-ref": {
+                  "file": "WebContent/assets/pack.json",
+                  "section": "atlas",
+                  "asset": "buttons",
+                  "sprite": "buttonMenu instance 10012"
+                },
+                "info": {
+                  "editorName": "lifeBar",
+                  "editorField": true,
+                  "x": 474,
+                  "y": 1304
+                }
+              },
+              {
+                "type": "prefab",
                 "prefab": "1",
                 "id": "1a73ddbc-f706-48a6-9065-16fcc98d11fc",
                 "asset-ref": {
@@ -234,8 +251,48 @@
           }
         },
         {
+          "type": "group",
+          "id": "dff174ac-f8e1-47b9-b1e7-212260f907c1",
+          "info": {
+            "editorName": "bossGroup",
+            "editorField": true,
+            "setAll": [],
+            "children": []
+          }
+        },
+        {
+          "type": "group",
+          "id": "66b0d9c6-777c-4bee-9009-4a38d3fedb28",
+          "info": {
+            "editorName": "comboText",
+            "editorField": true,
+            "setAll": [],
+            "children": []
+          }
+        },
+        {
+          "type": "group",
+          "id": "b00d9001-73b6-44cd-852d-3d0d284c1c7e",
+          "info": {
+            "editorName": "enemyShots",
+            "editorField": true,
+            "setAll": [],
+            "children": []
+          }
+        },
+        {
+          "type": "group",
+          "id": "4334e894-9cf4-4e35-9552-ae8a352f2812",
+          "info": {
+            "editorName": "enemyBullet",
+            "editorField": true,
+            "setAll": [],
+            "children": []
+          }
+        },
+        {
           "type": "prefab",
-          "prefab": "4",
+          "prefab": "5",
           "id": "fa3dba75-18ff-418b-a377-eeeadc87a459",
           "info": {
             "editorName": "menu",
@@ -246,7 +303,7 @@
         },
         {
           "type": "prefab",
-          "prefab": "5",
+          "prefab": "6",
           "id": "6b92b063-cf03-45ca-b402-46b55aae01a8",
           "asset-ref": {
             "file": "WebContent/assets/pack.json",
@@ -263,7 +320,7 @@
         },
         {
           "type": "prefab",
-          "prefab": "6",
+          "prefab": "7",
           "id": "6f95b69a-684b-4169-8b5c-e575c5271a73",
           "asset-ref": {
             "file": "WebContent/assets/pack.json",
@@ -279,7 +336,7 @@
         },
         {
           "type": "prefab",
-          "prefab": "7",
+          "prefab": "8",
           "id": "b6057b19-2168-4e8f-9920-70eacc8fb4a6",
           "asset-ref": {
             "file": "WebContent/assets/pack.json",
@@ -291,16 +348,6 @@
             "editorName": "FxBtn",
             "x": 219,
             "y": 1005
-          }
-        },
-        {
-          "type": "group",
-          "id": "b00d9001-73b6-44cd-852d-3d0d284c1c7e",
-          "info": {
-            "editorName": "enemyShots",
-            "editorField": true,
-            "setAll": [],
-            "children": []
           }
         }
       ]
@@ -317,9 +364,10 @@
     "1": "WebContent/prefabs/building1.canvas",
     "2": "WebContent/prefabs/building2.canvas",
     "3": "WebContent/prefabs/building3.canvas",
-    "4": "WebContent/prefabs/menuBg.canvas",
-    "5": "WebContent/prefabs/player.canvas",
-    "6": "WebContent/prefabs/musicBtn.canvas",
-    "7": "WebContent/prefabs/FxBtn.canvas"
+    "4": "WebContent/prefabs/barraSalva.canvas",
+    "5": "WebContent/prefabs/menuBg.canvas",
+    "6": "WebContent/prefabs/player.canvas",
+    "7": "WebContent/prefabs/musicBtn.canvas",
+    "8": "WebContent/prefabs/FxBtn.canvas"
   }
 }

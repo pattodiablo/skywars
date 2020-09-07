@@ -21,6 +21,8 @@ function alienHead(aGame, aX, aY, aKey, aFrame) {
 	this.animations.add('idle', ['idle0000'], 60, false);
 	this.animations.add('attack', ['attack0000'], 1, false);
 	
+	this.myCreate();
+	
 }
 
 /** @type Phaser.Sprite */
@@ -30,3 +32,17 @@ alienHead.prototype.constructor = alienHead;
 
 /* --- end generated code --- */
 // -- user code here --
+
+alienHead.prototype.myCreate = function(player,barra) {
+
+	this.Blinktimer = this.game.time.create(false);
+  	this.Blinktimer.loop(2000, this.blink, this);
+    this.Blinktimer.start();
+
+
+}
+
+alienHead.prototype.blink = function() {
+	this.animations.play('blink');
+}
+

@@ -1,7 +1,7 @@
 {
   "canvas-version": 2,
   "settings": {
-    "className": "kickPower",
+    "className": "barraSalva",
     "sceneWidth": 640,
     "sceneHeight": 360,
     "generateOnSave": true,
@@ -18,7 +18,8 @@
       200,
       200
     ],
-    "showGrid": true
+    "showGrid": true,
+    "create_after": "this.myCreate();"
   },
   "stateSettings": {
     "stageBackgroundColor": [
@@ -33,33 +34,28 @@
   },
   "world": {
     "type": "group",
-    "id": "9fe62455-d4ec-46ae-a2a4-5c8da40a35d1",
+    "id": "a2bab3a1-3397-4d5e-9d6b-9847709315e4",
     "info": {
-      "editorName": "kickPower",
+      "editorName": "root",
       "setAll": [],
       "children": [{
         "type": "atlas-sprite",
-        "id": "428ddd91-4e87-4052-8e92-e51d924fc624",
+        "id": "565e7d5f-9a43-4628-8f40-cf8dcbccabd6",
         "asset": "0",
         "info": {
-          "editorName": "kickPower0000",
-          "scale.x": 2,
-          "animations": [{
-            "name": "powered",
-            "frameRate": 90,
-            "killOnComplete": true,
-            "autoPlay": true,
-            "frames": [
-              "kickPower0000",
-              "kickPower0001",
-              "kickPower0002",
-              "kickPower0003",
-              "kickPower0004",
-              "kickPower0005",
-              "kickPower0006",
-              "kickPower0007"
-            ]
-          }]
+          "editorName": "buttonMenu_instance_",
+          "scale.x": 0.3,
+          "scale.y": 0.4,
+          "anchor.x": 0.5,
+          "anchor.y": 0.5,
+          "body": {
+            "type": "ARCADE_RECT",
+            "moves": false,
+            "immovable": true,
+            "bounceY": 0.2,
+            "width": 614,
+            "height": 114
+          }
         }
       }]
     }
@@ -68,8 +64,8 @@
   "asset-table": {"0": {
     "file": "WebContent/assets/pack.json",
     "section": "atlas",
-    "asset": "wisherEnemy",
-    "sprite": "kickPower0000"
+    "asset": "buttons",
+    "sprite": "buttonMenu instance 10012"
   }},
   "prefab-table": {}
 }

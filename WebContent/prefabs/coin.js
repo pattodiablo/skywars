@@ -39,13 +39,22 @@ coin.prototype.constructor = coin;
 // -- user code here --
 coin.prototype.myCreate = function() {
 	
-    this.enemyDeployTimer = this.game.time.create(false);
-    this.enemyDeployTimer.loop(500, this.retriveCoin, this);
-    this.enemyDeployTimer.start();
+ 
     this.killedByBullet =  false;
+	this.myTimer = this.game.time.create(false);
+    this.myTimer.loop(200, this.timerUpdate, this);
+    this.myTimer.start(this);
     
 };
+coin.prototype.startRetrieve = function() {
+	   this.enemyDeployTimer = this.game.time.create(false);
+    this.enemyDeployTimer.loop(500, this.retriveCoin, this);
+    this.enemyDeployTimer.start();
+}
+coin.prototype.setNoRetrieve = function() {
+ this.noRetrieve =  true;
 
+}
 coin.prototype.retriveCoin = function() {
 	
 	this.enemyDeployTimer.destroy();
@@ -53,7 +62,7 @@ coin.prototype.retriveCoin = function() {
 	const distance = Math.abs(this.myPoint.distance(this.game.state.getCurrentState().fPlayer));
 	
 	
-	if(distance <= 300 || this.killedByBullet){
+	if(distance <= 300 || this.killedByBullet || !this.noRetrieve){
 		this.tween = this.game.add.tween(this);
 		this.tween.to({x:this.game.width-370,y:30}, 500, Phaser.Easing.Linear.None);
 		this.tween.onComplete.add(this.captureCoin, this);
@@ -71,11 +80,11 @@ coin.prototype.captureCoin = function() {
 	this.destroy();
 };
 
-coin.prototype.update = function() {
-	if(!this.killedByBullet){
-		if(this.y>=this.game.height+100 ){
+coin.prototype.timerUpdate = function(coin) {
+		if(!this.killedByBullet){
+		if(this.y>=coin.game.height+100 ){
 			
 			this.destroy();
 		}
+	}
 }
-};

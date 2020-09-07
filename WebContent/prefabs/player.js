@@ -46,7 +46,7 @@ player.prototype.myCreate = function() {
 	this.core1Level = 0;
 	this.core2Level = 0;
 	this.core3Level = 0;
-	this.coins = 30;
+	this.coins = 2999;
 	this.canJump =  false;	
 	this.isKicking = false;
 	this.canKick = false;
@@ -62,7 +62,37 @@ player.prototype.myCreate = function() {
 	this.levelCap=1000;
 	this.totalLevelFill = this.levelCap*this.myLevel;
 
+   	this.myTimer = this.game.time.create(false);
+    this.myTimer.loop(200, this.timerUpdate, this);
+    this.myTimer.start();
+
 };
+
+player.prototype.timerUpdate = function() {
+if(this.canShot && this.enableShootOnce){
+			this.enaBleShooting();
+			this.enableShootOnce = false;
+		}
+			
+		if(!this.canShot){
+			this.shootTimer.destroy();
+		}
+
+		if(this.coins <= 0 ){
+
+			this.coins = 0 ;
+		}
+
+		if(this.canJump==false && Math.sign(this.body.velocity.y)>=0 && !this.isKicking){
+			this.animations.play('down');
+			this.isFalling = true;
+			
+		}else{
+
+			this.isFalling = false;
+		}
+
+}
 
 player.prototype.enaBleShooting = function() {
 
@@ -80,8 +110,14 @@ player.prototype.enaBleShooting = function() {
 
 
 
-player.prototype.getExp = function() {	
-this.ExpPoints++;
+player.prototype.getExp = function(comboHit) {	
+	
+	if(comboHit>=1){
+		this.ExpPoints+=1*comboHit;
+	}else{
+		this.ExpPoints++;
+	}
+
 
 this.currentFillLevel = this.ExpPoints/this.totalLevelFill;
 
@@ -94,31 +130,3 @@ this.currentFillLevel = this.ExpPoints/this.totalLevelFill;
 		
 		}
 }
-
-player.prototype.update = function() {
-
-if(this.canShot && this.enableShootOnce){
-	this.enaBleShooting();
-	this.enableShootOnce = false;
-}
-	
-if(!this.canShot){
-	this.shootTimer.destroy();
-}
-
-
-
-if(this.coins <= 0 ){
-
-	this.coins = 0 ;
-}
-	if(this.canJump==false && Math.sign(this.body.velocity.y)>=0 && !this.isKicking){
-		this.animations.play('down');
-		this.isFalling = true;
-		
-	}else{
-
-		this.isFalling = false;
-	}
-
-	};

@@ -170,6 +170,11 @@
       "type": "script",
       "key": "enemyLifeBar",
       "url": "prefabs/enemyLifeBar.js"
+    },
+    {
+      "type": "script",
+      "key": "barraSalva",
+      "url": "prefabs/barraSalva.js"
     }
   ],
   "atlas": [
@@ -322,7 +327,7 @@
     }
   ],
   "meta": {
-    "generated": "1598649724706",
+    "generated": "1599167511881",
     "app": "Phaser Editor",
     "url": "http://phasereditor.boniatillo.com",
     "version": "1.0",

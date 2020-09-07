@@ -149,16 +149,18 @@ menuBg.prototype.updateCore1 =  function(){
 
 
 		if(this.game.state.getCurrentState().fPlayer.core1Level<4){
+
 				upgrade.play('upgrade');
 			this.fUpgradeSign1.frame++;
-			this.core1BaseCost += Math.round(this.core1BaseCost*this.game.state.getCurrentState().fPlayer.myLevel*0.2);
 			this.game.state.getCurrentState().fPlayer.coins -= this.core1BaseCost;
+			this.core1BaseCost += Math.round(this.core1BaseCost*this.game.state.getCurrentState().fPlayer.myLevel*0.2);
+			
 			this.game.state.getCurrentState().fPlayer.core1Level++;	
 			this.game.state.getCurrentState().shakeAndFlash();
 			
 		}else{
 
-			this.fCore1cost.text = 'not available';
+			this.fCore1cost.text = 'xxx';
 		}
 		
 	}
@@ -173,14 +175,15 @@ menuBg.prototype.updateCore2 =  function(){
 		if(this.game.state.getCurrentState().fPlayer.core2Level<4){
 			upgrade.play('upgrade');
 			this.fUpgradeSign2.frame++;
-			this.core2BaseCost += Math.round(this.core2BaseCost*this.game.state.getCurrentState().fPlayer.myLevel*0.2);
 			this.game.state.getCurrentState().fPlayer.coins -= this.core2BaseCost;
+			this.core2BaseCost += Math.round(this.core2BaseCost*this.game.state.getCurrentState().fPlayer.myLevel*0.2);
+			
 			this.game.state.getCurrentState().fPlayer.core2Level++;	
 			this.game.state.getCurrentState().shakeAndFlash();
 			
 		}else{
 
-			this.fCore2cost.text = 'not available';
+			this.fCore2cost.text = 'xxx';
 		}
 		
 	}
@@ -195,14 +198,15 @@ menuBg.prototype.updateCore3 =  function(){
 		if(this.game.state.getCurrentState().fPlayer.core3Level<4){
 				upgrade.play('upgrade');
 			this.fUpgradeSign3.frame++;
-			this.core3BaseCost += Math.round(this.core3BaseCost*this.game.state.getCurrentState().fPlayer.myLevel*0.2);
 			this.game.state.getCurrentState().fPlayer.coins -= this.core3BaseCost;
+			this.core3BaseCost += Math.round(this.core3BaseCost*this.game.state.getCurrentState().fPlayer.myLevel*0.2);
+			
 			this.game.state.getCurrentState().fPlayer.core3Level++;	
 			this.game.state.getCurrentState().shakeAndFlash();
 			
 		}else{
 
-			this.fCore3cost.text = 'not available';
+			this.fCore3cost.text = 'xxx';
 		}
 		
 	}
@@ -231,9 +235,25 @@ if(this.menuIsOpen){
 
 
 	this.fLevelNumber.text =this.game.state.getCurrentState().fPlayer.myLevel;
-	this.fCore1cost.text = this.core1BaseCost;
-	this.fCore2cost.text = this.core2BaseCost;
-	this.fCore3cost.text = this.core3BaseCost;
+
+	if(this.game.state.getCurrentState().fPlayer.core1Level>3){
+		this.fCore1cost.text = 'xxx';
+	}else{
+		this.fCore1cost.text = this.core1BaseCost;	
+	}
+
+	if(this.game.state.getCurrentState().fPlayer.core2Level>3){
+		this.fCore2cost.text = 'xxx';
+	}else{
+		this.fCore2cost.text = this.core2BaseCost;	
+	}
+
+	if(this.game.state.getCurrentState().fPlayer.core3Level>3){
+		this.fCore3cost.text = 'xxx';
+	}else{
+		this.fCore3cost.text = this.core3BaseCost;	
+	}
+	
 
 		if(this.game.state.getCurrentState().fPlayer.coins>=this.core1BaseCost && this.game.state.getCurrentState().fPlayer.core1Level<4){
 			this.fCore1UpdateBtn.animations.play('able');
