@@ -28,7 +28,7 @@ Level.prototype.init = function () {
 	this.scale.pageAlignVertically = true;
 	this.game.renderer.renderSession.roundPixels = true;
 	this.stage.backgroundColor = '#80ffff';
-	this.game.forceSingleUpdate = true;
+	
 	this.myInit();
 	
 };
@@ -94,7 +94,7 @@ Level.prototype.create = function () {
 	var _menu = new menuBg(this.game);
 	_menu.position.set(9.0, -947.0);
 	
-	var _player = new player(this.game, 465.0, 512.0);
+	var _player = new player(this.game, 350.0, -63.0);
 	this.add.existing(_player);
 	
 	var _musicBtn = new musicBtn(this.game, 79.0, 1005.0);
