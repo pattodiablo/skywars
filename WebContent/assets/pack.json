@@ -175,6 +175,17 @@
       "type": "script",
       "key": "barraSalva",
       "url": "prefabs/barraSalva.js"
+    },
+    {
+      "type": "script",
+      "key": "homeScreen",
+      "url": "assets/canvas/homeScreen.js"
+    },
+    {
+      "type": "image",
+      "key": "homeBg",
+      "url": "assets/images/homeBg.png",
+      "overwrite": false
     }
   ],
   "atlas": [
@@ -327,7 +338,7 @@
     }
   ],
   "meta": {
-    "generated": "1599167511881",
+    "generated": "1599751682870",
     "app": "Phaser Editor",
     "url": "http://phasereditor.boniatillo.com",
     "version": "1.0",
