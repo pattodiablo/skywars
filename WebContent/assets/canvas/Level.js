@@ -35,11 +35,6 @@ Level.prototype.init = function () {
 
 Level.prototype.preload = function () {
 	
-	this.load.pack('images', 'assets/pack.json');
-	this.load.pack('atlas', 'assets/pack.json');
-	
-	this.myPreload();
-	
 };
 
 Level.prototype.create = function () {
@@ -138,29 +133,11 @@ Level.prototype.myInit = function () {
 
 };
 
-Level.prototype.myPreload = function () {
-this.game.load.audio('bgmusic1', ['assets/audio/bgmusic1.mp3','assets/audio/bgmusic1.ogg']);
 
-this.game.load.audio('bgmusic2', ['assets/audio/bgmusic2.mp3','assets/audio/bgmusic2.ogg']);
-
-this.game.load.audio('baseCall', ['assets/audio/baseCall.mp3','assets/audio/baseCall.ogg']);
-this.game.load.audio('bossCome', ['assets/audio/bossCome.mp3','assets/audio/bossCome.ogg']);
-this.game.load.audio('bossCome2', ['assets/audio/bossCome2.mp3','assets/audio/bossCome2.ogg']);
-this.game.load.audio('die', ['assets/audio/die.mp3','assets/audio/die.ogg']);
-this.game.load.audio('getCoins', ['assets/audio/getCoins.mp3','assets/audio/getCoins.ogg']);
-this.game.load.audio('laserShot', ['assets/audio/laserShot.mp3','assets/audio/laserShot.ogg']);
-this.game.load.audio('powerup1', ['assets/audio/powerup1.mp3','assets/audio/powerup1.ogg']);
-this.game.load.audio('punch1', ['assets/audio/punch1.mp3','assets/audio/punch1.ogg']);
-this.game.load.audio('punch2', ['assets/audio/punch2.mp3','assets/audio/punch2.ogg']);
-this.game.load.audio('punch3', ['assets/audio/punch3.mp3','assets/audio/punch3.ogg']);
-this.game.load.audio('levelUp', ['assets/audio/levelUp.mp3','assets/audio/levelUp.ogg']);
-this.game.load.audio('upgrade', ['assets/audio/upgrade.mp3','assets/audio/upgrade.ogg']);
-this.game.load.script('filter', 'https://cdn.rawgit.com/photonstorm/phaser-ce/master/filters/Pixelate.js');
-
-};
 
 
 Level.prototype.myCreate = function () {
+
 
 this.timerPowers = [];
 this.timerPowers2 = [];
@@ -171,9 +148,7 @@ this.jumpAnimations = [];
 
   this.isBosstime =  false;
   this.isBossShow =  false;
-  var filter = this.game.add.filter('Pixelate', 1920, 1080);
-  filter.sizeX =10;
-  filter.sizeY =10;
+ 
 //this.fBackground.filters = [filter];
 
 	this.createCoins(this.fPlayer.x,this.fPlayer.y,300,false);
@@ -640,7 +615,7 @@ Level.prototype.destroyEnemyWithLevel = function (player, enemy) {
 Level.prototype.destroyEnemyWithBullet = function (bullet, enemy) {	
 
 		if(!enemy.isKicked){
-			
+			bullet.myTimer.destroy();
 			this.fBullets.remove(bullet);
 			enemy.setKicked();
 			
@@ -665,8 +640,10 @@ Level.prototype.destroyEnemyWithBullet = function (bullet, enemy) {
 Level.prototype.createCoins = function (x,y,velo,killedByBullet,noRetrieve) {
 
 	var _coin = new coin(this.game, x, y);
-	if(!noRetrieve){
+	if(!noRetrieve ){
+		if(typeof _coin !== "undefined"){
 			_coin.startRetrieve();
+			}
 		}else{
 
 			_coin.tint = 0x9e9e9e;
@@ -961,6 +938,7 @@ Level.prototype.hitEnemyShot = function (player,shot) {
 }
 
 Level.prototype.hitPlayerWithBullet = function (player,bullet) {
+	bullet.myTimer.destroy();
 	bullet.destroy();
 	this.shakeAndFlash();
 	for(var i = 0 ; i<=5; i++){
@@ -992,8 +970,9 @@ Level.prototype.timerUpdate = function() {
 
 Level.prototype.update = function () {
 
-//	this.fPlayer.getExp(); //solo para pruebas habilitar para ganar experiencia rapidamente
-	
+	//this.fPlayer.getExp(); //solo para pruebas habilitar para ganar experiencia rapidamente
+	//console.log(this.fBossGroup.length);
+
 	this.game.physics.arcade.overlap(this.fBullets , this.fEnemies, this.destroyEnemyWithBullet, null, this);
 	this.game.physics.arcade.collide(this.fCoins , this.fPlatforms, this.coinOnPlatform, null, this);
 	this.game.physics.arcade.collide(this.fPlayer , this.fPlatforms, this.onPlatform, null, this);

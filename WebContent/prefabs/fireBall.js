@@ -42,20 +42,29 @@ fireBall.prototype.constructor = fireBall;
 fireBall.prototype.myCreate = function() {
 
 	this.isKicked = false;
+		this.myTimer = this.game.time.create(false);
+    this.myTimer.loop(200, this.timerUpdate, this);
+    this.myTimer.start();
 }
-fireBall.prototype.update = function() {
-if(this.x<=-200){
-	this.destroy();
+fireBall.prototype.timerUpdate = function() {
+
+	if(this.x<=-200){
+		
+		this.myTimer.destroy();
+
+		this.destroy();
 }
 
 if(this.y>=1200){
+	
+	this.myTimer.destroy();
 	this.destroy();
 }
 
 
 if(this.y<=-200){
+
+	this.myTimer.destroy();
 	this.destroy();
 }
-
-
 }

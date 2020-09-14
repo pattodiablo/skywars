@@ -43,7 +43,8 @@ coin.prototype.myCreate = function() {
     this.killedByBullet =  false;
 	this.myTimer = this.game.time.create(false);
     this.myTimer.loop(200, this.timerUpdate, this);
-    this.myTimer.start(this);
+    this.myTimer.start();
+   
     
 };
 coin.prototype.startRetrieve = function() {
@@ -59,8 +60,10 @@ coin.prototype.retriveCoin = function() {
 	
 	this.enemyDeployTimer.destroy();
 	this.myPoint =  new Phaser.Point(this.x,this.y);
-	const distance = Math.abs(this.myPoint.distance(this.game.state.getCurrentState().fPlayer));
-	
+	const distance = 0;
+	if(typeof this !== "undefined" || typeof this !== "null" ){
+
+		const distance = Math.abs(this.myPoint.distance(this.game.state.getCurrentState().fPlayer));
 	
 	if(distance <= 300 || this.killedByBullet || !this.noRetrieve){
 		this.tween = this.game.add.tween(this);
@@ -70,7 +73,9 @@ coin.prototype.retriveCoin = function() {
 	}else{
 		this.tint = 0x9e9e9e;
 	}
-	
+	this.myTimer.destroy();
+
+	}
 };
 
 coin.prototype.captureCoin = function() {
@@ -80,11 +85,13 @@ coin.prototype.captureCoin = function() {
 	this.destroy();
 };
 
-coin.prototype.timerUpdate = function(coin) {
+coin.prototype.timerUpdate = function() {
+
 		if(!this.killedByBullet){
-		if(this.y>=coin.game.height+100 ){
-			
-			this.destroy();
-		}
+			if(this.world.y>=1180 ){
+				this.body.enable = false;
+				this.myTimer.destroy();
+				this.destroy();	
+			}
 	}
 }

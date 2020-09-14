@@ -1,7 +1,7 @@
 {
   "canvas-version": 2,
   "settings": {
-    "className": "homeScreen",
+    "className": "finalScreen",
     "sceneWidth": 1920,
     "sceneHeight": 1080,
     "generateOnSave": true,
@@ -19,8 +19,7 @@
       200
     ],
     "showGrid": true,
-    "create_after": "this.myCreate();",
-    "state_preload_after": "this.myPreload();"
+    "create_after": "this.myCreate();"
   },
   "stateSettings": {
     "scaleMode": "SHOW_ALL",
@@ -34,77 +33,89 @@
     "physicsSystem": "ARCADE",
     "rendererRoundPixels": true,
     "autoLoad": false,
-    "preloadSpriteId": "82f185e8-c110-493d-8a4d-12867140cf4e",
+    "preloadSpriteId": "",
     "preloadSprite_direction": 0,
-    "load.pack": [
-      {
-        "file": "WebContent/assets/pack.json",
-        "section": "images"
-      },
-      {
-        "file": "WebContent/assets/pack.json",
-        "section": "atlas"
-      }
-    ]
+    "load.pack": []
   },
   "world": {
     "type": "group",
-    "id": "e26dd211-a7da-448c-a60c-f5fbc4ce2703",
+    "id": "ee75eb75-eef7-4b8e-926a-28ee51a0e77f",
     "info": {
-      "editorName": "homeScreen",
+      "editorName": "finalScreen",
       "setAll": [],
       "children": [
         {
           "type": "image",
-          "id": "88610612-6112-4175-9b1a-a4f1b3122036",
+          "id": "e1d6bc54-9e92-4211-b133-06012de2ee30",
           "asset": "0",
-          "info": {"editorName": "homeBg"}
+          "info": {"editorName": "finalBg"}
         },
         {
           "type": "image",
-          "id": "8cd839e3-57d8-4075-b12d-327ec36bb521",
+          "id": "4a4253dc-1e72-4f60-86d7-941a75e199d9",
           "asset": "1",
-          "info": {
-            "editorName": "heroHome",
-            "editorField": true,
-            "y": 1012
-          }
+          "info": {"editorName": "finalBuildings"}
         },
         {
           "type": "image",
-          "id": "061649fa-8858-4ab2-8b72-ea773a016a6a",
+          "id": "04ad87f4-32b7-4514-9ec9-1b044f584e95",
           "asset": "2",
           "info": {
-            "editorName": "alsoPlay",
+            "editorName": "finalHero",
             "editorField": true,
-            "x": 1667,
-            "y": 920,
+            "x": 990,
+            "y": 1232,
             "anchor.x": 0.5,
             "anchor.y": 0.5
           }
         },
         {
           "type": "image",
-          "id": "82f185e8-c110-493d-8a4d-12867140cf4e",
+          "id": "e9e31c6f-6a83-4a72-9147-0c59a9e9e3ce",
           "asset": "3",
           "info": {
-            "editorName": "playBtn",
+            "editorName": "finalPlayBtn",
             "editorField": true,
-            "x": 1126,
-            "y": 582,
+            "x": 1535,
+            "y": -191,
             "anchor.x": 0.5,
             "anchor.y": 0.5
           }
         },
         {
           "type": "image",
-          "id": "1f004a4d-7fe4-4656-a17b-0c3d1f48118b",
+          "id": "c6955373-5d98-4dca-a73e-e59a43a5235c",
           "asset": "4",
+          "info": {"editorName": "finalRoof"}
+        },
+        {
+          "type": "image",
+          "id": "debaad8a-565b-402f-b286-119d30eb23d1",
+          "asset": "5",
+          "info": {"editorName": "finalRedLine"}
+        },
+        {
+          "type": "image",
+          "id": "dc17e5ce-88f6-4e2b-920e-7c0a71a265a3",
+          "asset": "6",
           "info": {
-            "editorName": "gameTitle",
+            "editorName": "finalMessage",
             "editorField": true,
-            "x": 600,
-            "y": -332
+            "y": -577
+          }
+        },
+        {
+          "type": "text",
+          "id": "2f5cf8d0-4dbc-4b43-9639-448f8bd15874",
+          "info": {
+            "editorName": "finalScore",
+            "editorField": true,
+            "x": 698,
+            "y": 430,
+            "text": "0000000",
+            "style.fontSize": 100,
+            "style.fill": "#ffffff",
+            "style.stroke": "#ffffff"
           }
         }
       ]
@@ -115,27 +126,37 @@
     "0": {
       "file": "WebContent/assets/pack.json",
       "section": "images",
-      "asset": "homeBg"
+      "asset": "finalBg"
     },
     "1": {
       "file": "WebContent/assets/pack.json",
       "section": "images",
-      "asset": "heroHome"
+      "asset": "finalBuildings"
     },
     "2": {
       "file": "WebContent/assets/pack.json",
       "section": "images",
-      "asset": "alsoPlay"
+      "asset": "finalHero"
     },
     "3": {
       "file": "WebContent/assets/pack.json",
       "section": "images",
-      "asset": "playBtn"
+      "asset": "finalPlayBtn"
     },
     "4": {
       "file": "WebContent/assets/pack.json",
       "section": "images",
-      "asset": "gameTitle"
+      "asset": "finalRoof"
+    },
+    "5": {
+      "file": "WebContent/assets/pack.json",
+      "section": "images",
+      "asset": "finalRedLine"
+    },
+    "6": {
+      "file": "WebContent/assets/pack.json",
+      "section": "images",
+      "asset": "finalMessage"
     }
   },
   "prefab-table": {}

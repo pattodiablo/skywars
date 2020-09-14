@@ -186,6 +186,77 @@
       "key": "homeBg",
       "url": "assets/images/homeBg.png",
       "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "alsoPlay",
+      "url": "assets/images/alsoPlay.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "gameTitle",
+      "url": "assets/images/gameTitle.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "heroHome",
+      "url": "assets/images/heroHome.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "playBtn",
+      "url": "assets/images/playBtn.png",
+      "overwrite": false
+    },
+    {
+      "type": "script",
+      "key": "finalScreen",
+      "url": "assets/canvas/finalScreen.js"
+    },
+    {
+      "type": "image",
+      "key": "finalBg",
+      "url": "assets/images/finalBg.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "finalBuildings",
+      "url": "assets/images/finalBuildings.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "finalHero",
+      "url": "assets/images/finalHero.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "finalMessage",
+      "url": "assets/images/finalMessage.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "finalPlayBtn",
+      "url": "assets/images/finalPlayBtn.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "finalRedLine",
+      "url": "assets/images/finalRedLine.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "finalRoof",
+      "url": "assets/images/finalRoof.png",
+      "overwrite": false
     }
   ],
   "atlas": [
@@ -338,7 +409,7 @@
     }
   ],
   "meta": {
-    "generated": "1599751682870",
+    "generated": "1599758297036",
     "app": "Phaser Editor",
     "url": "http://phasereditor.boniatillo.com",
     "version": "1.0",

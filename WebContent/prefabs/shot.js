@@ -29,6 +29,8 @@ function shot(aGame, aX, aY, aKey, aFrame) {
 	
 	this.fFireshot = this;
 	
+	this.myCreate();
+	
 }
 
 /** @type Phaser.Sprite */
@@ -38,3 +40,29 @@ shot.prototype.constructor = shot;
 
 /* --- end generated code --- */
 // -- user code here --
+shot.prototype.myCreate = function() {
+	
+ 
+ 
+	this.myTimer = this.game.time.create(false);
+    this.myTimer.loop(200, this.timerUpdate, this);
+    this.myTimer.start();
+   
+    
+};
+
+shot.prototype.timerUpdate = function() {
+
+			if(this.world.x<=-200 ){
+			
+				this.myTimer.destroy();
+				this.destroy();			
+			}
+			if(this.world.x>=2000 ){
+				
+				this.myTimer.destroy();
+				this.destroy();			
+			}
+
+}
+

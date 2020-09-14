@@ -23,6 +23,8 @@ homeScreen.prototype.constructor = homeScreen;
 homeScreen.prototype.init = function () {
 	
 	this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
+	this.scale.pageAlignHorizontally = true;
+	this.scale.pageAlignVertically = true;
 	this.game.renderer.renderSession.roundPixels = true;
 	this.physics.startSystem(Phaser.Physics.ARCADE);
 	
@@ -31,16 +33,147 @@ homeScreen.prototype.init = function () {
 homeScreen.prototype.preload = function () {
 	
 	this.load.pack('images', 'assets/pack.json');
+	this.load.pack('atlas', 'assets/pack.json');
+	
+	this.myPreload();
 	
 };
 
 homeScreen.prototype.create = function () {
 	this.add.sprite(0.0, 0.0, 'homeBg');
 	
+	var _heroHome = this.add.sprite(0.0, 1012.0, 'heroHome');
 	
+	var _alsoPlay = this.add.sprite(1667.0, 920.0, 'alsoPlay');
+	_alsoPlay.anchor.set(0.5, 0.5);
+	
+	var _playBtn = this.add.sprite(1126.0, 582.0, 'playBtn');
+	_playBtn.anchor.set(0.5, 0.5);
+	
+	var _gameTitle = this.add.sprite(600.0, -332.0, 'gameTitle');
+	
+	
+	
+	// fields
+	
+	this.fHeroHome = _heroHome;
+	this.fAlsoPlay = _alsoPlay;
+	this.fPlayBtn = _playBtn;
+	this.fGameTitle = _gameTitle;
 	this.myCreate();
 	
 };
 
 /* --- end generated code --- */
 // -- user code here --
+
+
+
+homeScreen.prototype.myPreload = function () {
+
+this.game.load.audio('bgmusic1', ['assets/audio/bgmusic1.mp3','assets/audio/bgmusic1.ogg']);
+
+this.game.load.audio('bgmusic2', ['assets/audio/bgmusic2.mp3','assets/audio/bgmusic2.ogg']);
+
+this.game.load.audio('baseCall', ['assets/audio/baseCall.mp3','assets/audio/baseCall.ogg']);
+this.game.load.audio('bossCome', ['assets/audio/bossCome.mp3','assets/audio/bossCome.ogg']);
+this.game.load.audio('bossCome2', ['assets/audio/bossCome2.mp3','assets/audio/bossCome2.ogg']);
+this.game.load.audio('die', ['assets/audio/die.mp3','assets/audio/die.ogg']);
+this.game.load.audio('getCoins', ['assets/audio/getCoins.mp3','assets/audio/getCoins.ogg']);
+this.game.load.audio('laserShot', ['assets/audio/laserShot.mp3','assets/audio/laserShot.ogg']);
+this.game.load.audio('powerup1', ['assets/audio/powerup1.mp3','assets/audio/powerup1.ogg']);
+this.game.load.audio('punch1', ['assets/audio/punch1.mp3','assets/audio/punch1.ogg']);
+this.game.load.audio('punch2', ['assets/audio/punch2.mp3','assets/audio/punch2.ogg']);
+this.game.load.audio('punch3', ['assets/audio/punch3.mp3','assets/audio/punch3.ogg']);
+this.game.load.audio('levelUp', ['assets/audio/levelUp.mp3','assets/audio/levelUp.ogg']);
+this.game.load.audio('upgrade', ['assets/audio/upgrade.mp3','assets/audio/upgrade.ogg']);
+
+var loaderOutline = this.game.add.graphics(0, 0); //copiar todo este codigo para generar la barra de carga automaticamente
+		
+		loaderOutline.beginFill(0x602530, 0.6); 
+	    loaderOutline.moveTo(0,0);
+	    loaderOutline.lineTo(100, 0);
+	    loaderOutline.lineTo(100, 30);
+	    loaderOutline.lineTo(0, 30);
+	    loaderOutline.lineTo(0, 0);
+	    loaderOutline.endFill();
+
+	    var loaderOutline2 = this.game.add.graphics(0, 0);
+		
+		loaderOutline2.beginFill(0xc12354, 0.6); 
+	    loaderOutline2.moveTo(0,0);
+	    loaderOutline2.lineTo(100, 0);
+	    loaderOutline2.lineTo(100, 25);
+	    loaderOutline2.lineTo(0, 25);
+	    loaderOutline2.lineTo(0, 0);
+	    loaderOutline2.endFill();
+
+
+	    var loaderContainer = this.game.add.sprite(0,0, loaderOutline.generateTexture());
+	    loaderOutline.destroy();
+
+        loaderContainer.width = this.game.width;
+   		loaderContainer.x = this.game.world.centerX - loaderContainer.width / 2;
+        loaderContainer.y = this.game.world.centerY - 16;
+
+		var loadSprite = this.game.add.sprite(0,0, loaderOutline2.generateTexture());
+		   loaderOutline2.destroy();
+
+		  //loadSprite.width = 100;
+        loadSprite.x = this.game.world.centerX - loadSprite.width / 2;
+        loadSprite.y = this.game.world.centerY - 14;
+
+		this.game.load.onFileComplete.add(function (progress, key, success, loaded, total) {
+ 
+        loadSprite.width = this.game.width * (progress / 100);
+        loadSprite.x = this.game.world.centerX - loadSprite.width / 2;
+    
+ 
+        }, this);	
+
+
+};
+
+homeScreen.prototype.myCreate = function () {
+
+	this.fPlayBtn.inputEnabled =  true;
+	this.fPlayBtn.events.onInputDown.add(this.gameStart, this);
+
+	this.showHero = this.game.add.tween(this.fHeroHome);
+			this.showHero.to({y:0}, 1000, Phaser.Easing.Linear.None);
+			this.showHero.onComplete.add(this.showTitle,this)
+			this.showHero.start();
+}
+
+homeScreen.prototype.showTitle = function () {
+
+	this.showHeroTitle = this.game.add.tween(this.fGameTitle);
+	this.showHeroTitle.to({y:128}, 500,Phaser.Easing.Bounce.Out);
+	this.showHeroTitle.onComplete.add(this.moveThings,this)
+	this.showHeroTitle.start();
+}
+
+homeScreen.prototype.moveThings = function () {
+
+	this.movePlayBtn = this.game.add.tween(this.fPlayBtn.scale);
+	this.movePlayBtn.to({x:1.05,y:1.05}, 500, Phaser.Easing.Linear.None);
+	this.movePlayBtn2 = this.game.add.tween(this.fPlayBtn.scale);
+	this.movePlayBtn2.to({x:1,y:1}, 500, Phaser.Easing.Linear.None);
+	this.movePlayBtn.chain(this.movePlayBtn2);
+	this.movePlayBtn2.chain(this.movePlayBtn);
+	this.movePlayBtn.start();
+
+	this.moveAlso = this.game.add.tween(this.fAlsoPlay);
+	this.moveAlso.to({angle:3}, 500, Phaser.Easing.Linear.None);
+	this.moveAlso2 = this.game.add.tween(this.fAlsoPlay);
+	this.moveAlso2.to({angle:0}, 500, Phaser.Easing.Linear.None);
+	this.moveAlso.chain(this.moveAlso2);
+	this.moveAlso2.chain(this.moveAlso);
+	this.moveAlso.start();
+
+}
+
+homeScreen.prototype.gameStart = function () {
+
+	this.game.state.start("Level");
+}

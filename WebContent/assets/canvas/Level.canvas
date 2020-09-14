@@ -18,10 +18,9 @@
       200,
       200
     ],
-    "showGrid": true,
+    "showGrid": false,
     "create_after": "this.myCreate();\r\n\r\n",
-    "state_init_after": "this.myInit();",
-    "state_preload_after": "this.myPreload();"
+    "state_init_after": "this.myInit();"
   },
   "stateSettings": {
     "scaleMode": "SHOW_ALL",
@@ -33,7 +32,7 @@
       255
     ],
     "rendererRoundPixels": true,
-    "autoLoad": true,
+    "autoLoad": false,
     "preloadSpriteId": "",
     "preloadSprite_direction": 0,
     "load.pack": []

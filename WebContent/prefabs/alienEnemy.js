@@ -167,6 +167,15 @@ this.game.physics.arcade.overlap( this.game.state.getCurrentState().fPlayer, thi
 		this.appearTime.destroy();
 		this.destroyTimer.destroy();
 		this.game.state.getCurrentState().isBossShow = false; //para que no vuelva aparacer en caso de que ya haya uno en pantalla
+
+			BgMusic.stop();
+			BgMusic2.stop();
+
+		this.game.finalScore = this.game.state.getCurrentState().fPlayer.coins;
+		this.game.currentLevel = this.game.state.getCurrentState().fPlayer.myLevel;
+		this.game.state.getCurrentState().shakeAndFlash();
+		this.game.state.start("finalScreen");
+		this.destroyTimer.destroy();
 		this.destroy();
 
 	}
@@ -190,6 +199,7 @@ if(!this.isKilled){
 	if(shot.isKicked){
 		shot.enabled =  false;
 		this.getDamage(this.game.state.getCurrentState().fPlayer.myLevel*this.damagePower);
+		shot.myTimer.destroy();
 		shot.destroy();
 		this.game.state.getCurrentState().shakeAndFlash();
 	
@@ -237,20 +247,23 @@ alienEnemy.prototype.leaveScreen = function() {
 	 }
 	
 	if(typeof this.fireaBallTimer !== "undefined"){
-
+		//console.log('destroyin fireball timer')
 		this.fireaBallTimer.destroy();
 	}
 
 	if(typeof this.dropTimer !== "undefined"){
+			//console.log('destroyin drop timer')
 		this.dropTimer.destroy();
 	}
 	
    
     if(typeof this.moveHorizontalTimer !== "undefined"){
+    		//console.log('destroyin moveHorizontal timer')
     	this.moveHorizontalTimer.destroy();
     }
 
     if(typeof this.moveVerticalTimer !== "undefined"){
+    		//console.log('destroyin moveVertical timer')
     	this.moveVerticalTimer.destroy();
     }
    	
@@ -296,6 +309,7 @@ alienEnemy.prototype.destroyShip = function(time, distance) {
     this.destroyTimer.start();
 
     function destroying(){
+    	console.log('destroying');
 		for(var i=0; i<=5; i++){
 
 			this.game.state.getCurrentState().createCoins(this.fEnemyShip.world.x,this.fEnemyShip.world.y,500,true);	

@@ -93,6 +93,7 @@ wisherEnemy.prototype.timerUpdate = function() {
 
 			this.ShootTimer.destroy();
 		 }
+		 this.myTimer.destroy();
 		this.destroy();
 	}
 	
@@ -101,6 +102,7 @@ wisherEnemy.prototype.timerUpdate = function() {
 
 			this.ShootTimer.destroy();
 		 }
+		 this.myTimer.destroy();
 		this.destroy();
 	}
 
@@ -108,7 +110,8 @@ wisherEnemy.prototype.timerUpdate = function() {
 		 if(typeof this.ShootTimer !== "undefined"){
 
 			this.ShootTimer.destroy();
-		 }		
+		 }	
+		 this.myTimer.destroy();	
 		this.destroy();
 	}
 	
@@ -117,6 +120,7 @@ wisherEnemy.prototype.timerUpdate = function() {
 
 			this.ShootTimer.destroy();
 		 }
+		this.myTimer.destroy();
 		this.destroy();
 	}
 	
