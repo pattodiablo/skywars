@@ -171,7 +171,7 @@ Level.prototype.myCreate = function () {
    	this.myTimer = this.game.time.create(false);
     this.myTimer.loop(200, this.timerUpdate, this);
     this.myTimer.start();
-
+	//this.finalShake();
 };
 
 Level.prototype.bgMusicPlay = function () {
@@ -983,22 +983,18 @@ Level.prototype.timerUpdate = function() { //actualiza coins y stage speed
 }
 
 Level.prototype.bossTimeDefeated = function () { //incrementa el numero de veces que el jefe final fue derrotado
-
-	FBInstant.player
-	  .incrementStatsAsync({
-
-	  	timesDefeated:+1
-	  })
-	  .then(function(data) {
-
-		
-	    var timesDefeated = data['timesDefeated'];
-	  
-	   // console.log('times defeated: ' +timesDefeated);
-
-	  }).catch(function (e) {
-	 	console.log(e);
-	});
+	const timesDefeated = this.game.timesDefeated++;
+	
+		var tempdata={
+			coins: coins,
+			level: level,
+			core1: core1,
+			core2: core2,
+			core3: core3,
+			timesDefeated: timesDefeated,
+		}
+	
+	updatear(tempdata);
 }
 
 
