@@ -25,7 +25,11 @@ window.onload = function() {
 
 	request.onsuccess = function (event) {
 		db = request.result;
-	//	console.log("success: " + db);
+		console.log(db.objectStoreNames.length);
+		if(db.objectStoreNames.length<=0){
+
+
+		}
 		// remove();
 		if (!dbfirsttime) {
 			
@@ -37,7 +41,7 @@ window.onload = function() {
 
 				const result = objectStoreDataRequest.result;
 				tempdata = result.data;
-				console.log(tempdata);
+			
 				crearJuego(tempdata);
 			}
 		}
@@ -53,6 +57,7 @@ window.onload = function() {
 			crearJuego(tempdata);
 		}
 	};
+
 
 	request.onupgradeneeded = function (event) {
 		var db = event.target.result;
@@ -71,7 +76,7 @@ window.onload = function() {
 		});
 	  dbfirsttime = true;
 	};
-
+	
 
 	function crearJuego(loadingData){
 		var game = new Phaser.Game(1920, 1080, Phaser.AUTO);
@@ -99,3 +104,24 @@ window.onload = function() {
 
 
 };
+
+function updatear(datos) {
+	// Abra una transacción como de costumbre
+	const objectStore = db.transaction(['gameData'], "readwrite").objectStore('gameData');
+  
+	const objectStoreDataRequest = objectStore.get(1);
+	
+	objectStoreDataRequest.onsuccess = () => {
+		
+		const result = objectStoreDataRequest.result;
+		//data.notified = "yes";
+		result.data = datos;
+  
+		const updateDataRequest = objectStore.put(result);
+  
+		updateDataRequest.onsuccess = () => {
+			   var dbupdate = true;
+			   //console.log("db updated")
+			};
+	}
+  };

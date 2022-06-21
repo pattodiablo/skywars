@@ -9,14 +9,14 @@
     "lang": "JAVA_SCRIPT",
     "baseClass": "Phaser.State",
     "backgroundColor": [
-      180,
-      180,
-      180
+      0,
+      0,
+      0
     ],
     "gridColor": [
-      200,
-      200,
-      200
+      0,
+      0,
+      0
     ],
     "showGrid": false,
     "create_after": "this.myCreate();\r\n\r\n",
@@ -183,7 +183,7 @@
                   "editorName": "powerText",
                   "editorField": true,
                   "x": 64,
-                  "y": 456,
+                  "y": 442,
                   "text": "Double Jump",
                   "style.fontSize": 120,
                   "style.fill": "#ffffff",

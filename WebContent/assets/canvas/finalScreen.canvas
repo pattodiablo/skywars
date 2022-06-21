@@ -70,8 +70,8 @@
           }
         },
         {
-          "type": "image",
-          "id": "e9e31c6f-6a83-4a72-9147-0c59a9e9e3ce",
+          "type": "button",
+          "id": "e0f1f357-a1cd-4320-a090-320d822a8d60",
           "asset": "3",
           "info": {
             "editorName": "finalPlayBtn",
@@ -117,6 +117,20 @@
             "style.fill": "#ffffff",
             "style.stroke": "#ffffff"
           }
+        },
+        {
+          "type": "button",
+          "id": "d3c937c3-3c10-4c5a-85eb-5faa6f59bd6e",
+          "asset": "7",
+          "info": {
+            "editorName": "shareBtn",
+            "editorField": true,
+            "x": 1535,
+            "y": 792,
+            "anchor.x": 0.5,
+            "anchor.y": 0.5,
+            "callback": "this.shareGame"
+          }
         }
       ]
     }
@@ -157,6 +171,11 @@
       "file": "WebContent/assets/pack.json",
       "section": "images",
       "asset": "finalMessage"
+    },
+    "7": {
+      "file": "WebContent/assets/pack.json",
+      "section": "images",
+      "asset": "shareBtn"
     }
   },
   "prefab-table": {}

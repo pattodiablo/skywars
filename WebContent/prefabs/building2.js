@@ -34,7 +34,7 @@ building2.prototype.constructor = building2;
 // -- user code here --
 building2.prototype.myCreate = function() {
 	
-	this.body.velocity.x = -this.game.state.getCurrentState﻿().stageSpeed;
+	
 };
 
 building2.prototype.update = function() {

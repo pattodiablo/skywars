@@ -9,14 +9,14 @@
     "lang": "JAVA_SCRIPT",
     "baseClass": "Phaser.State",
     "backgroundColor": [
-      180,
-      180,
-      180
+      0,
+      0,
+      0
     ],
     "gridColor": [
-      200,
-      200,
-      200
+      0,
+      0,
+      0
     ],
     "showGrid": true,
     "create_after": "this.myCreate();",
@@ -106,6 +106,53 @@
             "x": 600,
             "y": -332
           }
+        },
+        {
+          "type": "image",
+          "id": "5d3fc60e-9811-4635-bec9-9541977533a6",
+          "asset": "5",
+          "info": {
+            "editorName": "alsoInvite",
+            "editorField": true,
+            "x": 1271,
+            "y": 920,
+            "anchor.x": 0.5,
+            "anchor.y": 0.5
+          }
+        },
+        {
+          "type": "image",
+          "id": "908de465-c140-46e8-8eed-76ffa6ccf0a1",
+          "asset": "6",
+          "info": {
+            "editorName": "alsoPlayWith",
+            "editorField": true,
+            "x": 865,
+            "y": 920,
+            "anchor.x": 0.5,
+            "anchor.y": 0.5
+          }
+        },
+        {
+          "type": "image",
+          "id": "42a45fd0-c63d-465a-ac1a-517e8310c8cb",
+          "asset": "7",
+          "info": {
+            "editorName": "background",
+            "editorField": true,
+            "tint": "0x004080"
+          }
+        },
+        {
+          "type": "prefab",
+          "prefab": "0",
+          "id": "c07c787e-6d38-4305-8ea9-4d5b9f52a5f6",
+          "info": {
+            "editorName": "leaderboardGroup",
+            "editorField": true,
+            "x": 1016,
+            "y": -363
+          }
         }
       ]
     }
@@ -136,7 +183,22 @@
       "file": "WebContent/assets/pack.json",
       "section": "images",
       "asset": "gameTitle"
+    },
+    "5": {
+      "file": "WebContent/assets/pack.json",
+      "section": "images",
+      "asset": "alsoInvite"
+    },
+    "6": {
+      "file": "WebContent/assets/pack.json",
+      "section": "images",
+      "asset": "alsoPlayWith"
+    },
+    "7": {
+      "file": "WebContent/assets/pack.json",
+      "section": "images",
+      "asset": "background"
     }
   },
-  "prefab-table": {}
+  "prefab-table": {"0": "WebContent/prefabs/leaderboard.canvas"}
 }

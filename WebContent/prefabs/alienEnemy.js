@@ -78,8 +78,15 @@ alienEnemy.prototype.myCreate = function() {
 	this.fullLifeWidth = this.fEnemyBar.fEnemyLifeFull.width;
 
 	this.damagePower = 1; //usar para probar destruccion del enemigo 1 es default
-	this.life = 100;
 
+
+	if(this.game.timesDefeated <=1 || typeof this.game.timesDefeated == 'undefined'){
+		this.life = 100
+	}else{
+		this.life = 100*this.game.timesDefeated;
+	}
+	
+	
 	this.speedKill =  false;
 	this.isKicked =  false;
 
@@ -173,8 +180,8 @@ this.game.physics.arcade.overlap( this.game.state.getCurrentState().fPlayer, thi
 
 		this.game.finalScore = this.game.state.getCurrentState().fPlayer.coins;
 		this.game.currentLevel = this.game.state.getCurrentState().fPlayer.myLevel;
-		this.game.state.getCurrentState().shakeAndFlash();
-		this.game.state.start("finalScreen");
+		this.game.state.getCurrentState().finalShake();
+		
 		this.destroyTimer.destroy();
 		this.destroy();
 
@@ -225,16 +232,27 @@ if(!this.isKilled){
 
 
 alienEnemy.prototype.getDamage = function(damage) {
+
 	this.life-=damage;
 	if(this.life<=0){
 		this.life = 0;
 	if(!this.destroying){
 		
 		this.destroying =  true;
+		this.appearTime.destroy();
 		this.destroyShip();
 	}	
 }
-	this.fEnemyBar.fEnemyLifeFull.width=this.life*this.fullLifeWidth/100;
+	if(this.game.timesDefeated>0){
+	
+
+		this.fEnemyBar.fEnemyLifeFull.scale.x=(this.life/(100*this.game.timesDefeated))/2;
+
+	}else{
+		this.fEnemyBar.fEnemyLifeFull.scale.x=(this.life/100)/2;
+	}
+	
+	
 }
 
 alienEnemy.prototype.leaveScreen = function() {
@@ -309,7 +327,7 @@ alienEnemy.prototype.destroyShip = function(time, distance) {
     this.destroyTimer.start();
 
     function destroying(){
-    	console.log('destroying');
+   
 		for(var i=0; i<=5; i++){
 
 			this.game.state.getCurrentState().createCoins(this.fEnemyShip.world.x,this.fEnemyShip.world.y,500,true);	

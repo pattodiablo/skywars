@@ -41,12 +41,45 @@ player.prototype.constructor = player;
 // -- user code here --
 player.prototype.myCreate = function() {
 	
-	this.myLevel = 1;
+	if(typeof this.game.playerLevel !== "undefined"  ){
+		this.myLevel = this.game.playerLevel;
+	
+		
+	}else{
+		this.myLevel = 1;
+	
+	}
+	
+	if(typeof this.game.playerCoins !== "undefined"  ){
+		this.coins = this.game.playerCoins;
+	}else{
+		this.coins = 29;
+	}
+	
+	if(typeof this.game.playerCore1 !== "undefined" ){
+		
+		this.core1Level = this.game.playerCore1;
+	}else{
+	
+		this.core1Level = 0;
+	}
+
+	if( typeof this.game.playerCore2 !== "undefined" ){
+		this.core2Level = this.game.playerCore2;
+	}else{
+		this.core2Level = 0;
+	}
+
+	if(typeof this.game.playerCore3 !== "undefined" ){
+		this.core3Level = this.game.playerCore3;
+	}else{
+		this.core3Level = 0;
+	}
+
+
+
 	this.ExpPoints = 0;
-	this.core1Level = 0;
-	this.core2Level = 0;
-	this.core3Level = 0;
-	this.coins = 29;
+	
 	this.canJump =  false;	
 	this.isKicking = false;
 	this.canKick = false;
@@ -59,9 +92,8 @@ player.prototype.myCreate = function() {
 	this.enableShootOnce = true;
 	this.shootTimer = this.game.time.create(false);
 	this.currentFillLevel = 0;
+	this.totalLevelFill = 1000;
 	this.levelCap=1000;
-	this.totalLevelFill = this.levelCap*this.myLevel;
-
    	this.myTimer = this.game.time.create(false);
     this.myTimer.loop(200, this.timerUpdate, this);
     this.myTimer.start();
@@ -113,11 +145,10 @@ player.prototype.enaBleShooting = function() {
 player.prototype.getExp = function(comboHit) {	
 	
 	if(comboHit>=1){
-		this.ExpPoints+=1*comboHit;
+		this.ExpPoints+=1*comboHit; //multiplicador de combo cuando hace mas de dos golpes en el aire
 	}else{
 		this.ExpPoints++;
 	}
-
 
 this.currentFillLevel = this.ExpPoints/this.totalLevelFill;
 
@@ -128,5 +159,13 @@ this.currentFillLevel = this.ExpPoints/this.totalLevelFill;
 		this.game.state.getCurrentState().isBosstime = false;
 		this.game.state.getCurrentState().newLevelAnim();
 		
+		var coins = this.coins;
+		var level =  this.myLevel;
+		var core1Level = this.core1Level;
+		var core2Level = this.core2Level;
+		var core3Level = this.core3Level;
+	
+	this.game.state.getCurrentState().saveProgress(coins,level,core1Level,core2Level,core3Level,this.game);
+
 		}
 }

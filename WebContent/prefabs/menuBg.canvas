@@ -76,9 +76,9 @@
               "info": {
                 "editorName": "returnText",
                 "editorField": true,
-                "x": 342,
+                "x": 309,
                 "y": 1020,
-                "text": "RETURN TO BASE",
+                "text": "BASE AND UPGRADES",
                 "style.fontSize": 40,
                 "style.fill": "#ffffff"
               }
@@ -89,7 +89,7 @@
               "info": {
                 "editorName": "coins",
                 "editorField": true,
-                "x": 441,
+                "x": 387,
                 "y": 61,
                 "text": "0000",
                 "style.fontSize": 60,
@@ -101,7 +101,7 @@
               "id": "30df9f01-5b32-4869-9070-cd5d50bfbe48",
               "info": {
                 "editorName": "LevelLabel",
-                "x": 451,
+                "x": 326,
                 "y": 149,
                 "text": "Level",
                 "style.fontSize": 50,
@@ -114,7 +114,7 @@
               "info": {
                 "editorName": "LevelNumber",
                 "editorField": true,
-                "x": 582,
+                "x": 522,
                 "y": 149,
                 "text": "00",
                 "style.fontSize": 50,
@@ -127,8 +127,11 @@
               "asset": "1",
               "info": {
                 "editorName": "userPic",
-                "x": 127,
-                "y": 24
+                "editorField": true,
+                "x": 162,
+                "y": 150,
+                "anchor.x": 0.5,
+                "anchor.y": 0.5
               }
             },
             {
@@ -390,7 +393,7 @@
               "asset": "5",
               "info": {
                 "editorName": "menuCoin",
-                "x": 365,
+                "x": 305,
                 "y": 60
               }
             },
@@ -403,6 +406,45 @@
                 "editorField": true,
                 "x": 855,
                 "y": 933
+              }
+            },
+            {
+              "type": "text",
+              "id": "97cb1aec-3035-43fd-9fb7-bb0c523e8da3",
+              "info": {
+                "editorName": "playerName",
+                "editorField": true,
+                "x": 325,
+                "y": 217,
+                "text": "playerName",
+                "style.fontSize": 30,
+                "style.fill": "#ffffff",
+                "style.stroke": "#ffffff"
+              }
+            },
+            {
+              "type": "atlas-sprite",
+              "id": "e25ce14e-7af8-4069-a115-e9056ede1c21",
+              "asset": "6",
+              "info": {
+                "editorName": "resetBtn",
+                "editorField": true,
+                "x": 680,
+                "y": 112,
+                "scale.x": 0.3
+              }
+            },
+            {
+              "type": "text",
+              "id": "bfc9a820-8640-4679-a8a3-8c3cb1881020",
+              "info": {
+                "editorName": "resetText",
+                "editorField": true,
+                "x": 689,
+                "y": 157,
+                "text": "RESET ALL",
+                "style.fontSize": 30,
+                "style.fill": "#ffffff"
               }
             }
           ]
@@ -441,6 +483,12 @@
       "file": "WebContent/assets/pack.json",
       "section": "images",
       "asset": "menuCoin"
+    },
+    "6": {
+      "file": "WebContent/assets/pack.json",
+      "section": "atlas",
+      "asset": "buttons",
+      "sprite": "buttonMenu instance 10024"
     }
   },
   "prefab-table": {

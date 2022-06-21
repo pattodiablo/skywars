@@ -49,10 +49,19 @@ upgradeBtn.prototype.myCreate = function () {
     
 };
 
+
 upgradeBtn.prototype.pullMenu = function () {
 	
+	var coins = this.game.state.getCurrentState().fPlayer.coins;
+	var level =  this.game.state.getCurrentState().fPlayer.myLevel;
+	var core1Level = this.game.state.getCurrentState().fPlayer.core1Level;
+	var core2Level = this.game.state.getCurrentState().fPlayer.core2Level;
+	var core3Level = this.game.state.getCurrentState().fPlayer.core3Level;
+	
+	this.game.state.getCurrentState().saveProgress(coins,level,core1Level,core2Level,core3Level,this.game);
+	
 	if(!this.menuOn){
-		
+		console.log('core1Level ' + this.game.state.getCurrentState().fPlayer.core1Level);
 		this.playerPos = -100;
 		this.menuPos = 30;
 		this.BtnPos=  860;
@@ -63,6 +72,8 @@ upgradeBtn.prototype.pullMenu = function () {
 		this.game.state.getCurrentState().fMenu.fReturnText.text = 'READY & DEPLOY';
 		this.game.state.getCurrentState().fMenu.menuIsOpen =  true;
 		this.game.state.getCurrentState().fMenu.updateMenu();
+		this.game.state.getCurrentState().fMenu.getCoreStats();
+		this.game.state.getCurrentState().fMenu.firstTimeRstBtn = false;	
 		
 	}else{
 			
@@ -75,7 +86,9 @@ upgradeBtn.prototype.pullMenu = function () {
 		this.game.state.getCurrentState().maximunStageSpeed=600;
 		this.game.state.getCurrentState().fMenu.fReturnText.text = 'RETURN TO BASE';
 		this.game.state.getCurrentState().fMenu.menuIsOpen =  false;
+
 		this.game.state.getCurrentState().fMenu.stopUpdateMenu();
+		this.game.state.getCurrentState().fMenu.firstTimeRstBtn = false;	
 		this.game.state.getCurrentState().fLifeBar.callBarra();
 	}
 	

@@ -66,7 +66,7 @@ Level.prototype.create = function () {
 	var _powerLabel = this.add.group();
 	_powerLabel.position.set(0.0, -595.0);
 	
-	var _powerText = this.add.text(64.0, 456.0, 'Double Jump', {"font":"bold 120px Arial","fill":"#ffffff","stroke":"#ffffff"}, _powerLabel);
+	var _powerText = this.add.text(64.0, 442.0, 'Double Jump', {"font":"bold 120px Arial","fill":"#ffffff","stroke":"#ffffff"}, _powerLabel);
 	
 	this.add.text(87.0, 397.0, 'You got', {"font":"bold 60px Arial","fill":"#ffffff","stroke":"#ffffff"}, _powerLabel);
 	
@@ -138,19 +138,15 @@ Level.prototype.myInit = function () {
 
 Level.prototype.myCreate = function () {
 
-
-this.timerPowers = [];
-this.timerPowers2 = [];
-this.timerPowers3 = [];
-this.comboHit =  0;
-this.speedAnimations = [];
-this.jumpAnimations = [];
-
-  this.isBosstime =  false;
-  this.isBossShow =  false;
- 
-//this.fBackground.filters = [filter];
-
+	this.getProgress();
+	this.timerPowers = [];
+	this.timerPowers2 = [];
+	this.timerPowers3 = [];
+	this.comboHit =  0;
+	this.speedAnimations = [];
+	this.jumpAnimations = [];
+	this.isBosstime =  false;
+	this.isBossShow =  false;
 	this.createCoins(this.fPlayer.x,this.fPlayer.y,300,false);
 	this.kickLevel = 0;
 	this.initSound = false;
@@ -161,19 +157,16 @@ this.jumpAnimations = [];
 	this.jumpPower = -900;
 
 
-if(!this.initSound){
+	if(!this.initSound){
 
-	  this.bgMusicPlay();
-	  this.initSound=true;
-}
+		  this.bgMusicPlay();
+		  this.initSound=true;
+	}
 
 
-    enemyDeployTimer = this.game.time.create(false);
-    enemyDeployTimer.loop(1250, this.deployItems, this);
-    enemyDeployTimer.start();
-
-  		
-	//this.setupCoinEmitter();
+    itemsDeployTimer = this.game.time.create(false);
+    itemsDeployTimer.loop(1250, this.deployItems, this);
+    itemsDeployTimer.start();
 
    	this.myTimer = this.game.time.create(false);
     this.myTimer.loop(200, this.timerUpdate, this);
@@ -204,20 +197,20 @@ Level.prototype.bgMusicPlay = function () {
 	switch (this.randomSong){
 
 		case 1:
-			console.log('rola 1 selected!');
+			
 			this.BgMusic = 1;
 			BgMusic.play();
 		break;
 			
 
 		case 2:
-			console.log('rola 2 selected!');
+		
 			this.BgMusic = 2;
 			BgMusic2.play();
 		break;
 
 		default:
-			console.log('no rola selected');
+		
 		break;
 
 	}
@@ -296,12 +289,12 @@ Level.prototype.switchMusic = function () {
 		BgMusic.pause();
 		BgMusic2.pause();
 		musicEnabled = false;
-		console.log('musica disabled');
+		//console.log('musica disabled');
 		
 
 	}else{
 	
-console.log(this.randomSong);
+//console.log(this.randomSong);
 		if(this.randomSong == 1){
 
 			BgMusic.play();
@@ -313,7 +306,7 @@ console.log(this.randomSong);
 		}
 		
 		musicEnabled = true;
-			console.log('musica musicEnabled');
+		//	console.log('musica musicEnabled');
 	}
 
 
@@ -333,7 +326,7 @@ Level.prototype.switchFX = function () {
 	},this);
 
 		fxEnabled = false;
-		console.log('fx disabled');
+
 		
 
 	}else{
@@ -347,7 +340,7 @@ Level.prototype.switchFX = function () {
 	
 		
 		fxEnabled = true;
-		console.log('fx enabled');
+
 	}
 
 
@@ -355,68 +348,66 @@ Level.prototype.switchFX = function () {
 
 Level.prototype.deployItems = function() {
 
-var itemAppearChance = (this.fPlayer.core1Level + this.fPlayer.core2Level + this.fPlayer.core3Level)/10;
+	var itemAppearChance = (this.fPlayer.core1Level + this.fPlayer.core2Level + this.fPlayer.core3Level)/10;
 
-const enemyXDeploy = Math.random()  * (550 - 200) + 200; //este es en realidad el Y donde aparece el power o el enemy
+	const enemyXDeploy = Math.random()  * (550 - 200) + 200; //este es en realidad el Y donde aparece el power o el enemy
 
-if(itemAppearChance>=0.5){
-	itemAppearChance = 0.5;
-}
+	if(itemAppearChance>=0.5){
+		itemAppearChance = 0.5;
+	}
 
-const salen =  Math.random() < itemAppearChance;
+	const salenCores =  Math.random() < itemAppearChance;
 
-if(salen){
+	if(salenCores){
 
-	const wichSale =  Math.round(Math.random() * 3);
+		const wichSale =  Math.round(Math.random() * 3);
 
 
-	if(this.fPlayer.core1Level>=1 && wichSale<=1){
-		const item1Cap = this.fPlayer.core1Level/10;
-		const isItem1Able =  Math.random() < (0.5+item1Cap);
+		if(this.fPlayer.core1Level>=1 && wichSale<=1){
+			const item1Cap = this.fPlayer.core1Level/10;
+			const isItem1Able =  Math.random() < (0.5+item1Cap);
 
-		if(isItem1Able){
-			var _itemPowerUp = new powerUp1(this.game, this.game.width+50, enemyXDeploy);
-			this.fPowerUps.add(_itemPowerUp);
+			if(isItem1Able){
+				var _itemPowerUp = new powerUp1(this.game, this.game.width+50, enemyXDeploy);
+				this.fPowerUps.add(_itemPowerUp);
+			}
+		}
+
+		if(this.fPlayer.core2Level>=1 && wichSale==2){
+			const item2Cap = this.fPlayer.core2Level/10;
+			const isItem2Able =  Math.random() < (0.5+item2Cap);
+
+			if(isItem2Able){
+				var _itemPowerUp = new powerUp2(this.game, this.game.width+50, enemyXDeploy);
+				this.fPowerUps.add(_itemPowerUp);
+			}
+		}
+
+		if(this.fPlayer.core3Level>=1 && wichSale==3){
+			const item3Cap = this.fPlayer.core3Level/10;
+			const isItem3Able =  Math.random() < (0.5+item3Cap);
+
+			if(isItem3Able){
+				var _itemPowerUp = new powerUp3(this.game, this.game.width+50, enemyXDeploy);
+				this.fPowerUps.add(_itemPowerUp);
+			}
 		}
 	}
 
-	if(this.fPlayer.core2Level>=1 && wichSale==2){
-		const item2Cap = this.fPlayer.core2Level/10;
-		const isItem2Able =  Math.random() < (0.5+item2Cap);
 
-		if(isItem2Able){
-			var _itemPowerUp = new powerUp2(this.game, this.game.width+50, enemyXDeploy);
-			this.fPowerUps.add(_itemPowerUp);
+	var _BirdEnemy = new wisherEnemy(this.game, this.game.width+50, enemyXDeploy);
+	var isRedEnemy=Math.random()<0.1;
+		if(isRedEnemy){
+			_BirdEnemy.turnRed();
 		}
-	}
 
-	if(this.fPlayer.core3Level>=1 && wichSale==3){
-		const item3Cap = this.fPlayer.core3Level/10;
-		const isItem3Able =  Math.random() < (0.5+item3Cap);
-
-		if(isItem3Able){
-			var _itemPowerUp = new powerUp3(this.game, this.game.width+50, enemyXDeploy);
-			this.fPowerUps.add(_itemPowerUp);
-		}
-	}
-}
-
-
-
-
-var _BirdEnemy = new wisherEnemy(this.game, this.game.width+50, enemyXDeploy);
-var isRedEnemy=Math.random()<0.1;
-	if(isRedEnemy){
-		_BirdEnemy.turnRed();
-	}
-
-	this.fEnemies.add(_BirdEnemy);
+		this.fEnemies.add(_BirdEnemy);
 
 };
 
 Level.prototype.swipeUpAction = function(pointer) { 
-this.fPlayer.isKicking = false;
-this.jumpPower=0;
+	this.fPlayer.isKicking = false;
+	this.jumpPower=0;
 };
 
 
@@ -520,64 +511,72 @@ Level.prototype.destroyEnemy = function (player, enemy) {
 		
 		if(!enemy.isCombo){
 
-			var _kickPower = new kickPower(this.game, enemy.x, enemy.y);
-			_kickPower.alpha = 0.5;
-			this.add.existing(_kickPower);
-			enemy.animations.play('kicked');
-			enemy.tweenBtn.stop();
-			enemy.tween2Btn.stop();
-			enemy.body.velocity.x=800;
-			enemy.body.gravity.y=1200;
-			enemy.body.enabled = false;
-			enemy.body.checkCollision.none = false;
+				var _kickPower = new kickPower(this.game, enemy.x, enemy.y);
+				_kickPower.alpha = 0.5;
+				this.add.existing(_kickPower);
+				enemy.animations.play('kicked');
+				enemy.tweenBtn.stop();
+				enemy.tween2Btn.stop();
+				enemy.body.velocity.x=800;
+				enemy.body.gravity.y=1200;
+				enemy.body.enabled = false;
+				enemy.body.checkCollision.none = false;
 
-			wichKick  = Math.round(Math.random()*3);
+				if(typeof enemy.ShootTimer !== "undefined"){
+
+					
+					enemy.ShootTimer.destroy();
+				 }
+
+				
+
+				wichKick  = Math.round(Math.random()*3);
+				
+				switch(wichKick){
+					case 1:
+					punch1.play('punch1');
+					break;
+					case 2:
+					punch2.play('punch2');
+					break;
+					case 3:
+					punch3.play('punch3');
+					break;
+					default:
+					punch1.play('punch1');
+					break;
+
+				}
+
+			//	this.shakeAndFlash();
+				enemy.isKicked =  true;
+				this.comboHit++;
 			
-			switch(wichKick){
-				case 1:
-				punch1.play('punch1');
-				break;
-				case 2:
-				punch2.play('punch2');
-				break;
-				case 3:
-				punch3.play('punch3');
-				break;
-				default:
-				punch1.play('punch1');
-				break;
 
+			if(this.comboHit>=2){
+
+				var comboText = this.add.text(enemy.x, enemy.y, 'x' + this.comboHit , {"font":"bold 120px Arial","fill":"#ffffff","stroke":"#ffffff"});
+				this.fComboText.add(comboText);
+				
+				this.showLevel = this.game.add.tween(comboText);
+				this.showLevel.to({alpha:0}, 500, Phaser.Easing.Linear.None);
+				this.showLevel.onComplete.add(function(){
+				this.fComboText.forEach(function(comboText){
+					comboText.destroy();
+				})
+				//this.showLevel.stop();
+				}, this);
+				this.showLevel.start();
+
+				this.showLevel2 = this.game.add.tween(comboText);
+				this.showLevel2.to({y:comboText.y-50}, 500, Phaser.Easing.Linear.None);
+
+				this.showLevel2.onComplete.add(function(){	
+				//this.showLevel2.stop();
+				}, this);
+
+				this.showLevel2.start();
 			}
-
-		//	this.shakeAndFlash();
-			enemy.isKicked =  true;
-			this.comboHit++;
-		
-
-		if(this.comboHit>=2){
-
-			var comboText = this.add.text(enemy.x, enemy.y, 'x' + this.comboHit , {"font":"bold 120px Arial","fill":"#ffffff","stroke":"#ffffff"});
-			this.fComboText.add(comboText);
-			
-			this.showLevel = this.game.add.tween(comboText);
-			this.showLevel.to({alpha:0}, 500, Phaser.Easing.Linear.None);
-			this.showLevel.onComplete.add(function(){
-			this.fComboText.forEach(function(comboText){
-				comboText.destroy();
-			})
-			//this.showLevel.stop();
-			}, this);
-			this.showLevel.start();
-
-			this.showLevel2 = this.game.add.tween(comboText);
-			this.showLevel2.to({y:comboText.y-50}, 500, Phaser.Easing.Linear.None);
-
-			this.showLevel2.onComplete.add(function(){	
-			//this.showLevel2.stop();
-			}, this);
-
-			this.showLevel2.start();
-		}
 		}
 }
 			
@@ -661,6 +660,30 @@ Level.prototype.shakeAndFlash = function () {
   		this.game.camera.flash(0xffffff, 250)
 };
 
+Level.prototype.finalShake = function () {
+	
+		retreavePlayer = this.game.add.tween(this.fPlayer);		
+		retreavePlayer.to({y:-200}, 500, Phaser.Easing.Linear.None);
+		retreavePlayer.start();
+		this.fPlayer.body.enable =  false;
+		
+		this.game.camera.shake(0.02, 3000);
+  		this.game.camera.flash(0xffffff, 3000)
+    
+    	this.Finaltimer = this.game.time.create(false);
+   		this.Finaltimer.loop(3000, this.gotoFinalScreen, this);
+   		this.Finaltimer.start();
+};
+
+Level.prototype.gotoFinalScreen = function () {
+		levelUp.play('levelUp');
+		this.bossTimeDefeated();
+	this.Finaltimer.destroy();
+	this.game.state.start("finalScreen");
+
+};
+
+
 Level.prototype.getPowerUp = function (player,powerUp) {
 	
 	if(!this.fPlayer.usingDoubleJump || !this.fPlayer.usingSpeedForce || !this.fPlayer.canShot){
@@ -674,7 +697,7 @@ Level.prototype.getPowerUp = function (player,powerUp) {
 
 				});
 			}
-			console.log('i got superShot');
+		//	console.log('i got superShot');
 			this.fPowerText.text = 'Super Shot';
 			player.canShot=true;
 
@@ -878,11 +901,7 @@ Level.prototype.getPowerUp = function (player,powerUp) {
 
 Level.prototype.newLevelAnim = function () {
 
-		
-
-	
-
-   		this.speedPowerInstance = new jumpPower(this.game, this.fPlayer.x, this.fPlayer.y);
+		this.speedPowerInstance = new jumpPower(this.game, this.fPlayer.x, this.fPlayer.y);
    		this.powerAnim = this.speedPowerInstance.animations.play('power');
    		this.powerAnim.killOnComplete=true;
    		this.powerAnim.loop=false;
@@ -893,7 +912,6 @@ Level.prototype.newLevelAnim = function () {
 	
 		explode.start();
 
-
    		this.fEnemies.forEach(function(enemy){
   			enemy.game.state.getCurrentState().destroyEnemyWithLevel(this.fPlayer,enemy);
 		});
@@ -902,6 +920,7 @@ Level.prototype.newLevelAnim = function () {
 }
 
 Level.prototype.showLabel = function () {
+	
 			bajaLetrero = this.game.add.tween(this.fPowerLabel);		
 		    bajaLetrero.to({y:-240}, 1200, Phaser.Easing.Bounce.Out);
 		    bajaLetrero.onComplete.add(theEnd, this);
@@ -941,37 +960,94 @@ Level.prototype.hitPlayerWithBullet = function (player,bullet) {
 	bullet.myTimer.destroy();
 	bullet.destroy();
 	this.shakeAndFlash();
+	punch3.play('punch3');
 	for(var i = 0 ; i<=5; i++){
 		this.fPlayer.coins--;
 			this.createCoins(player.x,player.y,1500,false,true);
 		}
 }
 
-Level.prototype.timerUpdate = function() {
+Level.prototype.timerUpdate = function() { //actualiza coins y stage speed
 
 	this.fMenu.fLevelBar.fMoneyText.text = this.fPlayer.coins;
-	if(this.fPlayer.myDoubleJump>0){
-		this.fPlayer.canDoubleJump =  true;
-	}
+	
 	if(this.stageSpeed>=this.maximunStageSpeed){
 
 		this.stageSpeed = this.maximunStageSpeed;
 
 	}else{
 		this.stageSpeed+=10;
-	}
-
-
-		
-
+	}	
 
 
 }
 
+Level.prototype.bossTimeDefeated = function () { //incrementa el numero de veces que el jefe final fue derrotado
+
+	FBInstant.player
+	  .incrementStatsAsync({
+
+	  	timesDefeated:+1
+	  })
+	  .then(function(data) {
+
+		
+	    var timesDefeated = data['timesDefeated'];
+	  
+	   // console.log('times defeated: ' +timesDefeated);
+
+	  }).catch(function (e) {
+	 	console.log(e);
+	});
+}
+
+
+Level.prototype.getProgress = function () {
+
+	
+	
+	    var coins = this.game.playerCoins;
+	    var level = this.game.playerLevel;
+
+
+	
+}
+
+Level.prototype.saveProgress = function (coins,level,core1,core2,core3,game) {
+//console.log('salvando ' + coins + ' ' + level + ' ' + core1 + ' ' + core2 + ' ' + core3  );
+var tempdata={
+	coins: coins,
+	level: level,
+	core1: core1,
+	core2: core2,
+	core3: core3,
+}
+updatear(tempdata);
+}
+
+Level.prototype.resetProgress = function (coins,level,core1,core2,core3,game,isReset,timesDefeated) {
+//console.log('salvando ' + coins + ' ' + level + ' ' + core1 + ' ' + core2 + ' ' + core3 + ' ' + timesDefeated );
+			var tempdata={
+				coins: 0,
+				level: 1,
+				core1: 0,
+				core2: 0,
+				core3: 0,
+			}
+			updatear(tempdata);
+			game.state.restart("homeScreen");
+
+
+
+
+ 	
+}
+
+
 Level.prototype.update = function () {
 
 	//this.fPlayer.getExp(); //solo para pruebas habilitar para ganar experiencia rapidamente
-	//console.log(this.fBossGroup.length);
+//	console.log(this.fComboText.length);
 
 	this.game.physics.arcade.overlap(this.fBullets , this.fEnemies, this.destroyEnemyWithBullet, null, this);
 	this.game.physics.arcade.collide(this.fCoins , this.fPlatforms, this.coinOnPlatform, null, this);

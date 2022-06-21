@@ -61,21 +61,27 @@ coin.prototype.retriveCoin = function() {
 	this.enemyDeployTimer.destroy();
 	this.myPoint =  new Phaser.Point(this.x,this.y);
 	const distance = 0;
-	if(typeof this !== "undefined" || typeof this !== "null" ){
-
-		const distance = Math.abs(this.myPoint.distance(this.game.state.getCurrentState().fPlayer));
 	
-	if(distance <= 300 || this.killedByBullet || !this.noRetrieve){
-		this.tween = this.game.add.tween(this);
-		this.tween.to({x:this.game.width-370,y:30}, 500, Phaser.Easing.Linear.None);
-		this.tween.onComplete.add(this.captureCoin, this);
-		this.tween.start();	
-	}else{
-		this.tint = 0x9e9e9e;
-	}
-	this.myTimer.destroy();
 
+	if(typeof this !== "undefined"  ){
+		if(typeof this !== "null"  ){
+
+			const distance = Math.abs(this.myPoint.distance(this.game.state.getCurrentState().fPlayer));
+		
+		if(distance <= 300 || this.killedByBullet || !this.noRetrieve){
+			this.tween = this.game.add.tween(this);
+			this.tween.to({x:this.game.width-370,y:30}, 500, Phaser.Easing.Linear.None);
+			this.tween.onComplete.add(this.captureCoin, this);
+			this.tween.start();	
+		}else{
+			this.tint = 0x9e9e9e;
+		}
+		this.myTimer.destroy();
+
+		}
 	}
+
+
 };
 
 coin.prototype.captureCoin = function() {

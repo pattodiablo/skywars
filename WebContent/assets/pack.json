@@ -257,6 +257,35 @@
       "key": "finalRoof",
       "url": "assets/images/finalRoof.png",
       "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "shareBtn",
+      "url": "assets/images/shareBtn.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "alsoInvite",
+      "url": "assets/images/alsoInvite.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "alsoPlayWith",
+      "url": "assets/images/alsoPlayWith.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "leaderboard",
+      "url": "assets/images/leaderboard.png",
+      "overwrite": false
+    },
+    {
+      "type": "script",
+      "key": "leaderboard1",
+      "url": "prefabs/leaderboard.js"
     }
   ],
   "atlas": [
@@ -409,7 +438,7 @@
     }
   ],
   "meta": {
-    "generated": "1599758297036",
+    "generated": "1600878613757",
     "app": "Phaser Editor",
     "url": "http://phasereditor.boniatillo.com",
     "version": "1.0",

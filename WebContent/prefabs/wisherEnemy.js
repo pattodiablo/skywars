@@ -88,6 +88,7 @@ wisherEnemy.prototype.killedBySpeed = function() {
 };
 
 wisherEnemy.prototype.timerUpdate = function() {
+	
 	if(this.y<=-100){ //elimina al enmigo al salir a la arriba de la pantalla por -100 px
 		 if(typeof this.ShootTimer !== "undefined"){
 
